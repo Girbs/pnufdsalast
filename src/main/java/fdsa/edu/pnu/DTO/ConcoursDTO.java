@@ -14,9 +14,6 @@ import org.modelmapper.ModelMapper;
 
 import java.util.Collection;
 
-/**
- * @author Ing.Girbson BIJOU
- */
 @Data
 @Builder
 @NoArgsConstructor
@@ -31,10 +28,7 @@ public class ConcoursDTO {
     private Collection<PlannificationConcoursDTO> PlannificationConcourses;
 
     public static ConcoursDTO fromEntity(Concours concours) {
-
-        //mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STANDARD);
         ConcoursDTO concoursDto = mapper.map(concours, ConcoursDTO.class);
-
         return concoursDto;
     }
 
@@ -42,5 +36,4 @@ public class ConcoursDTO {
         Concours concours = mapper.map(concoursDTO, Concours.class);
         return concours;
     }
-
 }

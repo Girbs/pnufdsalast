@@ -31,6 +31,6 @@ public interface RoleDAO extends JpaRepository<Role, Integer> {
 //    @Procedure
 //    Role IdRoleEdtutiant();
 
-    public Role findByRoleName(String roleName);
+    public  Role findByRoleName(String roleName);
 
 }

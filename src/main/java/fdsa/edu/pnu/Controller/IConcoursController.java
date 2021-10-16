@@ -35,6 +35,7 @@ public interface IConcoursController {
     })
     ConcoursDTO findById(@PathVariable("id") Integer id);
 
+
     @PostMapping(value = "/concours/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Enregistrer un COncours", notes = "Cette methode permet d'enregistrer ou modifier un concours", response = ConcoursDTO.class)
     @ApiResponses(value = {

@@ -22,7 +22,7 @@ public class RoleService {
     @Autowired
     private RoleDAO roleDAO;
 
-    public Optional<Role> getRole(final int id) {
+    public Optional<Role> getRole(final Integer id) {
         return roleDAO.findById(id);
     }
 
@@ -30,7 +30,7 @@ public class RoleService {
         return roleDAO.findAll();
     }
 
-    public void deleteRole(final int id) {
+    public void deleteRole(final Integer id) {
         roleDAO.deleteById(id);
     }
 

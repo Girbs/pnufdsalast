@@ -12,7 +12,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
 
-import java.util.Collection;
+import java.util.List;
 
 /**
  * @author Ing.Girbson BIJOU
@@ -25,12 +25,12 @@ public class PlannificationConcoursDTO {
 
     private static ModelMapper mapper = new ModelMapper();
     private int id;
-    private Integer concoursid;
+    private ConcoursDTO concoursid;
     private Integer matiereid;
     private java.util.Date Date;
     private double quotation;
     private double noteDePassage;
-    private Collection<HistoriqueExamenConcoursDTO> historiqueExamenConcours;
+    private List<HistoriqueExamenConcoursDTO> historiqueExamenConcours;
 
     public static PlannificationConcoursDTO fromEntity(PlannificationConcours plannificationConcours) {
 

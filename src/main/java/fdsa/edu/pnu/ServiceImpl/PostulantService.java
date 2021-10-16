@@ -51,23 +51,23 @@ public class PostulantService implements IPostulantService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    Role role = new Role();
+    //Role role = new Role();
 //    public  PostulantService(){
 //      Role role=  roleDAO.findByRoleName("Etudiant");
 //
 //        System.out.println(role.getRoleName());
 //    }
 
-    public PostulantService(@Autowired RoleDAO roleDao) {
-        this.roleDAO = roleDao;
-
-        try {
-            role = roleDAO.findByRoleName("Etudiant");
-        }catch (Exception e){
-            System.out.printf(e.getMessage());
-        }
-        System.out.println(role.getRoleName());
-    }
+//    public PostulantService(@Autowired RoleDAO roleDao) {
+//        this.roleDAO = roleDao;
+//
+//        try {
+//            role = roleDAO.findByRoleName("Etudiant");
+//        }catch (Exception e){
+//            System.out.printf(e.getMessage());
+//        }
+//       // System.out.println(role.getRoleName());
+//    }
 
     @Override
     public List<PostulantDTO> findAll() {
@@ -146,18 +146,18 @@ public class PostulantService implements IPostulantService {
             etudiant.setTelephone1(dto.getTelephone());
             etudiant.setCodePostal("");
             etudiant.setUserName(dto.getEmail());
-            etudiant.setUserPassword(passwordEncoder.encode(password.randomPassword()));
+            String pass = password.randomPassword();
+            System.out.println(pass);
+            etudiant.setUserPassword(passwordEncoder.encode(pass));
             etudiant.setCodeEtudiant("CODE");
             etudiant.setMatricule("50967");
-            Role r = new Role();
-            r.setIdRole(1);
-            r.setRoleName("Etudiant");
-            r.setRoleDescription("Role Etudiant");
-
             Set<Role> role = new HashSet<>();
-            role.add(r);
+            // role.add(new Role());
+            role.add(roleDAO.findByRoleName("Etudiant"));
+            //  role.add(roleDAO.findById(2).get());
             etudiant.setRoles(role);
             etudiantDAO.save(etudiant);
+
 
             mail.applicationApprovee(dto.getEmail(), dto.getNom(), dto.getPrenom(), dto.getFilliere());
 

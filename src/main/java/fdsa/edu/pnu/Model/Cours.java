@@ -70,11 +70,10 @@ public class Cours implements Serializable {
     @Column(name = "Responsable", nullable = true, length = 255)
     private String responsable;
 
-    @ManyToMany(targetEntity = fdsa.edu.pnu.Model.AnneeAcademique.class)
-    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
-    @JoinTable(name = "AnneeAcademique_Cours", joinColumns = {@JoinColumn(name = "CoursID")}, inverseJoinColumns = {@JoinColumn(name = "AnneeAcademiqueID")})
-    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
-    private java.util.Set anneeAcademiques = new java.util.HashSet();
+    @ManyToOne(targetEntity = fdsa.edu.pnu.Model.Semestre.class, fetch = FetchType.LAZY)
+    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
+    @JoinColumns(value = {@JoinColumn(name = "SemestreId", referencedColumnName = "ID", nullable = false)}, foreignKey = @ForeignKey(name = "FK_SEMESTRE_COURS"))
+    private fdsa.edu.pnu.Model.Semestre semestre;
 
     @OneToMany(mappedBy = "cours", targetEntity = fdsa.edu.pnu.Model.Evaluation.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})

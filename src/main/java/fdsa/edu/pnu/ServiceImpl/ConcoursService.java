@@ -18,9 +18,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * @author EstherA
- */
 @Data
 @Service
 public class ConcoursService implements IConcoursService {
@@ -35,12 +32,7 @@ public class ConcoursService implements IConcoursService {
                 .collect(Collectors.toList());
     }
 
-    /**
-     * Retrouver un postulant à l'aide de son id
-     *
-     * @param id
-     * @return
-     */
+
     @Override
     public ConcoursDTO findById(Integer id) {
         if (id == null) {
