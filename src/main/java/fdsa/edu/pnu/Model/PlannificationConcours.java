@@ -1,14 +1,4 @@
-/**
- * "Visual Paradigm: DO NOT MODIFY THIS FILE!"
- * <p>
- * This is an automatic generated file. It will be regenerated every time
- * you generate persistence class.
- * <p>
- * Modifying its content may cause the program not work, or your work may lost.
- * <p>
- * Licensee:
- * License Type: Evaluation
- */
+
 
 /**
  * Licensee: 
@@ -43,14 +33,14 @@ public class PlannificationConcours implements Serializable {
     private fdsa.edu.pnu.Model.Concours concours;
     @ManyToOne(targetEntity = fdsa.edu.pnu.Model.Matiere.class, fetch = FetchType.LAZY)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
-    @JoinColumns(value = {@JoinColumn(name = "MatiereID", referencedColumnName = "ID", nullable = false)}, foreignKey = @ForeignKey(name = "Concerner"))
+    @JoinColumns(value = {@JoinColumn(name = "MatiereID", referencedColumnName = "ID", nullable = true)}, foreignKey = @ForeignKey(name = "Concerner"))
     private fdsa.edu.pnu.Model.Matiere matiere;
     @Column(name = "`Date`", nullable = true)
     @Temporal(TemporalType.DATE)
     private java.util.Date Date;
-    @Column(name = "Quotation", nullable = false, length = 10)
+    @Column(name = "Quotation", nullable = true, length = 10)
     private double quotation;
-    @Column(name = "NoteDePassage", nullable = false, length = 10)
+    @Column(name = "NoteDePassage", nullable = true, length = 10)
     private double noteDePassage;
     @OneToMany(mappedBy = "plannificationConcours", targetEntity = fdsa.edu.pnu.Model.HistoriqueExamenConcours.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})

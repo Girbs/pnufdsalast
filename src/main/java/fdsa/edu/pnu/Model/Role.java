@@ -10,9 +10,6 @@ import java.io.Serializable;
 import java.util.Set;
 
 @Entity
-//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
-//        property = "id")
-//@JsonIdentityReference(alwaysAsId = true)
 @Table(name = "Role")
 @Data
 @Builder

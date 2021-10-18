@@ -7,6 +7,7 @@ package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Controller.IConcoursController;
 import fdsa.edu.pnu.DTO.ConcoursDTO;
+import fdsa.edu.pnu.Model.Concours;
 import fdsa.edu.pnu.ServiceImpl.ConcoursService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,6 +37,7 @@ public class ConcoursController implements IConcoursController {
     public ConcoursDTO save(ConcoursDTO dto) {
         return concoursService.save(dto);
     }
+
 
     @Override
     public void delete(Integer id) {

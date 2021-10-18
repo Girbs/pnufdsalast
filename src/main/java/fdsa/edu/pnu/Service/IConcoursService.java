@@ -15,11 +15,8 @@ import java.util.List;
 public interface IConcoursService {
 
     public List<ConcoursDTO> findAll();
-
     public ConcoursDTO findById(Integer id);
-
     public ConcoursDTO save(ConcoursDTO dto);
-
     public void delete(Integer id);
     public ConcoursDTO update(Integer id, ConcoursDTO dto);
 }

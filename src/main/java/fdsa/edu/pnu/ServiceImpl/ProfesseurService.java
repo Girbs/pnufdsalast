@@ -5,13 +5,18 @@
  */
 package fdsa.edu.pnu.ServiceImpl;
 
-import fdsa.edu.pnu.Model.Professeur;
+import fdsa.edu.pnu.DTO.ProfesseurDTO;
+import fdsa.edu.pnu.Exception.EntityNotFoundException;
+import fdsa.edu.pnu.Exception.ErrorCodes;
 import fdsa.edu.pnu.Repository.ProfesseurDAO;
+import fdsa.edu.pnu.Service.IProfesseurService;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
-import java.util.Optional;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author Richard
@@ -19,30 +24,57 @@ import java.util.Optional;
 
 @Data
 @Service
-
-
-public class ProfesseurService {
+public class ProfesseurService implements IProfesseurService {
 
     @Autowired
-
-
     private ProfesseurDAO professeurDAO;
 
-    public Optional<Professeur> getProfesseur(final int id) {
-        return professeurDAO.findById(id);
+    @Override
+    public List<ProfesseurDTO> findAll() {
+        return professeurDAO.findAll().stream()
+                .map(ProfesseurDTO::fromEntity)
+                .collect(Collectors.toList());
     }
 
-    public Iterable<Professeur> getProfesseur() {
-        return professeurDAO.findAll();
+    @Override
+    public ProfesseurDTO findById(Integer id) {
+        if (id == null) {
+            return null;
+        }
+        return professeurDAO.findById(id).map(ProfesseurDTO::fromEntity).orElseThrow(()
+                -> new EntityNotFoundException(
+                "Aucun postulant avec l'ID = " + id + " n' ete trouve dans la BDD",
+                ErrorCodes.ARTICLE_NOT_FOUND)
+        );
     }
 
-    public void deleteProfesseur(final int id) {
+    @Override
+    public ProfesseurDTO save(ProfesseurDTO dto) {
+
+        return ProfesseurDTO.fromEntity(
+                professeurDAO.save(
+                        ProfesseurDTO.toEntity(dto)
+                )
+        );
+    }
+
+    @Override
+    public void delete(Integer id) {
         professeurDAO.deleteById(id);
     }
 
-    public Professeur saveProfesseur(Professeur Professeur) {
-        Professeur savedProfesseur = professeurDAO.save(Professeur);
-        return savedProfesseur;
+    @Override
+    public ProfesseurDTO update(@PathVariable("id") final Integer id, ProfesseurDTO dto) {
+
+        ProfesseurDTO postulantDTO = findById(id);
+        if(postulantDTO!=null) {
+            return ProfesseurDTO.fromEntity(professeurDAO.save(ProfesseurDTO.toEntity(dto)));
+        }
+        return ProfesseurDTO.fromEntity(professeurDAO.save(ProfesseurDTO.toEntity(dto)));
     }
 
 }
+
+
+
+

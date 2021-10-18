@@ -22,6 +22,8 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
 
 @Entity
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
@@ -45,61 +47,54 @@ public class Concours implements Serializable {
     @OneToMany(mappedBy = "concours", targetEntity = fdsa.edu.pnu.Model.PlannificationConcours.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
-    private java.util.Set plannificationConcourses = new java.util.HashSet();
-
-    public Concours() {
-    }
+    private List<PlannificationConcours> plannificationConcourses;
 
     public Integer getId() {
         return id;
     }
 
-    private void setId(int value) {
-        setId(new Integer(value));
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    private void setId(Integer value) {
-        this.id = value;
-    }
-
-    public Integer getORMID() {
-        return getId();
-    }
-
-    public java.util.Date getDateDebut() {
+    public Date getDateDebut() {
         return DateDebut;
     }
 
-    public void setDateDebut(java.util.Date value) {
-        this.DateDebut = value;
+    public void setDateDebut(Date dateDebut) {
+        DateDebut = dateDebut;
     }
 
-    public java.util.Date getDateFin() {
+    public Date getDateFin() {
         return DateFin;
     }
 
-    public void setDateFin(java.util.Date value) {
-        this.DateFin = value;
+    public void setDateFin(Date dateFin) {
+        DateFin = dateFin;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String value) {
-        this.description = value;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public java.util.Set getPlannificationConcourses() {
+    public List<PlannificationConcours> getPlannificationConcourses() {
         return plannificationConcourses;
     }
 
-    public void setPlannificationConcourses(java.util.Set value) {
-        this.plannificationConcourses = value;
+    public void setPlannificationConcourses(List<PlannificationConcours> plannificationConcourses) {
+        this.plannificationConcourses = plannificationConcourses;
     }
 
-    public String toString() {
-        return String.valueOf(getId());
+
+
+    public Concours() {
     }
+
+
+
 
 }

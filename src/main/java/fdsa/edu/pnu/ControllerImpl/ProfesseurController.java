@@ -5,72 +5,46 @@
  */
 package fdsa.edu.pnu.ControllerImpl;
 
-import fdsa.edu.pnu.Model.Professeur;
+import fdsa.edu.pnu.Controller.IProfesseurController;
+import fdsa.edu.pnu.DTO.ProfesseurDTO;
 import fdsa.edu.pnu.ServiceImpl.ProfesseurService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * @author Richard
  */
 @RestController
-public class ProfesseurController {
+public class ProfesseurController implements IProfesseurController {
+
 
     @Autowired
     public ProfesseurService professeurService;
 
-    /**
-     * Afficher tous les Professeur
-     *
-     * @return
-     */
-    @GetMapping(value = "/professeurs")
-    public List<Professeur> getAllProfesseur() {
-        return (List<Professeur>) professeurService.getProfesseur();
+    @Override
+    public List<ProfesseurDTO> findAll() {
+        return professeurService.findAll();
     }
 
-
-    /**
-     * Creer un nouveau Professeur
-     *
-     * @param professeur
-     * @return
-     */
-    @PostMapping("/nouveauProfesseur")
-    public Professeur createProfesseur(@RequestBody Professeur professeur) {
-        return professeurService.saveProfesseur(professeur);
+    @Override
+    public ProfesseurDTO findById(Integer id) {
+        return professeurService.findById(id);
     }
 
-    /**
-     * Selectionner par ID
-     *
-     * @param id
-     * @return
-     */
-
-    @RequestMapping("/Professeur/(id)")
-    public Professeur getProfesseur(@PathVariable("id") int id) {
-        Optional<Professeur> professeur = professeurService.getProfesseur(id);
-        if (professeur.isPresent()) {
-            return professeur.get();
-        } else {
-            return null;
-        }
+    @Override
+    public ProfesseurDTO save(ProfesseurDTO dto) {
+        return professeurService.save(dto);
     }
 
-    /**
-     * Supprimer un Professeur
-     *
-     * @param id
-     */
-
-    @DeleteMapping("/supprimerProfesseur")
-    public void deleteProfesseur(@PathVariable("id") final int id) {
-        professeurService.deleteProfesseur(id);
+    @Override
+    public void delete(Integer id) {
+        professeurService.delete(id);
     }
 
-
+    @Override
+    public ProfesseurDTO update(Integer id, ProfesseurDTO dto) {
+        return professeurService.update(id,dto);
+    }
 }
