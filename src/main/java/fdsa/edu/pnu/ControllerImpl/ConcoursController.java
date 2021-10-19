@@ -34,8 +34,8 @@ public class ConcoursController implements IConcoursController {
     }
 
     @Override
-    public ConcoursDTO save(ConcoursDTO dto) {
-        return concoursService.save(dto);
+    public Concours save(Concours concours) {
+        return concoursService.save(concours);
     }
 
 

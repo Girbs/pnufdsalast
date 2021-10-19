@@ -131,7 +131,6 @@ public class PostulantService implements IPostulantService {
         String currentApplicationStatus = postulantDTO.getStatutApplication();
 
 
-
         // If application status is updated then we need to send an email confirmation to applicant.
         // So we will check for equality of current status that we have in DB and new status that we now want to store in DB.
         if (!currentApplicationStatus.equals(statusToBeUpdated) && statusToBeUpdated.equals("Accepté")) {
@@ -153,11 +152,10 @@ public class PostulantService implements IPostulantService {
             etudiant.setMatricule("50967");
             Set<Role> role = new HashSet<>();
             // role.add(new Role());
-            role.add(roleDAO.findByRoleName("Etudiant"));
+           // role.add(roleDAO.findByRoleName("Etudiant"));
             //  role.add(roleDAO.findById(2).get());
             etudiant.setRoles(role);
             etudiantDAO.save(etudiant);
-
 
             mail.applicationApprovee(dto.getEmail(), dto.getNom(), dto.getPrenom(), dto.getFilliere());
 

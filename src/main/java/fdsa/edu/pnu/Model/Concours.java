@@ -89,8 +89,6 @@ public class Concours implements Serializable {
         this.plannificationConcourses = plannificationConcourses;
     }
 
-
-
     public Concours() {
     }
 

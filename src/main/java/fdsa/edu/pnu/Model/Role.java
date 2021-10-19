@@ -19,7 +19,7 @@ public class Role implements Serializable {
 
     @Id
 
-    private int idRole;
+  //  private int idRole;
     private String roleName;
     private String roleDescription;
     @ManyToMany(targetEntity = Utilisateur.class, fetch = FetchType.EAGER, mappedBy = "role", cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})

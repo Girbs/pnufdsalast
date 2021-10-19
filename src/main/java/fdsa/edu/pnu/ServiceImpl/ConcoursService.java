@@ -8,6 +8,7 @@ package fdsa.edu.pnu.ServiceImpl;
 import fdsa.edu.pnu.DTO.ConcoursDTO;
 import fdsa.edu.pnu.Exception.EntityNotFoundException;
 import fdsa.edu.pnu.Exception.ErrorCodes;
+import fdsa.edu.pnu.Model.Concours;
 import fdsa.edu.pnu.Repository.ConcoursDAO;
 import fdsa.edu.pnu.Service.IConcoursService;
 import lombok.Data;
@@ -54,18 +55,14 @@ public class ConcoursService implements IConcoursService {
      * @return
      */
     @Override
-    public ConcoursDTO save(ConcoursDTO dto) {
+    public Concours save(Concours concours) {
 //        List<String> errors = ArticleValidator.validate(dto);
 //        if (!errors.isEmpty()) {
 //            log.error("Article is not valid {}", dto);
 //            throw new InvalidEntityException("L'article n'est pas valide", ErrorCodes.ARTICLE_NOT_VALID, errors);
 //        }
 
-        return ConcoursDTO.fromEntity(
-                concoursDAO.save(
-                        ConcoursDTO.toEntity(dto)
-                )
-        );
+        return concoursDAO.save(concours);
     }
 
 

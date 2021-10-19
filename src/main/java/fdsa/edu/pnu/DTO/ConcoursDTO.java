@@ -25,6 +25,7 @@ public class ConcoursDTO {
     private java.util.Date DateDebut;
     private java.util.Date DateFin;
     private String description;
+
     private Collection<PlannificationConcoursDTO> PlannificationConcourses;
 
     public static ConcoursDTO fromEntity(Concours concours) {

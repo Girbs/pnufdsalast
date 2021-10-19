@@ -6,6 +6,7 @@
 package fdsa.edu.pnu.Service;
 
 import fdsa.edu.pnu.DTO.ConcoursDTO;
+import fdsa.edu.pnu.Model.Concours;
 
 import java.util.List;
 
@@ -16,7 +17,7 @@ public interface IConcoursService {
 
     public List<ConcoursDTO> findAll();
     public ConcoursDTO findById(Integer id);
-    public ConcoursDTO save(ConcoursDTO dto);
+    public Concours save(Concours concours);
     public void delete(Integer id);
     public ConcoursDTO update(Integer id, ConcoursDTO dto);
 }

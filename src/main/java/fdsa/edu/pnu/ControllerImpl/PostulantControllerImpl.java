@@ -49,7 +49,6 @@ public class PostulantControllerImpl implements IPostulantController {
         return postulantService.save(dto);
     }
 
-
     @Override
     public void delete(Integer id) {
         postulantService.delete(id);

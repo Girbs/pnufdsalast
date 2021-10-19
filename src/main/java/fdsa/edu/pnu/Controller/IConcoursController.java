@@ -6,6 +6,7 @@
 package fdsa.edu.pnu.Controller;
 
 import fdsa.edu.pnu.DTO.ConcoursDTO;
+import fdsa.edu.pnu.Model.Concours;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -42,7 +43,7 @@ public interface IConcoursController {
             @ApiResponse(code = 200, message = "L'objet le concours cree / modifie"),
             @ApiResponse(code = 400, message = "L'objet concours n'est pas valide")
     })
-    ConcoursDTO save(@RequestBody ConcoursDTO dto);
+    Concours save(@RequestBody Concours concours);
 
 
     @DeleteMapping(value = "/concours/supprimer/{id}")
