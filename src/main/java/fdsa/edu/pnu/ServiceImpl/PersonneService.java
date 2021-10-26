@@ -6,17 +6,18 @@
 package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.DTO.PersonneDTO;
+import fdsa.edu.pnu.DTO.PostulantDTO;
 import fdsa.edu.pnu.Model.Personne;
 import fdsa.edu.pnu.Repository.PersonneDAO;
 import fdsa.edu.pnu.Service.IPersonneService;
+import java.util.List;
+import java.util.Optional;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
-
 /**
+ *
  * @author Richard
  */
 
@@ -24,18 +25,18 @@ import java.util.Optional;
 @Service
 
 
-public class PersonneService implements IPersonneService {
-
-
+public class PersonneService  implements IPersonneService{
+    
+    
     @Autowired
-
+    
     private PersonneDAO personneDAO;
-
+    
     public Optional<Personne> getPersonne(final int id) {
         return personneDAO.findById(id);
     }
-
-    public Iterable<Personne> getHoraire() {
+    
+     public Iterable<Personne> getHoraire() {
         return personneDAO.findAll();
     }
 
@@ -60,7 +61,7 @@ public class PersonneService implements IPersonneService {
 
     @Override
     public PersonneDTO save(PersonneDTO dto) {
-        return PersonneDTO.fromEntity(
+       return PersonneDTO.fromEntity(
                 personneDAO.save(
                         PersonneDTO.toEntity(dto)
                 )
@@ -71,5 +72,5 @@ public class PersonneService implements IPersonneService {
     public void delete(Integer id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
 }

@@ -7,21 +7,26 @@ package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Model.Departement;
 import fdsa.edu.pnu.ServiceImpl.DepartementService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
+ *
  * @author EstherA
  */
 @RestController
 public class DepartementController {
-    @Autowired
-    public DepartementService departementService;
-
-    /**
+       @Autowired
+public DepartementService departementService;
+     /**
      * Afficher tous les Departements
      *
      * @return
@@ -31,11 +36,11 @@ public class DepartementController {
         return (List<Departement>) departementService.getDepartement();
     }
 
-
+    
     /**
      * Creer nouveau Departement
      *
-     * @param departement
+     * @param departement  
      * @return
      */
     @PostMapping("/nouveauDepartement")
@@ -43,7 +48,7 @@ public class DepartementController {
         return departementService.saveDepartement(departement);
     }
 
-
+    
     /**
      * Selectionner par ID
      *
@@ -59,17 +64,15 @@ public class DepartementController {
             return null;
         }
     }
-
     /**
      * Supprimer un Departement
-     *
-     * @param id
+     * @param id 
      */
-    @DeleteMapping("/supprimerDepartement/{id}")
-    public void deleteEmployee(@PathVariable("id") final int id) {
-        departementService.deleteDepartement(id);
-    }
-
-
-    // TO DO modifier un Departement
+     @DeleteMapping("/supprimerDepartement/{id}")
+	public void deleteEmployee(@PathVariable("id") final int id) {
+		departementService.deleteDepartement(id);
+	}
+        
+        
+        // TO DO modifier un Departement
 }

@@ -7,6 +7,7 @@ package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Controller.IPostulantController;
 import fdsa.edu.pnu.DTO.PostulantDTO;
+import fdsa.edu.pnu.Model.Etudiant;
 import fdsa.edu.pnu.ServiceImpl.PostulantService;
 import fdsa.edu.pnu.mail.EmailController;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,9 +46,10 @@ public class PostulantControllerImpl implements IPostulantController {
 
     @Override
     public PostulantDTO save(PostulantDTO dto) {
-        seec.confirmerInscription(dto.getEmail(), dto.getNom(), dto.getPrenom());
+        // seec.confirmerInscription(dto.getEmail(), dto.getNom(), dto.getPrenom());
         return postulantService.save(dto);
     }
+
 
     @Override
     public void delete(Integer id) {
@@ -55,7 +57,7 @@ public class PostulantControllerImpl implements IPostulantController {
     }
 
     @Override
-    public PostulantDTO update(Integer id, PostulantDTO dto) {
+    public Etudiant update(Integer id, PostulantDTO dto) {
         return postulantService.update(id, dto);
     }
 

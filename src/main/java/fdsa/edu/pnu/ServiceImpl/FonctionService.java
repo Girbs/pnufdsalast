@@ -7,19 +7,19 @@ package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.Model.Fonction;
 import fdsa.edu.pnu.Repository.FonctionDAO;
+import java.util.Optional;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 /**
+ *
  * @author EstherA
  */
 @Data
 @Service
 public class FonctionService {
-    @Autowired
+       @Autowired
     private FonctionDAO fonctionDAO;
 
     public Optional<Fonction> getFonction(final int id) {
@@ -42,5 +42,5 @@ public class FonctionService {
     public void deletefonction(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
 }

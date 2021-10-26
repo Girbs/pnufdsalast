@@ -6,19 +6,16 @@
 package fdsa.edu.pnu.Service;
 
 import fdsa.edu.pnu.DTO.EtudiantDTO;
-
 import java.util.List;
 
 /**
+ *
  * @author gbijou
  */
 public interface IEtudiantService {
 
     public List<EtudiantDTO> findAll();
-
     public EtudiantDTO findById(Integer id);
-
     public EtudiantDTO save(EtudiantDTO dto);
-
     public void delete(Integer id);
 }

@@ -6,10 +6,10 @@
 package fdsa.edu.pnu.Service;
 
 import fdsa.edu.pnu.DTO.MatiereDTO;
-
 import java.util.List;
 
 /**
+ *
  * @author Ing.Girbson BIJOU
  */
 public interface IMatiereService {

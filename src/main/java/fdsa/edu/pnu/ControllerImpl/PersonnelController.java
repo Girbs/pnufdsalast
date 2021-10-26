@@ -6,23 +6,30 @@
 package fdsa.edu.pnu.ControllerImpl;
 
 
+
 import fdsa.edu.pnu.Model.Personnel;
 import fdsa.edu.pnu.ServiceImpl.PersonnelService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
+ *
  * @author Richard
  */
 @RestController
 public class PersonnelController {
-
-    @Autowired
+    
+    @Autowired 
     public PersonnelService personnelService;
-
+    
     /**
      * Afficher tous les Personnel
      *
@@ -32,10 +39,11 @@ public class PersonnelController {
     public List<Personnel> getAllPersonnel() {
         return (List<Personnel>) personnelService.getPersonnel();
     }
-
-
+    
+    
     /**
      * Creer un nouveau Horaire
+     *
      *
      * @param personnel
      * @return
@@ -44,34 +52,33 @@ public class PersonnelController {
     public Personnel createHoraire(@RequestBody Personnel personnel) {
         return personnelService.savePersonnel(personnel);
     }
-
+    
     /**
      * Selectionner par ID
      *
      * @param id
      * @return
      */
-
+    
     @RequestMapping("/Personnel/(id)")
     public Personnel getPersonnel(@PathVariable("id") int id) {
         Optional<Personnel> personnel = personnelService.getPersonnel(id);
-        if (personnel.isPresent()) {
+        if ( personnel.isPresent() ) {
             return personnel.get();
-        } else {
+        }else {
             return null;
         }
     }
-
+    
     /**
      * Supprimer un Personnel
-     *
-     * @param id
+     * @param id 
      */
-
+    
     @DeleteMapping("/supprimerPersonnel")
     public void deletePersonnel(@PathVariable("id") final int id) {
-        personnelService.deletePersonnel(id);
+       personnelService.deletePersonnel(id);
     }
-
-
+    
+  
 }

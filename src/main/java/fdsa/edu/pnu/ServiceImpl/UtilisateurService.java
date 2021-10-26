@@ -8,18 +8,18 @@ package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.DTO.UtilisateurDTO;
 import fdsa.edu.pnu.Model.Utilisateur;
-import fdsa.edu.pnu.Repository.UtilisateurDAO;
 import fdsa.edu.pnu.Service.IUtilisateurService;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
+import fdsa.edu.pnu.Repository.UtilisateurDAO;
 
 /**
+ *
  * @author Jephthé Gédéon
  */
 @Data
@@ -27,11 +27,11 @@ import java.util.stream.Collectors;
 public class UtilisateurService implements IUtilisateurService {
     @Autowired
     private UtilisateurDAO utilisateurDAO;
-
+     
     @Autowired
     private PasswordEncoder passwordEncoder;
-
-    public String getEncodedPassword(String password) {
+    
+     public String getEncodedPassword(String password){
         return passwordEncoder.encode(password);
     }
 
@@ -47,15 +47,15 @@ public class UtilisateurService implements IUtilisateurService {
         utilisateurDAO.deleteById(id);
     }
 
-
-    @Override
-    public List<UtilisateurDTO> findAll() {
-        return utilisateurDAO.findAll().stream()
-                .map(UtilisateurDTO::fromEntity)
-                .collect(Collectors.toList());
-    }
-
-
+    
+     @Override
+      public List<UtilisateurDTO> findAll() {
+    return utilisateurDAO.findAll().stream()
+        .map(UtilisateurDTO::fromEntity)
+        .collect(Collectors.toList());
+  }
+  
+    
     public Utilisateur saveUtilisateur(Utilisateur Utilisateur) {
         Utilisateur savedUtilisateur = utilisateurDAO.save(Utilisateur);
         return savedUtilisateur;
@@ -77,14 +77,14 @@ public class UtilisateurService implements IUtilisateurService {
     public void delete(Integer id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    public void initUser() {
+    
+    public void initUser(){
         Utilisateur user = new Utilisateur();
-        // user.setNom("bijou");
+       // user.setNom("bijou");
         user.setId(1);
         user.setUserName("aob");
         user.setUserPassword(getEncodedPassword("Algo2020"));
         utilisateurDAO.save(user);
-
+        
     }
 }

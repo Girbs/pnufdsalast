@@ -7,19 +7,19 @@ package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.Model.Session;
 import fdsa.edu.pnu.Repository.SessionDAO;
+import java.util.Optional;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 /**
+ *
  * @author Jephthé Gédéon
  */
 @Data
 @Service
 public class SessionService {
-    @Autowired
+     @Autowired
     private SessionDAO sessionDAO;
 
     public Optional<Session> getSession(final int id) {
@@ -38,6 +38,6 @@ public class SessionService {
         Session savedSession = sessionDAO.save(Session);
         return savedSession;
     }
-
+    
 }
 

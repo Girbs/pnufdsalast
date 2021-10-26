@@ -1,13 +1,10 @@
 /**
  * "Visual Paradigm: DO NOT MODIFY THIS FILE!"
- * <p>
+ *
  * This is an automatic generated file. It will be regenerated every time
  * you generate persistence class.
- * <p>
+ *
  * Modifying its content may cause the program not work, or your work may lost.
- * <p>
- * Licensee:
- * License Type: Evaluation
  */
 /**
  * Licensee:
@@ -35,10 +32,10 @@ public class Utilisateur extends Personne implements Serializable {
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "USER_ROLE",
             joinColumns = {
-                    @JoinColumn(name = "USER_ID")
+                @JoinColumn(name = "USER_ID")
             },
             inverseJoinColumns = {
-                    @JoinColumn(name = "ROLE_ID")
+                @JoinColumn(name = "ROLE_ID")
             })
     private Set<Role> role;
 

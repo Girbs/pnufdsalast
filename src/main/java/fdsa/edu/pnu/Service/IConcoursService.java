@@ -11,13 +11,16 @@ import fdsa.edu.pnu.Model.Concours;
 import java.util.List;
 
 /**
+ *
  * @author Ing.Girbson BIJOU
  */
 public interface IConcoursService {
 
     public List<ConcoursDTO> findAll();
+
     public ConcoursDTO findById(Integer id);
-    public Concours save(Concours concours);
+
+    public Concours save(Concours dto);
+
     public void delete(Integer id);
-    public ConcoursDTO update(Integer id, ConcoursDTO dto);
 }

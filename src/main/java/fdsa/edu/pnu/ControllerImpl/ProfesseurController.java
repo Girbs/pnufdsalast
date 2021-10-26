@@ -7,6 +7,7 @@ package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Controller.IProfesseurController;
 import fdsa.edu.pnu.DTO.ProfesseurDTO;
+import fdsa.edu.pnu.Model.Professeur;
 import fdsa.edu.pnu.ServiceImpl.ProfesseurService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,14 +15,15 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
+ *
  * @author Richard
  */
 @RestController
-public class ProfesseurController implements IProfesseurController {
-
-
-    @Autowired
+public class ProfesseurController  implements IProfesseurController {
+    
+    @Autowired 
     public ProfesseurService professeurService;
+
 
     @Override
     public List<ProfesseurDTO> findAll() {
@@ -34,17 +36,18 @@ public class ProfesseurController implements IProfesseurController {
     }
 
     @Override
-    public ProfesseurDTO save(ProfesseurDTO dto) {
+    public Professeur save(Professeur dto) {
         return professeurService.save(dto);
     }
+
+//    @Override
+//    public ProfesseurDTO save(ProfesseurDTO dto) {
+//        return professeurService.save(dto);
+//    }
 
     @Override
     public void delete(Integer id) {
         professeurService.delete(id);
-    }
 
-    @Override
-    public ProfesseurDTO update(Integer id, ProfesseurDTO dto) {
-        return professeurService.update(id,dto);
     }
 }

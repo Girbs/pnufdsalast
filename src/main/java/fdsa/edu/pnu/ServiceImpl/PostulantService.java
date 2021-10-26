@@ -36,39 +36,31 @@ import java.util.stream.Collectors;
 public class PostulantService implements IPostulantService {
 
     @Autowired
-    public EmailController mail;
-    @Autowired
     private PostulantDAO postulantDAO;
+
     @Autowired
     private EtudiantDAO etudiantDAO;
+
     @Autowired
     private RoleDAO roleDAO;
+
     @Autowired
     private PersonneDAO personneDAO;
+
+    @Autowired
+    public EmailController mail;
+
     @Autowired
     private PasswordGenerator password;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    //Role role = new Role();
-//    public  PostulantService(){
-//      Role role=  roleDAO.findByRoleName("Etudiant");
-//
-//        System.out.println(role.getRoleName());
-//    }
-
-//    public PostulantService(@Autowired RoleDAO roleDao) {
-//        this.roleDAO = roleDao;
-//
-//        try {
-//            role = roleDAO.findByRoleName("Etudiant");
-//        }catch (Exception e){
-//            System.out.printf(e.getMessage());
-//        }
-//       // System.out.println(role.getRoleName());
-//    }
-
+    /**
+     * Lister Tous Les Postulants
+     *
+     * @return
+     */
     @Override
     public List<PostulantDTO> findAll() {
         return postulantDAO.findAll().stream()
@@ -122,7 +114,10 @@ public class PostulantService implements IPostulantService {
     }
 
     @Override
-    public PostulantDTO update(@PathVariable("id") final Integer id,  PostulantDTO dto) {
+    public Etudiant update(@PathVariable("id") final Integer id, PostulantDTO dto) {
+
+        System.out.println(id);
+        System.out.println(dto);
 
         // first find that student is present in db or not
         PostulantDTO postulantDTO = findById(id);
@@ -130,39 +125,39 @@ public class PostulantService implements IPostulantService {
         String statusToBeUpdated = dto.getStatutApplication();
         String currentApplicationStatus = postulantDTO.getStatutApplication();
 
+        // Now save details in DB
+        Etudiant etudiant = new Etudiant();
+        etudiant.setNom(dto.getNom());
+        etudiant.setPrenom(dto.getPrenom());
+        etudiant.setCinNif(dto.getNifCin());
+        etudiant.setSexe(dto.getSexe());
+        etudiant.setStatus(true);
+        etudiant.setTelephone1(dto.getTelephone());
+        etudiant.setCodePostal("");
+        etudiant.setUserName(dto.getEmail());
+        String pass = password.randomPassword();
+        System.out.println(pass);
+        System.out.println(pass);
+        etudiant.setUserPassword(passwordEncoder.encode(pass));
+        etudiant.setCodeEtudiant("CODE");
+        etudiant.setMatricule("50967");
+        Set<Role> role = new HashSet<>();
+        role.add(roleDAO.findById(1).get());
+        //  role.add(roleDAO.findById(2).get());
+        etudiant.setRoles(role);
+
+
+        PostulantDTO.fromEntity(postulantDAO.save(PostulantDTO.toEntity(dto)));
+        return etudiantDAO.save(etudiant);
 
         // If application status is updated then we need to send an email confirmation to applicant.
         // So we will check for equality of current status that we have in DB and new status that we now want to store in DB.
-        if (!currentApplicationStatus.equals(statusToBeUpdated) && statusToBeUpdated.equals("Accepté")) {
-            // Please focus on ! operator in above condition and replace your "Accepté" text if needed.
-            // Now save details in DB
-            Etudiant etudiant = new Etudiant();
-            etudiant.setNom(dto.getNom());
-            etudiant.setPrenom(dto.getPrenom());
-            etudiant.setCinNif(dto.getNifCin());
-            etudiant.setSexe(dto.getSexe());
-            etudiant.setStatus(true);
-            etudiant.setTelephone1(dto.getTelephone());
-            etudiant.setCodePostal("");
-            etudiant.setUserName(dto.getEmail());
-            String pass = password.randomPassword();
-            System.out.println(pass);
-            etudiant.setUserPassword(passwordEncoder.encode(pass));
-            etudiant.setCodeEtudiant("CODE");
-            etudiant.setMatricule("50967");
-            Set<Role> role = new HashSet<>();
-            // role.add(new Role());
-           // role.add(roleDAO.findByRoleName("Etudiant"));
-            //  role.add(roleDAO.findById(2).get());
-            etudiant.setRoles(role);
-            etudiantDAO.save(etudiant);
+//        if (!currentApplicationStatus.equals(statusToBeUpdated) && statusToBeUpdated.equals("Accepté")) {
+//            // Please focus on ! operator in above condition and replace your "Accepté" text if needed.
+//            mail.applicationApprovee(dto.getEmail(), dto.getNom(), dto.getPrenom(), dto.getFilliere());
+//        }
 
-            mail.applicationApprovee(dto.getEmail(), dto.getNom(), dto.getPrenom(), dto.getFilliere());
-
-        }
-
-        return PostulantDTO.fromEntity(postulantDAO.save(PostulantDTO.toEntity(dto)));
+        // return PostulantDTO.fromEntity(postulantDAO.save(PostulantDTO.toEntity(dto)));
     }
 
 }
-

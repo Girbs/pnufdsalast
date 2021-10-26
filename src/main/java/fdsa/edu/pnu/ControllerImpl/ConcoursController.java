@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
+ *
  * @author EstherA
  */
 @RestController
@@ -34,21 +35,13 @@ public class ConcoursController implements IConcoursController {
     }
 
     @Override
-    public Concours save(Concours concours) {
-        return concoursService.save(concours);
+    public Concours save(Concours dto) {
+        return concoursService.save(dto);
     }
-
 
     @Override
     public void delete(Integer id) {
         concoursService.delete(id);
-    }
-
-    @Override
-    public ConcoursDTO update(Integer id, ConcoursDTO dto) {
-        return concoursService.update(id, dto);
-
-
     }
 
 }

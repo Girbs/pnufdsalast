@@ -8,28 +8,28 @@ package fdsa.edu.pnu.ControllerImpl;
 import fdsa.edu.pnu.Controller.IMatiereController;
 import fdsa.edu.pnu.DTO.MatiereDTO;
 import fdsa.edu.pnu.ServiceImpl.MatiereService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 /**
+ *
  * @author Richard
  */
 @RestController
 public class MatiereController implements IMatiereController {
-
+    
     @Autowired
     public MatiereService matiereService;
 
     @Override
     public List<MatiereDTO> findAll() {
-        return matiereService.findAll();
+      return  matiereService.findAll();
     }
 
     @Override
     public MatiereDTO findById(Integer id) {
-        return matiereService.findById(id);
+     return matiereService.findById(id);
     }
 
     @Override
@@ -39,6 +39,6 @@ public class MatiereController implements IMatiereController {
 
     @Override
     public void delete(Integer id) {
-        matiereService.delete(id);
-    }
+       matiereService.delete(id);
+    }  
 }

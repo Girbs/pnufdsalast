@@ -10,14 +10,14 @@ import fdsa.edu.pnu.Exception.EntityNotFoundException;
 import fdsa.edu.pnu.Exception.ErrorCodes;
 import fdsa.edu.pnu.Repository.MatiereDAO;
 import fdsa.edu.pnu.Service.IMatiereService;
+import java.util.List;
+import java.util.stream.Collectors;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 /**
+ *
  * @author Richard
  */
 @Data
@@ -42,8 +42,8 @@ public class MatiereService implements IMatiereService {
         }
         return matiereDAO.findById(id).map(MatiereDTO::fromEntity).orElseThrow(()
                 -> new EntityNotFoundException(
-                "Aucun postulant avec l'ID = " + id + " n' ete trouve dans la BDD",
-                ErrorCodes.ARTICLE_NOT_FOUND)
+                        "Aucun postulant avec l'ID = " + id + " n' ete trouve dans la BDD",
+                        ErrorCodes.ARTICLE_NOT_FOUND)
         );
     }
 

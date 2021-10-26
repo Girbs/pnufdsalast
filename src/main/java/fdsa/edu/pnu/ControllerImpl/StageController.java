@@ -7,22 +7,28 @@ package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Model.Stage;
 import fdsa.edu.pnu.ServiceImpl.StageService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
+ *
  * @author Jephthé Gédéon
  */
 
 @RestController
 public class StageController {
-
-    @Autowired
+    
+     @Autowired 
     public StageService stageService;
-
+    
     /**
      * Afficher tous les Stages
      *
@@ -32,10 +38,11 @@ public class StageController {
     public List<Stage> getAllStage() {
         return (List<Stage>) stageService.getStage();
     }
-
-
+    
+    
     /**
      * Creer un nouveau Stage
+     *
      *
      * @param stage
      * @return
@@ -44,33 +51,32 @@ public class StageController {
     public Stage createStage(@RequestBody Stage stage) {
         return stageService.saveStage(stage);
     }
-
+    
     /**
      * Selectionner par ID
      *
      * @param id
      * @return
      */
-
+    
     @RequestMapping("/Stage/{id}")
     public Stage getStage(@PathVariable("id") int id) {
         Optional<Stage> stage = stageService.getStage(id);
-        if (stage.isPresent()) {
+        if ( stage.isPresent() ) {
             return stage.get();
-        } else {
+        }else {
             return null;
         }
     }
-
+    
     /**
      * Supprimer un Stage
-     *
-     * @param id
+     * @param id 
      */
-
+    
     @DeleteMapping("/supprimerStage")
     public void deleteStage(@PathVariable("id") final int id) {
         stageService.deleteStage(id);
     }
-
+    
 }

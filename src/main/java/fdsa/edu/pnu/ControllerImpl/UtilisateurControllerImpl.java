@@ -5,18 +5,20 @@
  */
 package fdsa.edu.pnu.ControllerImpl;
 
-import fdsa.edu.pnu.Controller.IUtilisateurController;
 import fdsa.edu.pnu.DTO.UtilisateurDTO;
-import fdsa.edu.pnu.Repository.UtilisateurDAO;
+import fdsa.edu.pnu.Model.Utilisateur;
 import fdsa.edu.pnu.ServiceImpl.UtilisateurService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
+import fdsa.edu.pnu.Controller.IUtilisateurController;
+import javax.annotation.PostConstruct;
+import fdsa.edu.pnu.Repository.UtilisateurDAO;
+import org.springframework.security.access.prepost.PreAuthorize;
 
 /**
+ *
  * @author Ing.Girbson BIJOU //
  */
 @RestController
@@ -31,6 +33,7 @@ public class UtilisateurControllerImpl implements IUtilisateurController {
     @Autowired
     private UtilisateurDAO utilisateurDAO;
 
+  
 
 //    @PostConstruct
 //    public void initUser() {
@@ -46,16 +49,16 @@ public class UtilisateurControllerImpl implements IUtilisateurController {
     public UtilisateurDTO save(UtilisateurDTO dto) {
         return utlisateurService.save(dto);
     }
-
+    
     @GetMapping({"/forAdmin"})
     @PreAuthorize("hasRole('Admin')")
-    public String forAdmin() {
+    public String forAdmin(){
         return "This URL is only accessible to the admin";
     }
-
+    
     @GetMapping({"/forUser"})
     @PreAuthorize("hasRole('Etudiant')")
-    public String forUser() {
+    public String forUser(){
         return "This URL is only accessible Students";
     }
 }

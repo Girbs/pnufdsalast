@@ -7,29 +7,29 @@ package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.Model.Horaire;
 import fdsa.edu.pnu.Repository.HoraireDAO;
+import java.util.Optional;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 /**
+ *
  * @author Richard
  */
 
 @Data
-@Service
+@Service 
 public class HoraireService {
-
-    @Autowired
-
-    private HoraireDAO horaireDAO;
-
+    
+    @Autowired 
+    
+     private HoraireDAO horaireDAO;
+    
     public Optional<Horaire> getHoraire(final int id) {
         return horaireDAO.findById(id);
     }
-
-    public Iterable<Horaire> getHoraire() {
+    
+     public Iterable<Horaire> getHoraire() {
         return horaireDAO.findAll();
     }
 

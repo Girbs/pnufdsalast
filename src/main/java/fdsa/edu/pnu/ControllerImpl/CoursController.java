@@ -4,24 +4,27 @@
  * and open the template in the editor.
  */
 package fdsa.edu.pnu.ControllerImpl;
-
 import fdsa.edu.pnu.Model.Cours;
 import fdsa.edu.pnu.ServiceImpl.CoursService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 /**
+ *
  * @author EstherA
  */
 @RestController
 public class CoursController {
     @Autowired
-    public CoursService coursService;
-
-    /**
+public CoursService coursService;
+     /**
      * Afficher tous les cours
      *
      * @return
@@ -31,11 +34,11 @@ public class CoursController {
         return (List<Cours>) coursService.getCours();
     }
 
-
+    
     /**
      * Creer nouveau Cours
      *
-     * @param cours
+     * @param cours  
      * @return
      */
     @PostMapping("/nouveauCours")
@@ -43,14 +46,14 @@ public class CoursController {
         return coursService.saveCours(cours);
     }
 
-
+    
     /**
      * Selectionner par ID
      *
-     * @param id
+      * @param id
      * @return
      */
-    @RequestMapping("/Cours/{id}")
+   @RequestMapping("/Cours/{id}")
     public Cours getCours(@PathVariable("id") int id) {
         Optional<Cours> cours = coursService.getCours(id);
         if (cours.isPresent()) {
@@ -59,16 +62,15 @@ public class CoursController {
             return null;
         }
     }
-
     /**
      * Supprimer un Cours
-     *
-     * @param id
+     * @param id 
      */
-    @DeleteMapping("/supprimerCours/{id}")
-    public void deleteEmployee(@PathVariable("id") final int id) {
-        coursService.deleteCours(id);
-    }
-
-
+     @DeleteMapping("/supprimerCours/{id}")
+	public void deleteEmployee(@PathVariable("id") final int id) {
+		coursService.deleteCours(id);
+	}
+        
+        
+    
 }

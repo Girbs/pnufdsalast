@@ -6,10 +6,10 @@
 package fdsa.edu.pnu.Service;
 
 import fdsa.edu.pnu.DTO.UtilisateurDTO;
-
 import java.util.List;
 
 /**
+ *
  * @author Ing.Girbson BIJOU
  */
 public interface IUtilisateurService {

@@ -7,23 +7,24 @@ package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.Model.Cours;
 import fdsa.edu.pnu.Repository.CoursDAO;
+import java.util.Optional;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 
 /**
+ *
  * @author EstherA
  */
 @Data
 @Service
 public class CoursService {
-    @Autowired
+     @Autowired
     private CoursDAO coursDAO;
 
     /**
+     *
      * @param id
      * @return
      */
@@ -44,5 +45,5 @@ public class CoursService {
         return savedCours;
     }
 
-
+  
 }

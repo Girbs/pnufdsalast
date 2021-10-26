@@ -14,6 +14,7 @@ import org.modelmapper.ModelMapper;
 
 
 /**
+ *
  * @author Ing.Girbson BIJOU
  */
 @Builder
@@ -22,16 +23,17 @@ import org.modelmapper.ModelMapper;
 @AllArgsConstructor
 public class HistoriqueExamenConcoursDTO {
 
-    private static ModelMapper mapper = new ModelMapper();
     private Integer id;
     private double noteObtenue;
     private Integer plannificationConcoursId;
     private Integer postulantId;
 
+    private static ModelMapper mapper = new ModelMapper();
+
     public static HistoriqueExamenConcoursDTO fromEntity(HistoriqueExamenConcours hec) {
         HistoriqueExamenConcoursDTO historiqueExamenConcoursDTO = mapper.map(hec, HistoriqueExamenConcoursDTO.class);
         historiqueExamenConcoursDTO.getPlannificationConcoursId().equals(hec.getPlannificationConcours().getId());
-        historiqueExamenConcoursDTO.getPlannificationConcoursId().equals(hec.getPlannificationConcours().getMatiere().getDescription());
+       // historiqueExamenConcoursDTO.getPlannificationConcoursId().equals(hec.getPlannificationConcours().getMatiere().getDescription());
         historiqueExamenConcoursDTO.getPlannificationConcoursId().equals(hec.getPlannificationConcours().getNoteDePassage());
         historiqueExamenConcoursDTO.getPostulantId().equals(hec.getPostulant().getId());
         return historiqueExamenConcoursDTO;

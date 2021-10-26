@@ -15,10 +15,11 @@ import java.util.List;
 import java.util.Optional;
 
 /**
+ *
  * @author EstherA
  */
 public class EtudiantService implements IEtudiantService {
-    @Autowired
+     @Autowired
     private EtudiantDAO etudiantDAO;
 
     public Optional<Etudiant> getEtudiant(final int id) {
@@ -50,7 +51,7 @@ public class EtudiantService implements IEtudiantService {
 
     @Override
     public EtudiantDTO save(EtudiantDTO dto) {
-        return EtudiantDTO.fromEntity(
+          return EtudiantDTO.fromEntity(
                 etudiantDAO.save(
                         EtudiantDTO.toEntity(dto)
                 )

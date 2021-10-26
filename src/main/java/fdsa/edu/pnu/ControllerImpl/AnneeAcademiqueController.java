@@ -6,8 +6,11 @@
 package fdsa.edu.pnu.ControllerImpl;
 
 
-import fdsa.edu.pnu.Model.AnneeAcademique;
 import fdsa.edu.pnu.ServiceImpl.AnneeAcademiqueService;
+import fdsa.edu.pnu.Model.AnneeAcademique;
+
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,13 +19,33 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AnneeAcademiqueController {
 
-    @Autowired
+   @Autowired
     private AnneeAcademiqueService anneeAcademiqueService;
 
-
-    @GetMapping("/anneeAcademique")
+   
+     @GetMapping("/anneeAcademique")
     public Iterable<AnneeAcademique> getAnneeAcademique() {
-        return anneeAcademiqueService.getAnneeAcademique();
+       return   anneeAcademiqueService.getAnneeAcademique();
     }
 
+//    // student
+//    // old student
+//    // admin
+//    // teacher
+//    // resctricted
+//
+//    hasRole("student", "oldStudent", "admin", "teacher")
+//    public void getData() {
+//
+//    }
+//
+//    hasRole("admin", "teacher")
+//    public void modifyData() {
+//
+//    }
+//
+//    hasRole("admin", "teacher")
+//    public void deleteData() {
+//
+//    }
 }

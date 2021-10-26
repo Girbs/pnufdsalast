@@ -10,35 +10,42 @@ import fdsa.edu.pnu.DTO.PersonneDTO;
 import fdsa.edu.pnu.DTO.PostulantDTO;
 import fdsa.edu.pnu.Model.Personne;
 import fdsa.edu.pnu.ServiceImpl.PersonneService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
+ *
  * @author Richard
  */
 @RestController
 public class PersonneController implements IPersonneController {
-
-    @Autowired
+    
+     @Autowired 
     public PersonneService personneService;
-
+    
     /**
      * Afficher tous les Personne
      *
      * @return
      */
-
+     
 //    @GetMapping(value = "/personne")
 //    public List<Personne> getAllPersonne() {
 //        return (List<Personne>) personneService.getPersonne();
 //    }
 //    
-
+    
     /**
      * Creer un nouveau Personne
+     *
      *
      * @param personne
      * @return
@@ -47,30 +54,29 @@ public class PersonneController implements IPersonneController {
     public Personne createPersonne(@RequestBody Personne personne) {
         return personneService.saveHoraire(personne);
     }
-
+    
     /**
      * Selectionner par ID
      *
      * @param id
      * @return
      */
-
+    
     @RequestMapping("/personne/{id}")
     public Personne getPersonne(@PathVariable("id") int id) {
         Optional<Personne> personne = personneService.getPersonne(id);
-        if (personne.isPresent()) {
+        if ( personne.isPresent() ) {
             return personne.get();
-        } else {
+        }else {
             return null;
         }
     }
-
+    
     /**
      * Supprimer un Personne
-     *
-     * @param id
+     * @param id 
      */
-
+    
     @DeleteMapping("/supprimerPersonne")
     public void deletePersonne(@PathVariable("id") final int id) {
         personneService.deletePersonne(id);
@@ -88,13 +94,13 @@ public class PersonneController implements IPersonneController {
 
     @Override
     public PersonneDTO save(PersonneDTO dto) {
-        return personneService.save(dto);
+        return personneService.save(dto); 
     }
 
     @Override
     public void delete(Integer id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-
+    
+    
 }

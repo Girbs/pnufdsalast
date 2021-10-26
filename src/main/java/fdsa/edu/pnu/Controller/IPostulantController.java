@@ -6,6 +6,7 @@
 package fdsa.edu.pnu.Controller;
 
 import fdsa.edu.pnu.DTO.PostulantDTO;
+import fdsa.edu.pnu.Model.Etudiant;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -57,6 +58,6 @@ public interface IPostulantController {
             @ApiResponse(code = 200, message = "L'objet postulant cree / modifie"),
             @ApiResponse(code = 400, message = "L'objet postulant n'est pas valide")
     })
-    PostulantDTO update( @PathVariable("id") Integer id, @RequestBody PostulantDTO dto);
+    Etudiant update(@PathVariable("id") Integer id, @RequestBody PostulantDTO dto);
 
 }

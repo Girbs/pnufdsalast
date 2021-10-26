@@ -12,9 +12,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
 
-import java.util.List;
+import java.util.Collection;
 
 /**
+ *
  * @author Ing.Girbson BIJOU
  */
 @Data
@@ -23,14 +24,20 @@ import java.util.List;
 @AllArgsConstructor
 public class PlannificationConcoursDTO {
 
-    private static ModelMapper mapper = new ModelMapper();
     private int id;
-    private ConcoursDTO concoursid;
+
+    private Integer concoursid;
+
     private Integer matiereid;
+
     private java.util.Date Date;
+
     private double quotation;
+
     private double noteDePassage;
-    private List<HistoriqueExamenConcoursDTO> historiqueExamenConcours;
+
+    private Collection<HistoriqueExamenConcoursDTO> historiqueExamenConcours;
+    private static ModelMapper mapper = new ModelMapper();
 
     public static PlannificationConcoursDTO fromEntity(PlannificationConcours plannificationConcours) {
 
@@ -52,10 +59,11 @@ public class PlannificationConcoursDTO {
     }
 
 
+    
     public static PlannificationConcours toEntity(PlannificationConcoursDTO plannificationConcoursDTO) {
-
+        
         PlannificationConcours pc = mapper.map(plannificationConcoursDTO, PlannificationConcours.class);
-
+    
 //        if (pcDTO == null) {
 //            return null;
 //        }
@@ -67,6 +75,6 @@ public class PlannificationConcoursDTO {
 //        pc.setQuotation(pcDTO.getQuotation());
 //        pc.setNoteDePassage(pcDTO.noteDePassage);
 //        pc.setHistoriqueExamenConcourss((Set) pcDTO.getHistoriqueExamenConcoursCollection());
-        return pc;
+       return pc;
     }
 }

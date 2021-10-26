@@ -1,13 +1,10 @@
 /**
  * "Visual Paradigm: DO NOT MODIFY THIS FILE!"
- * <p>
- * This is an automatic generated file. It will be regenerated every time
+ * 
+ * This is an automatic generated file. It will be regenerated every time 
  * you generate persistence class.
- * <p>
+ * 
  * Modifying its content may cause the program not work, or your work may lost.
- * <p>
- * Licensee:
- * License Type: Evaluation
  */
 
 /**
@@ -15,12 +12,12 @@
  * License Type: Evaluation
  */
 package fdsa.edu.pnu.Repository;
-
 import fdsa.edu.pnu.Model.Concours;
+import org.hibernate.LockMode;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
-public interface ConcoursDAO extends JpaRepository<Concours, Integer> {
+public interface ConcoursDAO  extends JpaRepository<Concours, Integer>{
 //	public Concours loadConcoursByORMID(Integer id) throws PersistentException;
 //	public Concours getConcoursByORMID(Integer id) throws PersistentException;
 //	public Concours loadConcoursByORMID(Integer id, org.hibernate.LockMode lockMode) throws PersistentException;

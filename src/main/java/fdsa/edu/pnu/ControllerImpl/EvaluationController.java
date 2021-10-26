@@ -7,21 +7,26 @@ package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Model.Evaluation;
 import fdsa.edu.pnu.ServiceImpl.EvaluationService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
+ *
  * @author EstherA
  */
 @RestController
 public class EvaluationController {
     @Autowired
-    public EvaluationService evaluationService;
-
-    /**
+public EvaluationService evaluationService;
+     /**
      * Afficher tous les Evaluations
      *
      * @return
@@ -31,10 +36,10 @@ public class EvaluationController {
         return (List<Evaluation>) evaluationService.getEvaluation();
     }
 
-
+    
     /**
      * Creer nouveau valuation
-     *
+     *  
      * @param evaluation
      * @return
      */
@@ -43,7 +48,7 @@ public class EvaluationController {
         return evaluationService.saveEvaluation(evaluation);
     }
 
-
+    
     /**
      * Selectionner par ID
      *
@@ -59,17 +64,15 @@ public class EvaluationController {
             return null;
         }
     }
-
     /**
      * Supprimer une Evaluation
-     *
-     * @param id
+     * @param id 
      */
-    @DeleteMapping("/supprimerEvaluation/{id}")
-    public void deleteEmployee(@PathVariable("id") final int id) {
-        evaluationService.deleteEvaluation(id);
-    }
-
-
-    // TO DO modifier une Evaluation
+     @DeleteMapping("/supprimerEvaluation/{id}")
+	public void deleteEmployee(@PathVariable("id") final int id) {
+		evaluationService.deleteEvaluation(id);
+	}
+        
+        
+        // TO DO modifier une Evaluation
 }

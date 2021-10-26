@@ -64,8 +64,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/concours/{id}",
                         "/postulant/all",
                         "/modifierPostulant/{id}",
+"/postulant/{1}",
+                        "/professeur/nouveau",
 
-               "/modifierConcours/{id}",
                         "/v2/api-docs",
                         "/swagger-resources",
                         "/swagger-resources/**",

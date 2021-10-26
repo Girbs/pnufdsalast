@@ -14,11 +14,14 @@ import fdsa.edu.pnu.Service.IConcoursService;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ *
+ * @author EstherA
+ */
 @Data
 @Service
 public class ConcoursService implements IConcoursService {
@@ -33,7 +36,12 @@ public class ConcoursService implements IConcoursService {
                 .collect(Collectors.toList());
     }
 
-
+    /**
+     * Retrouver un postulant à l'aide de son id
+     *
+     * @param id
+     * @return
+     */
     @Override
     public ConcoursDTO findById(Integer id) {
         if (id == null) {
@@ -43,8 +51,8 @@ public class ConcoursService implements IConcoursService {
 
         return concoursDAO.findById(id).map(ConcoursDTO::fromEntity).orElseThrow(()
                 -> new EntityNotFoundException(
-                "Aucun postulant avec l'ID = " + id + " n' ete trouve dans la BDD",
-                ErrorCodes.ARTICLE_NOT_FOUND)
+                        "Aucun postulant avec l'ID = " + id + " n' ete trouve dans la BDD",
+                        ErrorCodes.ARTICLE_NOT_FOUND)
         );
     }
 
@@ -55,17 +63,24 @@ public class ConcoursService implements IConcoursService {
      * @return
      */
     @Override
-    public Concours save(Concours concours) {
-//        List<String> errors = ArticleValidator.validate(dto);
-//        if (!errors.isEmpty()) {
-//            log.error("Article is not valid {}", dto);
-//            throw new InvalidEntityException("L'article n'est pas valide", ErrorCodes.ARTICLE_NOT_VALID, errors);
-//        }
-
-        return concoursDAO.save(concours);
+    public Concours save(Concours dto) {
+      return concoursDAO.save(dto);
     }
 
-
+//    @Override
+//    public ConcoursDTO save(ConcoursDTO dto) {
+////        List<String> errors = ArticleValidator.validate(dto);
+////        if (!errors.isEmpty()) {
+////            log.error("Article is not valid {}", dto);
+////            throw new InvalidEntityException("L'article n'est pas valide", ErrorCodes.ARTICLE_NOT_VALID, errors);
+////        }
+//
+//        return ConcoursDTO.fromEntity(
+//                concoursDAO.save(
+//                        ConcoursDTO.toEntity(dto)
+//                )
+//        );
+//    }
 
     /**
      * Methode pour supprimer un postulant à l'aide son Id
@@ -93,13 +108,6 @@ public class ConcoursService implements IConcoursService {
 //          ErrorCodes.ARTICLE_ALREADY_IN_USE);
 //    }
         concoursDAO.deleteById(id);
-    }
-
-    @Override
-    public ConcoursDTO update(@PathVariable("id") final Integer id, ConcoursDTO dto) {
-
-        ConcoursDTO poncoursDTO = findById(id);
-        return ConcoursDTO.fromEntity(concoursDAO.save(ConcoursDTO.toEntity(dto)));
     }
 
 }

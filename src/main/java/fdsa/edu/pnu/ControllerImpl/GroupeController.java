@@ -7,21 +7,26 @@ package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Model.Groupe;
 import fdsa.edu.pnu.ServiceImpl.GroupeService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
+ *
  * @author EstherA
  */
 @RestController
 public class GroupeController {
-    @Autowired
-    public GroupeService groupeService;
-
-    /**
+       @Autowired
+public GroupeService groupeService;
+     /**
      * Afficher tous les Groupes
      *
      * @return
@@ -31,11 +36,11 @@ public class GroupeController {
         return (List<Groupe>) groupeService.getGroupe();
     }
 
-
+    
     /**
      * Creer nouveau Groupe
      *
-     * @param groupe
+     * @param groupe  
      * @return
      */
     @PostMapping("/nouveauGroupe")
@@ -43,7 +48,7 @@ public class GroupeController {
         return groupeService.saveGroupe(groupe);
     }
 
-
+    
     /**
      * Selectionner par ID
      *
@@ -59,18 +64,16 @@ public class GroupeController {
             return null;
         }
     }
-
     /**
      * Supprimer un Groupe
-     *
-     * @param id
+     * @param id 
      */
-    @DeleteMapping("/supprimerGroupe/{id}")
-    public void deleteEmployee(@PathVariable("id") final int id) {
-        groupeService.deleteGroupe(id);
-    }
-
-
-    // TO DO modifier un Groupe
-
+     @DeleteMapping("/supprimerGroupe/{id}")
+	public void deleteEmployee(@PathVariable("id") final int id) {
+		groupeService.deleteGroupe(id);
+	}
+        
+        
+        // TO DO modifier un Groupe
+      
 }

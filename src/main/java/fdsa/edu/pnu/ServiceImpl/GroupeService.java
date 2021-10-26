@@ -7,13 +7,13 @@ package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.Model.Groupe;
 import fdsa.edu.pnu.Repository.GroupeDAO;
+import java.util.Optional;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 /**
+ *
  * @author EstherA
  */
 @Data
@@ -23,6 +23,7 @@ public class GroupeService {
     private GroupeDAO groupeDAO;
 
     /**
+     *
      * @param id
      * @return
      */
@@ -43,5 +44,5 @@ public class GroupeService {
         return savedGroupe;
     }
 
-
+    
 }

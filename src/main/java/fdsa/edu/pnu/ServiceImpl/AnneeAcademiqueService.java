@@ -5,21 +5,28 @@
  */
 package fdsa.edu.pnu.ServiceImpl;
 
+import java.util.Optional;
 import fdsa.edu.pnu.Model.AnneeAcademique;
-import fdsa.edu.pnu.Repository.AnneeAcademiqueDAO;
-import lombok.Data;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import fdsa.edu.pnu.Repository.AnneeAcademiqueDAO;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import lombok.Data;
 
 @Data
 @Service
-public class AnneeAcademiqueService {
+public class AnneeAcademiqueService  {
 
     @Autowired
     private AnneeAcademiqueDAO anneeAcademiqueDAO;
 
     public Iterable<AnneeAcademique> getAnneeAcademique() {
-        return anneeAcademiqueDAO.findAll();
+      return   anneeAcademiqueDAO.findAll();
     }
 
 }

@@ -7,19 +7,19 @@ package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.Model.TypePaiement;
 import fdsa.edu.pnu.Repository.TypePaiementDAO;
+import java.util.Optional;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 /**
+ *
  * @author Jephthé Gédéon
  */
 @Data
 @Service
 public class TypePaiementService {
-    @Autowired
+     @Autowired
     private TypePaiementDAO typePaiementDAO;
 
     public Optional<TypePaiement> getTypePaiement(final int id) {
@@ -38,5 +38,5 @@ public class TypePaiementService {
         TypePaiement savedTypePaiement = typePaiementDAO.save(TypePaiement);
         return savedTypePaiement;
     }
-
+    
 }

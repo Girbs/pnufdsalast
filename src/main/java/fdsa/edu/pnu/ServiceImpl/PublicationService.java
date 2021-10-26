@@ -7,19 +7,19 @@ package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.Model.Publication;
 import fdsa.edu.pnu.Repository.PublicationDAO;
+import java.util.Optional;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 /**
+ *
  * @author Jephthé Gédéon
  */
 @Data
 @Service
 public class PublicationService {
-    @Autowired
+     @Autowired
     private PublicationDAO publicationDAO;
 
     public Optional<Publication> getPublication(final int id) {
@@ -38,6 +38,6 @@ public class PublicationService {
         Publication savedPublication = publicationDAO.save(Publication);
         return savedPublication;
     }
-
+    
 }
 

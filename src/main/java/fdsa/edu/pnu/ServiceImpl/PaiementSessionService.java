@@ -6,15 +6,16 @@
 package fdsa.edu.pnu.ServiceImpl;
 
 
+
 import fdsa.edu.pnu.Model.PaiementSession;
 import fdsa.edu.pnu.Repository.PaiementSessionDAO;
+import java.util.Optional;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 /**
+ *
  * @author Richard
  */
 
@@ -22,16 +23,16 @@ import java.util.Optional;
 @Service
 
 public class PaiementSessionService {
-
+    
     @Autowired
-
+    
     private PaiementSessionDAO paiementSessionDAO;
-
+    
     public Optional<PaiementSession> getPaiementSession(final int id) {
         return paiementSessionDAO.findById(id);
     }
-
-    public Iterable<PaiementSession> getPaiementSession() {
+    
+     public Iterable<PaiementSession> getPaiementSession() {
         return paiementSessionDAO.findAll();
     }
 

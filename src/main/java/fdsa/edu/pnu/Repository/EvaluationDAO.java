@@ -1,13 +1,10 @@
 /**
  * "Visual Paradigm: DO NOT MODIFY THIS FILE!"
- * <p>
- * This is an automatic generated file. It will be regenerated every time
+ * 
+ * This is an automatic generated file. It will be regenerated every time 
  * you generate persistence class.
- * <p>
+ * 
  * Modifying its content may cause the program not work, or your work may lost.
- * <p>
- * Licensee:
- * License Type: Evaluation
  */
 
 /**
@@ -18,10 +15,11 @@ package fdsa.edu.pnu.Repository;
 
 
 import fdsa.edu.pnu.Model.Evaluation;
+import org.hibernate.LockMode;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
-public interface EvaluationDAO extends JpaRepository<Evaluation, Integer> {
+public interface EvaluationDAO extends JpaRepository < Evaluation, Integer>{
 //	public Evaluation loadEvaluationByORMID(int id) throws PersistentException;
 //	public Evaluation getEvaluationByORMID(int id) throws PersistentException;
 //	public Evaluation loadEvaluationByORMID(int id, org.hibernate.LockMode lockMode) throws PersistentException;

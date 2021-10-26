@@ -7,13 +7,13 @@ package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.Model.Message;
 import fdsa.edu.pnu.Repository.MessageDAO;
+import java.util.Optional;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 /**
+ *
  * @author Richard
  */
 
@@ -21,16 +21,16 @@ import java.util.Optional;
 @Service
 
 public class MessageService {
-
+    
     @Autowired
-
-    private MessageDAO messageDAO;
-
+    
+     private MessageDAO messageDAO;
+    
     public Optional<Message> getMessage(final int id) {
         return messageDAO.findById(id);
     }
-
-    public Iterable<Message> getMessage() {
+    
+     public Iterable<Message> getMessage() {
         return messageDAO.findAll();
     }
 
@@ -42,5 +42,5 @@ public class MessageService {
         Message savedMessage = messageDAO.save(Message);
         return savedMessage;
     }
-
+    
 }

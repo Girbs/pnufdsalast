@@ -1,13 +1,10 @@
 /**
  * "Visual Paradigm: DO NOT MODIFY THIS FILE!"
- * <p>
+ *
  * This is an automatic generated file. It will be regenerated every time
  * you generate persistence class.
- * <p>
+ *
  * Modifying its content may cause the program not work, or your work may lost.
- * <p>
- * Licensee:
- * License Type: Evaluation
  */
 /**
  * Licensee:
@@ -15,7 +12,8 @@
  */
 package fdsa.edu.pnu.DTO;
 
-import fdsa.edu.pnu.Model.Personne;
+import fdsa.edu.pnu.Model.*;
+import java.io.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -28,7 +26,6 @@ import org.modelmapper.ModelMapper;
 @NoArgsConstructor
 public class PersonneDTO {
 
-    private static ModelMapper mapper = new ModelMapper();
     private int id;
     //private fdsa.edu.pnu.Model.Commune commune;
     private String nom;
@@ -39,6 +36,8 @@ public class PersonneDTO {
     private String telephone2;
     private String adresse;
     private String codePostal;
+
+    private static ModelMapper mapper = new ModelMapper();
 
     public static PersonneDTO fromEntity(Personne personne) {
 

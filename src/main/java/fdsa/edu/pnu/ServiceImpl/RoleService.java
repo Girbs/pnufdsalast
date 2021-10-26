@@ -11,32 +11,31 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 /**
+ *
  * @author Jephthé Gédéon
  */
 @Data
 @Service
 public class RoleService {
-    @Autowired
+     @Autowired
     private RoleDAO roleDAO;
 
-    public Optional<Role> getRole(final String id) {
-        return roleDAO.findById(id);
-    }
+//    public Optional<Role> getRole(final int id) {
+//        return roleDAO.findById(id);
+//    }
 
     public Iterable<Role> getRole() {
         return roleDAO.findAll();
     }
 
-    public void deleteRole(final String id) {
-        roleDAO.deleteById(id);
-    }
+//    public void deleteRole(final int id) {
+//        roleDAO.deleteById(id);
+//    }
 
     public Role saveRole(Role Role) {
         Role savedRole = roleDAO.save(Role);
         return savedRole;
     }
-
+    
 }
