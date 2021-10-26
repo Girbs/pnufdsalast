@@ -52,30 +52,29 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests().antMatchers(
 
 
-
-                        "/authenticate",
-                        "/postulant/nouveau",
-                        "/concours/nouveau",
-                        "/matiere/all",
-                        "/matiere/nouveau",
-                        "/matiere/{id}",
-                        "/concours/all",
-                        "/concours/nouveau",
-                        "/concours/{id}",
-                        "/postulant/all",
-                        "/modifierPostulant/{id}",
-"/postulant/{1}",
-                        "/professeur/nouveau",
-
-                        "/v2/api-docs",
-                        "/swagger-resources",
-                        "/swagger-resources/**",
-                        "/configuration/ui",
-                        "/configuration/security",
-                        "/swagger-ui.html",
-                        "/webjars/**",
-                        "/v3/api-docs/**",
-                        "/swagger-ui/**").permitAll()
+                "/authenticate",
+                "/postulant/nouveau",
+                "/concours/nouveau",
+                "/matiere/all",
+                "/matiere/nouveau",
+                "/matiere/{id}",
+                "/concours/all",
+                "/concours/nouveau",
+                "/concours/{id}",
+                "/postulant/all",
+                "/modifierPostulant/{id}",
+                "/saveStudent",
+                "/getStudent",
+                "/modifierConcours/{id}",
+                "/v2/api-docs",
+                "/swagger-resources",
+                "/swagger-resources/**",
+                "/configuration/ui",
+                "/configuration/security",
+                "/swagger-ui.html",
+                "/webjars/**",
+                "/v3/api-docs/**",
+                "/swagger-ui/**").permitAll()
                 .antMatchers(HttpHeaders.ALLOW).permitAll()
                 .anyRequest().authenticated()
                 .and()
