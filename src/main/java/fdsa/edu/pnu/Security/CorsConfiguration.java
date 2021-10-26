@@ -24,7 +24,7 @@ public class CorsConfiguration {
     private static final String POST = "POST";
     private static final String PUT = "PUT";
     private static final String DELETE = "DELETE";
-    @Value("${allowed.origin}")
+    @Value("{allowed.origin}")
     private String allowedOrigin;
     @Bean
     public WebMvcConfigurer corsConfigurer() {
