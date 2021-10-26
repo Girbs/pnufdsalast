@@ -18,6 +18,8 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -52,13 +54,11 @@ public class Matiere implements Serializable {
 	private int nombreDeCreditStandard;
 	
 	@OneToMany(mappedBy="matiere", targetEntity= Cours.class)
-	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
-	private java.util.Set cours = new java.util.HashSet();
+	private List<Cours> cours ;
 	
-//	@OneToMany(mappedBy="matiere", targetEntity= PlannificationConcours.class)
-//	private java.util.Set plannificationConcourses = new java.util.HashSet();
-//
+    @OneToMany(mappedBy="matiere", targetEntity= PlannificationConcours.class)
+	private List<PlannificationConcours> plannificationConcourses;
+
 
 	
 }

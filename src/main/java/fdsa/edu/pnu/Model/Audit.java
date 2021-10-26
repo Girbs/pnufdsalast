@@ -5,17 +5,18 @@
  */
 package fdsa.edu.pnu.Model;
 
-import java.io.Serializable;
-import java.time.Instant;
-import javax.persistence.Column;
-import javax.persistence.EntityListeners;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
 import lombok.Data;
+import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import javax.persistence.Column;
+import javax.persistence.EntityListeners;
+import javax.persistence.MappedSuperclass;
+import java.io.Serializable;
+import java.time.Instant;
 
 /**
  *
@@ -26,7 +27,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @Data
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-public class Audit implements Serializable {
+public class Audit<U> implements Serializable {
 
   @CreatedDate
   @Column(name = "creationDate", nullable = true, updatable = false)
@@ -35,4 +36,14 @@ public class Audit implements Serializable {
   @LastModifiedDate
   @Column(name = "lastModifiedDate")
   private Instant lastModifiedDate;
+
+  @CreatedBy
+  @Column(name = "CreatedBy")
+  protected U createdBy;
+
+
+  @LastModifiedBy
+  @Column(name = "LastModifiedBy")
+  protected U lastModifiedBy;
+
 }

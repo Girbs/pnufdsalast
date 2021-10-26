@@ -9,7 +9,11 @@ import fdsa.edu.pnu.DTO.ConcoursDTO;
 import fdsa.edu.pnu.Exception.EntityNotFoundException;
 import fdsa.edu.pnu.Exception.ErrorCodes;
 import fdsa.edu.pnu.Model.Concours;
+import fdsa.edu.pnu.Model.ExampleStudent;
 import fdsa.edu.pnu.Repository.ConcoursDAO;
+import fdsa.edu.pnu.Repository.ExampleAddressRepository;
+import fdsa.edu.pnu.Repository.ExampleStudentRepository;
+import fdsa.edu.pnu.Repository.PlannificationConcoursDAO;
 import fdsa.edu.pnu.Service.IConcoursService;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +32,10 @@ public class ConcoursService implements IConcoursService {
 
     @Autowired
     private ConcoursDAO concoursDAO;
+
+    @Autowired
+    private PlannificationConcoursDAO plannificationConcoursDAO;
+
 
     @Override
     public List<ConcoursDTO> findAll() {
@@ -64,8 +72,42 @@ public class ConcoursService implements IConcoursService {
      */
     @Override
     public Concours save(Concours dto) {
-      return concoursDAO.save(dto);
+          Concours c = concoursDAO.save(dto);
+          dto.getPlannificationConcourses().forEach(a ->{
+              a.setConcours(c);
+              plannificationConcoursDAO.save(a);
+
+          });
+        return concoursDAO.save(dto);
     }
+
+
+    @Service
+    public class ExampleStudentService {
+
+        @Autowired
+        private ExampleStudentRepository exampleStudentRepository;
+
+        @Autowired
+        private ExampleAddressRepository exampleAddressRepository;
+
+        public ExampleStudent saveStudent(ExampleStudent exampleStudent) {
+            ExampleStudent s1 = exampleStudentRepository.save(exampleStudent);
+            exampleStudent.getAddresses().forEach(a -> {
+                a.setStudent(s1);
+                exampleAddressRepository.save(a);
+            });
+
+            return exampleStudentRepository.findById(s1.getStudentId()).get();
+        }
+
+        public List<ExampleStudent> getStudent() {
+            return (List<ExampleStudent>) exampleStudentRepository.findAll();
+        }
+    }
+
+
+
 
 //    @Override
 //    public ConcoursDTO save(ConcoursDTO dto) {

@@ -13,12 +13,14 @@
  */
 package fdsa.edu.pnu.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -33,14 +35,15 @@ public class PlannificationConcours implements Serializable {
 	@GeneratedValue(generator="PNU_PLANNIFICATIONCONCOURS_ID_GENERATOR")	
 	@org.hibernate.annotations.GenericGenerator(name="PNU_PLANNIFICATIONCONCOURS_ID_GENERATOR", strategy="native")	
 	private int id;
-	
-	@ManyToOne
+
+    @ManyToOne (targetEntity= Concours.class, fetch=FetchType.LAZY)
+	@JoinColumns(value={ @JoinColumn(name="concoursId", referencedColumnName="ID", nullable=true) }, foreignKey=@ForeignKey(name="ConcoursPlanificationConcours"))
+	@JsonBackReference
 	private Concours concours;
-	
-//	@ManyToOne(targetEntity= Matiere.class, fetch=FetchType.LAZY)
-//	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
-//	@JoinColumns(value={ @JoinColumn(name="MatiereID", referencedColumnName="ID", nullable=true) }, foreignKey=@ForeignKey(name="Concerner"))
-//	private Matiere matiere;
+
+    @ManyToOne(targetEntity= Matiere.class, fetch=FetchType.LAZY)
+	@JoinColumns(value={ @JoinColumn(name="MatiereId", referencedColumnName="ID", nullable=true) }, foreignKey=@ForeignKey(name="MatierePlanificationConcours"))
+    private Matiere matiere;
 	
 	@Column(name="`Date`", nullable=true)	
 	@Temporal(TemporalType.DATE)	
@@ -52,10 +55,8 @@ public class PlannificationConcours implements Serializable {
 	@Column(name="NoteDePassage", nullable=false, length=10)	
 	private double noteDePassage;
 	
-	@OneToMany(mappedBy="plannificationConcours", targetEntity= HistoriqueExamenConcours.class)
-	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
-	private Collection<HistoriqueExamenConcours> historiqueExamenConcours;
-	
-	
+
+	@OneToMany(mappedBy="plannificationConcours", cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity= HistoriqueExamenConcours.class)
+	private List<HistoriqueExamenConcours> historiqueExamenConcours;
+
 }

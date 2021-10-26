@@ -13,14 +13,16 @@
  */
 package fdsa.edu.pnu.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import java.io.Serializable;
-import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+import java.io.Serializable;
 @Entity
 @Data
 @NoArgsConstructor
@@ -46,7 +48,7 @@ public class HistoriqueExamenConcours implements Serializable {
 	public PlannificationConcours plannificationConcours;
 	
 	@ManyToOne(targetEntity= Postulant.class)
-	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
+	@JsonBackReference
 	@JoinColumns({ @JoinColumn(name="PostulantID", referencedColumnName="ID", nullable=false) })	
 	private Postulant postulant;
 
