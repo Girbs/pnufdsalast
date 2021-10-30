@@ -58,6 +58,7 @@ public class PostulantControllerImpl implements IPostulantController {
 
     @Override
     public Etudiant update(Integer id, PostulantDTO dto) {
+
         return postulantService.update(id, dto);
     }
 

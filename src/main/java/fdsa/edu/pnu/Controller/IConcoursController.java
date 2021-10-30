@@ -11,6 +11,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.http.MediaType;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -36,7 +37,7 @@ public interface IConcoursController {
         @ApiResponse(code = 404, message = "Aucun concours n'existe dans la BDD avec l'ID fourni")
     })
     ConcoursDTO findById(@PathVariable("id") Integer id);
-
+    @PreAuthorize("hasRole('Student')")
     @PostMapping(value = "/concours/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Enregistrer un COncours", notes = "Cette methode permet d'enregistrer ou modifier un concours", response = ConcoursDTO.class)
     @ApiResponses(value = {

@@ -44,12 +44,12 @@ public class HistoriqueExamenConcours implements Serializable {
 	
 	@ManyToOne(targetEntity= PlannificationConcours.class)
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinColumns({ @JoinColumn(name="PlannificationConcoursID", referencedColumnName="ID", nullable=false) })	
+	@JoinColumns({ @JoinColumn(name="PlannificationConcoursID", referencedColumnName="ID") })
 	public PlannificationConcours plannificationConcours;
 	
 	@ManyToOne(targetEntity= Postulant.class)
 	@JsonBackReference
-	@JoinColumns({ @JoinColumn(name="PostulantID", referencedColumnName="ID", nullable=false) })	
+	@JoinColumns({ @JoinColumn(name="PostulantID", referencedColumnName="ID") })
 	private Postulant postulant;
 
 }

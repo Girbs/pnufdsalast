@@ -10,10 +10,8 @@ import fdsa.edu.pnu.Exception.EntityNotFoundException;
 import fdsa.edu.pnu.Exception.ErrorCodes;
 import fdsa.edu.pnu.Model.Concours;
 import fdsa.edu.pnu.Model.ExampleStudent;
-import fdsa.edu.pnu.Repository.ConcoursDAO;
-import fdsa.edu.pnu.Repository.ExampleAddressRepository;
-import fdsa.edu.pnu.Repository.ExampleStudentRepository;
-import fdsa.edu.pnu.Repository.PlannificationConcoursDAO;
+import fdsa.edu.pnu.Model.Matiere;
+import fdsa.edu.pnu.Repository.*;
 import fdsa.edu.pnu.Service.IConcoursService;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +33,9 @@ public class ConcoursService implements IConcoursService {
 
     @Autowired
     private PlannificationConcoursDAO plannificationConcoursDAO;
+
+    @Autowired
+    private MatiereDAO matiereDAO;
 
 
     @Override
@@ -72,13 +73,20 @@ public class ConcoursService implements IConcoursService {
      */
     @Override
     public Concours save(Concours dto) {
-          Concours c = concoursDAO.save(dto);
-          dto.getPlannificationConcourses().forEach(a ->{
-              a.setConcours(c);
-              plannificationConcoursDAO.save(a);
-
-          });
         return concoursDAO.save(dto);
+    }
+
+    @Override
+    public Concours saveRelatedRecords(Concours dto, Matiere matiere) {
+       Concours c = concoursDAO.findById(dto.getId()).get();
+        if( c.getPlannificationConcourses()!=null) {
+            c.getPlannificationConcourses().forEach(a -> {
+                a.setConcours(c);
+                a.setMatiere(matiereDAO.findById(matiere.getId()).get());
+                plannificationConcoursDAO.save(a);
+            });
+        }
+        return concoursDAO.save(c);
     }
 
 

@@ -9,14 +9,15 @@ import fdsa.edu.pnu.DTO.PlannificationConcoursDTO;
 import fdsa.edu.pnu.Exception.EntityNotFoundException;
 import fdsa.edu.pnu.Exception.ErrorCodes;
 import fdsa.edu.pnu.Model.PlannificationConcours;
+import fdsa.edu.pnu.Repository.HistoriqueExamenConcoursDAO;
 import fdsa.edu.pnu.Repository.PlannificationConcoursDAO;
 import fdsa.edu.pnu.Service.IPlannificationConcoursService;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -29,6 +30,9 @@ public class PlannificationConcoursService implements IPlannificationConcoursSer
     
     @Autowired
     private PlannificationConcoursDAO plannificationConcoursDAO;
+
+    @Autowired
+    private HistoriqueExamenConcoursDAO historiqueExamenConcoursDAO;
     
     @Override
     public List<PlannificationConcoursDTO> findAll() {
@@ -48,15 +52,27 @@ public class PlannificationConcoursService implements IPlannificationConcoursSer
                         ErrorCodes.ARTICLE_NOT_FOUND)
         );
     }
-    
+
     @Override
-    public PlannificationConcoursDTO save(PlannificationConcoursDTO dto) {
-        return PlannificationConcoursDTO.fromEntity(
-                plannificationConcoursDAO.save(
-                        PlannificationConcoursDTO.toEntity(dto)
-                )
-        );
+    public PlannificationConcours save(PlannificationConcours plannificationConcours) {
+        PlannificationConcours pc = plannificationConcoursDAO.save(plannificationConcours);
+        if( plannificationConcours.getHistoriqueExamenConcours()!=null) {
+            plannificationConcours.getHistoriqueExamenConcours().forEach(a -> {
+                a.setPlannificationConcours(pc);
+                historiqueExamenConcoursDAO.save(a);
+            });
+        }
+        return plannificationConcoursDAO.save(plannificationConcours);
     }
+
+//    @Override
+//    public PlannificationConcours save(PlannificationConcours dto) {
+//        return PlannificationConcoursDTO.fromEntity(
+//                plannificationConcoursDAO.save(
+//                        PlannificationConcoursDTO.toEntity(dto)
+//                )
+//        );
+//    }
     
     @Override
     public void delete(Integer id) {

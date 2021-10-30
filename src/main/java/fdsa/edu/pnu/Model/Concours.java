@@ -13,6 +13,7 @@
  */
 package fdsa.edu.pnu.Model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -21,8 +22,7 @@ import java.util.List;
 
 @Entity
 @Data
-
-
+@AllArgsConstructor
 @Table(name="Concours")
 public class Concours extends Audit<String> implements Serializable {
 
@@ -43,7 +43,6 @@ public class Concours extends Audit<String> implements Serializable {
 	
 	@Column(name="Description", nullable=true, length=255)	
 	private String description;
-
 
 	@OneToMany(mappedBy = "concours", cascade = CascadeType.ALL, fetch = FetchType.EAGER) // mappedBy will create a bidirectional relation for us
 	private List<PlannificationConcours> plannificationConcourses;

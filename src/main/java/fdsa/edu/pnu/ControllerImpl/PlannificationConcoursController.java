@@ -9,11 +9,10 @@ import fdsa.edu.pnu.Controller.IPlannificationConcoursController;
 import fdsa.edu.pnu.DTO.PlannificationConcoursDTO;
 import fdsa.edu.pnu.Model.PlannificationConcours;
 import fdsa.edu.pnu.ServiceImpl.PlannificationConcoursService;
-import java.util.List;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  *
@@ -36,7 +35,7 @@ public class PlannificationConcoursController implements IPlannificationConcours
     }
 
     @Override
-    public PlannificationConcoursDTO save(PlannificationConcoursDTO dto) {
+    public PlannificationConcours save(PlannificationConcours dto) {
          return plannificationConcoursService.save(dto);
     }
 

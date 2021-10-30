@@ -23,13 +23,9 @@ import java.util.List;
 @Entity
 @Data
 @AllArgsConstructor
-
-@org.hibernate.annotations.Proxy(lazy=false)
 @Table(name="Matiere")
 public class Matiere implements Serializable {
-	public Matiere() {
-	}
-	
+
 	@Column(name="ID", nullable=false, length=10)	
 	@Id	
 	@GeneratedValue(generator="PNU_MATIERE_ID_GENERATOR")	
@@ -59,6 +55,8 @@ public class Matiere implements Serializable {
     @OneToMany(mappedBy="matiere", targetEntity= PlannificationConcours.class)
 	private List<PlannificationConcours> plannificationConcourses;
 
+	public Matiere() {
+	}
 
-	
+
 }
