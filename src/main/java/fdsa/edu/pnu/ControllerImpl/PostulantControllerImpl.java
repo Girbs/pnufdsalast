@@ -45,8 +45,7 @@ public class PostulantControllerImpl implements IPostulantController {
 
 
     @Override
-    public PostulantDTO save(PostulantDTO dto) {
-        // seec.confirmerInscription(dto.getEmail(), dto.getNom(), dto.getPrenom());
+    public PostulantDTO savePostulant(PostulantDTO dto) {
         return postulantService.save(dto);
     }
 
@@ -58,7 +57,7 @@ public class PostulantControllerImpl implements IPostulantController {
 
     @Override
     public Etudiant update(Integer id, PostulantDTO dto) {
-
+        System.out.println("This method is getting called for update");
         return postulantService.update(id, dto);
     }
 

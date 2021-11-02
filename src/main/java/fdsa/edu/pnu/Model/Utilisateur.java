@@ -1,10 +1,34 @@
 /**
  * "Visual Paradigm: DO NOT MODIFY THIS FILE!"
- *
+ * <p>
  * This is an automatic generated file. It will be regenerated every time
  * you generate persistence class.
- *
+ * <p>
  * Modifying its content may cause the program not work, or your work may lost.
+ * <p>
+ * Licensee:
+ * License Type: Evaluation
+ * <p>
+ * Licensee:
+ * License Type: Evaluation
+ * <p>
+ * Licensee:
+ * License Type: Evaluation
+ * <p>
+ * Licensee:
+ * License Type: Evaluation
+ * <p>
+ * Licensee:
+ * License Type: Evaluation
+ * <p>
+ * Licensee:
+ * License Type: Evaluation
+ * <p>
+ * Licensee:
+ * License Type: Evaluation
+ * <p>
+ * Licensee:
+ * License Type: Evaluation
  */
 /**
  * Licensee:
@@ -12,30 +36,25 @@
  */
 package fdsa.edu.pnu.Model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
 
 @Entity
-
-
-//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
-//        property = "id")
-//@JsonIdentityReference(alwaysAsId = true)
 @Table(name = "Utilisateur")
 @Inheritance(strategy = InheritanceType.JOINED)
-//@DiscriminatorValue("Utilisateur")
 @PrimaryKeyJoinColumn(name = "PersonneID", referencedColumnName = "ID")
-
 public class Utilisateur extends Personne implements Serializable {
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "USER_ROLE",
             joinColumns = {
-                @JoinColumn(name = "USER_ID")
+                    @JoinColumn(name = "USER_ID")
             },
             inverseJoinColumns = {
-                @JoinColumn(name = "ROLE_ID")
+                    @JoinColumn(name = "ROLE_ID")
             })
     private Set<Role> role;
 
@@ -110,6 +129,7 @@ public class Utilisateur extends Personne implements Serializable {
     /**
      * @return the roles
      */
+    @JsonManagedReference
     public Set<Role> getRoles() {
         return role;
     }

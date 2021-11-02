@@ -7,7 +7,6 @@ package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.DTO.PostulantDTO;
 import fdsa.edu.pnu.Exception.EntityNotFoundException;
-import fdsa.edu.pnu.Exception.ErrorCodes;
 import fdsa.edu.pnu.Model.Etudiant;
 import fdsa.edu.pnu.Model.Role;
 import fdsa.edu.pnu.Repository.EtudiantDAO;
@@ -18,10 +17,10 @@ import fdsa.edu.pnu.Security.PasswordGenerator;
 import fdsa.edu.pnu.Service.IPostulantService;
 import fdsa.edu.pnu.mail.EmailController;
 import lombok.Data;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.HashSet;
 import java.util.List;
@@ -56,6 +55,8 @@ public class PostulantService implements IPostulantService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    private static ModelMapper mapper = new ModelMapper();
+
     /**
      * Lister Tous Les Postulants
      *
@@ -73,11 +74,11 @@ public class PostulantService implements IPostulantService {
         if (id == null) {
             return null;
         }
-        return postulantDAO.findById(id).map(PostulantDTO::fromEntity).orElseThrow(()
-                -> new EntityNotFoundException(
-                "Aucun postulant avec l'ID = " + id + " n' ete trouve dans la BDD",
-                ErrorCodes.ARTICLE_NOT_FOUND)
-        );
+        return postulantDAO.findById(id)
+                .map(PostulantDTO::fromEntity)
+                .orElseThrow(() -> {
+                    throw new EntityNotFoundException("Not Found");
+                });
     }
 
     @Override
@@ -114,10 +115,7 @@ public class PostulantService implements IPostulantService {
     }
 
     @Override
-    public Etudiant update(@PathVariable("id") final Integer id, PostulantDTO dto) {
-
-        System.out.println(id);
-        System.out.println(dto);
+    public Etudiant update(Integer id, PostulantDTO dto) {
 
         // first find that student is present in db or not
         PostulantDTO postulantDTO = findById(id);
@@ -143,13 +141,10 @@ public class PostulantService implements IPostulantService {
         etudiant.setMatricule("50967");
         Set<Role> role = new HashSet<>();
         role.add(roleDAO.findById(1).get());
-        //  role.add(roleDAO.findById(2).get());
         etudiant.setRoles(role);
+        // PostulantDTO.fromEntity(postulantDAO.save(PostulantDTO.toEntity(dto)));
 
-
-        PostulantDTO.fromEntity(postulantDAO.save(PostulantDTO.toEntity(dto)));
         return etudiantDAO.save(etudiant);
-
         // If application status is updated then we need to send an email confirmation to applicant.
         // So we will check for equality of current status that we have in DB and new status that we now want to store in DB.
 //        if (!currentApplicationStatus.equals(statusToBeUpdated) && statusToBeUpdated.equals("Accepté")) {
