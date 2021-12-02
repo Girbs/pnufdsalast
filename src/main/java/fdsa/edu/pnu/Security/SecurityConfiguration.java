@@ -57,10 +57,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 "/plannificationConcours/all",
                 "/plannificationConcours/nouveau",
                 "/concours/nouveau",
+                        "/professeur/nouveau",
                 "/matiere/all",
                 "/matiere/nouveau",
                 "/matiere/{id}",
                 "/concours/all",
+                        "/concours/nouveau",
 
                 "/concours/{id}",
                 "/postulant/all",

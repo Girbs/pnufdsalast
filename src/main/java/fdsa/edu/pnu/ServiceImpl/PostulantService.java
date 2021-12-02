@@ -133,7 +133,9 @@ public class PostulantService implements IPostulantService {
         etudiant.setTelephone1(dto.getTelephone());
         etudiant.setCodePostal("");
         etudiant.setUserName(dto.getEmail());
-        String pass = password.randomPassword();
+       // String pass = password.randomPassword();
+
+        String pass = "stud@pass";
         System.out.println(pass);
         System.out.println(pass);
         etudiant.setUserPassword(passwordEncoder.encode(pass));
@@ -144,13 +146,15 @@ public class PostulantService implements IPostulantService {
         etudiant.setRoles(role);
         // PostulantDTO.fromEntity(postulantDAO.save(PostulantDTO.toEntity(dto)));
 
-        return etudiantDAO.save(etudiant);
-        // If application status is updated then we need to send an email confirmation to applicant.
-        // So we will check for equality of current status that we have in DB and new status that we now want to store in DB.
 //        if (!currentApplicationStatus.equals(statusToBeUpdated) && statusToBeUpdated.equals("Accepté")) {
 //            // Please focus on ! operator in above condition and replace your "Accepté" text if needed.
 //            mail.applicationApprovee(dto.getEmail(), dto.getNom(), dto.getPrenom(), dto.getFilliere());
 //        }
+
+        return etudiantDAO.save(etudiant);
+        // If application status is updated then we need to send an email confirmation to applicant.
+        // So we will check for equality of current status that we have in DB and new status that we now want to store in DB.
+
 
         // return PostulantDTO.fromEntity(postulantDAO.save(PostulantDTO.toEntity(dto)));
     }

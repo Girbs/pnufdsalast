@@ -60,8 +60,8 @@ public class ConcoursService implements IConcoursService {
 
         return concoursDAO.findById(id).map(ConcoursDTO::fromEntity).orElseThrow(()
                 -> new EntityNotFoundException(
-                        "Aucun postulant avec l'ID = " + id + " n' ete trouve dans la BDD",
-                        ErrorCodes.ARTICLE_NOT_FOUND)
+                "Aucun postulant avec l'ID = " + id + " n' ete trouve dans la BDD",
+                ErrorCodes.ARTICLE_NOT_FOUND)
         );
     }
 
@@ -78,7 +78,7 @@ public class ConcoursService implements IConcoursService {
 
     @Override
     public Concours saveRelatedRecords(Concours dto, Matiere matiere) {
-       Concours c = concoursDAO.findById(dto.getId()).get();
+        Concours c = concoursDAO.findById(dto.getId()).get();
         if( c.getPlannificationConcourses()!=null) {
             c.getPlannificationConcourses().forEach(a -> {
                 a.setConcours(c);
