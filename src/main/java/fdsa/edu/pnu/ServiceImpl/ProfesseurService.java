@@ -65,20 +65,21 @@ public class ProfesseurService implements IProfesseurService {
 //    }
 
     @Override
-    public Professeur save(Professeur dto) {
+    public Professeur save(Professeur professeur) {
 
-        String pass = password.randomPassword();
+        String pass = "Pass";
+       // String pass = password.randomPassword();
         System.out.println(pass);
         System.out.println(pass);
-        dto.setUserPassword(passwordEncoder.encode(pass));
+        professeur.setUserPassword(passwordEncoder.encode(pass));
 
         Set<Role> role = new HashSet<>();
         // role.add(new Role());
         role.add(roleDAO.findById(2).get());
         //  role.add(roleDAO.findById(2).get());
-        dto.setRoles(role);
+        professeur.setRoles(role);
 
-        return professeurDAO.save(dto);
+        return professeurDAO.save(professeur);
     }
 
     @Override

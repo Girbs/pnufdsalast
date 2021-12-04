@@ -22,7 +22,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Data
+
 @AllArgsConstructor
 
 @Table(name="PlannificationConcours")
@@ -38,7 +38,7 @@ public class PlannificationConcours implements Serializable {
 
     @ManyToOne (targetEntity= Concours.class, fetch=FetchType.LAZY)
 	@JoinColumns(value={ @JoinColumn(name="concoursId", referencedColumnName="ID", nullable=true) }, foreignKey=@ForeignKey(name="ConcoursPlanificationConcours"))
-	@JsonBackReference
+	//@JsonBackReference
 	private Concours concours;
 
     @ManyToOne(targetEntity= Matiere.class, fetch=FetchType.LAZY)
@@ -59,4 +59,59 @@ public class PlannificationConcours implements Serializable {
 	@OneToMany(mappedBy="plannificationConcours", cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity= HistoriqueExamenConcours.class)
 	private List<HistoriqueExamenConcours> historiqueExamenConcours;
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Concours getConcours() {
+		return concours;
+	}
+
+	public void setConcours(Concours concours) {
+		this.concours = concours;
+	}
+
+	public Matiere getMatiere() {
+		return matiere;
+	}
+
+	public void setMatiere(Matiere matiere) {
+		this.matiere = matiere;
+	}
+
+	public java.util.Date getDate() {
+		return Date;
+	}
+
+	public void setDate(java.util.Date date) {
+		Date = date;
+	}
+
+	public double getQuotation() {
+		return quotation;
+	}
+
+	public void setQuotation(double quotation) {
+		this.quotation = quotation;
+	}
+
+	public double getNoteDePassage() {
+		return noteDePassage;
+	}
+
+	public void setNoteDePassage(double noteDePassage) {
+		this.noteDePassage = noteDePassage;
+	}
+
+	public List<HistoriqueExamenConcours> getHistoriqueExamenConcours() {
+		return historiqueExamenConcours;
+	}
+
+	public void setHistoriqueExamenConcours(List<HistoriqueExamenConcours> historiqueExamenConcours) {
+		this.historiqueExamenConcours = historiqueExamenConcours;
+	}
 }
