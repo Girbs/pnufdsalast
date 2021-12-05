@@ -53,4 +53,10 @@ public interface IConcoursController {
     })
     void delete(@PathVariable("id") Integer id);
 
+    @DeleteMapping(value = "/concours/modifier/{id}")
+    @ApiOperation(value = "Modifier un concours", notes = "Cette methode permet de modifier un concours par ID")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Le concours a ete Modifier")
+    })
+    Concours update(@PathVariable("id") Integer id, @RequestBody Concours dto);
 }

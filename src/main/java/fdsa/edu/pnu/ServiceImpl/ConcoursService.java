@@ -76,23 +76,26 @@ public class ConcoursService implements IConcoursService {
         return concoursDAO.save(dto);
     }
 
+
+
     @Override
-    public Concours saveRelatedRecords(Concours concours, Matiere matiere) {
-        return null;
+    public Concours update(Integer id, Concours concours) {
+        return concoursDAO.save(concours);
     }
 
-//    @Override
-//    public Concours saveRelatedRecords(Concours dto, Matiere matiere) {
-//       Concours c = concoursDAO.findById(dto.getId()).get();
-//        if( c.getPlannificationConcourses()!=null) {
-//            c.getPlannificationConcourses().forEach(a -> {
-//                a.setConcours(c);
-//                a.setMatiere(matiereDAO.findById(matiere.getId()).get());
-//                plannificationConcoursDAO.save(a);
-//            });
-//        }
-//        return concoursDAO.save(c);
-//    }
+
+    @Override
+    public Concours saveRelatedRecords(Concours dto, Matiere matiere) {
+       Concours c = concoursDAO.findById(dto.getId()).get();
+        if( c.getPlannificationConcourses()!=null) {
+            c.getPlannificationConcourses().forEach(a -> {
+                a.setConcours(c);
+                a.setMatiere(matiereDAO.findById(matiere.getId()).get());
+                plannificationConcoursDAO.save(a);
+            });
+        }
+        return concoursDAO.save(c);
+    }
 
 
     @Service

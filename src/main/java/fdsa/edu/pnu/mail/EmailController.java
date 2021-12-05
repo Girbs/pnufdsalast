@@ -47,7 +47,6 @@ public class EmailController {
     @ResponseBody
     public void applicationApprovee(String emailpostulant, String nomPostulant, String prenomPostulant, String filliere) {
 
-
         message.setTo(emailpostulant);
         message.setSubject("Application Approuvee");
         message.setText("Chèr(e)  " + prenomPostulant + " " + nomPostulant + ", \n\n "
@@ -62,6 +61,23 @@ public class EmailController {
         // Send Message!
         this.emailSender.send(message);
 
+    }
+
+    @ResponseBody
+    public void confirmerCreationProfesseur(String emailProfesseur, String nomProfesseur, String prenomProfesseur, String nomUtilisateur, String motDePasse) {
+
+        message.setTo(emailProfesseur);
+        message.setSubject("Bienvenue à la FDSA");
+        message.setText("Professeur  " + prenomProfesseur + " " + nomProfesseur + ", \n\n "
+                + "La Direction Academique  de la FDSA vous souhaite la plus cordiale bienvenue sur sa platforme."
+                + "Priere d'utiliser les informations ci-dessous pour accesder aux ressources de la faculte.\n\n"
+                + "Nom d'utilisateur: "+ nomUtilisateur +"\n"
+                + "Mot de Passe temporaire: "+ motDePasse +"\n\n"
+
+                + "Cordialement\n Direction Academique\n Faculte Des Science Appliquees(FDSA)");
+
+        // Send Message!
+        this.emailSender.send(message);
 
     }
 

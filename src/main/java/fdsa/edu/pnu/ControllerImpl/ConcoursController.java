@@ -44,4 +44,9 @@ public class ConcoursController implements IConcoursController {
         concoursService.delete(id);
     }
 
+    @Override
+    public Concours update(Integer id, Concours dto) {
+      return  concoursService.update(id, dto);
+    }
+
 }

@@ -8,27 +8,6 @@
  * <p>
  * Licensee:
  * License Type: Evaluation
- * <p>
- * Licensee:
- * License Type: Evaluation
- * <p>
- * Licensee:
- * License Type: Evaluation
- * <p>
- * Licensee:
- * License Type: Evaluation
- * <p>
- * Licensee:
- * License Type: Evaluation
- * <p>
- * Licensee:
- * License Type: Evaluation
- * <p>
- * Licensee:
- * License Type: Evaluation
- * <p>
- * Licensee:
- * License Type: Evaluation
  */
 /**
  * Licensee:
@@ -36,16 +15,21 @@
  */
 package fdsa.edu.pnu.Model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
 
 @Entity
+
+
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
+//        property = "id")
+//@JsonIdentityReference(alwaysAsId = true)
 @Table(name = "Utilisateur")
 @Inheritance(strategy = InheritanceType.JOINED)
+//@DiscriminatorValue("Utilisateur")
 @PrimaryKeyJoinColumn(name = "PersonneID", referencedColumnName = "ID")
+
 public class Utilisateur extends Personne implements Serializable {
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -68,10 +52,10 @@ public class Utilisateur extends Personne implements Serializable {
 //    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
 //    private java.util.Set groupe = new java.util.HashSet();
 
-//	@OneToOne(mappedBy="etre", targetEntity=fdsa.edu.PNUFDSA.Model.Postulant.class, fetch=FetchType.LAZY)	
-//	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
+//	@OneToOne(mappedBy="etre", targetEntity=fdsa.edu.PNUFDSA.Model.Postulant.class, fetch=FetchType.LAZY)
+//	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
 //	private fdsa.edu.PNUFDSA.Model.Postulant postulant;
-//	
+//
 
 
     @Column(name = "Status")
@@ -129,7 +113,6 @@ public class Utilisateur extends Personne implements Serializable {
     /**
      * @return the roles
      */
-    @JsonManagedReference
     public Set<Role> getRoles() {
         return role;
     }

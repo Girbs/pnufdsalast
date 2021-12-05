@@ -12,6 +12,7 @@ import fdsa.edu.pnu.Repository.ProfesseurDAO;
 import fdsa.edu.pnu.Repository.RoleDAO;
 import fdsa.edu.pnu.Security.PasswordGenerator;
 import fdsa.edu.pnu.Service.IProfesseurService;
+import fdsa.edu.pnu.mail.EmailController;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -34,6 +35,8 @@ public class ProfesseurService implements IProfesseurService {
     @Autowired
     private ProfesseurDAO professeurDAO;
 
+    @Autowired
+    private EmailController ec;
     @Autowired
     private PasswordGenerator password;
 
@@ -67,18 +70,17 @@ public class ProfesseurService implements IProfesseurService {
     @Override
     public Professeur save(Professeur professeur) {
 
-        String pass = "Pass";
-       // String pass = password.randomPassword();
+        //String pass = "Pass";
+        String pass = password.randomPassword();
         System.out.println(pass);
         System.out.println(pass);
         professeur.setUserPassword(passwordEncoder.encode(pass));
-
         Set<Role> role = new HashSet<>();
         // role.add(new Role());
         role.add(roleDAO.findById(2).get());
         //  role.add(roleDAO.findById(2).get());
         professeur.setRoles(role);
-
+        ec.confirmerCreationProfesseur(professeur.getUserName(), professeur.getPrenom(), professeur.getNom(), professeur.getUserName(), professeur.getUserPassword());
         return professeurDAO.save(professeur);
     }
 
