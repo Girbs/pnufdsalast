@@ -27,7 +27,6 @@ public class PostulantControllerImpl implements IPostulantController {
     @Autowired
     public EmailController seec;
 
-
     /**
      * Selectionner par ID
      *
@@ -43,12 +42,10 @@ public class PostulantControllerImpl implements IPostulantController {
         return postulantService.findById(id);
     }
 
-
     @Override
     public PostulantDTO savePostulant(PostulantDTO dto) {
         return postulantService.save(dto);
     }
-
 
     @Override
     public void delete(Integer id) {
@@ -60,5 +57,4 @@ public class PostulantControllerImpl implements IPostulantController {
         System.out.println("This method is getting called for update");
         return postulantService.update(id, dto);
     }
-
 }

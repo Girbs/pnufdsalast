@@ -13,12 +13,8 @@ import java.util.List;
 public interface IConcoursService {
 
     public List<ConcoursDTO> findAll();
-
     public ConcoursDTO findById(Integer id);
-
     public Concours save(Concours dto);
     public Concours update(Integer id, Concours concours);
-    public Concours saveRelatedRecords(Concours concours, Matiere matiere);
-
     public void delete(Integer id);
 }

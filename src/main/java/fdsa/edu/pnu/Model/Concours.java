@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -14,7 +15,7 @@ import java.util.List;
 		property = "id")
 @JsonIdentityReference(alwaysAsId = true)
 @Table(name = "Concours")
-public class Concours implements Serializable {
+public class Concours extends Audit<String> implements Serializable {
 	@Column(name = "ID", nullable = false, length = 10)
 	@Id
 	@GeneratedValue(generator = "PNU_CONCOURS_ID_GENERATOR")
@@ -69,6 +70,9 @@ public class Concours implements Serializable {
 	}
 
 	public List<PlannificationConcours> getPlannificationConcourses() {
+		if(plannificationConcourses==null){
+			plannificationConcourses= new ArrayList<PlannificationConcours>();
+		}
 		return plannificationConcourses;
 	}
 

@@ -65,6 +65,9 @@ public class ConcoursService implements IConcoursService {
         );
     }
 
+
+
+
     /**
      * Enregistrer Etudiant
      *
@@ -80,20 +83,16 @@ public class ConcoursService implements IConcoursService {
 
     @Override
     public Concours update(Integer id, Concours concours) {
-        return concoursDAO.save(concours);
-    }
-
-
-    @Override
-    public Concours saveRelatedRecords(Concours dto, Matiere matiere) {
-       Concours c = concoursDAO.findById(dto.getId()).get();
-        if( c.getPlannificationConcourses()!=null) {
-            c.getPlannificationConcourses().forEach(a -> {
+        Concours c = concoursDAO.findById(id).get();
+        Concours c1 = concoursDAO.save(concours);
+        concours.getPlannificationConcourses().forEach(a -> {
                 a.setConcours(c);
-                a.setMatiere(matiereDAO.findById(matiere.getId()).get());
+                a.setMatiere(matiereDAO.findById(a.getMatiere().getId()).get());
+                //a.setMatiere(matiereDAO.findById(matiere.getId()).get());
                 plannificationConcoursDAO.save(a);
-            });
-        }
+           });
+     c.setDescription(concours.getDescription());
+
         return concoursDAO.save(c);
     }
 

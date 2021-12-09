@@ -24,7 +24,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @Table(name="Matiere")
-public class Matiere implements Serializable {
+public class Matiere extends Audit<String>  implements Serializable {
 
 	@Column(name="ID", nullable=false, length=10)	
 	@Id	

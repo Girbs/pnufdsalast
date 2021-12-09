@@ -6,7 +6,11 @@
 package fdsa.edu.pnu.Controller;
 
 import fdsa.edu.pnu.DTO.ConcoursDTO;
+import fdsa.edu.pnu.DTO.MatiereDTO;
+import fdsa.edu.pnu.DTO.PostulantDTO;
 import fdsa.edu.pnu.Model.Concours;
+import fdsa.edu.pnu.Model.ExampleStudent;
+import fdsa.edu.pnu.Model.Matiere;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -37,6 +41,24 @@ public interface IConcoursController {
             @ApiResponse(code = 404, message = "Aucun concours n'existe dans la BDD avec l'ID fourni")
     })
     ConcoursDTO findById(@PathVariable("id") Integer id);
+
+
+    //@PreAuthorize("hasRole('Student')")
+    @PutMapping  (value = "/concours/modifier/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Enregistrer un COncours", notes = "Cette methode permet d'enregistrer ou modifier un concours", response = ConcoursDTO.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "L'objet le concours cree / modifie"),
+            @ApiResponse(code = 400, message = "L'objet concours n'est pas valide")
+    })
+    Concours update(@PathVariable("id") Integer id,@RequestBody Concours dto);
+
+    @DeleteMapping(value = "/concours/supprimer/{id}")
+    @ApiOperation(value = "Supprimer un concours", notes = "Cette methode permet de supprimer un concours par ID")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Le concours a ete supprime")
+    })
+    void delete(@PathVariable("id") Integer id);
+
     //@PreAuthorize("hasRole('Student')")
     @PostMapping(value = "/concours/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Enregistrer un COncours", notes = "Cette methode permet d'enregistrer ou modifier un concours", response = ConcoursDTO.class)
@@ -46,17 +68,4 @@ public interface IConcoursController {
     })
     Concours save(@RequestBody Concours dto);
 
-    @DeleteMapping(value = "/concours/supprimer/{id}")
-    @ApiOperation(value = "Supprimer un concours", notes = "Cette methode permet de supprimer un concours par ID")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Le concours a ete supprime")
-    })
-    void delete(@PathVariable("id") Integer id);
-
-    @DeleteMapping(value = "/concours/modifier/{id}")
-    @ApiOperation(value = "Modifier un concours", notes = "Cette methode permet de modifier un concours par ID")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Le concours a ete Modifier")
-    })
-    Concours update(@PathVariable("id") Integer id, @RequestBody Concours dto);
 }

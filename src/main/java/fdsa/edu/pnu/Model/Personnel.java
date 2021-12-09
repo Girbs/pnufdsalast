@@ -33,6 +33,7 @@ public class Personnel extends Utilisateur implements Serializable {
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="FonctionID", referencedColumnName="ID") }, foreignKey=@ForeignKey(name="FKPersonnel768785"))	
 	private Fonction fonctionpersonel;
+
 	
 	public void setFonctionpersonel(Fonction value) {
 		this.fonctionpersonel = value;

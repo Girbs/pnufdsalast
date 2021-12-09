@@ -81,6 +81,7 @@ public class JWTService implements UserDetailsService {
         return authorities;
     }
 
+
     private void authenticate(String userName, String userPassword) throws Exception {
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userName, userPassword));

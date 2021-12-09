@@ -26,7 +26,7 @@ import java.util.List;
 @AllArgsConstructor
 
 @Table(name="PlannificationConcours")
-public class PlannificationConcours implements Serializable {
+public class PlannificationConcours  extends Audit<String> implements Serializable {
 	public PlannificationConcours() {
 	}
 	

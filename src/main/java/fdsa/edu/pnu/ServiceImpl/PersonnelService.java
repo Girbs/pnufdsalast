@@ -7,9 +7,15 @@ package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.Model.Personnel;
 import fdsa.edu.pnu.Repository.PersonnelDAO;
+
+import java.util.List;
 import java.util.Optional;
+
+import fdsa.edu.pnu.Security.PasswordGenerator;
+import fdsa.edu.pnu.Service.IPersonnel;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 /**
@@ -21,29 +27,40 @@ import org.springframework.stereotype.Service;
 @Service
 
 
-public class PersonnelService {
+public class PersonnelService implements IPersonnel {
     
     @Autowired
-     private PersonnelDAO personnelDAO;
-    
-    public Optional<Personnel> getPersonnel(final int id) {
-        return personnelDAO.findById(id);
-    }
-    
-     public Iterable<Personnel> getPersonnel() {
+    private PersonnelDAO personnelDAO;
+
+    @Autowired
+    private PasswordGenerator password;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    @Override
+    public List<Personnel> findAll() {
         return personnelDAO.findAll();
     }
 
-    public void deletePersonnel(final int id) {
-       personnelDAO.deleteById(id);
+    @Override
+    public Optional<Personnel> findById(Integer id) {
+        return personnelDAO.findById(id);
     }
 
-    public Personnel savePersonnel(Personnel Personnel) {
-        Personnel savedPersonnel = personnelDAO.save(Personnel);
-        return savedPersonnel;
+
+    @Override
+    public Personnel save(Personnel personnel) {
+        String pass = "admin";
+        //String pass = password.randomPassword();
+        System.out.println(pass);
+        System.out.println(pass);
+        personnel.setUserPassword(passwordEncoder.encode(pass));
+        return personnelDAO.save(personnel);
     }
-    
-    
-    
-    
+
+    @Override
+    public void delete(Integer id) {
+        personnelDAO.deleteById(id);
+    }
 }
