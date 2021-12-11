@@ -8,8 +8,10 @@ package fdsa.edu.pnu.ServiceImpl;
 import fdsa.edu.pnu.DTO.PlannificationConcoursDTO;
 import fdsa.edu.pnu.Exception.EntityNotFoundException;
 import fdsa.edu.pnu.Exception.ErrorCodes;
+import fdsa.edu.pnu.Model.Matiere;
 import fdsa.edu.pnu.Model.PlannificationConcours;
 import fdsa.edu.pnu.Repository.HistoriqueExamenConcoursDAO;
+import fdsa.edu.pnu.Repository.MatiereDAO;
 import fdsa.edu.pnu.Repository.PlannificationConcoursDAO;
 import fdsa.edu.pnu.Service.IPlannificationConcoursService;
 import lombok.Data;
@@ -31,6 +33,8 @@ public class PlannificationConcoursService implements IPlannificationConcoursSer
     @Autowired
     private PlannificationConcoursDAO plannificationConcoursDAO;
 
+    @Autowired
+    private MatiereDAO matiereDAO;
     @Autowired
     private HistoriqueExamenConcoursDAO historiqueExamenConcoursDAO;
     
@@ -55,13 +59,15 @@ public class PlannificationConcoursService implements IPlannificationConcoursSer
 
     @Override
     public PlannificationConcours save(PlannificationConcours plannificationConcours) {
-        PlannificationConcours pc = plannificationConcoursDAO.save(plannificationConcours);
-        if( plannificationConcours.getHistoriqueExamenConcours()!=null) {
-            plannificationConcours.getHistoriqueExamenConcours().forEach(a -> {
-                a.setPlannificationConcours(pc);
-                historiqueExamenConcoursDAO.save(a);
-            });
-        }
+        Matiere m = matiereDAO.findById(plannificationConcours.getMatiere().getId()).get();
+        plannificationConcours.setMatiere(m);
+//        PlannificationConcours pc = plannificationConcoursDAO.save(plannificationConcours);
+//        if( plannificationConcours.getHistoriqueExamenConcours()!=null) {
+//            plannificationConcours.getHistoriqueExamenConcours().forEach(a -> {
+//                a.setPlannificationConcours(pc);
+//                historiqueExamenConcoursDAO.save(a);
+//            });
+//        }
         return plannificationConcoursDAO.save(plannificationConcours);
     }
 

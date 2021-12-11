@@ -13,6 +13,8 @@
  */
 package fdsa.edu.pnu.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -48,10 +50,11 @@ public class Matiere extends Audit<String>  implements Serializable {
 	
 	@Column(name="NombreDeCreditStandard", nullable=false, length=10)	
 	private int nombreDeCreditStandard;
-	
+
 	@OneToMany(mappedBy="matiere", targetEntity= Cours.class)
 	private List<Cours> cours ;
-	
+
+	@JsonManagedReference
     @OneToMany(mappedBy="matiere", targetEntity= PlannificationConcours.class)
 	private List<PlannificationConcours> plannificationConcourses;
 

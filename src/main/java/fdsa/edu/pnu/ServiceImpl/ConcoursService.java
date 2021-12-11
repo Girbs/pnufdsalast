@@ -37,7 +37,6 @@ public class ConcoursService implements IConcoursService {
     @Autowired
     private MatiereDAO matiereDAO;
 
-
     @Override
     public List<ConcoursDTO> findAll() {
         return concoursDAO.findAll().stream()
@@ -84,7 +83,7 @@ public class ConcoursService implements IConcoursService {
     @Override
     public Concours update(Integer id, Concours concours) {
         Concours c = concoursDAO.findById(id).get();
-        Concours c1 = concoursDAO.save(concours);
+       // Concours c1 = concoursDAO.save(concours);
         concours.getPlannificationConcourses().forEach(a -> {
                 a.setConcours(c);
                 a.setMatiere(matiereDAO.findById(a.getMatiere().getId()).get());

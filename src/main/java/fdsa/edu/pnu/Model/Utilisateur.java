@@ -42,6 +42,8 @@ public class Utilisateur extends Personne implements Serializable {
             })
     private Set<Role> role;
 
+
+
 //    @ManyToMany(mappedBy = "utlilisateurs", targetEntity = fdsa.edu.pnu.Model.Groupe.class)
 //    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
 //    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
@@ -56,8 +58,6 @@ public class Utilisateur extends Personne implements Serializable {
 //	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
 //	private fdsa.edu.PNUFDSA.Model.Postulant postulant;
 //
-
-
     @Column(name = "Status")
     private boolean status;
 

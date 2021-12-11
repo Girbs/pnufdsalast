@@ -74,7 +74,7 @@ public class PlannificationConcours  extends Audit<String> implements Serializab
 	public void setConcours(Concours concours) {
 		this.concours = concours;
 	}
-
+    @JsonBackReference
 	public Matiere getMatiere() {
 		return matiere;
 	}

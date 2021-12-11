@@ -1,6 +1,7 @@
 package fdsa.edu.pnu.Security;
 
 
+import fdsa.edu.pnu.Model.Role;
 import fdsa.edu.pnu.Model.Utilisateur;
 import fdsa.edu.pnu.Repository.UtilisateurDAO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,7 +54,6 @@ public class JWTService implements UserDetailsService {
         userInfo.setUserPassword(user.getUserPassword());
         userInfo.setUserRoles(user.getRoles());
         return new JwtResponse(userInfo, newGeneratedToken);
-
     }
 
     @Override
@@ -68,17 +68,25 @@ public class JWTService implements UserDetailsService {
         } else {
             throw new UsernameNotFoundException("UserName Is not Valid");
         }
-
     }
 
     private Set getAuthorities(Utilisateur user) {
         Set authorities = new HashSet();
-
         user.getRoles().forEach(role ->
         {
-            authorities.add(new SimpleGrantedAuthority("ROLE_" + role.getRoleName()));
+           // authorities.add(new SimpleGrantedAuthority("ROLE_" + role.getRoleName()));
+            authorities.add(new SimpleGrantedAuthority(       "ROLE_"+role.getPermission()));
         });
         return authorities;
+    }
+
+    private Set getPermission(Role role) {
+        Set permissions = new HashSet();
+        role.getPermission().forEach(permission ->
+        {
+            permissions.add(permission.getNomPermission());
+        });
+        return permissions;
     }
 
 
