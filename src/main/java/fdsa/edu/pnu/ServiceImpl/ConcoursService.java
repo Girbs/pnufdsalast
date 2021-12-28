@@ -91,7 +91,9 @@ public class ConcoursService implements IConcoursService {
                 plannificationConcoursDAO.save(a);
            });
      c.setDescription(concours.getDescription());
-
+     c.setDateDebut(concours.getDateDebut());
+     c.setDateFin(concours.getDateFin());
+     c.setStatus(concours.getStatus());
         return concoursDAO.save(c);
     }
 

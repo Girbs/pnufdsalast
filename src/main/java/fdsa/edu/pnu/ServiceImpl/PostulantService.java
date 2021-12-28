@@ -83,7 +83,7 @@ public class PostulantService implements IPostulantService {
 
     @Override
     public PostulantDTO save(PostulantDTO dto) {
-
+       mail.confirmerInscription(dto.getEmail(),dto.getNom(), dto.getPrenom());
         return PostulantDTO.fromEntity(
                 postulantDAO.save(
                         PostulantDTO.toEntity(dto)
@@ -146,11 +146,11 @@ public class PostulantService implements IPostulantService {
         etudiant.setRoles(role);
         // PostulantDTO.fromEntity(postulantDAO.save(PostulantDTO.toEntity(dto)));
 
-//        if (!currentApplicationStatus.equals(statusToBeUpdated) && statusToBeUpdated.equals("Accepté")) {
-//            // Please focus on ! operator in above condition and replace your "Accepté" text if needed.
-//            mail.applicationApprovee(dto.getEmail(), dto.getNom(), dto.getPrenom(), dto.getFilliere());
-//        }
-
+        if (!currentApplicationStatus.equals(statusToBeUpdated) && statusToBeUpdated.equals("Accepté")) {
+            // Please focus on ! operator in above condition and replace your "Accepté" text if needed.
+            mail.applicationApprovee(dto.getEmail(), dto.getNom(), dto.getPrenom(), dto.getFilliere());
+        }
+        //postulantDAO.save(dto);
         return etudiantDAO.save(etudiant);
         // If application status is updated then we need to send an email confirmation to applicant.
         // So we will check for equality of current status that we have in DB and new status that we now want to store in DB.

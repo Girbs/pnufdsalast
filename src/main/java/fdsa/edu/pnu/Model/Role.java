@@ -22,7 +22,7 @@ public class Role implements Serializable {
     @ManyToMany(fetch = FetchType.EAGER, targetEntity = Utilisateur.class, mappedBy = "role", cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     private Set<Utilisateur> utlilisateurs;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "PermissionRole",
             joinColumns = {
                     @JoinColumn(name = "RoleId")

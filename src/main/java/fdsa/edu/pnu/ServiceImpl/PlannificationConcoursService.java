@@ -57,10 +57,15 @@ public class PlannificationConcoursService implements IPlannificationConcoursSer
         );
     }
 
+
+
+
+
+
     @Override
     public PlannificationConcours save(PlannificationConcours plannificationConcours) {
-        Matiere m = matiereDAO.findById(plannificationConcours.getMatiere().getId()).get();
-        plannificationConcours.setMatiere(m);
+//        Matiere m = matiereDAO.findById(plannificationConcours.getMatiere().getId()).get();
+//        plannificationConcours.setMatiere(m);
 //        PlannificationConcours pc = plannificationConcoursDAO.save(plannificationConcours);
 //        if( plannificationConcours.getHistoriqueExamenConcours()!=null) {
 //            plannificationConcours.getHistoriqueExamenConcours().forEach(a -> {

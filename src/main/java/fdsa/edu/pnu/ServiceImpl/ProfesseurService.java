@@ -80,7 +80,7 @@ public class ProfesseurService implements IProfesseurService {
         role.add(roleDAO.findById(2).get());
         //  role.add(roleDAO.findById(2).get());
         professeur.setRoles(role);
-        ec.confirmerCreationProfesseur(professeur.getUserName(), professeur.getPrenom(), professeur.getNom(), professeur.getUserName(), professeur.getUserPassword());
+        ec.confirmerCreationProfesseur(professeur.getUserName(), professeur.getPrenom(), professeur.getNom(), professeur.getUserName(), pass);
         return professeurDAO.save(professeur);
     }
 

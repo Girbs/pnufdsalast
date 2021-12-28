@@ -3,6 +3,7 @@ package fdsa.edu.pnu.Model;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
@@ -13,6 +14,9 @@ import java.util.List;
 @Entity
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
 		property = "id")
+
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id", scope = Long.class)
+
 @JsonIdentityReference(alwaysAsId = true)
 @Table(name = "Concours")
 public class Concours extends Audit<String> implements Serializable {
@@ -29,6 +33,12 @@ public class Concours extends Audit<String> implements Serializable {
 	private java.util.Date DateFin;
 	@Column(name = "Description", nullable = true, length = 255)
 	private String description;
+
+
+
+	@Column(name = "status", nullable = true, length = 255)
+	private String status;
+	@JsonIgnore
 	@OneToMany( fetch =FetchType.EAGER, mappedBy=  "concours", targetEntity = fdsa.edu.pnu.Model.PlannificationConcours.class)
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
@@ -67,6 +77,13 @@ public class Concours extends Audit<String> implements Serializable {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public List<PlannificationConcours> getPlannificationConcourses() {

@@ -1,6 +1,7 @@
 package fdsa.edu.pnu.Security;
 
 
+import fdsa.edu.pnu.Config.SpringSecurityAuditorAware;
 import fdsa.edu.pnu.Model.Role;
 import fdsa.edu.pnu.Model.Utilisateur;
 import fdsa.edu.pnu.Repository.UtilisateurDAO;
@@ -38,12 +39,16 @@ public class JWTService implements UserDetailsService {
     @Autowired
     private AuthenticationManager authenticationManager;
 
+    @Autowired
+    private SpringSecurityAuditorAware springSecurityAuditorAware;
+
     public JwtResponse createJwtToken(JwtRequest jwtRequest) throws Exception {
 
         String userName = jwtRequest.getUserName();
         String userPassword = jwtRequest.getUserPassword();
         authenticate(userName, userPassword);
         final UserDetails userDetails = loadUserByUsername(userName);
+        springSecurityAuditorAware.setCurrentUser(userName);
         jwtUtil.generateToken(userDetails);
 
         String newGeneratedToken = jwtUtil.generateToken(userDetails);
@@ -72,16 +77,17 @@ public class JWTService implements UserDetailsService {
 
     private Set getAuthorities(Utilisateur user) {
         Set authorities = new HashSet();
-        user.getRoles().forEach(role ->
-        {
+        user.getRoles().forEach(role -> {
            // authorities.add(new SimpleGrantedAuthority("ROLE_" + role.getRoleName()));
-            authorities.add(new SimpleGrantedAuthority(       "ROLE_"+role.getPermission()));
+                    for(String permission:getPermission(role)) {
+            authorities.add(new SimpleGrantedAuthority(  "ROLE_"+permission));
+                 }
         });
         return authorities;
     }
 
-    private Set getPermission(Role role) {
-        Set permissions = new HashSet();
+    private Set<String> getPermission(Role role) {
+        Set <String> permissions = new HashSet();
         role.getPermission().forEach(permission ->
         {
             permissions.add(permission.getNomPermission());

@@ -16,6 +16,6 @@ public class Permission {
     private Integer id;
     private String nomPermission;
     private String descriptionPermission;
-    @ManyToMany(fetch = FetchType.EAGER, targetEntity = Role.class, mappedBy = "permission", cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
-    private Set<Role> roles;
+//    @ManyToMany(fetch = FetchType.LAZY, targetEntity = Role.class, mappedBy = "permission", cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
+//    private Set<Role> roles;
 }

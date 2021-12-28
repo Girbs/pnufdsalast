@@ -26,7 +26,7 @@ import java.util.List;
  */
 public interface IConcoursController {
 
-  //  @PreAuthorize("hasAnyRole( '')")
+    @PreAuthorize("hasAnyRole( 'lireConcours')")
     @GetMapping(value = "/concours/all", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Renvoi la liste des Concours", notes = "Cette methode permet de chercher et renvoyer la liste des concours qui existent "
             + "dans la BDD", responseContainer = "List<ConcoursDTO>")
@@ -35,7 +35,7 @@ public interface IConcoursController {
     })
     List<ConcoursDTO> findAll();
 
-   // @PreAuthorize("hasAnyRole('Administrateur', 'Responsable Academique')")
+    @PreAuthorize("hasAnyRole('lireConcours')")
     @GetMapping(value = "/concours/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Rechercher un concours par ID", notes = "Cette methode permet de chercher un concours par son ID", response = ConcoursDTO.class)
     @ApiResponses(value = {
@@ -45,7 +45,7 @@ public interface IConcoursController {
     ConcoursDTO findById(@PathVariable("id") Integer id);
 
 
-  //  @PreAuthorize("hasAnyRole('Administrateur', 'Responsable Academique')")
+    @PreAuthorize("hasAnyRole('modifierConcours')")
     @PutMapping  (value = "/concours/modifier/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Enregistrer un COncours", notes = "Cette methode permet d'enregistrer ou modifier un concours", response = ConcoursDTO.class)
     @ApiResponses(value = {
@@ -55,7 +55,7 @@ public interface IConcoursController {
     Concours update(@PathVariable("id") Integer id,@RequestBody Concours dto);
 
 
-  //  @PreAuthorize("hasAnyRole('Administrateur', 'Responsable Academique')")
+   @PreAuthorize("hasAnyRole('supplrimerConcours')")
     @DeleteMapping(value = "/concours/supprimer/{id}")
     @ApiOperation(value = "Supprimer un concours", notes = "Cette methode permet de supprimer un concours par ID")
     @ApiResponses(value = {
@@ -63,7 +63,7 @@ public interface IConcoursController {
     })
     void delete(@PathVariable("id") Integer id);
 
- //   @PreAuthorize("hasAnyRole('Administrateur', 'Responsable Academique')")
+    @PreAuthorize("hasAnyRole('creerConcours')")
     @PostMapping(value = "/concours/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Enregistrer un COncours", notes = "Cette methode permet d'enregistrer ou modifier un concours", response = ConcoursDTO.class)
     @ApiResponses(value = {
