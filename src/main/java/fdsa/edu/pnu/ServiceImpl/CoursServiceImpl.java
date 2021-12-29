@@ -7,7 +7,11 @@ package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.Model.Cours;
 import fdsa.edu.pnu.Repository.CoursDAO;
+
+import java.util.List;
 import java.util.Optional;
+
+import fdsa.edu.pnu.Service.ICoursService;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,31 +23,29 @@ import org.springframework.stereotype.Service;
  */
 @Data
 @Service
-public class CoursService {
+public class CoursServiceImpl implements ICoursService {
      @Autowired
     private CoursDAO coursDAO;
 
-    /**
-     *
-     * @param id
-     * @return
-     */
-    public Optional<Cours> getCours(final int id) {
+
+
+    @Override
+    public List<Cours> findAll() {
+        return  coursDAO.findAll();
+    }
+
+    @Override
+    public Optional<Cours> findById(Integer id) {
         return coursDAO.findById(id);
     }
 
-    public Iterable<Cours> getCours() {
-        return coursDAO.findAll();
+    @Override
+    public Cours save(Cours cours) {
+       return coursDAO.save(cours);
     }
 
-    public void deleteCours(final int id) {
-        coursDAO.deleteById(id);
+    @Override
+    public void delete(Integer id) {
+         coursDAO.deleteById(id);
     }
-
-    public Cours saveCours(Cours Cours) {
-        Cours savedCours = coursDAO.save(Cours);
-        return savedCours;
-    }
-
-  
 }

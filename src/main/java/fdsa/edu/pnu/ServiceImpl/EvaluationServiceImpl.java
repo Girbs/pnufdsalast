@@ -7,7 +7,11 @@ package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.Model.Evaluation;
 import fdsa.edu.pnu.Repository.EvaluationDAO;
+
+import java.util.List;
 import java.util.Optional;
+
+import fdsa.edu.pnu.Service.IEvaluationService;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,24 +22,27 @@ import org.springframework.stereotype.Service;
  */
 @Data
 @Service
-public class EvaluationService {
+public class EvaluationServiceImpl implements IEvaluationService {
      @Autowired
     private EvaluationDAO evaluationDAO;
 
-    public Optional<Evaluation> getEvaluation(final int id) {
-        return evaluationDAO.findById(id);
-    }
-
-    public Iterable<Evaluation> getEvaluation() {
+    @Override
+    public List<Evaluation> findAll() {
         return evaluationDAO.findAll();
     }
 
-    public void deleteEvaluation(final int id) {
-        evaluationDAO.deleteById(id);
+    @Override
+    public Optional<Evaluation> findById(Integer id) {
+        return evaluationDAO.findById(id);
     }
 
-    public Evaluation saveEvaluation(Evaluation Evaluation) {
-        Evaluation savedEvaluation = evaluationDAO.save(Evaluation);
-        return savedEvaluation;
+    @Override
+    public Evaluation save(Evaluation evaluation) {
+        return evaluationDAO.save(evaluation);
+    }
+
+    @Override
+    public void delete(Integer id) {
+        evaluationDAO.deleteById(id);
     }
 }

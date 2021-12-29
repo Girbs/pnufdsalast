@@ -48,7 +48,7 @@ public class JWTService implements UserDetailsService {
         String userPassword = jwtRequest.getUserPassword();
         authenticate(userName, userPassword);
         final UserDetails userDetails = loadUserByUsername(userName);
-        springSecurityAuditorAware.setCurrentUser(userName);
+
         jwtUtil.generateToken(userDetails);
 
         String newGeneratedToken = jwtUtil.generateToken(userDetails);

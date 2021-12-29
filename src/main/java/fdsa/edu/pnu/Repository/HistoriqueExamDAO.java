@@ -20,7 +20,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 
 
-public interface HistoriqueExamDAO extends CrudRepository<HistoriqueExam,Integer> {
+public interface HistoriqueExamDAO extends JpaRepository<HistoriqueExam,Integer> {
 //	public HistoriqueExam loadHistoriqueExamByORMID(int ID) throws PersistentException;
 //	public HistoriqueExam getHistoriqueExamByORMID(int ID) throws PersistentException;
 //	public HistoriqueExam loadHistoriqueExamByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException;
