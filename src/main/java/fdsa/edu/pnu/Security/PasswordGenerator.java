@@ -29,10 +29,10 @@ public class PasswordGenerator {
         int randNumberOfNumbers = random.nextInt(6 - 2) + 2;
         int randSpecialCaracterNumber = random.nextInt(6 - 2) + 2;
 
-        char arrStr[] = new char[randUpperNumber];
-        char arrStrLower[] = new char[randlowerAlphabet];
-        char arrStrNumber[] = new char[randNumberOfNumbers];
-        char arrStrSpecialChar[] = new char[randSpecialCaracterNumber];
+        char[] arrStr = new char[randUpperNumber];
+        char[] arrStrLower = new char[randlowerAlphabet];
+        char[] arrStrNumber = new char[randNumberOfNumbers];
+        char[] arrStrSpecialChar = new char[randSpecialCaracterNumber];
 
         String finalRandom = null;
         String upperAlphabetPart = null;

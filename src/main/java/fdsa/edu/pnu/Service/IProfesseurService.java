@@ -7,11 +7,11 @@ import java.util.List;
 
 public interface IProfesseurService {
 
-    public List<ProfesseurDTO> findAll();
+    List<ProfesseurDTO> findAll();
 
-    public ProfesseurDTO findById(Integer id);
+    ProfesseurDTO findById(Integer id);
 
-    public Professeur save(Professeur dto);
+    Professeur save(Professeur dto);
 
-    public void delete(Integer id);
+    void delete(Integer id);
 }

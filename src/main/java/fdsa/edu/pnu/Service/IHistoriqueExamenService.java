@@ -7,11 +7,11 @@ import java.util.Optional;
 
 public interface IHistoriqueExamenService {
 
-    public List<HistoriqueExam> findAll();
+    List<HistoriqueExam> findAll();
 
-    public Optional<HistoriqueExam> findById(Integer id);
+    Optional<HistoriqueExam> findById(Integer id);
 
-    public HistoriqueExam save(HistoriqueExam historiqueExam);
+    HistoriqueExam save(HistoriqueExam historiqueExam);
 
-    public void delete(Integer id);
+    void delete(Integer id);
 }

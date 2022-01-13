@@ -14,12 +14,12 @@ import java.util.List;
  */
 public interface IHistoriqueExamenConcoursService {
 
-    public List<HistoriqueExamenConcoursDTO> findAll();
+    List<HistoriqueExamenConcoursDTO> findAll();
 
-    public HistoriqueExamenConcoursDTO findById(Integer id);
+    HistoriqueExamenConcoursDTO findById(Integer id);
 
-    public HistoriqueExamenConcoursDTO save(HistoriqueExamenConcoursDTO dto);
+    HistoriqueExamenConcoursDTO save(HistoriqueExamenConcoursDTO dto);
 
-    public void delete(Integer id);
+    void delete(Integer id);
 
 }

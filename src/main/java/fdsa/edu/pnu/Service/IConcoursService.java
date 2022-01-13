@@ -12,9 +12,9 @@ import java.util.List;
  */
 public interface IConcoursService {
 
-    public List<ConcoursDTO> findAll();
-    public ConcoursDTO findById(Integer id);
-    public Concours save(Concours dto);
-    public Concours update(Integer id, Concours concours);
-    public void delete(Integer id);
+    List<ConcoursDTO> findAll();
+    ConcoursDTO findById(Integer id);
+    Concours save(Concours dto);
+    Concours update(Integer id, Concours concours);
+    void delete(Integer id);
 }

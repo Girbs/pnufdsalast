@@ -7,10 +7,12 @@ package fdsa.edu.pnu.Controller;
 
 import fdsa.edu.pnu.DTO.PostulantDTO;
 import fdsa.edu.pnu.Model.Etudiant;
+import fdsa.edu.pnu.Model.Postulant;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.http.MediaType;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -59,5 +61,17 @@ public interface IPostulantController {
             @ApiResponse(code = 400, message = "L'objet postulant n'est pas valide")
     })
     Etudiant update(@PathVariable("id") Integer id, @RequestBody PostulantDTO dto);
+
+
+    @PreAuthorize("hasAnyRole( 'lireConcours')")
+
+    @GetMapping(value = "/postulant", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Rechercher un article par ID", notes = "Cette methode permet de chercher un postulant par son ID", response = PostulantDTO.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "L'article a ete trouve dans la BDD"),
+            @ApiResponse(code = 404, message = "Aucun article n'existe dans la BDD avec l'ID fourni")
+    })
+    List<Postulant> findByStatus(@RequestParam(required = false) String status);
+
 
 }

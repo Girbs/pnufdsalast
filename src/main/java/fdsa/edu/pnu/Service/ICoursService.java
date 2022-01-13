@@ -6,11 +6,11 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ICoursService {
-    public List<Cours> findAll();
+    List<Cours> findAll();
 
-    public Optional<Cours> findById(Integer id);
+    Optional<Cours> findById(Integer id);
 
-    public Cours save(Cours dto);
+    Cours save(Cours dto);
 
-    public void delete(Integer id);
+    void delete(Integer id);
 }

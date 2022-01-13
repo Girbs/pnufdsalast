@@ -8,6 +8,7 @@ package fdsa.edu.pnu.ControllerImpl;
 import fdsa.edu.pnu.Controller.IPostulantController;
 import fdsa.edu.pnu.DTO.PostulantDTO;
 import fdsa.edu.pnu.Model.Etudiant;
+import fdsa.edu.pnu.Model.Postulant;
 import fdsa.edu.pnu.ServiceImpl.PostulantService;
 import fdsa.edu.pnu.mail.EmailController;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,4 +58,10 @@ public class PostulantControllerImpl implements IPostulantController {
         System.out.println("This method is getting called for update");
         return postulantService.update(id, dto);
     }
+
+    @Override
+    public List<Postulant> findByStatus(String status) {
+        return postulantService.getApplicationParStatut(status);
+    }
+
 }

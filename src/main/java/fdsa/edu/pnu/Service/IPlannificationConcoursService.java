@@ -16,13 +16,13 @@ import java.util.List;
  */
 public interface IPlannificationConcoursService {
 
-    public List<PlannificationConcoursDTO> findAll();
+    List<PlannificationConcoursDTO> findAll();
 
-    public PlannificationConcoursDTO findById(Integer id);
+    PlannificationConcoursDTO findById(Integer id);
 
-    public PlannificationConcours save(PlannificationConcours dto);
+    PlannificationConcours save(PlannificationConcours dto);
 
 //    public PlannificationConcours update(Concours concours);
 
-    public void delete(Integer id);
+    void delete(Integer id);
 }

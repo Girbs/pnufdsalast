@@ -14,11 +14,11 @@ import java.util.List;
  */
 public interface IMatiereService {
 
-    public List<MatiereDTO> findAll();
+    List<MatiereDTO> findAll();
 
-    public MatiereDTO findById(Integer id);
+    MatiereDTO findById(Integer id);
 
-    public MatiereDTO save(MatiereDTO dto);
+    MatiereDTO save(MatiereDTO dto);
 
-    public void delete(Integer id);
+    void delete(Integer id);
 }

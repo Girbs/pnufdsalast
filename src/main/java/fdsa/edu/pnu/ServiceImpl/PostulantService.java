@@ -8,6 +8,7 @@ package fdsa.edu.pnu.ServiceImpl;
 import fdsa.edu.pnu.DTO.PostulantDTO;
 import fdsa.edu.pnu.Exception.EntityNotFoundException;
 import fdsa.edu.pnu.Model.Etudiant;
+import fdsa.edu.pnu.Model.Postulant;
 import fdsa.edu.pnu.Model.Role;
 import fdsa.edu.pnu.Repository.EtudiantDAO;
 import fdsa.edu.pnu.Repository.PersonneDAO;
@@ -113,6 +114,12 @@ public class PostulantService implements IPostulantService {
 //    }
         postulantDAO.deleteById(id);
     }
+
+    @Override
+    public List<Postulant> getApplicationParStatut(String statut_application) {
+        return postulantDAO.findAllByStatutApplicatin(statut_application);
+    }
+
 
     @Override
     public Etudiant update(Integer id, PostulantDTO dto) {

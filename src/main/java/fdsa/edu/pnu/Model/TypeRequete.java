@@ -33,9 +33,7 @@ public class TypeRequete implements Serializable {
 		if (!(aObj instanceof TypeRequete))
 			return false;
 		TypeRequete typerequete = (TypeRequete)aObj;
-		if ((getType() != null && !getType().equals(typerequete.getType())) || (getType() == null && typerequete.getType() != null))
-			return false;
-		return true;
+		return (getType() == null || getType().equals(typerequete.getType())) && (getType() != null || typerequete.getType() == null);
 	}
 	
 	public int hashCode() {

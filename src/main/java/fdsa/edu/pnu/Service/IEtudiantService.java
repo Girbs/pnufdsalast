@@ -14,8 +14,8 @@ import java.util.List;
  */
 public interface IEtudiantService {
 
-    public List<EtudiantDTO> findAll();
-    public EtudiantDTO findById(Integer id);
-    public EtudiantDTO save(EtudiantDTO dto);
-    public void delete(Integer id);
+    List<EtudiantDTO> findAll();
+    EtudiantDTO findById(Integer id);
+    EtudiantDTO save(EtudiantDTO dto);
+    void delete(Integer id);
 }

@@ -53,7 +53,7 @@ public class EmailController {
                 + "Le departement d'admission de la  (FDSA) a le plaisir de vous informer"
                 + "que votre application pour le programme de " + filliere + " a été retenue."
                 + "Priere de cliquer sur le lien ci-dessous pour accepter "
-                + "l\'offre et du coup activer votre compte d'etutiant.Une fois que votre est activé"
+                + "l'offre et du coup activer votre compte d'etutiant.Une fois que votre est activé"
                 + "vous retrouverez par email, votre num d'utilisateur et password pour acceder aux ressources des etudiants.\n\n "
 
                 + "Cordialement\n Bureau d'Admission\n Faculte Des Science Appliquees(FDSA)");

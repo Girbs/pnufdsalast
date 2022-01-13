@@ -23,7 +23,7 @@ import org.springframework.stereotype.Repository;
 public interface RoleDAO extends JpaRepository<Role,Integer> {
     
     @Query(value = "select r from Role r where r.roleName = Etudiant")
-    public Role findRoleEtudiant();
+    Role findRoleEtudiant();
     
 //	public Role loadRoleByORMID(String role) throws PersistentException;
 //	public Role getRoleByORMID(String role) throws PersistentException;

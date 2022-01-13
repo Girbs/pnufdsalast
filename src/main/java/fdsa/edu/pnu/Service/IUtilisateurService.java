@@ -14,11 +14,11 @@ import java.util.List;
  */
 public interface IUtilisateurService {
 
-    public List<UtilisateurDTO> findAll();
+    List<UtilisateurDTO> findAll();
 
-    public UtilisateurDTO findById(Integer id);
+    UtilisateurDTO findById(Integer id);
 
-    public UtilisateurDTO save(UtilisateurDTO dto);
+    UtilisateurDTO save(UtilisateurDTO dto);
 
-    public void delete(Integer id);
+    void delete(Integer id);
 }

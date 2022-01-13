@@ -53,7 +53,7 @@ public enum ErrorCodes {
     UPDATE_PHOTO_EXCEPTION(14000),
     UNKNOWN_CONTEXT(14001);
 
-    private int code;
+    private final int code;
 
     ErrorCodes(int code) {
         this.code = code;

@@ -7,6 +7,8 @@ package fdsa.edu.pnu.Service;
 
 import fdsa.edu.pnu.DTO.PostulantDTO;
 import fdsa.edu.pnu.Model.Etudiant;
+import fdsa.edu.pnu.Model.Postulant;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -16,14 +18,15 @@ import java.util.List;
  */
 public interface IPostulantService {
    
-    public List<PostulantDTO> findAll();
+    List<PostulantDTO> findAll();
 
-    public PostulantDTO findById(Integer id);
+    PostulantDTO findById(Integer id);
 
-    public PostulantDTO save(PostulantDTO dto);
+    PostulantDTO save(PostulantDTO dto);
     
-    public Etudiant update(Integer id, PostulantDTO dto);
+    Etudiant update(Integer id, PostulantDTO dto);
 
-    public void delete(Integer id);
-    
+    void delete(Integer id);
+    List<Postulant> getApplicationParStatut(String statut_application);
+
 }

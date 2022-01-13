@@ -14,11 +14,11 @@ import java.util.List;
  */
 public interface IPersonneService {
     
-    public List<PersonneDTO> findAll();
+    List<PersonneDTO> findAll();
 
-    public PersonneDTO findById(Integer id);
+    PersonneDTO findById(Integer id);
 
-    public PersonneDTO save(PersonneDTO dto);
+    PersonneDTO save(PersonneDTO dto);
 
-    public void delete(Integer id);
+    void delete(Integer id);
 }

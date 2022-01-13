@@ -26,7 +26,7 @@ public class EtudiantDTO {
 //	private java.util.Set stages = new java.util.HashSet();
 //	private java.util.Set requetes = new java.util.HashSet();	
 //	private java.util.Set messages = new java.util.HashSet();
-    private static ModelMapper mapper = new ModelMapper();
+    private static final ModelMapper mapper = new ModelMapper();
 
     public static EtudiantDTO fromEntity(Etudiant etudiant) {
 
