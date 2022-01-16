@@ -23,9 +23,9 @@ import java.io.Serializable;
 import java.util.List;
 @Entity
 @Data
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "id")
-@JsonIdentityReference(alwaysAsId = true)
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
+//        property = "id")
+//@JsonIdentityReference(alwaysAsId = true)
 @Table(name="Postulant")
 public class Postulant implements Serializable {
 	public Postulant() {

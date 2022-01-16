@@ -66,7 +66,7 @@ public interface IPostulantController {
     @PreAuthorize("hasAnyRole( 'lireConcours')")
 
     @GetMapping(value = "/postulant", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Rechercher un article par ID", notes = "Cette methode permet de chercher un postulant par son ID", response = PostulantDTO.class)
+    @ApiOperation(value = "Rechercher un article par ID", notes = "Cette methode permet de chercher un postulant par son ID")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "L'article a ete trouve dans la BDD"),
             @ApiResponse(code = 404, message = "Aucun article n'existe dans la BDD avec l'ID fourni")

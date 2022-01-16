@@ -117,7 +117,9 @@ public class PostulantService implements IPostulantService {
 
     @Override
     public List<Postulant> getApplicationParStatut(String statut_application) {
-        return postulantDAO.findAllByStatutApplicatin(statut_application);
+
+       List <Postulant> lstPostulant = postulantDAO.findAllByStatutApplicatin(statut_application);
+       return lstPostulant;
     }
 
 
