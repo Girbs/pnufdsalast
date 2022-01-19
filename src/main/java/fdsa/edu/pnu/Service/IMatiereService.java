@@ -6,7 +6,10 @@
 package fdsa.edu.pnu.Service;
 
 import fdsa.edu.pnu.DTO.MatiereDTO;
+import fdsa.edu.pnu.Model.Matiere;
+
 import java.util.List;
+import java.util.Optional;
 
 /**
  *
@@ -14,9 +17,9 @@ import java.util.List;
  */
 public interface IMatiereService {
 
-    List<MatiereDTO> findAll();
+    List<Matiere> findAll();
 
-    MatiereDTO findById(Integer id);
+    Optional<Matiere> findById(Integer id);
 
     MatiereDTO save(MatiereDTO dto);
 

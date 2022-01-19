@@ -7,8 +7,11 @@ package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Controller.IMatiereController;
 import fdsa.edu.pnu.DTO.MatiereDTO;
+import fdsa.edu.pnu.Model.Matiere;
 import fdsa.edu.pnu.ServiceImpl.MatiereService;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,12 +26,12 @@ public class MatiereController implements IMatiereController {
     public MatiereService matiereService;
 
     @Override
-    public List<MatiereDTO> findAll() {
+    public List<Matiere> findAll() {
       return  matiereService.findAll();
     }
 
     @Override
-    public MatiereDTO findById(Integer id) {
+    public Optional<Matiere> findById(Integer id) {
      return matiereService.findById(id);
     }
 

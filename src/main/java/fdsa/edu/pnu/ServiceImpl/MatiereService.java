@@ -6,12 +6,12 @@
 package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.DTO.MatiereDTO;
-import fdsa.edu.pnu.Exception.EntityNotFoundException;
-import fdsa.edu.pnu.Exception.ErrorCodes;
+import fdsa.edu.pnu.Model.Matiere;
 import fdsa.edu.pnu.Repository.MatiereDAO;
 import fdsa.edu.pnu.Service.IMatiereService;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Optional;
+
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,22 +29,24 @@ public class MatiereService implements IMatiereService {
     private MatiereDAO matiereDAO;
 
     @Override
-    public List<MatiereDTO> findAll() {
-        return matiereDAO.findAll().stream()
-                .map(MatiereDTO::fromEntity)
-                .collect(Collectors.toList());
+    public List<Matiere> findAll() {
+        return matiereDAO.findAll();
+//                findAll.stream()
+//                .map(MatiereDTO::fromEntity)
+//                .collect(Collectors.toList());
     }
 
     @Override
-    public MatiereDTO findById(Integer id) {
+    public Optional<Matiere> findById(Integer id) {
         if (id == null) {
             return null;
         }
-        return matiereDAO.findById(id).map(MatiereDTO::fromEntity).orElseThrow(()
-                -> new EntityNotFoundException(
-                        "Aucun postulant avec l'ID = " + id + " n' ete trouve dans la BDD",
-                        ErrorCodes.ARTICLE_NOT_FOUND)
-        );
+        return matiereDAO.findById(id);
+//                .map(MatiereDTO::fromEntity).orElseThrow(()
+//                -> new EntityNotFoundException(
+//                        "Aucun postulant avec l'ID = " + id + " n' ete trouve dans la BDD",
+//                        ErrorCodes.ARTICLE_NOT_FOUND)
+        //);
     }
 
     @Override

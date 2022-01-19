@@ -6,10 +6,13 @@
 package fdsa.edu.pnu.Controller;
 
 import fdsa.edu.pnu.DTO.MatiereDTO;
+import fdsa.edu.pnu.Model.Matiere;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,7 +32,7 @@ public interface IMatiereController {
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "La liste des matiere / Une liste vide")
     })
-    List<MatiereDTO> findAll();
+    List<Matiere> findAll();
 
     @GetMapping(value = "/matiere/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Rechercher une matiere par ID", notes = "Cette methode permet de chercher une matiere par son ID", response = MatiereDTO.class)
@@ -37,7 +40,7 @@ public interface IMatiereController {
         @ApiResponse(code = 200, message = "La Matiere   a ete trouve dans la BDD"),
         @ApiResponse(code = 404, message = "Aucun article n'existe dans la BDD avec l'ID fourni")
     })
-    MatiereDTO findById(@PathVariable("id") Integer id);
+    Optional<Matiere> findById(@PathVariable("id") Integer id);
 
     @PostMapping(value = "/matiere/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Enregistrer une matie", notes = "Cette methode permet d'enregistrer ou modifier une matiere", response = MatiereDTO.class)

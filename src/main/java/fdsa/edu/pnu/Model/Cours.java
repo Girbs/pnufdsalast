@@ -27,9 +27,9 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "id")
-@JsonIdentityReference(alwaysAsId = true)
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
+//        property = "id")
+//@JsonIdentityReference(alwaysAsId = true)
 @Table(name="Cours")
 public class Cours implements Serializable {
 	
@@ -39,14 +39,13 @@ public class Cours implements Serializable {
 	@org.hibernate.annotations.GenericGenerator(name="PNU_COURS_ID_GENERATOR", strategy="native")	
 	private int id;
 	
-	@ManyToOne(targetEntity= Professeur.class, fetch=FetchType.LAZY)
-	@JoinColumns(value={ @JoinColumn(name="ProfesseurPersonneID", referencedColumnName="PersonneID", nullable=false) }, foreignKey=@ForeignKey(name="Enseigner"))	
-	private Professeur professeur;
+//	@ManyToOne(targetEntity= Professeur.class, fetch=FetchType.LAZY)
+//	@JoinColumns(value={ @JoinColumn(name="ProfesseurPersonneID", referencedColumnName="PersonneID", nullable=false) }, foreignKey=@ForeignKey(name="Enseigner"))
+//	private Professeur professeur;
 	
-	@ManyToOne(targetEntity= Matiere.class, fetch=FetchType.LAZY)
-	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinColumns(value={ @JoinColumn(name="MatiereID", referencedColumnName="ID") }, foreignKey=@ForeignKey(name="FK_Matiere_Cours"))	
-	private Matiere matiere;
+//	@ManyToOne(targetEntity= Matiere.class, fetch=FetchType.LAZY)
+//	@JoinColumns(value={ @JoinColumn(name="MatiereID", referencedColumnName="ID") }, foreignKey=@ForeignKey(name="FK_Matiere_Cours"))
+//	private Matiere matiere;
 	
 	@Column(name="CodeCours", nullable=true, length=255)	
 	private String codeCours;
@@ -57,8 +56,8 @@ public class Cours implements Serializable {
 	@Column(name="MatiereDesc", nullable=true, length=255)	
 	private String matiereDesc;
 	
-	@Column(name="CreditReel", nullable=true, length=10)	
-	private int creditReel;
+//	@Column(name="CreditReel", nullable=true, length=10)
+//	private int creditReel;
 	
 	@Column(name="Duree", nullable=true, length=255)	
 	private String duree;
