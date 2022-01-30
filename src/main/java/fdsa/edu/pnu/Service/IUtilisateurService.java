@@ -5,6 +5,7 @@
  */
 package fdsa.edu.pnu.Service;
 
+import fdsa.edu.pnu.DTO.ChangerMotDePasseUtilisateurDto;
 import fdsa.edu.pnu.DTO.UtilisateurDTO;
 import java.util.List;
 
@@ -21,4 +22,6 @@ public interface IUtilisateurService {
     UtilisateurDTO save(UtilisateurDTO dto);
 
     void delete(Integer id);
+
+    UtilisateurDTO changerMotDePasse(ChangerMotDePasseUtilisateurDto dto);
 }

@@ -6,27 +6,50 @@
 package fdsa.edu.pnu.ControllerImpl;
 
 
+import fdsa.edu.pnu.Controller.IAnneeAcademiqueController;
 import fdsa.edu.pnu.ServiceImpl.AnneeAcademiqueService;
 import fdsa.edu.pnu.Model.AnneeAcademique;
 
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+import java.util.Optional;
 
 
 @RestController
-public class AnneeAcademiqueController {
+public class AnneeAcademiqueController implements IAnneeAcademiqueController {
 
    @Autowired
     private AnneeAcademiqueService anneeAcademiqueService;
 
-   
-     @GetMapping("/anneeAcademique")
-    public Iterable<AnneeAcademique> getAnneeAcademique() {
-       return   anneeAcademiqueService.getAnneeAcademique();
+    @Override
+    public List<AnneeAcademique> findAll() {
+        return anneeAcademiqueService.findAll();
     }
+
+    @Override
+    public Optional<AnneeAcademique> findById(Integer id) {
+        return anneeAcademiqueService.findById(id);
+    }
+
+    @Override
+    public AnneeAcademique update(Integer id, AnneeAcademique anneeAcademique) {
+        return null;
+    }
+
+    @Override
+    public void delete(Integer id) {
+        anneeAcademiqueService.delete(id);
+    }
+
+    @Override
+    public AnneeAcademique save(AnneeAcademique anneeAcademique) {
+        return anneeAcademiqueService.save(anneeAcademique);
+    }
+
 
 //    // student
 //    // old student

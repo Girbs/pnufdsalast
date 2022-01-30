@@ -8,25 +8,44 @@ package fdsa.edu.pnu.ServiceImpl;
 import java.util.Optional;
 import fdsa.edu.pnu.Model.AnneeAcademique;
 
+import fdsa.edu.pnu.Service.IAnneeAcademiqueService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import fdsa.edu.pnu.Repository.AnneeAcademiqueDAO;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import lombok.Data;
 
 @Data
 @Service
-public class AnneeAcademiqueService  {
+public class AnneeAcademiqueService implements IAnneeAcademiqueService {
 
     @Autowired
     private AnneeAcademiqueDAO anneeAcademiqueDAO;
 
-    public Iterable<AnneeAcademique> getAnneeAcademique() {
-      return   anneeAcademiqueDAO.findAll();
+    @Override
+    public List<AnneeAcademique> findAll() {
+        return   anneeAcademiqueDAO.findAll();
     }
 
+    @Override
+    public Optional<AnneeAcademique> findById(Integer id) {
+        return anneeAcademiqueDAO.findById(id);
+    }
+
+    @Override
+    public AnneeAcademique save(AnneeAcademique anneeAcademique) {
+        return anneeAcademiqueDAO.save(anneeAcademique);
+    }
+
+    @Override
+    public AnneeAcademique update(Integer id, AnneeAcademique anneeAcademique) {
+        return null;
+    }
+
+    @Override
+    public void delete(Integer id) {
+        anneeAcademiqueDAO.deleteById(id);
+    }
 }

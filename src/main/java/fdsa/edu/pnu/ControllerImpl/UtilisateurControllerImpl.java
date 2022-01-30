@@ -5,6 +5,7 @@
  */
 package fdsa.edu.pnu.ControllerImpl;
 
+import fdsa.edu.pnu.DTO.ChangerMotDePasseUtilisateurDto;
 import fdsa.edu.pnu.DTO.UtilisateurDTO;
 import fdsa.edu.pnu.Model.Utilisateur;
 import fdsa.edu.pnu.ServiceImpl.UtilisateurService;
@@ -28,37 +29,25 @@ public class UtilisateurControllerImpl implements IUtilisateurController {
      * @return the utlilisateurDAO
      */
     @Autowired
-    public UtilisateurService utlisateurService;
+    public UtilisateurService utilisateurService;
 
     @Autowired
     private UtilisateurDAO utilisateurDAO;
 
-  
-
-//    @PostConstruct
-//    public void initUser() {
-//        utlisateurService.initUser();
-//    }
-
     @Override
     public List<UtilisateurDTO> findAll() {
-        return utlisateurService.findAll();
+        return utilisateurService.findAll();
     }
 
     @Override
     public UtilisateurDTO save(UtilisateurDTO dto) {
-        return utlisateurService.save(dto);
+        return utilisateurService.save(dto);
     }
-    
-    @GetMapping({"/forAdmin"})
-    @PreAuthorize("hasRole('Admin')")
-    public String forAdmin(){
-        return "This URL is only accessible to the admin";
+
+    @Override
+    public UtilisateurDTO changerMotDePasse(ChangerMotDePasseUtilisateurDto dto) {
+        return utilisateurService.changerMotDePasse(dto);
     }
-    
-    @GetMapping({"/forUser"})
-    @PreAuthorize("hasRole('Etudiant')")
-    public String forUser(){
-        return "This URL is only accessible Students";
-    }
+
+
 }

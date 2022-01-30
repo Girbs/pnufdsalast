@@ -7,7 +7,11 @@ package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.Model.Programme;
 import fdsa.edu.pnu.Repository.ProgrammeDAO;
+
+import java.util.List;
 import java.util.Optional;
+
+import fdsa.edu.pnu.Service.IProgrammeService;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,25 +22,32 @@ import org.springframework.stereotype.Service;
  */
 @Data
 @Service
-public class ProgrammeService {
+public class ProgrammeServiceImpl implements IProgrammeService {
      @Autowired
     private ProgrammeDAO programmeDAO;
 
-    public Optional<Programme> getProgramme(final int id) {
-        return programmeDAO.findById(id);
-    }
-
-    public Iterable<Programme> getProgramme() {
+    @Override
+    public List<Programme> findAll() {
         return programmeDAO.findAll();
     }
 
-    public void deleteProgramme(final int id) {
-        programmeDAO.deleteById(id);
+    @Override
+    public Optional<Programme> findById(Integer id) {
+        return programmeDAO.findById(id);
     }
 
-    public Programme saveProgramme(Programme Programme) {
-        Programme savedProgramme = programmeDAO.save(Programme);
-        return savedProgramme;
+    @Override
+    public Programme save(Programme programme) {
+        return programmeDAO.save(programme);
     }
-    
+
+    @Override
+    public Programme update(Integer id, Programme programme) {
+        return null;
+    }
+
+    @Override
+    public void delete(Integer id) {
+        programmeDAO.deleteById(id);
+    }
 }

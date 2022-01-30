@@ -8,12 +8,16 @@ package fdsa.edu.pnu.ServiceImpl;
 import fdsa.edu.pnu.DTO.ConcoursDTO;
 import fdsa.edu.pnu.Exception.EntityNotFoundException;
 import fdsa.edu.pnu.Exception.ErrorCodes;
+import fdsa.edu.pnu.Exception.InvalidEntityException;
 import fdsa.edu.pnu.Model.Concours;
 import fdsa.edu.pnu.Model.ExampleStudent;
 import fdsa.edu.pnu.Model.Matiere;
 import fdsa.edu.pnu.Repository.*;
 import fdsa.edu.pnu.Service.IConcoursService;
+import fdsa.edu.pnu.Validators.ConcoursValidateur;
 import lombok.Data;
+import org.aspectj.bridge.ISourceLocation;
+import org.aspectj.bridge.MessageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +34,9 @@ public class ConcoursService implements IConcoursService {
 
     @Autowired
     private ConcoursDAO concoursDAO;
+
+    @Autowired
+    private ConcoursValidateur concoursValidateur;
 
     @Autowired
     private PlannificationConcoursDAO plannificationConcoursDAO;
@@ -70,12 +77,18 @@ public class ConcoursService implements IConcoursService {
     /**
      * Enregistrer Etudiant
      *
-     * @param dto
+     * @param concours
      * @return
      */
     @Override
-    public Concours save(Concours dto) {
-        return concoursDAO.save(dto);
+    public Concours save(Concours concours) {
+        List<String> errors = ConcoursValidateur.validate(concours);
+        if (!errors.isEmpty()) {
+            MessageUtil log = null;
+            MessageUtil.error("Donnees invalid", (ISourceLocation) concours);
+            throw new InvalidEntityException("Donnees invalid", (Throwable) errors);
+        }
+        return concoursDAO.save(concours);
     }
 
 

@@ -1,11 +1,12 @@
 package fdsa.edu.pnu.Validators;
 
 import fdsa.edu.pnu.Model.Concours;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Component
 public class ConcoursValidateur {
 
     public static List<String> validate(Concours concours) {
@@ -18,7 +19,7 @@ public class ConcoursValidateur {
         }
 
         if (!StringUtils.hasLength(concours.getDescription())) {
-            errors.add("Veuillez renseigner le nom du client");
+            errors.add("Veuillez renseigner la description du concours");
         }
         if (concours.getDateDebut()== null) {
             errors.add("Veuillez renseigner la date de debut du concours");
@@ -27,7 +28,7 @@ public class ConcoursValidateur {
             errors.add("La date du debut ne peut pas etre superieur à la date de la fin ");
         }
 
-       // errors.addAll(AdresseValidator.validate(dto.getAdresse()));
+
         return errors;
     }
 }

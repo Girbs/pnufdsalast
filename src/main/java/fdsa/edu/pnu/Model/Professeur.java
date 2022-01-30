@@ -48,11 +48,11 @@ public class Professeur extends Utilisateur implements Serializable {
 	
 //	@OneToMany(mappedBy="professeur", targetEntity= Cours.class, fetch=FetchType.EAGER, cascade = CascadeType.ALL)
 //	private List<Cours> cours;
-	
+//
 	@OneToMany(mappedBy="professeur", targetEntity= Publication.class,  fetch=FetchType.EAGER, cascade = CascadeType.ALL)
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
-	private java.util.Set publications = new java.util.HashSet();
+	private List<Publication> publications;
 
 	
 }

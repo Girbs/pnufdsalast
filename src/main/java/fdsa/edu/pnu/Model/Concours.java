@@ -12,12 +12,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
-		property = "id")
-
-//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id", scope = Long.class)
-
-@JsonIdentityReference(alwaysAsId = true)
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
+//		property = "id")
+//
+////@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id", scope = Long.class)
+//
+//@JsonIdentityReference(alwaysAsId = true)
 @Table(name = "Concours")
 public class Concours extends Audit<String> implements Serializable {
 	@Column(name = "ID", nullable = false, length = 10)
@@ -33,8 +33,6 @@ public class Concours extends Audit<String> implements Serializable {
 	private java.util.Date DateFin;
 	@Column(name = "Description", nullable = true, length = 255)
 	private String description;
-
-
 
 	@Column(name = "status", nullable = true, length = 255)
 	private String status;

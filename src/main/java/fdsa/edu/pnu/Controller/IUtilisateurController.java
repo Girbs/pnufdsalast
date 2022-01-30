@@ -5,6 +5,7 @@
  */
 package fdsa.edu.pnu.Controller;
 
+import fdsa.edu.pnu.DTO.ChangerMotDePasseUtilisateurDto;
 import fdsa.edu.pnu.DTO.UtilisateurDTO;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -42,4 +43,7 @@ public interface IUtilisateurController {
         @ApiResponse(code = 400, message = "L'objet postulant n'est pas valide")
     })
     UtilisateurDTO save(@RequestBody UtilisateurDTO dto);
+
+    @PostMapping(value="/update/password")
+    UtilisateurDTO changerMotDePasse(@RequestBody ChangerMotDePasseUtilisateurDto dto);
 }

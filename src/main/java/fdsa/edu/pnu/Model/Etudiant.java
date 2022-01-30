@@ -41,17 +41,11 @@ import java.util.Set;
 @DiscriminatorValue("Etudiants")
 public class Etudiant extends Utilisateur implements Serializable {
 
-
     @Column(name = "CodeEtudiant")
     private String codeEtudiant;
 
     @Column(name = "Matricule")
     private String matricule;
-
-    @OneToMany(mappedBy = "etudiant", targetEntity = PaiementSession.class)
-    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
-    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
-    private java.util.Set paiementSessions;
 
     @ManyToMany(targetEntity = Cours.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
@@ -102,7 +96,6 @@ public class Etudiant extends Utilisateur implements Serializable {
     public Etudiant(String codeEtudiant, String matricule, Set paiementSessions, Set cours, Set promotions, Set programmes, HistoriqueExam historiqueExam, Set paiements, Set stages, Set requetes, Set messages) {
         this.codeEtudiant = codeEtudiant;
         this.matricule = matricule;
-        this.paiementSessions = paiementSessions;
         this.cours = cours;
         this.promotions = promotions;
         this.programmes = programmes;
@@ -129,13 +122,6 @@ public class Etudiant extends Utilisateur implements Serializable {
         this.matricule = matricule;
     }
 
-    public Set getPaiementSessions() {
-        return paiementSessions;
-    }
-
-    public void setPaiementSessions(Set paiementSessions) {
-        this.paiementSessions = paiementSessions;
-    }
 
     public Set getCours() {
         return cours;
