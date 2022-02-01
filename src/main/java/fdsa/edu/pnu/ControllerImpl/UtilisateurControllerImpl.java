@@ -49,5 +49,10 @@ public class UtilisateurControllerImpl implements IUtilisateurController {
         return utilisateurService.changerMotDePasse(dto);
     }
 
+    @Override
+    public Utilisateur motDePasseOublie(Utilisateur dto) {
+        return utilisateurService.forgetPassword(dto);
+    }
+
 
 }

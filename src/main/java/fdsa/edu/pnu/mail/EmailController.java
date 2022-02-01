@@ -81,4 +81,24 @@ public class EmailController {
 
     }
 
+    @ResponseBody
+    public void motDePasseOublieConfirmationEmail(String email, String nom, String prenom, String nomUtilisateur, String motDePasse) {
+
+        message.setTo(email);
+        message.setSubject("Mot de passe Reinitialisé");
+        message.setText("Cher(e) " + prenom + " " + nom + ", \n\n "
+                + "Votre mot de pass a éte reinitialisé avec succes."
+                + "Priere d'utiliser les informations ci-dessous pour accesder aux ressources de la faculte.\n\n"
+                + "Nom d'utilisateur: "+ nomUtilisateur +"\n"
+                +"Mot de Passe temporaire: "+ motDePasse +"\n\n"
+
+                + "Cordialement\nSupport Technique PNU\nFaculte Des Science Appliquees(FDSA)");
+
+        // Send Message!
+        this.emailSender.send(message);
+
+
+    }
+
+
 }

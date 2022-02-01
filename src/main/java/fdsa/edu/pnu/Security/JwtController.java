@@ -26,9 +26,6 @@ public class JwtController {
 
     public JwtResponse createToken(@RequestBody JwtRequest jwtRequest) throws Exception {
         JwtResponse jwtResponse = jwtService.createJwtToken(jwtRequest);
-        System.out.println(jwtResponse);
-        System.out.println(jwtResponse);
-        System.out.println(jwtResponse);
         return jwtResponse;
     }
     // @PostMapping({)

@@ -3,43 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fdsa.edu.pnu.ServiceImpl;
+package fdsa.edu.pnu.ControllerImpl;
 
+import fdsa.edu.pnu.Controller.ISessionController;
 import fdsa.edu.pnu.Model.Session;
-import fdsa.edu.pnu.Repository.SessionDAO;
-
+import fdsa.edu.pnu.ServiceImpl.SessionService;
 import java.util.List;
 import java.util.Optional;
-
-import fdsa.edu.pnu.Service.ISessionService;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-/**
- *
- * @author Jephthé Gédéon
- */
-@Data
-@Service
-public class SessionService implements ISessionService {
-     @Autowired
-    private SessionDAO sessionDAO;
+import org.springframework.web.bind.annotation.RestController;
 
 
+@RestController
+public class SessionControllerImpl implements ISessionController {
+
+    @Autowired
+    private SessionService sessionService;
     @Override
     public List<Session> findAll() {
-        return sessionDAO.findAll();
+        return sessionService.findAll();
     }
 
     @Override
     public Optional<Session> findById(Integer id) {
-        return sessionDAO.findById(id);
-    }
-
-    @Override
-    public Session save(Session session) {
-        return sessionDAO.save(session);
+        return sessionService.findById(id);
     }
 
     @Override
@@ -49,7 +36,12 @@ public class SessionService implements ISessionService {
 
     @Override
     public void delete(Integer id) {
-        sessionDAO.deleteById(id);
+        sessionService.delete(id);
+    }
+
+    @Override
+    public Session save(Session session) {
+        return sessionService.save(session);
     }
 }
 

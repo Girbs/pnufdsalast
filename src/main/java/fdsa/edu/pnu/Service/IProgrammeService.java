@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface IProgrammeService {
     List<Programme> findAll();
     Optional<Programme> findById(Integer id);
-    Programme save(Programme semestre);
+    Programme save(Programme programme);
     Programme update(Integer id, Programme programme);
     void delete(Integer id);
 }

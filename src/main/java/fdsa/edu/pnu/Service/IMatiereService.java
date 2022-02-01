@@ -21,7 +21,7 @@ public interface IMatiereService {
 
     Optional<Matiere> findById(Integer id);
 
-    MatiereDTO save(MatiereDTO dto);
+    Matiere save(Matiere matiere);
 
     void delete(Integer id);
 }

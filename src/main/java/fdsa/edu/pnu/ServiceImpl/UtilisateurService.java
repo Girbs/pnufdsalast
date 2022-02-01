@@ -13,7 +13,9 @@ import fdsa.edu.pnu.Exception.ErrorCodes;
 import fdsa.edu.pnu.Exception.InvalidOperationException;
 import fdsa.edu.pnu.Model.Utilisateur;
 import fdsa.edu.pnu.Repository.UtilisateurDAO;
+import fdsa.edu.pnu.Security.PasswordGenerator;
 import fdsa.edu.pnu.Service.IUtilisateurService;
+import fdsa.edu.pnu.mail.EmailController;
 import lombok.Data;
 import org.aspectj.bridge.MessageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +35,12 @@ import java.util.stream.Collectors;
 public class UtilisateurService implements IUtilisateurService {
     @Autowired
     private UtilisateurDAO utilisateurDAO;
+
+    @Autowired
+    private PasswordGenerator password;
+
+    @Autowired
+    private EmailController ec;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -101,7 +109,31 @@ public class UtilisateurService implements IUtilisateurService {
                 utilisateurDAO.save(utilisateur)
         );
     }
+    @Override
+    public Utilisateur forgetPassword(Utilisateur user) {
+        Optional<Utilisateur> utilisateurOptional = utilisateurDAO.findByUsername(user.getUserName());
 
+        Utilisateur utilisateur = null;
+        MessageUtil log = null;
+        if (utilisateurOptional.isPresent()) {
+            utilisateur = utilisateurOptional.get();
+            if (utilisateur.isStatus()) {
+                String newPassword = password.randomPassword();
+                utilisateur.setUserPassword(passwordEncoder.encode(newPassword));
+                ec.motDePasseOublieConfirmationEmail(user.getUserName(), utilisateur.getPrenom(), utilisateur.getNom(), utilisateur.getUserName(), newPassword);
+            } else {
+                log.warn("utilisateur inactif");
+                throw new InvalidOperationException("Utilisateur Inactif",
+                        ErrorCodes.UTILISATEUR_INACTIF);
+            }
+        } else {
+            log.warn("Cet utilisateur n'existe pas");
+            throw new InvalidOperationException("Aucune information n'a ete retrouvée pour le nom d'utilisateur foruni",
+                    ErrorCodes.UTILISATEUR_NOT_VALID);
+
+        }
+        return utilisateurDAO.save(utilisateur);
+    }
     private void validate(ChangerMotDePasseUtilisateurDto dto) {
         MessageUtil log = null;
         if (dto == null) {
@@ -125,6 +157,5 @@ public class UtilisateurService implements IUtilisateurService {
                     ErrorCodes.UTILISATEUR_CHANGE_PASSWORD_OBJECT_NOT_VALID);
         }
     }
-
 
 }

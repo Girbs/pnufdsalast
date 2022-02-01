@@ -5,7 +5,7 @@
  */
 package fdsa.edu.pnu.ServiceImpl;
 
-import fdsa.edu.pnu.DTO.MatiereDTO;
+
 import fdsa.edu.pnu.Model.Matiere;
 import fdsa.edu.pnu.Repository.MatiereDAO;
 import fdsa.edu.pnu.Service.IMatiereService;
@@ -16,14 +16,10 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author Richard
- */
 @Data
 @Service
 
-public class MatiereService implements IMatiereService {
+public class MatiereServiceImpl implements IMatiereService {
 
     @Autowired
     private MatiereDAO matiereDAO;
@@ -31,32 +27,16 @@ public class MatiereService implements IMatiereService {
     @Override
     public List<Matiere> findAll() {
         return matiereDAO.findAll();
-//                findAll.stream()
-//                .map(MatiereDTO::fromEntity)
-//                .collect(Collectors.toList());
     }
 
     @Override
     public Optional<Matiere> findById(Integer id) {
-        if (id == null) {
-            return null;
-        }
         return matiereDAO.findById(id);
-//                .map(MatiereDTO::fromEntity).orElseThrow(()
-//                -> new EntityNotFoundException(
-//                        "Aucun postulant avec l'ID = " + id + " n' ete trouve dans la BDD",
-//                        ErrorCodes.ARTICLE_NOT_FOUND)
-        //);
     }
 
     @Override
-    public MatiereDTO save(MatiereDTO dto) {
-
-        return MatiereDTO.fromEntity(
-                matiereDAO.save(
-                        MatiereDTO.toEntity(dto)
-                )
-        );
+    public Matiere save(Matiere matiere) {
+        return matiereDAO.save(matiere);
     }
 
     @Override

@@ -7,6 +7,7 @@ package fdsa.edu.pnu.Controller;
 
 import fdsa.edu.pnu.DTO.ChangerMotDePasseUtilisateurDto;
 import fdsa.edu.pnu.DTO.UtilisateurDTO;
+import fdsa.edu.pnu.Model.Utilisateur;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -46,4 +47,7 @@ public interface IUtilisateurController {
 
     @PostMapping(value="/update/password")
     UtilisateurDTO changerMotDePasse(@RequestBody ChangerMotDePasseUtilisateurDto dto);
+
+    @PostMapping(value="/utilisateur/motDePasseOublie")
+    Utilisateur motDePasseOublie(@RequestBody Utilisateur dto);
 }

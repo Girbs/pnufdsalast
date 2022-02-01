@@ -6,42 +6,41 @@
 package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Controller.IMatiereController;
-import fdsa.edu.pnu.DTO.MatiereDTO;
 import fdsa.edu.pnu.Model.Matiere;
-import fdsa.edu.pnu.ServiceImpl.MatiereService;
-import java.util.List;
-import java.util.Optional;
-
+import fdsa.edu.pnu.ServiceImpl.MatiereServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+import java.util.Optional;
+
 /**
- *
  * @author Richard
  */
 @RestController
-public class MatiereController implements IMatiereController {
-    
+public class MatiereControllerImpl implements IMatiereController {
+
     @Autowired
-    public MatiereService matiereService;
+    public MatiereServiceImpl matiereServiceImpl;
 
     @Override
     public List<Matiere> findAll() {
-      return  matiereService.findAll();
+        return matiereServiceImpl.findAll();
     }
 
     @Override
     public Optional<Matiere> findById(Integer id) {
-     return matiereService.findById(id);
+        return matiereServiceImpl.findById(id);
     }
 
+
     @Override
-    public MatiereDTO save(MatiereDTO dto) {
-        return matiereService.save(dto);
+    public Matiere save(Matiere matiere) {
+        return matiereServiceImpl.save(matiere);
     }
 
     @Override
     public void delete(Integer id) {
-       matiereService.delete(id);
-    }  
+        matiereServiceImpl.delete(id);
+    }
 }

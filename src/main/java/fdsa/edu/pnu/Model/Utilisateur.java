@@ -15,8 +15,11 @@
  */
 package fdsa.edu.pnu.Model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -29,7 +32,7 @@ import java.util.Set;
 @Inheritance(strategy = InheritanceType.JOINED)
 //@DiscriminatorValue("Utilisateur")
 @PrimaryKeyJoinColumn(name = "PersonneID", referencedColumnName = "ID")
-
+@Data
 public class Utilisateur extends Personne implements Serializable {
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -66,6 +69,9 @@ public class Utilisateur extends Personne implements Serializable {
 
     @Column(name = "Password")
     private String userPassword;
+
+    @Column(name = "DerniereConnexion")
+    private Date derniereConnexion;
 
 
     /**

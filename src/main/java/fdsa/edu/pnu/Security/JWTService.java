@@ -16,6 +16,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -58,6 +60,8 @@ public class JWTService implements UserDetailsService {
         userInfo.setUserName(user.getUserName());
         userInfo.setUserPassword(user.getUserPassword());
         userInfo.setUserRoles(user.getRoles());
+        //user.setDerniereConnexion(getLastLoginDate());
+       // System.out.println("The last login date is:"+getLastLoginDate());
         return new JwtResponse(userInfo, newGeneratedToken);
     }
 
@@ -66,6 +70,7 @@ public class JWTService implements UserDetailsService {
         Utilisateur user = userDAO.findByUsername(username).get();
         if (user != null) {
             return new org.springframework.security.core.userdetails.User(
+
                     user.getUserName(),
                     user.getUserPassword(),
                     getAuthorities(user)
@@ -95,6 +100,10 @@ public class JWTService implements UserDetailsService {
         return permissions;
     }
 
+    public static Date getLastLoginDate() {
+        Date timestamp = new Date(System.currentTimeMillis());
+        return timestamp;
+    }
 
     private void authenticate(String userName, String userPassword) throws Exception {
         try {
