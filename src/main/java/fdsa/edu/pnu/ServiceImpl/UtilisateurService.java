@@ -63,10 +63,10 @@ public class UtilisateurService implements IUtilisateurService {
 
 
     @Override
-    public List<UtilisateurDTO> findAll() {
-        return utilisateurDAO.findAll().stream()
-                .map(UtilisateurDTO::fromEntity)
-                .collect(Collectors.toList());
+    public List<Utilisateur> findAll() {
+        return utilisateurDAO.findAll();
+       // .stream().map(UtilisateurDTO::fromEntity)
+           //     .collect(Collectors.toList());
     }
 
 

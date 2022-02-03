@@ -5,17 +5,12 @@
  */
 package fdsa.edu.pnu.ControllerImpl;
 
+import fdsa.edu.pnu.Controller.IHoraireController;
 import fdsa.edu.pnu.Model.Horaire;
-import fdsa.edu.pnu.ServiceImpl.HoraireService;
+import fdsa.edu.pnu.ServiceImpl.HoraireServiceImpl;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -24,59 +19,34 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-public class HoraireController {
+public class HoraireController implements IHoraireController {
     
-     @Autowired 
-    public HoraireService horaireService;
-    
-    /**
-     * Afficher tous les Horaires
-     *
-     * @return
-     */
-    @GetMapping(value = "/horaires")
-    public List<Horaire> getAllHoraire() {
-        return (List<Horaire>) horaireService.getHoraire();
+    @Autowired
+    public HoraireServiceImpl horaireServiceImpl;
+
+
+    @Override
+    public List<Horaire> findAll() {
+        return null;
     }
-    
-    
-    /**
-     * Creer un nouveau Horaire
-     *
-     *
-     * @param horaire
-     * @return
-     */
-    @PostMapping("/nouveauHoraire")
-    public Horaire createHoraire(@RequestBody Horaire horaire) {
-        return horaireService.saveHoraire(horaire);
+
+    @Override
+    public Optional<Horaire> findById(Integer id) {
+        return Optional.empty();
     }
-    
-    /**
-     * Selectionner par ID
-     *
-     * @param id
-     * @return
-     */
-    
-    @RequestMapping("/Horaire/(id)")
-    public Horaire getHoraire(@PathVariable("id") int id) {
-        Optional<Horaire> horaire = horaireService.getHoraire(id);
-        if ( horaire.isPresent() ) {
-            return horaire.get();
-        }else {
-            return null;
-        }
+
+    @Override
+    public Horaire update(Integer id, Horaire horaire) {
+        return null;
     }
-    
-    /**
-     * Supprimer un Horaire
-     * @param id 
-     */
-    
-    @DeleteMapping("/supprimerHoraire")
-    public void deleteHoraire(@PathVariable("id") final int id) {
-        horaireService.deleteHoraire(id);
+
+    @Override
+    public void delete(Integer id) {
+
     }
-    
+
+    @Override
+    public Horaire save(Horaire horaire) {
+        return null;
+    }
 }

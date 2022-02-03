@@ -35,7 +35,7 @@ public class UtilisateurControllerImpl implements IUtilisateurController {
     private UtilisateurDAO utilisateurDAO;
 
     @Override
-    public List<UtilisateurDTO> findAll() {
+    public List<Utilisateur> findAll() {
         return utilisateurService.findAll();
     }
 

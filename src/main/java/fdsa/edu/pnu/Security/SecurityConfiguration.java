@@ -64,6 +64,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/plannificationConcours/{id}",
                         "/anneeAcademique/all",
                         "/utilisateur/motDePasseOublie",
+                        "/role/all",
+                         "/utilisateur/all",
 
                         "/professeur/nouveau",
                         "/personnel/all",

@@ -17,7 +17,7 @@ import java.util.List;
  */
 public interface IUtilisateurService {
 
-    List<UtilisateurDTO> findAll();
+    List<Utilisateur> findAll();
 
     UtilisateurDTO findById(Integer id);
 

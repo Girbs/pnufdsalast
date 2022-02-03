@@ -10,7 +10,7 @@ public interface ICoursService {
 
     Optional<Cours> findById(Integer id);
 
-    Cours save(Cours dto);
+    Cours save(Cours cours);
 
     void delete(Integer id);
 }

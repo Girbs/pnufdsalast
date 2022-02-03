@@ -7,9 +7,13 @@ package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.Model.Role;
 import fdsa.edu.pnu.Repository.RoleDAO;
+import fdsa.edu.pnu.Service.IRoleService;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
 
 /**
  *
@@ -17,25 +21,28 @@ import org.springframework.stereotype.Service;
  */
 @Data
 @Service
-public class RoleService {
+public class RoleServiceImpl implements IRoleService {
      @Autowired
     private RoleDAO roleDAO;
 
-//    public Optional<Role> getRole(final int id) {
-//        return roleDAO.findById(id);
-//    }
 
-    public Iterable<Role> getRole() {
+    @Override
+    public List<Role> findAll() {
         return roleDAO.findAll();
     }
 
-//    public void deleteRole(final int id) {
-//        roleDAO.deleteById(id);
-//    }
-
-    public Role saveRole(Role Role) {
-        Role savedRole = roleDAO.save(Role);
-        return savedRole;
+    @Override
+    public Optional<Role> findById(Integer id) {
+        return roleDAO.findById(id);
     }
-    
+
+    @Override
+    public Role save(Role role) {
+        return roleDAO.save(role);
+    }
+
+    @Override
+    public void delete(Integer id) {
+        roleDAO.deleteById(id);
+    }
 }

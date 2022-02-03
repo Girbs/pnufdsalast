@@ -27,14 +27,14 @@ public interface IUtilisateurController {
 
     
   
-    @PreAuthorize("hasRole('Admin')")
+   // @PreAuthorize("hasRole('Admin')")
     @GetMapping(value = "/utilisateur/all", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Renvoi la liste des utilisateurs", notes = "Cette methode permet de chercher et renvoyer la liste des utilisateurs qui existent "
             + "dans la BDD", responseContainer = "List<UtlisateurDTO>")
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "La liste des utilisateurs / Une liste vide")
     })
-    List<UtilisateurDTO> findAll();
+    List<Utilisateur> findAll();
     
     
     @PostMapping(value = "/utilisateur/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)

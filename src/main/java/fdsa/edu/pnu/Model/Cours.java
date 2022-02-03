@@ -13,6 +13,7 @@
  */
 package fdsa.edu.pnu.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,6 +27,7 @@ import java.util.List;
 @NoArgsConstructor
 
 @Table(name="Cours")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Cours implements Serializable {
 	
 	@Column(name="ID", nullable=false, length=10)	
@@ -34,14 +36,10 @@ public class Cours implements Serializable {
 	@org.hibernate.annotations.GenericGenerator(name="PNU_COURS_ID_GENERATOR", strategy="native")	
 	private int id;
 
-//	@Column(name="CreditReel", nullable=true, length=10)
-//	private int creditReel;
-	
-	@Column(name="Duree", nullable=true, length=255)	
-	private String duree;
-	
-	@Column(name="Responsable", nullable=true, length=255)	
-	private String responsable;
+//	@OneToMany(fetch = FetchType.LAZY, mappedBy = "car")
+//	@JsonIgnoreProperties("car")
+//	private List<Driver> drivers;
+
 
 	@OneToMany(mappedBy="cours", targetEntity= Evaluation.class)
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
@@ -76,5 +74,14 @@ public class Cours implements Serializable {
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private List<Discussion> discussions ;
+
+	//	@Column(name="CreditReel", nullable=true, length=10)
+//	private int creditReel;
+
+	@Column(name="Duree", nullable=true, length=255)
+	private String duree;
+
+	@Column(name="Responsable", nullable=true, length=255)
+	private String responsable;
 
 }
