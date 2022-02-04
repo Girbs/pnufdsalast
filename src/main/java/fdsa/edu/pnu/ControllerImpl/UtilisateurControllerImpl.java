@@ -10,6 +10,8 @@ import fdsa.edu.pnu.DTO.UtilisateurDTO;
 import fdsa.edu.pnu.Model.Utilisateur;
 import fdsa.edu.pnu.ServiceImpl.UtilisateurService;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,14 +27,8 @@ import org.springframework.security.access.prepost.PreAuthorize;
 @RestController
 public class UtilisateurControllerImpl implements IUtilisateurController {
 
-    /**
-     * @return the utlilisateurDAO
-     */
     @Autowired
     public UtilisateurService utilisateurService;
-
-    @Autowired
-    private UtilisateurDAO utilisateurDAO;
 
     @Override
     public List<Utilisateur> findAll() {
@@ -54,5 +50,18 @@ public class UtilisateurControllerImpl implements IUtilisateurController {
         return utilisateurService.forgetPassword(dto);
     }
 
+    @Override
+    public Optional<Utilisateur> findById(Integer id) {
+        return utilisateurService.findById(id);
+    }
 
+    @Override
+    public Utilisateur update(Integer id, Utilisateur utilisateur) {
+        return null;
+    }
+
+    @Override
+    public void delete(Integer id) {
+
+    }
 }

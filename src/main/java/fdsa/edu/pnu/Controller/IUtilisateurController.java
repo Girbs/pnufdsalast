@@ -7,17 +7,17 @@ package fdsa.edu.pnu.Controller;
 
 import fdsa.edu.pnu.DTO.ChangerMotDePasseUtilisateurDto;
 import fdsa.edu.pnu.DTO.UtilisateurDTO;
+import fdsa.edu.pnu.Model.Semestre;
 import fdsa.edu.pnu.Model.Utilisateur;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  *
@@ -50,4 +50,28 @@ public interface IUtilisateurController {
 
     @PostMapping(value="/utilisateur/motDePasseOublie")
     Utilisateur motDePasseOublie(@RequestBody Utilisateur dto);
+
+ @GetMapping(value = "/utilisateur/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+ @ApiOperation(value = "Rechercher une Semestre par ID", notes = "Cette methode permet de chercher une Semestre par son ID", response = Utilisateur.class)
+ @ApiResponses(value = {
+         @ApiResponse(code = 200, message = "Le Semestre a ete trouve dans la BDD"),
+         @ApiResponse(code = 404, message = "Aucun Semestre n'existe dans la BDD avec l'ID fourni")
+ })
+ Optional<Utilisateur> findById(@PathVariable("id") Integer id);
+
+
+ @PutMapping(value = "/utilisateur/modifier/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+ @ApiOperation(value = "Enregistrer un Semestre", notes = "Cette methode permet d'enregistrer ou modifier une Semestre", response = Utilisateur.class)
+ @ApiResponses(value = {
+         @ApiResponse(code = 200, message = "L'objet Semestre cr / modifie"),
+         @ApiResponse(code = 400, message = "L'objet Semestre n'est pas valide")
+ })
+ Utilisateur update(@PathVariable("id") Integer id, @RequestBody Utilisateur utilisateur);
+
+ @DeleteMapping(value = "/supprimer/{id}")
+ @ApiOperation(value = "Supprimer unSemestre", notes = "Cette methode permet de supprimer un Semestre par ID")
+ @ApiResponses(value = {
+         @ApiResponse(code = 200, message = "Le Semestre a ete supprime")
+ })
+ void delete(@PathVariable("id") Integer id);
 }

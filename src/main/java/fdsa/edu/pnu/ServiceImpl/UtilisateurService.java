@@ -25,7 +25,6 @@ import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 /**
  * @author Jephthé Gédéon
@@ -76,8 +75,8 @@ public class UtilisateurService implements IUtilisateurService {
     }
 
     @Override
-    public UtilisateurDTO findById(Integer id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Optional<Utilisateur> findById(Integer id) {
+      return  utilisateurDAO.findById(id);
     }
 
     @Override

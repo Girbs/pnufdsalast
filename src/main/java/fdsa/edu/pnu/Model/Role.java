@@ -4,23 +4,30 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "Role")
 @Data
-@JsonIgnoreProperties(ignoreUnknown = true)
+@Setter
+@Getter
+//@JsonIgnoreProperties(ignoreUnknown = true)
 public class Role implements Serializable {
 
     @Id
     private Integer id;
     private String roleName;
     private String roleDescription;
-    @ManyToMany(fetch = FetchType.EAGER, targetEntity = Utilisateur.class, mappedBy = "role", cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
-    private Set<Utilisateur> utlilisateurs;
+
+
+    @ManyToMany(mappedBy = "role", cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
+    private Set<Utilisateur> utlilisateurs= new HashSet<>();
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "PermissionRole",
@@ -31,10 +38,6 @@ public class Role implements Serializable {
                     @JoinColumn(name = "PermissionId")
             })
     private Set<Permission> permission;
-
-
-//    @ManyToMany(fetch = FetchType.EAGER, targetEntity = Permission.class, mappedBy = "roles", cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
-//    private Set<Permission> permission;
 
     public Integer getId() {
         return id;
@@ -60,7 +63,6 @@ public class Role implements Serializable {
         this.roleDescription = roleDescription;
     }
 
-
     @JsonBackReference
     public Set<Utilisateur> getUtlilisateurs() {
         return utlilisateurs;
@@ -69,4 +71,17 @@ public class Role implements Serializable {
     public void setUtlilisateurs(Set<Utilisateur> utlilisateurs) {
         this.utlilisateurs = utlilisateurs;
     }
+
+    public Set<Permission> getPermission() {
+        return permission;
+    }
+
+    public void setPermission(Set<Permission> permission) {
+        this.permission = permission;
+    }
+
+
+
+
+
 }

@@ -10,6 +10,7 @@ import fdsa.edu.pnu.DTO.UtilisateurDTO;
 import fdsa.edu.pnu.Model.Utilisateur;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  *
@@ -19,7 +20,7 @@ public interface IUtilisateurService {
 
     List<Utilisateur> findAll();
 
-    UtilisateurDTO findById(Integer id);
+    Optional<Utilisateur> findById(Integer id);
 
     UtilisateurDTO save(UtilisateurDTO dto);
 

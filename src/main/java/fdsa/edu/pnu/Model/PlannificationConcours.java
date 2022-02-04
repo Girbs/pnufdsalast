@@ -41,7 +41,7 @@ public class PlannificationConcours  extends Audit<String> implements Serializab
 	//@JsonBackReference
 	private Concours concours;
 
-	@JsonBackReference
+	//@JsonBackReference
     @ManyToOne(targetEntity= Matiere.class, fetch=FetchType.LAZY)
 	@JoinColumns(value={ @JoinColumn(name="MatiereId", referencedColumnName="ID", nullable=true) }, foreignKey=@ForeignKey(name="MatierePlanificationConcours"))
     private Matiere matiere;
