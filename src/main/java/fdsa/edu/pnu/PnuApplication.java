@@ -2,7 +2,7 @@ package fdsa.edu.pnu;
 
 import fdsa.edu.pnu.Config.SpringSecurityAuditorAware;
 import fdsa.edu.pnu.Model.Etudiant;
-import fdsa.edu.pnu.ServiceImpl.EtudiantService;
+import fdsa.edu.pnu.ServiceImpl.EtudiantServiceImpl;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -33,7 +33,7 @@ public class PnuApplication {
     }
     
      @Bean
-    public EtudiantService etudiantService(){
-        return new EtudiantService();
+    public EtudiantServiceImpl etudiantService(){
+        return new EtudiantServiceImpl();
     }
 }

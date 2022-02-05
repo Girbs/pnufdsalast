@@ -21,10 +21,11 @@ package fdsa.edu.pnu.Repository;
 
 
 import fdsa.edu.pnu.Model.Etudiant;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 
 
-public interface EtudiantDAO extends CrudRepository<Etudiant, Integer> {
+public interface EtudiantDAO extends JpaRepository<Etudiant, Integer> {
 //	public Etudiant loadEtudiantByORMID(int id) throws PersistentException;
 //	public Etudiant getEtudiantByORMID(int id) throws PersistentException;
 //	public Etudiant loadEtudiantByORMID(int id, org.hibernate.LockMode lockMode) throws PersistentException;

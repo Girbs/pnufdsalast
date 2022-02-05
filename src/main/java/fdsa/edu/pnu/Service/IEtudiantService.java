@@ -5,8 +5,10 @@
  */
 package fdsa.edu.pnu.Service;
 
-import fdsa.edu.pnu.DTO.EtudiantDTO;
+import fdsa.edu.pnu.Model.Etudiant;
+
 import java.util.List;
+import java.util.Optional;
 
 /**
  *
@@ -14,8 +16,8 @@ import java.util.List;
  */
 public interface IEtudiantService {
 
-    List<EtudiantDTO> findAll();
-    EtudiantDTO findById(Integer id);
-    EtudiantDTO save(EtudiantDTO dto);
+    List<Etudiant> findAll();
+    Optional<Etudiant> findById(Integer id);
+    Etudiant save(Etudiant dto);
     void delete(Integer id);
 }
