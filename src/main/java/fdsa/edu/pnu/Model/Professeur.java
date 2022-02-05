@@ -32,7 +32,7 @@ import java.util.List;
         property = "id")
 @JsonIdentityReference(alwaysAsId = true)
 @Table(name="Professeur")
-@Inheritance(strategy=InheritanceType.JOINED)
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorValue("Professeurs")
 public class Professeur extends Utilisateur implements Serializable {
 

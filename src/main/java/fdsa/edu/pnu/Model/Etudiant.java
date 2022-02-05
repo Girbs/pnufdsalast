@@ -37,7 +37,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "Etudiant")
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorValue("Etudiants")
 public class Etudiant extends Utilisateur implements Serializable {
 

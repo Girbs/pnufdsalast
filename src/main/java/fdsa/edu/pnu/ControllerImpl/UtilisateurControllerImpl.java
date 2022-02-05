@@ -60,8 +60,5 @@ public class UtilisateurControllerImpl implements IUtilisateurController {
         return null;
     }
 
-    @Override
-    public void delete(Integer id) {
 
-    }
 }

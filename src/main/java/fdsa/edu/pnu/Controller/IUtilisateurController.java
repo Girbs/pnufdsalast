@@ -68,10 +68,5 @@ public interface IUtilisateurController {
  })
  Utilisateur update(@PathVariable("id") Integer id, @RequestBody Utilisateur utilisateur);
 
- @DeleteMapping(value = "/supprimer/{id}")
- @ApiOperation(value = "Supprimer unSemestre", notes = "Cette methode permet de supprimer un Semestre par ID")
- @ApiResponses(value = {
-         @ApiResponse(code = 200, message = "Le Semestre a ete supprime")
- })
- void delete(@PathVariable("id") Integer id);
+
 }

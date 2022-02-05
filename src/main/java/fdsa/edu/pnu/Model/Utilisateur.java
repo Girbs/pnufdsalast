@@ -15,6 +15,8 @@
  */
 package fdsa.edu.pnu.Model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
@@ -32,32 +34,7 @@ import java.util.Set;
 
 public class Utilisateur extends Personne implements Serializable {
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinTable(name = "USER_ROLE",
-            joinColumns = {
-                    @JoinColumn(name = "USER_ID")
-            },
-            inverseJoinColumns = {
-                    @JoinColumn(name = "ROLE_ID")
-            })
-    private Set<Role> role;
 
-
-
-//    @ManyToMany(mappedBy = "utlilisateurs", targetEntity = fdsa.edu.pnu.Model.Groupe.class)
-//    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
-//    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
-//    private java.util.Set groupes = new java.util.HashSet();
-//
-//    @OneToMany(mappedBy = "utlilisateur", targetEntity = fdsa.edu.pnu.Model.Groupe.class)
-//    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
-//    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
-//    private java.util.Set groupe = new java.util.HashSet();
-
-    //	@OneToOne(mappedBy="etre", targetEntity=fdsa.edu.PNUFDSA.Model.Postulant.class, fetch=FetchType.LAZY)
-//	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
-//	private fdsa.edu.PNUFDSA.Model.Postulant postulant;
-//
     @Column(name = "Status")
     private boolean status;
 
@@ -68,6 +45,17 @@ public class Utilisateur extends Personne implements Serializable {
     private String userPassword;
 
 
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(name = "USER_ROLE",
+            joinColumns = {
+                    @JoinColumn(name = "USER_ID")
+            },
+            inverseJoinColumns = {
+                    @JoinColumn(name = "ROLE_ID")
+            })
+    @JsonManagedReference(value = "user-role")
+    private Set<Role> role;
     /**
      * @return the status
      */
