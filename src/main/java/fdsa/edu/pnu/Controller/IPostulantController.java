@@ -87,7 +87,7 @@ public interface IPostulantController {
 
 
 
-    @GetMapping("/postulant/all")
+    @GetMapping("/postulant/listeDynamique")
     @ApiOperation(value = "Renvoi la liste des postulant", notes = "Cette methode permet de chercher et renvoyer la liste des postulant qui existent "
             + "dans la BDD", responseContainer = "List<PostulantDTO>")
     @ApiResponses(value = {
@@ -105,7 +105,4 @@ public interface IPostulantController {
     })
     APIResponse<Page<Postulant>> findAllWithFilter(@RequestParam(required = true)  int offset, @RequestParam(required = true)  int pageSize,
                                                    @RequestParam(required = true) String field,@RequestParam(required = true)  String prenom );
-
-
-
 }
