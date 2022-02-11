@@ -8,6 +8,7 @@ package fdsa.edu.pnu.Service;
 import fdsa.edu.pnu.DTO.PostulantDTO;
 import fdsa.edu.pnu.Model.Etudiant;
 import fdsa.edu.pnu.Model.Postulant;
+import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
@@ -29,4 +30,5 @@ public interface IPostulantService {
     void delete(Integer id);
     List<Postulant> getApplicationParStatut(String statut_application);
 
+     Page<Postulant> findAllWithPaginationAndSorting(int offset, int pageSize, String field);
 }

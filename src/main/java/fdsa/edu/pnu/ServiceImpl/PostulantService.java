@@ -20,6 +20,9 @@ import fdsa.edu.pnu.mail.EmailController;
 import lombok.Data;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -122,6 +125,24 @@ public class PostulantService implements IPostulantService {
        return lstPostulant;
     }
 
+    @Override
+    public Page<Postulant> findAllWithPaginationAndSorting(int offset, int pageSize, String field) {
+        Page<Postulant> postulants = postulantDAO.findAll(PageRequest.of(offset, pageSize).withSort(Sort.by(field)));
+        return  postulants;
+    }
+
+
+    public Page<Postulant> findAllWithPaginationAndSortingv1(int offset, int pageSize, String field, String searchfield) {
+        Page<Postulant> postulants = postulantDAO.findByAllDynameicSearch( searchfield, PageRequest.of(offset-1, pageSize).withSort(Sort.by(Sort.Direction.DESC, (field))));
+        return  postulants;
+    }
+
+    public Page<Postulant> findAllWithFilter(int offset, int pageSize, String field, String prenom) {
+        Page<Postulant> postulants = postulantDAO.findByAllName( prenom,
+                PageRequest.of(offset, pageSize).withSort(Sort.by(field)));
+        return  postulants;
+    }
+
 
     @Override
     public Etudiant update(Integer id, PostulantDTO dto) {
@@ -152,7 +173,7 @@ public class PostulantService implements IPostulantService {
         etudiant.setMatricule("50967");
         Set<Role> role = new HashSet<>();
         role.add(roleDAO.findById(1).get());
-        etudiant.setRoles(role);
+        etudiant.setRole(role);
         // PostulantDTO.fromEntity(postulantDAO.save(PostulantDTO.toEntity(dto)));
 
         if (!currentApplicationStatus.equals(statusToBeUpdated) && statusToBeUpdated.equals("Accepté")) {

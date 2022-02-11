@@ -1,10 +1,7 @@
 
 package fdsa.edu.pnu.Model;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIdentityReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -36,8 +33,9 @@ public class Concours extends Audit<String> implements Serializable {
 
 	@Column(name = "status", nullable = true, length = 255)
 	private String status;
-	@JsonIgnore
-	@OneToMany( fetch =FetchType.EAGER, mappedBy=  "concours", targetEntity = fdsa.edu.pnu.Model.PlannificationConcours.class)
+
+	//@JsonIgnoreProperties(value = {"concours"}, allowSetters = true)
+	@OneToMany( fetch =FetchType.LAZY, mappedBy=  "concours", targetEntity = fdsa.edu.pnu.Model.PlannificationConcours.class)
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
 	private List<PlannificationConcours> plannificationConcourses  ;

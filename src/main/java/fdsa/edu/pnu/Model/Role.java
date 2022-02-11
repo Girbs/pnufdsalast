@@ -3,6 +3,7 @@ package fdsa.edu.pnu.Model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +15,6 @@ import java.util.Set;
 
 @Entity
 @Table(name = "Role")
-@Data
 @Setter
 @Getter
 //@JsonIgnoreProperties(ignoreUnknown = true)
@@ -25,60 +25,28 @@ public class Role implements Serializable {
     private String roleName;
     private String roleDescription;
 
+    @ManyToMany( targetEntity = Utilisateur.class , mappedBy = "role", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("role")
+    private Set<Utilisateur> utlilisateurs;
 
-    @ManyToMany(mappedBy = "role", cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
-    private Set<Utilisateur> utlilisateurs= new HashSet<>();
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinTable(name = "PermissionRole",
-            joinColumns = {
-                    @JoinColumn(name = "RoleId")
-            },
-            inverseJoinColumns = {
-                    @JoinColumn(name = "PermissionId")
-            })
+
+
+    @ManyToMany( targetEntity = Permission.class ,fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("roles")
     private Set<Permission> permission;
 
-    public Integer getId() {
-        return id;
-    }
+//    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JoinTable(name = "PermissionRole",
+//            joinColumns = {
+//                    @JoinColumn(name = "RoleId")
+//            },
+//            inverseJoinColumns = {
+//                    @JoinColumn(name = "PermissionId")
+//            })
+//   private Set<Permission> permission;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
-    public String getRoleName() {
-        return roleName;
-    }
-
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
-    }
-
-    public String getRoleDescription() {
-        return roleDescription;
-    }
-
-    public void setRoleDescription(String roleDescription) {
-        this.roleDescription = roleDescription;
-    }
-
-    @JsonBackReference
-    public Set<Utilisateur> getUtlilisateurs() {
-        return utlilisateurs;
-    }
-
-    public void setUtlilisateurs(Set<Utilisateur> utlilisateurs) {
-        this.utlilisateurs = utlilisateurs;
-    }
-
-    public Set<Permission> getPermission() {
-        return permission;
-    }
-
-    public void setPermission(Set<Permission> permission) {
-        this.permission = permission;
-    }
 
 
 

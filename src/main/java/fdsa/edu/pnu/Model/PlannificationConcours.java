@@ -14,6 +14,7 @@
 package fdsa.edu.pnu.Model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -36,6 +37,8 @@ public class PlannificationConcours  extends Audit<String> implements Serializab
 	@org.hibernate.annotations.GenericGenerator(name="PNU_PLANNIFICATIONCONCOURS_ID_GENERATOR", strategy="native")	
 	private int id;
 
+
+	@JsonIgnoreProperties(value = {"plannificationConcourses"}, allowSetters = true)
     @ManyToOne (targetEntity= Concours.class, fetch=FetchType.LAZY)
 	@JoinColumns(value={ @JoinColumn(name="concoursId", referencedColumnName="ID", nullable=true) }, foreignKey=@ForeignKey(name="ConcoursPlanificationConcours"))
 	//@JsonBackReference

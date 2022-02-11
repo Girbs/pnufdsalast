@@ -65,9 +65,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/anneeAcademique/all",
                         "/utilisateur/motDePasseOublie",
                         "/role/all",
-                         "/utilisateur/all",
+                        "/concours/all",
+                        "/permission/all",
+                        "/utilisateur/all",
                         "/utilisateur/{id}",
-
+                        "/postulant/all/{offset}/{pageSize}/{field}",
+                        "/postulant/all/{offset}/{pageSize}/{field}/{filter}",
+                        "/postulantPageWithFilter/{offset}/{pageSize}/{field}/{prenom}",
                         "/professeur/nouveau",
                         "/personnel/all",
                         "/personnel/nouveau",
@@ -79,6 +83,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "concours/all",
                         "/concours/{id}",
                         "/concours/supprimer/{id}",
+                        "/postulantPageWithFilter",
 
 
 

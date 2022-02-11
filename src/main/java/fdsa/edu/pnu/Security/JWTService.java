@@ -1,6 +1,4 @@
 package fdsa.edu.pnu.Security;
-
-
 import fdsa.edu.pnu.Config.SpringSecurityAuditorAware;
 import fdsa.edu.pnu.Model.Role;
 import fdsa.edu.pnu.Model.Utilisateur;
@@ -21,15 +19,6 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * @Course: Platforme Numerique Universitaire - FDSA
- * @Author Name: Girbson Bijou
- * @Assignment Name: fdsa.edu.pnu.Security
- * @Date: Sep 20, 2021
- * @Subclass JWTService Description:
- */
-//Imports
-//Begin Subclass JWTService
 @Service
 public class JWTService implements UserDetailsService {
 
@@ -43,6 +32,7 @@ public class JWTService implements UserDetailsService {
 
     @Autowired
     private SpringSecurityAuditorAware springSecurityAuditorAware;
+
 
     public JwtResponse createJwtToken(JwtRequest jwtRequest) throws Exception {
 
@@ -59,9 +49,9 @@ public class JWTService implements UserDetailsService {
         UserInfo userInfo = new UserInfo();
         userInfo.setUserName(user.getUserName());
         userInfo.setUserPassword(user.getUserPassword());
-        userInfo.setUserRoles(user.getRoles());
+        userInfo.setUserRoles(user.getRole());
         //user.setDerniereConnexion(getLastLoginDate());
-       // System.out.println("The last login date is:"+getLastLoginDate());
+        // System.out.println("The last login date is:"+getLastLoginDate());
         return new JwtResponse(userInfo, newGeneratedToken);
     }
 
@@ -82,11 +72,11 @@ public class JWTService implements UserDetailsService {
 
     private Set getAuthorities(Utilisateur user) {
         Set authorities = new HashSet();
-        user.getRoles().forEach(role -> {
-           // authorities.add(new SimpleGrantedAuthority("ROLE_" + role.getRoleName()));
-                    for(String permission:getPermission(role)) {
-            authorities.add(new SimpleGrantedAuthority(  "ROLE_"+permission));
-                 }
+        user.getRole().forEach(role -> {
+            // authorities.add(new SimpleGrantedAuthority("ROLE_" + role.getRoleName()));
+            for(String permission:getPermission(role)) {
+                authorities.add(new SimpleGrantedAuthority(  "ROLE_"+permission));
+            }
         });
         return authorities;
     }

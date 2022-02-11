@@ -28,12 +28,10 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "id")
-@JsonIdentityReference(alwaysAsId = true)
+
 @Table(name="Professeur")
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-@DiscriminatorValue("Professeurs")
+@Inheritance(strategy=InheritanceType.JOINED)
+//@DiscriminatorValue("Professeurs")
 public class Professeur extends Utilisateur implements Serializable {
 
 	

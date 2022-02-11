@@ -65,9 +65,9 @@ public class Etudiant extends Utilisateur implements Serializable {
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private java.util.Set programmes;
 
-    @OneToOne(mappedBy = "etudiant", targetEntity = HistoriqueExam.class)
-    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
-    private HistoriqueExam historiqueExam;
+//    @OneToOne(mappedBy = "etudiant", targetEntity = HistoriqueExam.class)
+//    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
+//    private HistoriqueExam historiqueExam;
 
     @OneToMany(mappedBy = "etudiant", targetEntity = Paiement.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
@@ -99,7 +99,7 @@ public class Etudiant extends Utilisateur implements Serializable {
         this.cours = cours;
         this.promotions = promotions;
         this.programmes = programmes;
-        this.historiqueExam = historiqueExam;
+      //  this.historiqueExam = historiqueExam;
         this.paiements = paiements;
         this.stages = stages;
         this.requetes = requetes;
@@ -147,13 +147,13 @@ public class Etudiant extends Utilisateur implements Serializable {
         this.programmes = programmes;
     }
 
-    public HistoriqueExam getHistoriqueExam() {
-        return historiqueExam;
-    }
-
-    public void setHistoriqueExam(HistoriqueExam historiqueExam) {
-        this.historiqueExam = historiqueExam;
-    }
+//    public HistoriqueExam getHistoriqueExam() {
+//        return historiqueExam;
+//    }
+//
+//    public void setHistoriqueExam(HistoriqueExam historiqueExam) {
+//        this.historiqueExam = historiqueExam;
+//    }
 
     public Set getPaiements() {
         return paiements;
