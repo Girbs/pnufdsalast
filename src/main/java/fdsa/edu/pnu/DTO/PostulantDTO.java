@@ -98,6 +98,7 @@ public class PostulantDTO {
     private String prenomPersonneAcontacter;
     private String telephonePersonneAcontacter;
     private String statutApplication;
+
     private List<HistoriqueExamenConcoursDTO> historiqueExamenConcourss;
 
     private static ModelMapper mapper = new ModelMapper();

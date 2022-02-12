@@ -1,9 +1,9 @@
 /**
  * "Visual Paradigm: DO NOT MODIFY THIS FILE!"
- * 
+ *
  * This is an automatic generated file. It will be regenerated every time 
  * you generate persistence class.
- * 
+ *
  * Modifying its content may cause the program not work, or your work may lost.
  */
 
@@ -30,11 +30,11 @@ import java.util.List;
 public class Postulant implements Serializable {
 	public Postulant() {
 	}
-	
-	@Column(name="ID", nullable=false, length=10)	
-	@Id	
-	@GeneratedValue(generator="PNU_POSTULANT_ID_GENERATOR")	
-	@org.hibernate.annotations.GenericGenerator(name="PNU_POSTULANT_ID_GENERATOR", strategy="native")	
+
+	@Column(name="ID", nullable=false, length=10)
+	@Id
+	@GeneratedValue(generator="PNU_POSTULANT_ID_GENERATOR")
+	@org.hibernate.annotations.GenericGenerator(name="PNU_POSTULANT_ID_GENERATOR", strategy="native")
 	private Integer id;
 	private String nom;
 	private String prenom;
@@ -108,18 +108,18 @@ public class Postulant implements Serializable {
 	private String nomPersonneAcontacter;
 	private String prenomPersonneAcontacter;
 	private String telephonePersonneAcontacter;
-        private String statutApplication;
-	
+	private String statutApplication;
+
 	@OneToMany( fetch =FetchType.EAGER, mappedBy="postulant", targetEntity= HistoriqueExamenConcours.class)
-	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
+	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
 
 	private  List<HistoriqueExamenConcours> historiqueExamenConcourss;
-        
-        //	@OneToOne(optional=false, targetEntity=fdsa.edu.PNUFDSA.Model.Utlilisateur.class, fetch=FetchType.LAZY)	
+
+	//	@OneToOne(optional=false, targetEntity=fdsa.edu.PNUFDSA.Model.Utlilisateur.class, fetch=FetchType.LAZY)
 //	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 //	@JoinColumns(value={ @JoinColumn(name="UtlilisateurPersonneID", referencedColumnName="PersonneID", nullable=true) }, foreignKey=@ForeignKey(name="FKPostulant864673"))	
 //	private fdsa.edu.PNUFDSA.Model.Utlilisateur etre;
-	
 
-	
+
+
 }

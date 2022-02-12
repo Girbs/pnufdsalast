@@ -104,7 +104,7 @@ public interface IPostulantController {
             @ApiResponse(code = 200, message = "La liste des article / Une liste vide")
     })
     APIResponse<Page<Postulant>> getAllPostulantsWithPaginationAndSortv1(@RequestParam(required = true)  int offset, @RequestParam(required = true)  int pageSize,
-                                                                         @RequestParam(required = true) String sortField,@RequestParam(required = true)  String searchField, String sortDirection );
+                                                                         @RequestParam(required = true) String field,@RequestParam(required = true)  String searchFiled, String sortDirection );
 
 
     @GetMapping("/postulantPageWithFilter/{offset}/{pageSize}/{field}/{prenom}")

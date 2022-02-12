@@ -87,7 +87,7 @@ public class PostulantService implements IPostulantService {
 
     @Override
     public PostulantDTO save(PostulantDTO dto) {
-       mail.confirmerInscription(dto.getEmail(),dto.getNom(), dto.getPrenom());
+        mail.confirmerInscription(dto.getEmail(),dto.getNom(), dto.getPrenom());
         return PostulantDTO.fromEntity(
                 postulantDAO.save(
                         PostulantDTO.toEntity(dto)
@@ -121,8 +121,8 @@ public class PostulantService implements IPostulantService {
     @Override
     public List<Postulant> getApplicationParStatut(String statut_application) {
 
-       List <Postulant> lstPostulant = postulantDAO.findAllByStatutApplicatin(statut_application);
-       return lstPostulant;
+        List <Postulant> lstPostulant = postulantDAO.findAllByStatutApplicatin(statut_application);
+        return lstPostulant;
     }
 
     @Override
@@ -175,7 +175,7 @@ public class PostulantService implements IPostulantService {
         etudiant.setTelephone1(dto.getTelephone());
         etudiant.setCodePostal("");
         etudiant.setUserName(dto.getEmail());
-       // String pass = password.randomPassword();
+        // String pass = password.randomPassword();
 
         String pass = "stud@pass";
         System.out.println(pass);
