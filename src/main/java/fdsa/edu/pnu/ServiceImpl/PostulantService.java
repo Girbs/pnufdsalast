@@ -131,11 +131,23 @@ public class PostulantService implements IPostulantService {
         return  postulants;
     }
 
+//This is the OriginalMethod. It works fine
+//    public Page<Postulant> findAllWithPaginationAndSortingv1(int offset, int pageSize, String field, String searchfield) {
+//        Page<Postulant> postulants = postulantDAO.findByAllDynameicSearch( searchfield, PageRequest.of(offset-1, pageSize).withSort(Sort.by((field))));
+//        return  postulants;
+//    }
 
-    public Page<Postulant> findAllWithPaginationAndSortingv1(int offset, int pageSize, String field, String searchfield) {
-        Page<Postulant> postulants = postulantDAO.findByAllDynameicSearch( searchfield, PageRequest.of(offset-1, pageSize).withSort(Sort.by(Sort.Direction.DESC, (field))));
+    //This is the new metho with the dynamic sort
+    public Page<Postulant> findAllWithPaginationAndSortingv1(int offset, int pageSize, String sortField, String searchfield, String sortDirection) {
+
+        Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() :
+                Sort.by(sortField).descending();
+
+        Page<Postulant> postulants = postulantDAO.findByAllDynameicSearch( searchfield, PageRequest.of(offset-1, pageSize, sort));
         return  postulants;
     }
+
+
 
     public Page<Postulant> findAllWithFilter(int offset, int pageSize, String field, String prenom) {
         Page<Postulant> postulants = postulantDAO.findByAllName( prenom,

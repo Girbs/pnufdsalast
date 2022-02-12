@@ -86,6 +86,16 @@ public interface IPostulantController {
                                                                        @RequestParam(required = true)int pageSize, @RequestParam(required = true)  String field);
 
 
+//THis is the Original Method. It works fine
+//    @GetMapping("/postulant/listeDynamique")
+//    @ApiOperation(value = "Renvoi la liste des postulant", notes = "Cette methode permet de chercher et renvoyer la liste des postulant qui existent "
+//            + "dans la BDD", responseContainer = "List<PostulantDTO>")
+//    @ApiResponses(value = {
+//            @ApiResponse(code = 200, message = "La liste des article / Une liste vide")
+//    })
+//    APIResponse<Page<Postulant>> getAllPostulantsWithPaginationAndSortv1(@RequestParam(required = true)  int offset, @RequestParam(required = true)  int pageSize,
+//                                                                         @RequestParam(required = true) String field,@RequestParam(required = true)  String searchFiled );
+
 
     @GetMapping("/postulant/listeDynamique")
     @ApiOperation(value = "Renvoi la liste des postulant", notes = "Cette methode permet de chercher et renvoyer la liste des postulant qui existent "
@@ -94,7 +104,7 @@ public interface IPostulantController {
             @ApiResponse(code = 200, message = "La liste des article / Une liste vide")
     })
     APIResponse<Page<Postulant>> getAllPostulantsWithPaginationAndSortv1(@RequestParam(required = true)  int offset, @RequestParam(required = true)  int pageSize,
-                                                                         @RequestParam(required = true) String field,@RequestParam(required = true)  String searchFiled );
+                                                                         @RequestParam(required = true) String sortField,@RequestParam(required = true)  String searchField, String sortDirection );
 
 
     @GetMapping("/postulantPageWithFilter/{offset}/{pageSize}/{field}/{prenom}")
