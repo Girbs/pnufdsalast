@@ -34,7 +34,7 @@ import java.util.stream.Collectors;
 /**
  * @author Ing.Girbson BIJOU
  */
-@Data
+
 @Service
 public class PostulantService implements IPostulantService {
 
@@ -86,13 +86,12 @@ public class PostulantService implements IPostulantService {
     }
 
     @Override
-    public PostulantDTO save(PostulantDTO dto) {
+    public Postulant save(Postulant dto) {
         mail.confirmerInscription(dto.getEmail(),dto.getNom(), dto.getPrenom());
-        return PostulantDTO.fromEntity(
-                postulantDAO.save(
-                        PostulantDTO.toEntity(dto)
-                )
-        );
+
+        return postulantDAO.save(dto);
+
+
     }
 
     @Override

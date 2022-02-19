@@ -30,7 +30,7 @@ import java.util.List;
 @Repository
 public interface PostulantDAO extends JpaRepository<Postulant,Integer> {
 
-
+    //Calling Procedure Store
     @Query(value =  "{call ApplicationParStatut(:appSatut)}", nativeQuery = true)
     List<Postulant> findAllByStatutApplicatin(@Param("appSatut") String appSatut);
 
@@ -38,8 +38,12 @@ public interface PostulantDAO extends JpaRepository<Postulant,Integer> {
     @Query(value ="select s from Postulant s where prenom like %?1%",  nativeQuery = true)
     Page<Postulant> findByAllName(String prenom, Pageable pageable);
 
+    //Calling Procedure Store+
+//    @Query(value =  "{call PostulantRechercheDynamique (:CritereDeRecherche)}", nativeQuery = true)
+//    Page<Postulant> findByAllDynameicSearch(@Param("CritereDeRecherche") String text , Pageable pageable);
 
-    @Query(value ="SELECT * FROM Postulant  WHERE  CONCAT( nom , prenom, adresse, email , telephone, statutApplication) LIKE %:text%" , nativeQuery = true)
+   // This method is the same to the above one
+    @Query(value ="SELECT * FROM Postulant  WHERE  CONCAT( nom , prenom, adresse, email , telephone, statut_application) LIKE %:text%" , nativeQuery = true)
     Page<Postulant> findByAllDynameicSearch(@Param("text") String text , Pageable pageable);
 
     // @Query(value = "SELECT * FROM parent WHERE CONCAT(receiver, sender) like %:text%", nativeQuery = true)

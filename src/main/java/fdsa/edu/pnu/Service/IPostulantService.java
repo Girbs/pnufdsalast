@@ -23,7 +23,7 @@ public interface IPostulantService {
 
     PostulantDTO findById(Integer id);
 
-    PostulantDTO save(PostulantDTO dto);
+    Postulant save(Postulant dto);
 
     Etudiant update(Integer id, PostulantDTO dto);
 

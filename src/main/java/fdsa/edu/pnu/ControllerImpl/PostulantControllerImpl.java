@@ -46,7 +46,7 @@ public class PostulantControllerImpl implements IPostulantController {
     }
 
     @Override
-    public PostulantDTO savePostulant(PostulantDTO dto) {
+    public Postulant save(Postulant dto) {
         return postulantService.save(dto);
     }
 

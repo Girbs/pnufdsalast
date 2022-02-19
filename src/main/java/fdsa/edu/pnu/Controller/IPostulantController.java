@@ -41,12 +41,12 @@ public interface IPostulantController {
     PostulantDTO findById(@PathVariable("id") Integer id);
 
     @PostMapping(value = "/postulant/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Enregistrer un Postulant", notes = "Cette methode permet d'enregistrer ou modifier un postulant", response = PostulantDTO.class)
+    @ApiOperation(value = "Enregistrer un Postulant", notes = "Cette methode permet d'enregistrer ou modifier un postulant", response = Postulant.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "L'objet postulant cree / modifie"),
             @ApiResponse(code = 400, message = "L'objet postulant n'est pas valide")
     })
-    PostulantDTO savePostulant(@RequestBody PostulantDTO dto);
+    Postulant save(@RequestBody Postulant dto);
 
     @DeleteMapping(value = "/postulant/supprimer/{id}")
     @ApiOperation(value = "Supprimer un postulant", notes = "Cette methode permet de supprimer un postulant par ID")

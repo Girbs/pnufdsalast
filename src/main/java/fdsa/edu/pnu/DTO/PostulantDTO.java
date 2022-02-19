@@ -24,7 +24,6 @@ public class PostulantDTO {
 
 
     private Integer id;
-//    @JsonProperty(value = "nom")
     private String nom;
     private String prenom;
     private String adresse;
