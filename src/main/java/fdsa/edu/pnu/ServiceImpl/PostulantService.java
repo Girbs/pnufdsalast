@@ -17,7 +17,6 @@ import fdsa.edu.pnu.Repository.RoleDAO;
 import fdsa.edu.pnu.Security.PasswordGenerator;
 import fdsa.edu.pnu.Service.IPostulantService;
 import fdsa.edu.pnu.mail.EmailController;
-import lombok.Data;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -61,6 +60,15 @@ public class PostulantService implements IPostulantService {
 
     private static ModelMapper mapper = new ModelMapper();
 
+    public PostulantService(PostulantDAO postulantDAO, EtudiantDAO etudiantDAO, RoleDAO roleDAO, PersonneDAO personneDAO, PasswordGenerator password, PasswordEncoder passwordEncoder) {
+        this.postulantDAO = postulantDAO;
+        this.etudiantDAO = etudiantDAO;
+        this.roleDAO = roleDAO;
+        this.personneDAO = personneDAO;
+        this.password = password;
+        this.passwordEncoder = passwordEncoder;
+    }
+
     /**
      * Lister Tous Les Postulants
      *
@@ -87,7 +95,7 @@ public class PostulantService implements IPostulantService {
 
     @Override
     public Postulant save(Postulant dto) {
-        mail.confirmerInscription(dto.getEmail(),dto.getNom(), dto.getPrenom());
+       // mail.confirmerInscription(dto.getEmail(),dto.getNom(), dto.getPrenom());
 
         return postulantDAO.save(dto);
 
