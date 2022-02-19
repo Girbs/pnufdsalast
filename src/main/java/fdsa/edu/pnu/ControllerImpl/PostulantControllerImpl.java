@@ -46,7 +46,7 @@ public class PostulantControllerImpl implements IPostulantController {
     }
 
     @Override
-    public Postulant save(Postulant dto) {
+    public Postulant save(Postulant dto) throws InterruptedException {
         return postulantService.save(dto);
     }
 

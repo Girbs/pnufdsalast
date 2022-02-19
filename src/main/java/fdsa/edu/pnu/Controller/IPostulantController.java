@@ -46,7 +46,7 @@ public interface IPostulantController {
             @ApiResponse(code = 200, message = "L'objet postulant cree / modifie"),
             @ApiResponse(code = 400, message = "L'objet postulant n'est pas valide")
     })
-    Postulant save(@RequestBody Postulant dto);
+    Postulant save(@RequestBody Postulant dto) throws InterruptedException;
 
     @DeleteMapping(value = "/postulant/supprimer/{id}")
     @ApiOperation(value = "Supprimer un postulant", notes = "Cette methode permet de supprimer un postulant par ID")
