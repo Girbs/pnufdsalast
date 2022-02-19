@@ -6,7 +6,6 @@
 package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.DTO.PostulantDTO;
-import fdsa.edu.pnu.Exception.EntityNotFoundException;
 import fdsa.edu.pnu.Model.Etudiant;
 import fdsa.edu.pnu.Model.Postulant;
 import fdsa.edu.pnu.Model.Role;
@@ -17,7 +16,6 @@ import fdsa.edu.pnu.Repository.RoleDAO;
 import fdsa.edu.pnu.Security.PasswordGenerator;
 import fdsa.edu.pnu.Service.IPostulantService;
 import fdsa.edu.pnu.mail.EmailController;
-import lombok.Data;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -26,9 +24,9 @@ import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -75,15 +73,12 @@ public class PostulantService implements IPostulantService {
     }
 
     @Override
-    public PostulantDTO findById(Integer id) {
+    public Optional<Postulant> findById(Integer id) {
         if (id == null) {
             return null;
         }
-        return postulantDAO.findById(id)
-                .map(PostulantDTO::fromEntity)
-                .orElseThrow(() -> {
-                    throw new EntityNotFoundException("Not Found");
-                });
+        return postulantDAO.findById(id);
+
     }
 
     @Override
@@ -91,7 +86,6 @@ public class PostulantService implements IPostulantService {
       //  mail.confirmerInscription(dto.getEmail(),dto.getNom(), dto.getPrenom());
 
         return postulantDAO.save(dto);
-
 
     }
 
@@ -156,49 +150,49 @@ public class PostulantService implements IPostulantService {
     }
 
 
-    @Override
-    public Etudiant update(Integer id, PostulantDTO dto) {
-
-        // first find that student is present in db or not
-        PostulantDTO postulantDTO = findById(id);
-
-        String statusToBeUpdated = dto.getStatutApplication();
-        String currentApplicationStatus = postulantDTO.getStatutApplication();
-
-        // Now save details in DB
-        Etudiant etudiant = new Etudiant();
-        etudiant.setNom(dto.getNom());
-        etudiant.setPrenom(dto.getPrenom());
-        etudiant.setCinNif(dto.getNifCin());
-        etudiant.setSexe(dto.getSexe());
-        etudiant.setStatus(true);
-        etudiant.setTelephone1(dto.getTelephone());
-        etudiant.setCodePostal("");
-        etudiant.setUserName(dto.getEmail());
-        // String pass = password.randomPassword();
-
-        String pass = "stud@pass";
-        System.out.println(pass);
-        System.out.println(pass);
-        etudiant.setUserPassword(passwordEncoder.encode(pass));
-        etudiant.setCodeEtudiant("CODE");
-        etudiant.setMatricule("50967");
-        Set<Role> role = new HashSet<>();
-        role.add(roleDAO.findById(1).get());
-        etudiant.setRole(role);
-        // PostulantDTO.fromEntity(postulantDAO.save(PostulantDTO.toEntity(dto)));
-
-        if (!currentApplicationStatus.equals(statusToBeUpdated) && statusToBeUpdated.equals("Accepté")) {
-            // Please focus on ! operator in above condition and replace your "Accepté" text if needed.
-            mail.applicationApprovee(dto.getEmail(), dto.getNom(), dto.getPrenom(), dto.getFilliere());
-        }
-        //postulantDAO.save(dto);
-        return etudiantDAO.save(etudiant);
-        // If application status is updated then we need to send an email confirmation to applicant.
-        // So we will check for equality of current status that we have in DB and new status that we now want to store in DB.
-
-
-        // return PostulantDTO.fromEntity(postulantDAO.save(PostulantDTO.toEntity(dto)));
-    }
+    //@Override
+//    public Etudiant update(Integer id, Postulant dto) {
+//
+//        // first find that student is present in db or not
+//        Optional<Postulant> postulant = findById(id);
+//
+//        String statusToBeUpdated = dto.getStatutApplication();
+//        String currentApplicationStatus = postulant.
+//
+//        // Now save details in DB
+//        Etudiant etudiant = new Etudiant();
+//        etudiant.setNom(dto.getNom());
+//        etudiant.setPrenom(dto.getPrenom());
+//        etudiant.setCinNif(dto.getNifCin());
+//        etudiant.setSexe(dto.getSexe());
+//        etudiant.setStatus(true);
+//        etudiant.setTelephone1(dto.getTelephone());
+//        etudiant.setCodePostal("");
+//        etudiant.setUserName(dto.getEmail());
+//        // String pass = password.randomPassword();
+//
+//        String pass = "stud@pass";
+//        System.out.println(pass);
+//        System.out.println(pass);
+//        etudiant.setUserPassword(passwordEncoder.encode(pass));
+//        etudiant.setCodeEtudiant("CODE");
+//        etudiant.setMatricule("50967");
+//        Set<Role> role = new HashSet<>();
+//        role.add(roleDAO.findById(1).get());
+//        etudiant.setRole(role);
+//        // PostulantDTO.fromEntity(postulantDAO.save(PostulantDTO.toEntity(dto)));
+//
+//        if (!currentApplicationStatus.equals(statusToBeUpdated) && statusToBeUpdated.equals("Accepté")) {
+//            // Please focus on ! operator in above condition and replace your "Accepté" text if needed.
+//            mail.applicationApprovee(dto.getEmail(), dto.getNom(), dto.getPrenom(), dto.getFilliere());
+//        }
+//        //postulantDAO.save(dto);
+//        return etudiantDAO.save(etudiant);
+//        // If application status is updated then we need to send an email confirmation to applicant.
+//        // So we will check for equality of current status that we have in DB and new status that we now want to store in DB.
+//
+//
+//        // return PostulantDTO.fromEntity(postulantDAO.save(PostulantDTO.toEntity(dto)));
+//    }
 
 }
