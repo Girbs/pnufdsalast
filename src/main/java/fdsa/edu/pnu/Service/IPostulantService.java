@@ -23,7 +23,7 @@ public interface IPostulantService {
 
     PostulantDTO findById(Integer id);
 
-    Postulant save(Postulant dto) throws InterruptedException;
+    //Postulant save(Postulant dto) throws InterruptedException;
 
     Etudiant update(Integer id, PostulantDTO dto);
 

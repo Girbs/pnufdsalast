@@ -45,10 +45,10 @@ public class PostulantControllerImpl implements IPostulantController {
         return postulantService.findById(id);
     }
 
-    @Override
-    public Postulant save(Postulant dto) throws InterruptedException {
-        return postulantService.save(dto);
-    }
+//    @Override
+//    public Postulant save(Postulant dto) throws InterruptedException {
+//        return postulantService.save(dto);
+//    }
 
     @Override
     public void delete(Integer id) {

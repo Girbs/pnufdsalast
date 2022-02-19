@@ -86,14 +86,14 @@ public class PostulantService implements IPostulantService {
                 });
     }
 
-    @Override
-    public Postulant save(Postulant dto)  throws InterruptedException {
-        mail.confirmerInscription(dto.getEmail(),dto.getNom(), dto.getPrenom());
-
-        return postulantDAO.save(dto);
-
-
-    }
+//    @Override
+//    public Postulant save(Postulant dto)  throws InterruptedException {
+//        mail.confirmerInscription(dto.getEmail(),dto.getNom(), dto.getPrenom());
+//
+//        return postulantDAO.save(dto);
+//
+//
+//    }
 
     @Override
     public void delete(Integer id) {
