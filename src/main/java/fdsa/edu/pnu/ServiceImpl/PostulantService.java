@@ -17,6 +17,7 @@ import fdsa.edu.pnu.Repository.RoleDAO;
 import fdsa.edu.pnu.Security.PasswordGenerator;
 import fdsa.edu.pnu.Service.IPostulantService;
 import fdsa.edu.pnu.mail.EmailController;
+import lombok.Data;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -25,6 +26,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -60,15 +62,6 @@ public class PostulantService implements IPostulantService {
 
     private static ModelMapper mapper = new ModelMapper();
 
-    public PostulantService(PostulantDAO postulantDAO, EtudiantDAO etudiantDAO, RoleDAO roleDAO, PersonneDAO personneDAO, PasswordGenerator password, PasswordEncoder passwordEncoder) {
-        this.postulantDAO = postulantDAO;
-        this.etudiantDAO = etudiantDAO;
-        this.roleDAO = roleDAO;
-        this.personneDAO = personneDAO;
-        this.password = password;
-        this.passwordEncoder = passwordEncoder;
-    }
-
     /**
      * Lister Tous Les Postulants
      *
@@ -94,8 +87,8 @@ public class PostulantService implements IPostulantService {
     }
 
     @Override
-    public Postulant save(Postulant dto) {
-       // mail.confirmerInscription(dto.getEmail(),dto.getNom(), dto.getPrenom());
+    public Postulant save(Postulant dto)  throws InterruptedException {
+        mail.confirmerInscription(dto.getEmail(),dto.getNom(), dto.getPrenom());
 
         return postulantDAO.save(dto);
 
