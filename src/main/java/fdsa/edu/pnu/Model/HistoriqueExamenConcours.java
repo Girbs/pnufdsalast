@@ -1,14 +1,14 @@
 /**
  * "Visual Paradigm: DO NOT MODIFY THIS FILE!"
- * 
- * This is an automatic generated file. It will be regenerated every time 
+ *
+ * This is an automatic generated file. It will be regenerated every time
  * you generate persistence class.
- * 
+ *
  * Modifying its content may cause the program not work, or your work may lost.
  */
 
 /**
- * Licensee: 
+ * Licensee:
  * License Type: Evaluation
  */
 package fdsa.edu.pnu.Model;
@@ -28,25 +28,25 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "id")
+		property = "id")
 @JsonIdentityReference(alwaysAsId = true)
 @Table(name="HistoriqueExamenConcours")
 public class HistoriqueExamenConcours implements Serializable {
-	
-	@Column(name="ID", nullable=false, length=10)	
-	@Id	
-	@GeneratedValue(generator="PNU_HISTORIQUEEXAMENCONCOURS_ID_GENERATOR")	
-	@org.hibernate.annotations.GenericGenerator(name="PNU_HISTORIQUEEXAMENCONCOURS_ID_GENERATOR", strategy="native")	
+
+	@Column(name="ID", nullable=false, length=10)
+	@Id
+	@GeneratedValue(generator="PNU_HISTORIQUEEXAMENCONCOURS_ID_GENERATOR")
+	@org.hibernate.annotations.GenericGenerator(name="PNU_HISTORIQUEEXAMENCONCOURS_ID_GENERATOR", strategy="native")
 	private int ID;
-	
-	@Column(name="NoteObtenue", nullable=false, length=10)	
+
+	@Column(name="NoteObtenue", nullable=false, length=10)
 	private double noteObtenue;
-	
+
 	@ManyToOne(targetEntity= PlannificationConcours.class)
-	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
+	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
 	@JoinColumns({ @JoinColumn(name="PlannificationConcoursID", referencedColumnName="ID") })
 	public PlannificationConcours plannificationConcours;
-	
+
 	@ManyToOne(targetEntity= Postulant.class)
 	@JsonBackReference
 	@JoinColumns({ @JoinColumn(name="PostulantID", referencedColumnName="ID") })

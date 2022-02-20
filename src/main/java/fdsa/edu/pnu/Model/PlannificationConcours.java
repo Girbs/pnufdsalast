@@ -1,9 +1,9 @@
 /**
  * "Visual Paradigm: DO NOT MODIFY THIS FILE!"
- * 
+ *
  * This is an automatic generated file. It will be regenerated every time 
  * you generate persistence class.
- * 
+ *
  * Modifying its content may cause the program not work, or your work may lost.
  */
 
@@ -30,38 +30,35 @@ import java.util.List;
 public class PlannificationConcours  extends Audit<String> implements Serializable {
 	public PlannificationConcours() {
 	}
-	
-	@Column(name="ID", nullable=false, length=10)	
-	@Id	
-	@GeneratedValue(generator="PNU_PLANNIFICATIONCONCOURS_ID_GENERATOR")	
-	@org.hibernate.annotations.GenericGenerator(name="PNU_PLANNIFICATIONCONCOURS_ID_GENERATOR", strategy="native")	
+
+	@Column(name="ID", nullable=false, length=10)
+	@Id
+	@GeneratedValue(generator="PNU_PLANNIFICATIONCONCOURS_ID_GENERATOR")
+	@org.hibernate.annotations.GenericGenerator(name="PNU_PLANNIFICATIONCONCOURS_ID_GENERATOR", strategy="native")
 	private int id;
 
 
 	@JsonIgnoreProperties(value = {"plannificationConcourses"}, allowSetters = true)
-    @ManyToOne (targetEntity= Concours.class, fetch=FetchType.EAGER)
+	@ManyToOne (targetEntity= Concours.class, fetch=FetchType.LAZY)
 	@JoinColumns(value={ @JoinColumn(name="concoursId", referencedColumnName="ID", nullable=true) }, foreignKey=@ForeignKey(name="ConcoursPlanificationConcours"))
 	//@JsonBackReference
 	private Concours concours;
 
 	//@JsonBackReference
-    @ManyToOne(targetEntity= Matiere.class, fetch=FetchType.EAGER)
+	@ManyToOne(targetEntity= Matiere.class, fetch=FetchType.LAZY)
 	@JoinColumns(value={ @JoinColumn(name="MatiereId", referencedColumnName="ID", nullable=true) }, foreignKey=@ForeignKey(name="MatierePlanificationConcours"))
-    private Matiere matiere;
-	
-	@Column(name="`Date`", nullable=true)	
-	@Temporal(TemporalType.DATE)	
+	private Matiere matiere;
+
+	@Column(name="`Date`", nullable=true)
+	@Temporal(TemporalType.DATE)
 	private java.util.Date Date;
-	
-	@Column(name="Quotation", nullable=false, length=10)	
+
+	@Column(name="Quotation", nullable=false, length=10)
 	private double quotation;
-	
-	@Column(name="NoteDePassage", nullable=false, length=10)	
+
+	@Column(name="NoteDePassage", nullable=false, length=10)
 	private double noteDePassage;
 
-
-	private String commentaire;
-	
 
 	@OneToMany(mappedBy="plannificationConcours", cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity= HistoriqueExamenConcours.class)
 	private List<HistoriqueExamenConcours> historiqueExamenConcours;
