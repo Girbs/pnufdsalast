@@ -25,7 +25,7 @@ import java.util.List;
 
 public interface IPlannificationConcoursController {
 
-    @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/plannificationConcours/all", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Renvoi la liste des PlannificationConcours", notes = "Cette methode permet de chercher et renvoyer la liste des plannificationConcours qui existent "
             + "dans la BDD", responseContainer = "List<PlannificationConcoursDTO>")
     @ApiResponses(value = {
