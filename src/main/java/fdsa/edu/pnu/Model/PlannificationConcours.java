@@ -39,13 +39,13 @@ public class PlannificationConcours  extends Audit<String> implements Serializab
 
 
 	@JsonIgnoreProperties(value = {"plannificationConcourses"}, allowSetters = true)
-    @ManyToOne (targetEntity= Concours.class, fetch=FetchType.LAZY)
+    @ManyToOne (targetEntity= Concours.class, fetch=FetchType.EAGER)
 	@JoinColumns(value={ @JoinColumn(name="concoursId", referencedColumnName="ID", nullable=true) }, foreignKey=@ForeignKey(name="ConcoursPlanificationConcours"))
 	//@JsonBackReference
 	private Concours concours;
 
 	//@JsonBackReference
-    @ManyToOne(targetEntity= Matiere.class, fetch=FetchType.LAZY)
+    @ManyToOne(targetEntity= Matiere.class, fetch=FetchType.EAGER)
 	@JoinColumns(value={ @JoinColumn(name="MatiereId", referencedColumnName="ID", nullable=true) }, foreignKey=@ForeignKey(name="MatierePlanificationConcours"))
     private Matiere matiere;
 	
