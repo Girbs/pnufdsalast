@@ -19,10 +19,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("/matiere")
+//@RequestMapping("/matiere")
 public interface IMatiereController {
 
-    @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/matiere/all", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Renvoi la liste des matieres", notes = "Cette methode permet de chercher et renvoyer la liste des matieres qui existent "
             + "dans la BDD", responseContainer = "List<MatiereDTO>")
     @ApiResponses(value = {
@@ -30,7 +30,7 @@ public interface IMatiereController {
     })
     List<Matiere> findAll();
 
-    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/matiere/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Rechercher une matiere par ID", notes = "Cette methode permet de chercher une matiere par son ID", response = MatiereDTO.class)
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "La Matiere   a ete trouve dans la BDD"),
@@ -38,7 +38,7 @@ public interface IMatiereController {
     })
     Optional<Matiere> findById(@PathVariable("id") Integer id);
 
-    @PostMapping(value = "/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/matiere/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Enregistrer une matie", notes = "Cette methode permet d'enregistrer ou modifier une matiere", response = MatiereDTO.class)
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "L'objet matiere cree / modifie"),
@@ -47,14 +47,14 @@ public interface IMatiereController {
     Matiere save(@RequestBody Matiere matiere);
 
 
-    @DeleteMapping(value = "/supprimer/{id}")
+    @DeleteMapping(value = "/matiere/supprimer/{id}")
     @ApiOperation(value = "Supprimer un matiere", notes = "Cette methode permet de supprimer un matiere par ID")
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "Le matiere a ete supprime")
     })
     void delete(@PathVariable("id") Integer id);
 
-    @GetMapping("/listeDynamique")
+    @GetMapping("/matiere/listeDynamique")
     @ApiOperation(value = "Renvoi la liste des postulant", notes = "Cette methode permet de chercher et renvoyer la liste des matieres qui existent "
             + "dans la BDD", responseContainer = "List<Matiere>")
     @ApiResponses(value = {
