@@ -83,7 +83,7 @@ public class PostulantService implements IPostulantService {
 
     @Override
     public Postulant save(Postulant dto) {
-       mail.confirmerInscription(dto.getEmail(),dto.getNom(), dto.getPrenom());
+     //  mail.confirmerInscription(dto.getEmail(),dto.getNom(), dto.getPrenom());
 
         return postulantDAO.save(dto);
 
