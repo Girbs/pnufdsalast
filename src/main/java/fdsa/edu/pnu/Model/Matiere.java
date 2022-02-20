@@ -14,6 +14,7 @@
 package fdsa.edu.pnu.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,6 +27,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @Table(name="Matiere")
+@JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer","fieldHandler"})
 public class Matiere extends Audit<String>  implements Serializable {
 
 	@Column(name="ID", nullable=false, length=10)
@@ -51,11 +53,10 @@ public class Matiere extends Audit<String>  implements Serializable {
 	@Column(name="NombreDeCreditStandard", nullable=false, length=10)
 	private int nombreDeCreditStandard;
 
-	@JsonManagedReference
 	@OneToMany(mappedBy="matiere", targetEntity= Curriculum.class)
 	private List<Curriculum> curriculum ;
 
-
+	@JsonIgnoreProperties(value = {"matiere"}, allowSetters = true)
 	@OneToMany(mappedBy="matiere", targetEntity= PlannificationConcours.class)
 	private List<PlannificationConcours> plannificationConcourses;
 
