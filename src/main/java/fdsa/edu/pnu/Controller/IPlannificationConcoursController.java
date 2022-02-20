@@ -22,7 +22,7 @@ import java.util.List;
  *
  * @author Ing.Girbson BIJOU
  */
-@RequestMapping("/plannificationConcours")
+
 public interface IPlannificationConcoursController {
 
     @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -33,7 +33,7 @@ public interface IPlannificationConcoursController {
     })
     List<PlannificationConcoursDTO> findAll();
 
-    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/plannificationConcours/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Rechercher une plannificationConcours par ID", notes = "Cette methode permet de chercher une matiere par son ID", response = PlannificationConcoursDTO.class)
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "La plannificationConcours a ete trouve dans la BDD"),
@@ -41,7 +41,7 @@ public interface IPlannificationConcoursController {
     })
     PlannificationConcoursDTO findById(@PathVariable("id") Integer id);
 
-    @PostMapping(value = "/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/plannificationConcours/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Enregistrer une plannificationConcours", notes = "Cette methode permet d'enregistrer ou modifier une plannificationConcours", response = PlannificationConcoursDTO.class)
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "L'objet plannificationConcours cree / modifie"),
@@ -49,14 +49,14 @@ public interface IPlannificationConcoursController {
     })
     PlannificationConcours save(@RequestBody PlannificationConcours dto);
 
-    @DeleteMapping(value = "/supprimer/{id}")
+    @DeleteMapping(value = "/plannificationConcours/supprimer/{id}")
     @ApiOperation(value = "Supprimer une plannificationConcours", notes = "Cette methode permet de supprimer une plannificationConcours par ID")
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "Le matiere a ete supprime")
     })
     void delete(@PathVariable("id") Integer id);
 
-    @GetMapping("/listeDynamique")
+    @GetMapping("/plannificationConcours/listeDynamique")
     @ApiOperation(value = "Renvoi la liste des PlannificationConcours", notes = "Cette methode permet de chercher et renvoyer la liste des PlannificationConcours qui existent "
             + "dans la BDD", responseContainer = "List<PlannificationConcours>")
     @ApiResponses(value = {
