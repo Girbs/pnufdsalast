@@ -15,42 +15,16 @@ package fdsa.edu.pnu.Repository;
 
 
 import fdsa.edu.pnu.Model.HistoriqueExamenConcours;
+import fdsa.edu.pnu.Model.Matiere;
 import org.hibernate.LockMode;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 
 public interface HistoriqueExamenConcoursDAO extends JpaRepository<HistoriqueExamenConcours,Integer> {
-//	public HistoriqueExamenConcours loadHistoriqueExamenConcoursByORMID(int ID) throws PersistentException;
-//	public HistoriqueExamenConcours getHistoriqueExamenConcoursByORMID(int ID) throws PersistentException;
-//	public HistoriqueExamenConcours loadHistoriqueExamenConcoursByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException;
-//	public HistoriqueExamenConcours getHistoriqueExamenConcoursByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException;
-//	public HistoriqueExamenConcours loadHistoriqueExamenConcoursByORMID(PersistentSession session, int ID) throws PersistentException;
-//	public HistoriqueExamenConcours getHistoriqueExamenConcoursByORMID(PersistentSession session, int ID) throws PersistentException;
-//	public HistoriqueExamenConcours loadHistoriqueExamenConcoursByORMID(PersistentSession session, int ID, org.hibernate.LockMode lockMode) throws PersistentException;
-//	public HistoriqueExamenConcours getHistoriqueExamenConcoursByORMID(PersistentSession session, int ID, org.hibernate.LockMode lockMode) throws PersistentException;
-//	public HistoriqueExamenConcours[] listHistoriqueExamenConcoursByQuery(String condition, String orderBy) throws PersistentException;
-//	public HistoriqueExamenConcours[] listHistoriqueExamenConcoursByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException;
-//	public java.util.List queryHistoriqueExamenConcours(String condition, String orderBy) throws PersistentException;
-//	public java.util.List queryHistoriqueExamenConcours(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException;
-//	public java.util.Iterator iterateHistoriqueExamenConcoursByQuery(String condition, String orderBy) throws PersistentException;
-//	public java.util.Iterator iterateHistoriqueExamenConcoursByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException;
-//	public HistoriqueExamenConcours[] listHistoriqueExamenConcoursByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException;
-//	public HistoriqueExamenConcours[] listHistoriqueExamenConcoursByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException;
-//	public java.util.List queryHistoriqueExamenConcours(PersistentSession session, String condition, String orderBy) throws PersistentException;
-//	public java.util.List queryHistoriqueExamenConcours(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException;
-//	public java.util.Iterator iterateHistoriqueExamenConcoursByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException;
-//	public java.util.Iterator iterateHistoriqueExamenConcoursByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException;
-//	public HistoriqueExamenConcours loadHistoriqueExamenConcoursByQuery(String condition, String orderBy) throws PersistentException;
-//	public HistoriqueExamenConcours loadHistoriqueExamenConcoursByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException;
-//	public HistoriqueExamenConcours loadHistoriqueExamenConcoursByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException;
-//	public HistoriqueExamenConcours loadHistoriqueExamenConcoursByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException;
-//	public HistoriqueExamenConcours createHistoriqueExamenConcours();
-//	public boolean save(pnu.HistoriqueExamenConcours historiqueExamenConcours) throws PersistentException;
-//	public boolean delete(pnu.HistoriqueExamenConcours historiqueExamenConcours) throws PersistentException;
-//	public boolean deleteAndDissociate(pnu.HistoriqueExamenConcours historiqueExamenConcours) throws PersistentException;
-//	public boolean deleteAndDissociate(pnu.HistoriqueExamenConcours historiqueExamenConcours, org.orm.PersistentSession session) throws PersistentException;
-//	public boolean refresh(pnu.HistoriqueExamenConcours historiqueExamenConcours) throws PersistentException;
-//	public boolean evict(pnu.HistoriqueExamenConcours historiqueExamenConcours) throws PersistentException;
-//	public HistoriqueExamenConcours loadHistoriqueExamenConcoursByCriteria(HistoriqueExamenConcoursCriteria historiqueExamenConcoursCriteria);
-//	public HistoriqueExamenConcours[] listHistoriqueExamenConcoursByCriteria(HistoriqueExamenConcoursCriteria historiqueExamenConcoursCriteria);
+    @Query(value ="SELECT * FROM historique_examen_concours  WHERE  CONCAT( note_obtenue)  LIKE %:text%" , nativeQuery = true)
+    Page<HistoriqueExamenConcours> findByAllHistoriqueExamenConcoursDynamiqueSearch(@Param("text") String text , Pageable pageable);
 }
