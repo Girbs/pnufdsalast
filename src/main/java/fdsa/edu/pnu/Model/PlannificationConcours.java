@@ -58,6 +58,9 @@ public class PlannificationConcours  extends Audit<String> implements Serializab
 	
 	@Column(name="NoteDePassage", nullable=false, length=10)	
 	private double noteDePassage;
+
+
+	private String commentaire;
 	
 
 	@OneToMany(mappedBy="plannificationConcours", cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity= HistoriqueExamenConcours.class)

@@ -33,12 +33,7 @@ public class Matiere extends Audit<String>  implements Serializable {
 	@GeneratedValue(generator="PNU_MATIERE_ID_GENERATOR")	
 	@org.hibernate.annotations.GenericGenerator(name="PNU_MATIERE_ID_GENERATOR", strategy="native")	
 	private int id;
-	
-//	@ManyToOne(targetEntity=fdsa.edu.PNUFDSA.Model.Matiere.class, fetch=FetchType.LAZY)	
-//	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
-//	@JoinColumns(value={ @JoinColumn(name="MatiereID", referencedColumnName="ID", nullable=false) }, foreignKey=@ForeignKey(name="Pre-requis"))	
-//	private fdsa.edu.PNUFDSA.Model.Matiere matiere;
-	
+
 	@Column(name="Description", nullable=true, length=255)	
 	private String description;
 	

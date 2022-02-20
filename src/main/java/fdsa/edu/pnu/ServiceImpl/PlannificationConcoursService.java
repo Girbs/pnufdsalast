@@ -16,6 +16,9 @@ import fdsa.edu.pnu.Repository.PlannificationConcoursDAO;
 import fdsa.edu.pnu.Service.IPlannificationConcoursService;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -76,7 +79,14 @@ public class PlannificationConcoursService implements IPlannificationConcoursSer
         return plannificationConcoursDAO.save(plannificationConcours);
     }
 
-//    @Override
+    @Override
+    public Page<PlannificationConcours> findAllWithPaginationAndSortingv1(int offset, int pageSize, String sortField, String searchfield, String sortDirection) {
+        Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() :
+                Sort.by(sortField).descending();
+        Page<PlannificationConcours> plannificationConcours = plannificationConcoursDAO.findByAllPlannificationConcoursDynamiqueSearch( searchfield, PageRequest.of(offset-1, pageSize, sort));
+        return  plannificationConcours;
+    }
+
 //    public PlannificationConcours save(PlannificationConcours dto) {
 //        return PlannificationConcoursDTO.fromEntity(
 //                plannificationConcoursDAO.save(

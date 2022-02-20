@@ -6,10 +6,13 @@
 package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Controller.IPlannificationConcoursController;
+import fdsa.edu.pnu.DTO.APIResponse;
 import fdsa.edu.pnu.DTO.PlannificationConcoursDTO;
+import fdsa.edu.pnu.Model.Matiere;
 import fdsa.edu.pnu.Model.PlannificationConcours;
 import fdsa.edu.pnu.ServiceImpl.PlannificationConcoursService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -42,6 +45,13 @@ public class PlannificationConcoursController implements IPlannificationConcours
     @Override
     public void delete(Integer id) {
         plannificationConcoursService.delete(id);
-    } 
-    
+    }
+
+    @Override
+    public APIResponse<Page<PlannificationConcours>> getAllPlannificationConcoursWithPaginationAndSortv1(int offset, int pageSize, String field, String searchFiled, String sortDirection) {
+        Page<PlannificationConcours> productsWithPagination = plannificationConcoursService.findAllWithPaginationAndSortingv1(offset, pageSize, field, searchFiled, sortDirection);
+        return new APIResponse<>(productsWithPagination.getSize(), productsWithPagination);
+
+    }
+
 }

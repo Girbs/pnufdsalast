@@ -5,11 +5,14 @@
  */
 package fdsa.edu.pnu.Controller;
 
+import fdsa.edu.pnu.DTO.APIResponse;
 import fdsa.edu.pnu.DTO.PlannificationConcoursDTO;
+import fdsa.edu.pnu.Model.Matiere;
 import fdsa.edu.pnu.Model.PlannificationConcours;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import org.springframework.data.domain.Page;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,9 +22,10 @@ import java.util.List;
  *
  * @author Ing.Girbson BIJOU
  */
+@RequestMapping("/plannificationConcours")
 public interface IPlannificationConcoursController {
 
-    @GetMapping(value = "/plannificationConcours/all", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Renvoi la liste des PlannificationConcours", notes = "Cette methode permet de chercher et renvoyer la liste des plannificationConcours qui existent "
             + "dans la BDD", responseContainer = "List<PlannificationConcoursDTO>")
     @ApiResponses(value = {
@@ -29,7 +33,7 @@ public interface IPlannificationConcoursController {
     })
     List<PlannificationConcoursDTO> findAll();
 
-    @GetMapping(value = "/plannificationConcours/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Rechercher une plannificationConcours par ID", notes = "Cette methode permet de chercher une matiere par son ID", response = PlannificationConcoursDTO.class)
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "La plannificationConcours a ete trouve dans la BDD"),
@@ -37,7 +41,7 @@ public interface IPlannificationConcoursController {
     })
     PlannificationConcoursDTO findById(@PathVariable("id") Integer id);
 
-    @PostMapping(value = "/plannificationConcours/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Enregistrer une plannificationConcours", notes = "Cette methode permet d'enregistrer ou modifier une plannificationConcours", response = PlannificationConcoursDTO.class)
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "L'objet plannificationConcours cree / modifie"),
@@ -45,11 +49,20 @@ public interface IPlannificationConcoursController {
     })
     PlannificationConcours save(@RequestBody PlannificationConcours dto);
 
-    @DeleteMapping(value = "/plannificationConcours/supprimer/{id}")
+    @DeleteMapping(value = "/supprimer/{id}")
     @ApiOperation(value = "Supprimer une plannificationConcours", notes = "Cette methode permet de supprimer une plannificationConcours par ID")
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "Le matiere a ete supprime")
     })
     void delete(@PathVariable("id") Integer id);
+
+    @GetMapping("/listeDynamique")
+    @ApiOperation(value = "Renvoi la liste des PlannificationConcours", notes = "Cette methode permet de chercher et renvoyer la liste des PlannificationConcours qui existent "
+            + "dans la BDD", responseContainer = "List<PlannificationConcours>")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "La liste des article / Une liste vide")
+    })
+    APIResponse<Page<PlannificationConcours>> getAllPlannificationConcoursWithPaginationAndSortv1(@RequestParam(required = true)  int offset, @RequestParam(required = true)  int pageSize,
+                                                                      @RequestParam(required = true) String field, @RequestParam(required = true)  String searchFiled, String sortDirection );
 
 }

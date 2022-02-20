@@ -30,5 +30,6 @@ public interface IPostulantService {
     void delete(Integer id);
     List<Postulant> getApplicationParStatut(String statut_application);
 
-    Page<Postulant> findAllWithPaginationAndSorting(int offset, int pageSize, String field);
+    Page<Postulant> findAllWithPaginationAndSortingv1(int offset, int pageSize, String sortField, String searchfield, String sortDirection);
+
 }

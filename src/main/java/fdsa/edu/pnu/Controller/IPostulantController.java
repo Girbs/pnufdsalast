@@ -76,15 +76,15 @@ public interface IPostulantController {
     List<Postulant> findByStatus(@RequestParam(required = false) String status);
 
 
-    @GetMapping("/postulant/all/{offset}/{pageSize}/{field}")
-    @ApiOperation(value = "Renvoi la liste des postulant", notes = "Cette methode permet de chercher et renvoyer la liste des postulant qui existent "
-            + "dans la BDD", responseContainer = "List<PostulantDTO>")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "La liste des article / Une liste vide")
-    })
-    APIResponse<Page<Postulant>> getAllPostulantsWithPaginationAndSort(@RequestParam(required = true)  int offset,
-                                                                       @RequestParam(required = true)int pageSize, @RequestParam(required = true)  String field);
-
+//    @GetMapping("/postulant/all/{offset}/{pageSize}/{field}")
+//    @ApiOperation(value = "Renvoi la liste des postulant", notes = "Cette methode permet de chercher et renvoyer la liste des postulant qui existent "
+//            + "dans la BDD", responseContainer = "List<PostulantDTO>")
+//    @ApiResponses(value = {
+//            @ApiResponse(code = 200, message = "La liste des article / Une liste vide")
+//    })
+//    APIResponse<Page<Postulant>> getAllPostulantsWithPaginationAndSort(@RequestParam(required = true)  int offset,
+//                                                                       @RequestParam(required = true)int pageSize, @RequestParam(required = true)  String field);
+//
 
 //THis is the Original Method. It works fine
 //    @GetMapping("/postulant/listeDynamique")
@@ -107,12 +107,12 @@ public interface IPostulantController {
                                                                          @RequestParam(required = true) String field,@RequestParam(required = true)  String searchFiled, String sortDirection );
 
 
-    @GetMapping("/postulantPageWithFilter/{offset}/{pageSize}/{field}/{prenom}")
-    @ApiOperation(value = "Renvoi la liste des postulant", notes = "Cette methode permet de chercher et renvoyer la liste des postulant qui existent "
-            + "dans la BDD", responseContainer = "List<PostulantDTO>")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "La liste des article / Une liste vide")
-    })
-    APIResponse<Page<Postulant>> findAllWithFilter(@RequestParam(required = true)  int offset, @RequestParam(required = true)  int pageSize,
-                                                   @RequestParam(required = true) String field,@RequestParam(required = true)  String prenom );
+//    @GetMapping("/postulantPageWithFilter/{offset}/{pageSize}/{field}/{prenom}")
+//    @ApiOperation(value = "Renvoi la liste des postulant", notes = "Cette methode permet de chercher et renvoyer la liste des postulant qui existent "
+//            + "dans la BDD", responseContainer = "List<PostulantDTO>")
+//    @ApiResponses(value = {
+//            @ApiResponse(code = 200, message = "La liste des article / Une liste vide")
+//    })
+//    APIResponse<Page<Postulant>> findAllWithFilter(@RequestParam(required = true)  int offset, @RequestParam(required = true)  int pageSize,
+//                                                   @RequestParam(required = true) String field,@RequestParam(required = true)  String prenom );
 }

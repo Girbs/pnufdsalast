@@ -30,6 +30,8 @@ public class Concours extends Audit<String> implements Serializable {
 	private java.util.Date DateFin;
 	@Column(name = "Description", nullable = true, length = 255)
 	private String description;
+	@Column(name = "Code", nullable = true, length = 255)
+	private String code;
 
 	@Column(name = "status", nullable = true, length = 255)
 	private String status;

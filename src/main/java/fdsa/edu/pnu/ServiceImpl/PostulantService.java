@@ -119,11 +119,11 @@ public class PostulantService implements IPostulantService {
         return lstPostulant;
     }
 
-    @Override
-    public Page<Postulant> findAllWithPaginationAndSorting(int offset, int pageSize, String field) {
-        Page<Postulant> postulants = postulantDAO.findAll(PageRequest.of(offset, pageSize).withSort(Sort.by(field)));
-        return  postulants;
-    }
+//    @Override
+//    public Page<Postulant> findAllWithPaginationAndSorting(int offset, int pageSize, String field) {
+//        Page<Postulant> postulants = postulantDAO.findAll(PageRequest.of(offset, pageSize).withSort(Sort.by(field)));
+//        return  postulants;
+//    }
 
 //This is the OriginalMethod. It works fine
 //    public Page<Postulant> findAllWithPaginationAndSortingv1(int offset, int pageSize, String field, String searchfield) {
@@ -132,22 +132,21 @@ public class PostulantService implements IPostulantService {
 //    }
 
     //This is the new metho with the dynamic sort
+    @Override
     public Page<Postulant> findAllWithPaginationAndSortingv1(int offset, int pageSize, String sortField, String searchfield, String sortDirection) {
-
         Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() :
                 Sort.by(sortField).descending();
-
         Page<Postulant> postulants = postulantDAO.findByAllDynameicSearch( searchfield, PageRequest.of(offset-1, pageSize, sort));
         return  postulants;
     }
 
 
 
-    public Page<Postulant> findAllWithFilter(int offset, int pageSize, String field, String prenom) {
-        Page<Postulant> postulants = postulantDAO.findByAllName( prenom,
-                PageRequest.of(offset, pageSize).withSort(Sort.by(field)));
-        return  postulants;
-    }
+//    public Page<Postulant> findAllWithFilter(int offset, int pageSize, String field, String prenom) {
+//        Page<Postulant> postulants = postulantDAO.findByAllName( prenom,
+//                PageRequest.of(offset, pageSize).withSort(Sort.by(field)));
+//        return  postulants;
+//    }
 
 
     //@Override

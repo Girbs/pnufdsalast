@@ -66,11 +66,11 @@ public class PostulantControllerImpl implements IPostulantController {
         return postulantService.getApplicationParStatut(status);
     }
 
-    @Override
-    public APIResponse<Page<Postulant>> getAllPostulantsWithPaginationAndSort(int offset, int pageSize, String field) {
-        Page<Postulant> productsWithPagination = postulantService.findAllWithPaginationAndSorting(offset, pageSize, field);
-        return new APIResponse<>(productsWithPagination.getSize(), productsWithPagination);
-    }
+//    @Override
+//    public APIResponse<Page<Postulant>> getAllPostulantsWithPaginationAndSort(int offset, int pageSize, String field) {
+//        Page<Postulant> productsWithPagination = postulantService.findAllWithPaginationAndSorting(offset, pageSize, field);
+//        return new APIResponse<>(productsWithPagination.getSize(), productsWithPagination);
+//    }
 
     // This is the Original Controller. It works fine
 //    @Override
@@ -87,10 +87,10 @@ public class PostulantControllerImpl implements IPostulantController {
     }
 
 
-    @Override
-    public APIResponse<Page<Postulant>> findAllWithFilter(int offset, int pageSize, String field, String prenom) {
-        Page<Postulant> productsWithPagination = postulantService.findAllWithFilter(offset, pageSize, field, prenom);
-        return new APIResponse<>(productsWithPagination.getSize(), productsWithPagination);
-    }
+//    @Override
+//    public APIResponse<Page<Postulant>> findAllWithFilter(int offset, int pageSize, String field, String prenom) {
+//        Page<Postulant> productsWithPagination = postulantService.findAllWithFilter(offset, pageSize, field, prenom);
+//        return new APIResponse<>(productsWithPagination.getSize(), productsWithPagination);
+//    }
 
 }

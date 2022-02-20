@@ -19,6 +19,9 @@ import lombok.Data;
 import org.aspectj.bridge.ISourceLocation;
 import org.aspectj.bridge.MessageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -82,12 +85,12 @@ public class ConcoursService implements IConcoursService {
      */
     @Override
     public Concours save(Concours concours) {
-        List<String> errors = ConcoursValidateur.validate(concours);
-        if (!errors.isEmpty()) {
-            MessageUtil log = null;
-            MessageUtil.error("Donnees invalid", (ISourceLocation) concours);
-            throw new InvalidEntityException("Donnees invalid", (Throwable) errors);
-        }
+//        List<String> errors = ConcoursValidateur.validate(concours);
+//        if (!errors.isEmpty()) {
+//            MessageUtil log = null;
+//            MessageUtil.error("Donnees invalid", (ISourceLocation) concours);
+//            throw new InvalidEntityException("Donnees invalid", (Throwable) errors);
+//        }
         return concoursDAO.save(concours);
     }
 
@@ -179,6 +182,14 @@ public class ConcoursService implements IConcoursService {
 //          ErrorCodes.ARTICLE_ALREADY_IN_USE);
 //    }
         concoursDAO.deleteById(id);
+    }
+
+    @Override
+    public Page<Concours> findAllWithPaginationAndSortingv1(int offset, int pageSize, String sortField, String searchfield, String sortDirection) {
+        Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() :
+                Sort.by(sortField).descending();
+        Page<Concours> concours = concoursDAO.findByAllConcoursDynamiqueSearch( searchfield, PageRequest.of(offset-1, pageSize, sort));
+        return  concours;
     }
 
 }

@@ -6,7 +6,9 @@
 package fdsa.edu.pnu.Service;
 
 import fdsa.edu.pnu.DTO.PlannificationConcoursDTO;
+import fdsa.edu.pnu.Model.Concours;
 import fdsa.edu.pnu.Model.PlannificationConcours;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
@@ -23,6 +25,7 @@ public interface IPlannificationConcoursService {
     PlannificationConcours save(PlannificationConcours dto);
 
 //    public PlannificationConcours update(Concours concours);
+Page<PlannificationConcours> findAllWithPaginationAndSortingv1(int offset, int pageSize, String sortField, String searchfield, String sortDirection);
 
     void delete(Integer id);
 }

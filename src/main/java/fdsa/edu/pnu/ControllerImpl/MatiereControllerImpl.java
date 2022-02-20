@@ -6,9 +6,12 @@
 package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Controller.IMatiereController;
+import fdsa.edu.pnu.DTO.APIResponse;
 import fdsa.edu.pnu.Model.Matiere;
+import fdsa.edu.pnu.Model.Postulant;
 import fdsa.edu.pnu.ServiceImpl.MatiereServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -42,5 +45,11 @@ public class MatiereControllerImpl implements IMatiereController {
     @Override
     public void delete(Integer id) {
         matiereServiceImpl.delete(id);
+    }
+
+    @Override
+    public APIResponse<Page<Matiere>> getAllMatieressWithPaginationAndSortv1(int offset, int pageSize, String field, String searchFiled, String sortDirection) {
+        Page<Matiere> productsWithPagination = matiereServiceImpl.findAllWithPaginationAndSortingv1(offset, pageSize, field, searchFiled, sortDirection);
+        return new APIResponse<>(productsWithPagination.getSize(), productsWithPagination);
     }
 }

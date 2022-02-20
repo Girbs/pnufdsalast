@@ -54,6 +54,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
                 "/authenticate",
                         "/postulant/nouveau",
+                        "/matiere/listeDynamique",
                         "/postulant/all",
                         "/postulant/{statut}",
                         "/historiqueExamenConcours/all",
@@ -62,6 +63,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/plannificationConcours/nouveau",
                         "/plannificationConcours/supprimer/{id}",
                         "/plannificationConcours/{id}",
+                        "/plannificationConcours/listeDynamique",
                         "/anneeAcademique/all",
                         "/utilisateur/motDePasseOublie",
                         "/role/all",
@@ -80,8 +82,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/matiere/nouveau",
                         "/matiere/supprimer/{id}",
                         "/matiere/{id}",
-                        "concours/all",
+                         "concours/all",
                         "/concours/{id}",
+                        "/concours/nouveau",
+                        "/concours/listeDynamique",
                         "/concours/supprimer/{id}",
                         "/postulantPageWithFilter",
 
