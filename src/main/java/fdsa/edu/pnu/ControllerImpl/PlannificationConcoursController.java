@@ -7,8 +7,6 @@ package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Controller.IPlannificationConcoursController;
 import fdsa.edu.pnu.DTO.APIResponse;
-import fdsa.edu.pnu.DTO.PlannificationConcoursDTO;
-import fdsa.edu.pnu.Model.Matiere;
 import fdsa.edu.pnu.Model.PlannificationConcours;
 import fdsa.edu.pnu.ServiceImpl.PlannificationConcoursService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +14,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  *
@@ -28,12 +27,12 @@ public class PlannificationConcoursController implements IPlannificationConcours
     public PlannificationConcoursService plannificationConcoursService;
 
     @Override
-    public List<PlannificationConcoursDTO> findAll() {
+    public List<PlannificationConcours> findAll() {
        return plannificationConcoursService.findAll();
     }
 
     @Override
-    public PlannificationConcoursDTO findById(Integer id) {
+    public Optional<PlannificationConcours> findById(Integer id) {
        return plannificationConcoursService.findById(id);
     }
 

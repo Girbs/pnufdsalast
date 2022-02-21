@@ -5,24 +5,21 @@
  */
 package fdsa.edu.pnu.ServiceImpl;
 
-import fdsa.edu.pnu.DTO.HistoriqueExamenConcoursDTO;
 import fdsa.edu.pnu.Exception.EntityNotFoundException;
 import fdsa.edu.pnu.Exception.ErrorCodes;
 import fdsa.edu.pnu.Model.HistoriqueExamenConcours;
 import fdsa.edu.pnu.Repository.HistoriqueExamenConcoursDAO;
 import fdsa.edu.pnu.Service.IHistoriqueExamenConcoursService;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author Richard
- */
 @Data
+@Setter
+@Getter
 @Service
 public class HistoriqueExamenConcoursService implements IHistoriqueExamenConcoursService {
 
@@ -30,31 +27,24 @@ public class HistoriqueExamenConcoursService implements IHistoriqueExamenConcour
     private HistoriqueExamenConcoursDAO historiqueExamenConcoursDAO;
 
     @Override
-    public List<HistoriqueExamenConcoursDTO> findAll() {
-        return historiqueExamenConcoursDAO.findAll().stream()
-                .map(HistoriqueExamenConcoursDTO::fromEntity)
-                .collect(Collectors.toList());
+    public List<HistoriqueExamenConcours> findAll() {
+        return historiqueExamenConcoursDAO.findAll();
     }
 
     @Override
-    public HistoriqueExamenConcoursDTO findById(Integer id) {
+    public HistoriqueExamenConcours findById(Integer id) {
         if (id == null) {
             return null;
         }
-        return historiqueExamenConcoursDAO.findById(id).map(HistoriqueExamenConcoursDTO::fromEntity).orElseThrow(()
+        return historiqueExamenConcoursDAO.findById(id).orElseThrow(()
                 -> new EntityNotFoundException(
                         "Aucun postulant avec l'ID = " + id + " n' ete trouve dans la BDD",
-                        ErrorCodes.ARTICLE_NOT_FOUND)
-        );
+                        ErrorCodes.ARTICLE_NOT_FOUND));
     }
 
     @Override
-    public HistoriqueExamenConcoursDTO save(HistoriqueExamenConcoursDTO dto) {
-        return HistoriqueExamenConcoursDTO.fromEntity(
-                historiqueExamenConcoursDAO.save(
-                        HistoriqueExamenConcoursDTO.toEntity(dto)
-                )
-        );
+    public HistoriqueExamenConcours save(HistoriqueExamenConcours dto) {
+        return historiqueExamenConcoursDAO.save(dto);
     }
 
     @Override

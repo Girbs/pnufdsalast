@@ -15,10 +15,9 @@ package fdsa.edu.pnu.Model;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -26,7 +25,8 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-
+@AllArgsConstructor
+@JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer","fieldHandler"})
 @Table(name="Postulant")
 public class Postulant extends Audit<String> implements Serializable {
 	public Postulant() {
@@ -111,6 +111,8 @@ public class Postulant extends Audit<String> implements Serializable {
 	private String telephonePersonneAcontacter;
 	private String statutApplication;
 
+
+	@JsonIgnoreProperties(value = {"postulant"}, allowSetters = true)
 	@OneToMany( fetch =FetchType.LAZY, mappedBy="postulant", targetEntity= HistoriqueExamenConcours.class)
 	private  List<HistoriqueExamenConcours> historiqueExamenConcourss;
 	//	@OneToOne(optional=false, targetEntity=fdsa.edu.PNUFDSA.Model.Utlilisateur.class, fetch=FetchType.LAZY)

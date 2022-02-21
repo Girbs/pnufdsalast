@@ -3,6 +3,7 @@ package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Controller.IHistoriqueExamenConcoursController;
 import fdsa.edu.pnu.DTO.HistoriqueExamenConcoursDTO;
+import fdsa.edu.pnu.Model.HistoriqueExamenConcours;
 import fdsa.edu.pnu.ServiceImpl.HistoriqueExamenConcoursService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,17 +20,17 @@ public class HistoriqueExamenConcoursController implements IHistoriqueExamenConc
     public HistoriqueExamenConcoursService historiqueExamenConcoursService;
 
     @Override
-    public List<HistoriqueExamenConcoursDTO> findAll() {
+    public List<HistoriqueExamenConcours> findAll() {
         return historiqueExamenConcoursService.findAll();
     }
 
     @Override
-    public HistoriqueExamenConcoursDTO findById(Integer id) {
+    public HistoriqueExamenConcours findById(Integer id) {
         return historiqueExamenConcoursService.findById(id);
     }
 
     @Override
-    public HistoriqueExamenConcoursDTO save(HistoriqueExamenConcoursDTO dto) {
+    public HistoriqueExamenConcours save(HistoriqueExamenConcours dto) {
         return historiqueExamenConcoursService.save(dto);
     }
 

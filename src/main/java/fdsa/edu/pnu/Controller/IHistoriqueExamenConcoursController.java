@@ -6,6 +6,7 @@
 package fdsa.edu.pnu.Controller;
 
 import fdsa.edu.pnu.DTO.HistoriqueExamenConcoursDTO;
+import fdsa.edu.pnu.Model.HistoriqueExamenConcours;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -29,7 +30,7 @@ public interface IHistoriqueExamenConcoursController {
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "La liste des article / Une liste vide")
     })
-    List<HistoriqueExamenConcoursDTO> findAll();
+    List<HistoriqueExamenConcours> findAll();
     
     
     @GetMapping(value = "/historiqueExamenConcours/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -38,7 +39,7 @@ public interface IHistoriqueExamenConcoursController {
         @ApiResponse(code = 200, message = "La historiqueExamenConcours a ete trouve dans la BDD"),
         @ApiResponse(code = 404, message = "Aucun historiqueExamenConcours n'existe dans la BDD avec l'ID fourni")
     })
-    HistoriqueExamenConcoursDTO findById(@PathVariable("id") Integer id);
+    HistoriqueExamenConcours findById(@PathVariable("id") Integer id);
 
     @PostMapping(value = "/historiqueExamenConcours/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Enregistrer une plannificationConcours", notes = "Cette methode permet d'enregistrer ou modifier une historiqueExamenConcours", response = HistoriqueExamenConcoursDTO.class)
@@ -46,7 +47,7 @@ public interface IHistoriqueExamenConcoursController {
         @ApiResponse(code = 200, message = "L'objet plannificationConcours cree / modifie"),
         @ApiResponse(code = 400, message = "L'objet plannificationConcours n'est pas valide")
     })
-    HistoriqueExamenConcoursDTO save(@RequestBody HistoriqueExamenConcoursDTO dto);
+    HistoriqueExamenConcours save(@RequestBody HistoriqueExamenConcours dto);
 
     @DeleteMapping(value = "/historiqueExamenConcours/supprimer/{id}")
     @ApiOperation(value = "Supprimer une historiqueExamenConcours", notes = "Cette methode permet de supprimer une historiqueExamenConcours par ID")

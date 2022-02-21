@@ -13,23 +13,17 @@
  */
 package fdsa.edu.pnu.Model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIdentityReference;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.*;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
 @Entity
-@Data
+@Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
-		property = "id")
-@JsonIdentityReference(alwaysAsId = true)
+@JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer","fieldHandler"})
 @Table(name="HistoriqueExamenConcours")
 public class HistoriqueExamenConcours implements Serializable {
 
@@ -42,13 +36,14 @@ public class HistoriqueExamenConcours implements Serializable {
 	@Column(name="NoteObtenue", nullable=false, length=10)
 	private double noteObtenue;
 
+	@JsonIgnoreProperties(value = {"historiqueExamenConcours"}, allowSetters = true)
 	@ManyToOne(targetEntity= PlannificationConcours.class)
-	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
 	@JoinColumns({ @JoinColumn(name="PlannificationConcoursID", referencedColumnName="ID") })
 	public PlannificationConcours plannificationConcours;
 
+
+	@JsonIgnoreProperties(value = {"historiqueExamenConcourss"}, allowSetters = true)
 	@ManyToOne(targetEntity= Postulant.class)
-	@JsonBackReference
 	@JoinColumns({ @JoinColumn(name="PostulantID", referencedColumnName="ID") })
 	private Postulant postulant;
 

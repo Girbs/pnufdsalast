@@ -5,10 +5,6 @@
  */
 package fdsa.edu.pnu.ServiceImpl;
 
-import fdsa.edu.pnu.DTO.PlannificationConcoursDTO;
-import fdsa.edu.pnu.Exception.EntityNotFoundException;
-import fdsa.edu.pnu.Exception.ErrorCodes;
-import fdsa.edu.pnu.Model.Matiere;
 import fdsa.edu.pnu.Model.PlannificationConcours;
 import fdsa.edu.pnu.Repository.HistoriqueExamenConcoursDAO;
 import fdsa.edu.pnu.Repository.MatiereDAO;
@@ -22,17 +18,16 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Optional;
 
 /**
- *
  * @author Richard
  */
 @Data
 @Service
 
 public class PlannificationConcoursService implements IPlannificationConcoursService {
-    
+
     @Autowired
     private PlannificationConcoursDAO plannificationConcoursDAO;
 
@@ -40,29 +35,19 @@ public class PlannificationConcoursService implements IPlannificationConcoursSer
     private MatiereDAO matiereDAO;
     @Autowired
     private HistoriqueExamenConcoursDAO historiqueExamenConcoursDAO;
-    
+
     @Override
-    public List<PlannificationConcoursDTO> findAll() {
-        return plannificationConcoursDAO.findAll().stream()
-                .map(PlannificationConcoursDTO::fromEntity)
-                .collect(Collectors.toList());
+    public List<PlannificationConcours> findAll() {
+        return plannificationConcoursDAO.findAll();
     }
-    
+
     @Override
-    public PlannificationConcoursDTO findById(Integer id) {
+    public Optional<PlannificationConcours> findById(Integer id) {
         if (id == null) {
             return null;
         }
-        return plannificationConcoursDAO.findById(id).map(PlannificationConcoursDTO::fromEntity).orElseThrow(()
-                -> new EntityNotFoundException(
-                        "Aucune plannification Concours avec l'ID = " + id + " n' ete trouve dans la BDD",
-                        ErrorCodes.ARTICLE_NOT_FOUND)
-        );
+        return plannificationConcoursDAO.findById(id);
     }
-
-
-
-
 
 
     @Override
@@ -83,8 +68,8 @@ public class PlannificationConcoursService implements IPlannificationConcoursSer
     public Page<PlannificationConcours> findAllWithPaginationAndSortingv1(int offset, int pageSize, String sortField, String searchfield, String sortDirection) {
         Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() :
                 Sort.by(sortField).descending();
-        Page<PlannificationConcours> plannificationConcours = plannificationConcoursDAO.findByAllPlannificationConcoursDynamiqueSearch( searchfield, PageRequest.of(offset-1, pageSize, sort));
-        return  plannificationConcours;
+        Page<PlannificationConcours> plannificationConcours = plannificationConcoursDAO.findByAllPlannificationConcoursDynamiqueSearch(searchfield, PageRequest.of(offset - 1, pageSize, sort));
+        return plannificationConcours;
     }
 
 //    public PlannificationConcours save(PlannificationConcours dto) {
@@ -94,10 +79,10 @@ public class PlannificationConcoursService implements IPlannificationConcoursSer
 //                )
 //        );
 //    }
-    
+
     @Override
     public void delete(Integer id) {
         plannificationConcoursDAO.deleteById(id);
     }
-    
+
 }

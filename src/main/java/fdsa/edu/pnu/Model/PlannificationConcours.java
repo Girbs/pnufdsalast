@@ -63,7 +63,7 @@ public class PlannificationConcours  extends Audit<String> implements Serializab
 	@Column(name="NoteDePassage", nullable=false, length=10)
 	private double noteDePassage;
 
-
+	@JsonIgnoreProperties(value = {"plannificationConcours"}, allowSetters = true)
 	@OneToMany(mappedBy="plannificationConcours", cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity= HistoriqueExamenConcours.class)
 	private List<HistoriqueExamenConcours> historiqueExamenConcours;
 

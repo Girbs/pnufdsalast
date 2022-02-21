@@ -5,12 +5,11 @@
  */
 package fdsa.edu.pnu.Service;
 
-import fdsa.edu.pnu.DTO.PlannificationConcoursDTO;
-import fdsa.edu.pnu.Model.Concours;
 import fdsa.edu.pnu.Model.PlannificationConcours;
 import org.springframework.data.domain.Page;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  *
@@ -18,9 +17,9 @@ import java.util.List;
  */
 public interface IPlannificationConcoursService {
 
-    List<PlannificationConcoursDTO> findAll();
+    List<PlannificationConcours> findAll();
 
-    PlannificationConcoursDTO findById(Integer id);
+    Optional<PlannificationConcours> findById(Integer id);
 
     PlannificationConcours save(PlannificationConcours dto);
 

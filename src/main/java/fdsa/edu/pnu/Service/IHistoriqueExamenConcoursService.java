@@ -5,20 +5,20 @@
  */
 package fdsa.edu.pnu.Service;
 
-import fdsa.edu.pnu.DTO.HistoriqueExamenConcoursDTO;
+import fdsa.edu.pnu.Model.HistoriqueExamenConcours;
+
 import java.util.List;
 
 /**
- *
  * @author Ing.Girbson BIJOU
  */
 public interface IHistoriqueExamenConcoursService {
 
-    List<HistoriqueExamenConcoursDTO> findAll();
+    List<HistoriqueExamenConcours> findAll();
 
-    HistoriqueExamenConcoursDTO findById(Integer id);
+    HistoriqueExamenConcours findById(Integer id);
 
-    HistoriqueExamenConcoursDTO save(HistoriqueExamenConcoursDTO dto);
+    HistoriqueExamenConcours save(HistoriqueExamenConcours dto);
 
     void delete(Integer id);
 
