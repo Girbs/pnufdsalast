@@ -83,8 +83,13 @@ public class PostulantService implements IPostulantService {
 
     @Override
     public Postulant save(Postulant dto) {
-      //mail.confirmerInscription(dto.getEmail(),dto.getNom(), dto.getPrenom());
 
+        try {
+            mail.confirmerInscription(dto.getEmail(),dto.getNom(), dto.getPrenom());
+
+        } catch (Exception ex) {
+            System.out.printf("The Error Message is :"+ ex);
+        }
         return postulantDAO.save(dto);
 
     }
