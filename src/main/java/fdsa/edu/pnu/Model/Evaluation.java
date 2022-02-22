@@ -40,7 +40,7 @@ public class Evaluation implements Serializable {
     private Cours cours;
     @Column(name = "DateEvaluation", nullable = false)
     private java.sql.Timestamp dateEvaluation;
-    @Column(name = "`Session`", nullable = true, length = 255)
+    @Column(name = "`SessionProgramme`", nullable = true, length = 255)
     private String session;
     @Column(name = "CotationPourcentage", nullable = true, precision = 19, scale = 0)
     private java.math.BigDecimal cotationPourcentage;

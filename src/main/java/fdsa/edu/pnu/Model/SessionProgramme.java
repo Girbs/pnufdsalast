@@ -21,8 +21,8 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Table(name = "`Session`")
-public class Session implements Serializable {
+@Table(name = "`SessionProgramme`")
+public class SessionProgramme implements Serializable {
 
     @Column(name = "ID", nullable = false, length = 10)
     @Id
@@ -32,7 +32,7 @@ public class Session implements Serializable {
 
     @ManyToOne(targetEntity = Programme.class, fetch = FetchType.LAZY)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
-    @JoinColumns(value = {@JoinColumn(name = "ProgrammeID", referencedColumnName = "ID", nullable = false)}, foreignKey = @ForeignKey(name = "FK_SESSIONS_PROGRAMMES"))
+    @JoinColumns(value = {@JoinColumn(name = "ProgrammeID", referencedColumnName = "ID", nullable = false)})
     private Programme programme;
 
     @Column(name = "DescriptionSession", nullable = true, length = 255)
@@ -47,7 +47,8 @@ public class Session implements Serializable {
     @OneToMany(mappedBy = "session", targetEntity = Curriculum.class)
     private List<Curriculum> curriculum;
 
-    public Session() {
+
+    public SessionProgramme() {
     }
 
 }

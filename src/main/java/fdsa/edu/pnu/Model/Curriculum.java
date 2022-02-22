@@ -1,6 +1,5 @@
 package fdsa.edu.pnu.Model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -21,13 +20,13 @@ public class Curriculum {
 
     @ManyToOne(targetEntity = Matiere.class, fetch = FetchType.LAZY)
     @JoinColumns(value = {@JoinColumn(name = "matiereId", referencedColumnName = "ID", nullable = true)}, foreignKey = @ForeignKey(name = "CoursProgramme"))
-    @JsonBackReference
     private Matiere matiere;
 
-    @ManyToOne(targetEntity = Programme.class, fetch = FetchType.LAZY)
+
+    @ManyToOne(targetEntity = SessionProgramme.class, fetch = FetchType.LAZY)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
-    @JoinColumns(value = {@JoinColumn(name = "SessionID", referencedColumnName = "ID", nullable = false)}, foreignKey = @ForeignKey(name = "FK_SESSIONS_Curriculum"))
-    private Session session;
+    @JoinColumns(value = {@JoinColumn(name = "SessionId", referencedColumnName = "ID", nullable = false)}, foreignKey = @ForeignKey(name = "FK_SESSIONS_Curriculum"))
+    private SessionProgramme session;
 
     @OneToMany(mappedBy = "curriculum", targetEntity = Cours.class)
     private List<Cours> cours;

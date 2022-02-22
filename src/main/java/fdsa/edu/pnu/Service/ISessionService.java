@@ -1,18 +1,18 @@
 package fdsa.edu.pnu.Service;
 
-import fdsa.edu.pnu.Model.Session;
+import fdsa.edu.pnu.Model.SessionProgramme;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface ISessionService {
-    List<Session> findAll();
+    List<SessionProgramme> findAll();
 
-    Optional<Session> findById(Integer id);
+    Optional<SessionProgramme> findById(Integer id);
 
-    Session save(Session session);
+    SessionProgramme save(SessionProgramme session);
 
-    Session update(Integer id, Session session);
+    SessionProgramme update(Integer id, SessionProgramme session);
 
     void delete(Integer id);
 }

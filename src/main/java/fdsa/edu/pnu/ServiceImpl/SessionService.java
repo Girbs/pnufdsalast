@@ -5,7 +5,7 @@
  */
 package fdsa.edu.pnu.ServiceImpl;
 
-import fdsa.edu.pnu.Model.Session;
+import fdsa.edu.pnu.Model.SessionProgramme;
 import fdsa.edu.pnu.Repository.SessionDAO;
 import fdsa.edu.pnu.Service.ISessionService;
 import lombok.Data;
@@ -26,22 +26,22 @@ public class SessionService implements ISessionService {
 
 
     @Override
-    public List<Session> findAll() {
+    public List<SessionProgramme> findAll() {
         return sessionDAO.findAll();
     }
 
     @Override
-    public Optional<Session> findById(Integer id) {
+    public Optional<SessionProgramme> findById(Integer id) {
         return sessionDAO.findById(id);
     }
 
     @Override
-    public Session save(Session session) {
+    public SessionProgramme save(SessionProgramme session) {
         return sessionDAO.save(session);
     }
 
     @Override
-    public Session update(Integer id, Session session) {
+    public SessionProgramme update(Integer id, SessionProgramme session) {
         return null;
     }
 

@@ -17,13 +17,13 @@ public interface ICurriculumController {
     @ApiOperation(value = "Renvoi la liste des Curriculum", notes = "Cette methode permet de chercher et renvoyer la liste des Sessions qui existent "
             + "dans la BDD", responseContainer = "List<Curriculum>")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "La liste des Session / Une liste vide")
+            @ApiResponse(code = 200, message = "La liste des SessionProgramme / Une liste vide")
     })
     List<Curriculum> findAll();
 
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Rechercher un Curriculum par ID", notes = "Cette methode permet de chercher une Session par son ID", response = Curriculum.class)
+    @ApiOperation(value = "Rechercher un Curriculum par ID", notes = "Cette methode permet de chercher une SessionProgramme par son ID", response = Curriculum.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Le Curriculum a ete trouve dans la BDD"),
             @ApiResponse(code = 404, message = "Aucun Curriculum n'existe dans la BDD avec l'ID fourni")
@@ -40,9 +40,9 @@ public interface ICurriculumController {
     Curriculum update(@PathVariable("id") Integer id, @RequestBody Curriculum curriculum);
 
     @DeleteMapping(value = "/supprimer/{id}")
-    @ApiOperation(value = "Supprimer une session ", notes = "Cette methode permet de supprimer un Session par ID")
+    @ApiOperation(value = "Supprimer une session ", notes = "Cette methode permet de supprimer un SessionProgramme par ID")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Le Session a ete supprime")
+            @ApiResponse(code = 200, message = "Le SessionProgramme a ete supprime")
     })
     void delete(@PathVariable("id") Integer id);
 

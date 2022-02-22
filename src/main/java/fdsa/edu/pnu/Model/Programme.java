@@ -19,6 +19,7 @@
  */
 package fdsa.edu.pnu.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -29,6 +30,7 @@ import java.util.List;
 @Data
 
 @Table(name = "Programme")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Programme implements Serializable {
 
     @Column(name = "ID", nullable = false, length = 10)
@@ -43,12 +45,12 @@ public class Programme implements Serializable {
     @Column(name = "Description", nullable = false, length = 255)
     private String description;
 
-    @OneToMany(mappedBy = "programme", targetEntity = Session.class)
-    private List<Session> sessions;
+    @OneToMany(mappedBy = "programme", targetEntity = SessionProgramme.class)
+    private List<SessionProgramme> sessionProgrammeList;
 
 
-    @OneToMany(mappedBy = "programme", targetEntity = Session.class)
-    private List<Programme> programmes;
+//    @OneToMany(mappedBy = "programme", targetEntity = SessionProgramme.class)
+//    private List<Programme> programmes;
 
 
     @ManyToMany(mappedBy = "programmes", targetEntity = Etudiant.class)
