@@ -34,11 +34,7 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
 
-        </dependency>
 
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
