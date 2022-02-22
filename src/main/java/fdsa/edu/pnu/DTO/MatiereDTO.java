@@ -6,17 +6,16 @@
 package fdsa.edu.pnu.DTO;
 
 import fdsa.edu.pnu.Model.Matiere;
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
 
+import java.util.Collection;
+import java.util.List;
+
 /**
- *
  * @author Ing.Girbson BIJOU
  */
 @Data
@@ -25,21 +24,14 @@ import org.modelmapper.ModelMapper;
 @AllArgsConstructor
 public class MatiereDTO {
 
-    private int id;
-
-    private String description;
-
-    private String code;
-
-    private String Contenu;
-
-    private int nombreDeCreditStandard;
-
-    private List<CoursDTO> cours;
-
-    private Collection<PlannificationConcoursDTO> PlannificationConcours;
-
     private static ModelMapper mapper = new ModelMapper();
+    private int id;
+    private String description;
+    private String code;
+    private String Contenu;
+    private int nombreDeCreditStandard;
+    private List<CoursDTO> cours;
+    private Collection<PlannificationConcoursDTO> PlannificationConcours;
 
     public static MatiereDTO fromEntity(Matiere matiere) {
 

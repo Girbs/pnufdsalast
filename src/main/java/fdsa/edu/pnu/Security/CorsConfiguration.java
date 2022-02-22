@@ -26,6 +26,7 @@ public class CorsConfiguration {
     private static final String DELETE = "DELETE";
     @Value("{allowed.origin}")
     private String allowedOrigin;
+
     @Bean
     public WebMvcConfigurer corsConfigurer() {
 

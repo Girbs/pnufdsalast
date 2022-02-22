@@ -1,10 +1,13 @@
 /**
  * "Visual Paradigm: DO NOT MODIFY THIS FILE!"
- * 
- * This is an automatic generated file. It will be regenerated every time 
+ * <p>
+ * This is an automatic generated file. It will be regenerated every time
  * you generate persistence class.
- * 
+ * <p>
  * Modifying its content may cause the program not work, or your work may lost.
+ * <p>
+ * Licensee:
+ * License Type: Evaluation
  */
 
 /**
@@ -15,11 +18,10 @@ package fdsa.edu.pnu.Repository;
 
 
 import fdsa.edu.pnu.Model.Horaire;
-import org.hibernate.LockMode;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
-public interface HoraireDAO extends JpaRepository<Horaire,Integer> {
+public interface HoraireDAO extends JpaRepository<Horaire, Integer> {
 //	public Horaire loadHoraireByORMID(int ID) throws PersistentException;
 //	public Horaire getHoraireByORMID(int ID) throws PersistentException;
 //	public Horaire loadHoraireByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException;

@@ -8,10 +8,11 @@ package fdsa.edu.pnu.ControllerImpl;
 import fdsa.edu.pnu.Controller.ISessionController;
 import fdsa.edu.pnu.Model.Session;
 import fdsa.edu.pnu.ServiceImpl.SessionService;
-import java.util.List;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -19,6 +20,7 @@ public class SessionControllerImpl implements ISessionController {
 
     @Autowired
     private SessionService sessionService;
+
     @Override
     public List<Session> findAll() {
         return sessionService.findAll();

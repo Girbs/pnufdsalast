@@ -1,10 +1,13 @@
 /**
  * "Visual Paradigm: DO NOT MODIFY THIS FILE!"
- *
- * This is an automatic generated file. It will be regenerated every time 
+ * <p>
+ * This is an automatic generated file. It will be regenerated every time
  * you generate persistence class.
- *
+ * <p>
  * Modifying its content may cause the program not work, or your work may lost.
+ * <p>
+ * Licensee:
+ * License Type: Evaluation
  */
 
 /**
@@ -13,10 +16,8 @@
  */
 package fdsa.edu.pnu.Model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -29,43 +30,36 @@ import java.util.List;
 @AllArgsConstructor
 @Setter
 @Getter
-@JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer","fieldHandler"})
-@Table(name="PlannificationConcours")
-public class PlannificationConcours  extends Audit<String> implements Serializable {
-	public PlannificationConcours() {
-	}
+@JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
+@Table(name = "PlannificationConcours")
+public class PlannificationConcours extends Audit<String> implements Serializable {
+    @Column(name = "ID", nullable = false, length = 10)
+    @Id
+    @GeneratedValue(generator = "PNU_PLANNIFICATIONCONCOURS_ID_GENERATOR")
+    @org.hibernate.annotations.GenericGenerator(name = "PNU_PLANNIFICATIONCONCOURS_ID_GENERATOR", strategy = "native")
+    private int id;
+    @JsonIgnoreProperties(value = {"plannificationConcourses"}, allowSetters = true)
+    @ManyToOne(targetEntity = Concours.class, fetch = FetchType.LAZY)
+    @JoinColumns(value = {@JoinColumn(name = "concoursId", referencedColumnName = "ID", nullable = true)}, foreignKey = @ForeignKey(name = "ConcoursPlanificationConcours"))
+    private Concours concours;
+    //@JsonBackReference
+    @JsonIgnoreProperties(value = {"plannificationConcourses"}, allowSetters = true)
+    @ManyToOne(targetEntity = Matiere.class, fetch = FetchType.LAZY)
+    //@JoinColumns(value={ @JoinColumn(name="MatiereId", referencedColumnName="ID", nullable=true) }, foreignKey=@ForeignKey(name="MatierePlanificationConcours"))
+    private Matiere matiere;
+    @Column(name = "`Date`", nullable = true)
+    @Temporal(TemporalType.DATE)
+    private java.util.Date Date;
+    @Column(name = "Quotation", nullable = false, length = 10)
+    private double quotation;
+    @Column(name = "NoteDePassage", nullable = false, length = 10)
+    private double noteDePassage;
+    @JsonIgnoreProperties(value = {"plannificationConcours"}, allowSetters = true)
+    @OneToMany(mappedBy = "plannificationConcours", cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = HistoriqueExamenConcours.class)
+    private List<HistoriqueExamenConcours> historiqueExamenConcours;
 
-	@Column(name="ID", nullable=false, length=10)
-	@Id
-	@GeneratedValue(generator="PNU_PLANNIFICATIONCONCOURS_ID_GENERATOR")
-	@org.hibernate.annotations.GenericGenerator(name="PNU_PLANNIFICATIONCONCOURS_ID_GENERATOR", strategy="native")
-	private int id;
-
-
-	@JsonIgnoreProperties(value = {"plannificationConcourses"}, allowSetters = true)
-	@ManyToOne (targetEntity= Concours.class, fetch=FetchType.LAZY)
-	@JoinColumns(value={ @JoinColumn(name="concoursId", referencedColumnName="ID", nullable=true) }, foreignKey=@ForeignKey(name="ConcoursPlanificationConcours"))
-	private Concours concours;
-
-	//@JsonBackReference
-	@JsonIgnoreProperties(value = {"plannificationConcourses"}, allowSetters = true)
-	@ManyToOne(targetEntity= Matiere.class, fetch=FetchType.LAZY)
-	//@JoinColumns(value={ @JoinColumn(name="MatiereId", referencedColumnName="ID", nullable=true) }, foreignKey=@ForeignKey(name="MatierePlanificationConcours"))
-	private Matiere matiere;
-
-	@Column(name="`Date`", nullable=true)
-	@Temporal(TemporalType.DATE)
-	private java.util.Date Date;
-
-	@Column(name="Quotation", nullable=false, length=10)
-	private double quotation;
-
-	@Column(name="NoteDePassage", nullable=false, length=10)
-	private double noteDePassage;
-
-	@JsonIgnoreProperties(value = {"plannificationConcours"}, allowSetters = true)
-	@OneToMany(mappedBy="plannificationConcours", cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity= HistoriqueExamenConcours.class)
-	private List<HistoriqueExamenConcours> historiqueExamenConcours;
+    public PlannificationConcours() {
+    }
 
 //	public int getId() {
 //		return id;

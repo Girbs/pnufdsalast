@@ -6,9 +6,8 @@
 package fdsa.edu.pnu.DTO;
 
 /**
- *
  * @author Ing.Girbson BIJOU
  */
 class CoursDTO {
-    
+
 }

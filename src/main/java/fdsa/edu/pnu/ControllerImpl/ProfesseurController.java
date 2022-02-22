@@ -15,13 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- *
  * @author Richard
  */
 @RestController
-public class ProfesseurController  implements IProfesseurController {
-    
-    @Autowired 
+public class ProfesseurController implements IProfesseurController {
+
+    @Autowired
     public ProfesseurService professeurService;
 
 

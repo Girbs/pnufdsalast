@@ -11,6 +11,9 @@
  * <p>
  * Licensee:
  * License Type: Evaluation
+ * <p>
+ * Licensee:
+ * License Type: Evaluation
  */
 
 /**
@@ -22,7 +25,6 @@ package fdsa.edu.pnu.Repository;
 
 import fdsa.edu.pnu.Model.Etudiant;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
 
 
 public interface EtudiantDAO extends JpaRepository<Etudiant, Integer> {

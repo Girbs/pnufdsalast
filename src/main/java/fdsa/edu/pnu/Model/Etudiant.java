@@ -23,6 +23,9 @@
  * <p>
  * Licensee:
  * License Type: Evaluation
+ * <p>
+ * Licensee:
+ * License Type: Evaluation
  */
 
 /**
@@ -99,7 +102,7 @@ public class Etudiant extends Utilisateur implements Serializable {
         this.cours = cours;
         this.promotions = promotions;
         this.programmes = programmes;
-      //  this.historiqueExam = historiqueExam;
+        //  this.historiqueExam = historiqueExam;
         this.paiements = paiements;
         this.stages = stages;
         this.requetes = requetes;

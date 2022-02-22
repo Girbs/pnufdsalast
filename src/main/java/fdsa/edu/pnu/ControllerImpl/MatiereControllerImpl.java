@@ -8,7 +8,6 @@ package fdsa.edu.pnu.ControllerImpl;
 import fdsa.edu.pnu.Controller.IMatiereController;
 import fdsa.edu.pnu.DTO.APIResponse;
 import fdsa.edu.pnu.Model.Matiere;
-import fdsa.edu.pnu.Model.Postulant;
 import fdsa.edu.pnu.ServiceImpl.MatiereServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -29,6 +28,11 @@ public class MatiereControllerImpl implements IMatiereController {
     @Override
     public List<Matiere> findAll() {
         return matiereServiceImpl.findAll();
+    }
+
+    @Override
+    public List<Matiere> findByAllCustomQuerry() {
+        return matiereServiceImpl.findByAllCustumQuerry();
     }
 
     @Override

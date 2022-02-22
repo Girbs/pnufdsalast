@@ -1,6 +1,5 @@
 package fdsa.edu.pnu.Service;
 
-import fdsa.edu.pnu.Model.Horaire;
 import fdsa.edu.pnu.Model.Role;
 
 import java.util.List;

@@ -27,18 +27,18 @@ public class Semestre implements Serializable {
     @Column(name = "status", nullable = true, length = 255)
     private String status;
 
-    @OneToMany(mappedBy="semestre", targetEntity= Paiement.class)
+    @OneToMany(mappedBy = "semestre", targetEntity = Paiement.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private List<Paiement> paiement;
 
-    @ManyToOne(targetEntity= AnneeAcademique.class, fetch=FetchType.LAZY)
+    @ManyToOne(targetEntity = AnneeAcademique.class, fetch = FetchType.LAZY)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
-    @JoinColumns(value={ @JoinColumn(name="AnneeAcademiqueID", referencedColumnName=" ID", nullable=false) }, foreignKey=@ForeignKey(name="FK_Semestre_AnneeAcademique"))
+    @JoinColumns(value = {@JoinColumn(name = "AnneeAcademiqueID", referencedColumnName = " ID", nullable = false)}, foreignKey = @ForeignKey(name = "FK_Semestre_AnneeAcademique"))
     private AnneeAcademique anneeAcademique;
 
 
-    @OneToMany(mappedBy="semestre", targetEntity= Cours.class)
+    @OneToMany(mappedBy = "semestre", targetEntity = Cours.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private List<Cours> cours;

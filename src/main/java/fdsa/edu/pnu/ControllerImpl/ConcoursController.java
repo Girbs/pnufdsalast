@@ -9,19 +9,14 @@ import fdsa.edu.pnu.Controller.IConcoursController;
 import fdsa.edu.pnu.DTO.APIResponse;
 import fdsa.edu.pnu.DTO.ConcoursDTO;
 import fdsa.edu.pnu.Model.Concours;
-import fdsa.edu.pnu.Model.ExampleStudent;
-import fdsa.edu.pnu.Model.Matiere;
 import fdsa.edu.pnu.ServiceImpl.ConcoursService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 /**
- *
  * @author EstherA
  */
 @RestController
@@ -52,7 +47,7 @@ public class ConcoursController implements IConcoursController {
 
     @Override
     public Concours save(Concours dto) {
-      return  concoursService.save(dto);
+        return concoursService.save(dto);
     }
 
     @Override

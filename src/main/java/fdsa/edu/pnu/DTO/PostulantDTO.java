@@ -23,6 +23,7 @@ import java.util.List;
 public class PostulantDTO {
 
 
+    private static ModelMapper mapper = new ModelMapper();
     private Integer id;
     private String nom;
     private String prenom;
@@ -97,10 +98,7 @@ public class PostulantDTO {
     private String prenomPersonneAcontacter;
     private String telephonePersonneAcontacter;
     private String statutApplication;
-
     private List<HistoriqueExamenConcoursDTO> historiqueExamenConcourss;
-
-    private static ModelMapper mapper = new ModelMapper();
 
     public static PostulantDTO fromEntity(Postulant postulant) {
         // mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STANDARD);

@@ -4,21 +4,23 @@
  * and open the template in the editor.
  */
 package fdsa.edu.pnu.ControllerImpl;
+
 import fdsa.edu.pnu.Controller.ICoursController;
 import fdsa.edu.pnu.Model.Cours;
 import fdsa.edu.pnu.ServiceImpl.CoursServiceImpl;
-import java.util.List;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+import java.util.Optional;
+
 /**
- *
  * @author EstherA
  */
 @RestController
 public class CoursControllerImpl implements ICoursController {
     @Autowired
-public CoursServiceImpl coursServiceImpl;
+    public CoursServiceImpl coursServiceImpl;
 
 
     @Override

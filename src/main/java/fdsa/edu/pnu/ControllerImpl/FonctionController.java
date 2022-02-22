@@ -7,26 +7,21 @@ package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Model.Fonction;
 import fdsa.edu.pnu.ServiceImpl.FonctionService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 import java.util.Optional;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
- *
  * @author EstherA
  */
 @RestController
 public class FonctionController {
-     @Autowired
-public FonctionService fonctionService;
-     /**
+    @Autowired
+    public FonctionService fonctionService;
+
+    /**
      * Afficher tous les Fonctions
      *
      * @return
@@ -36,10 +31,10 @@ public FonctionService fonctionService;
         return (List<Fonction>) fonctionService.getFonction();
     }
 
-    
+
     /**
      * Creer nouveau Fonction
-     * 
+     *
      * @param fonction
      * @return
      */
@@ -48,14 +43,14 @@ public FonctionService fonctionService;
         return fonctionService.saveFonction(fonction);
     }
 
-    
+
     /**
      * Selectionner par ID
      *
-      * @param id
+     * @param id
      * @return
      */
-   @RequestMapping("/Fonction/{id}")
+    @RequestMapping("/Fonction/{id}")
     public Fonction getFonction(@PathVariable("id") int id) {
         Optional<Fonction> fonction = fonctionService.getFonction(id);
         if (fonction.isPresent()) {
@@ -64,12 +59,14 @@ public FonctionService fonctionService;
             return null;
         }
     }
+
     /**
      * Supprimer une Fonction
-     * @param id 
+     *
+     * @param id
      */
-     @DeleteMapping("/supprimerFonction/{id}")
-	public void deleteEmployee(@PathVariable("id") final int id) {
-		fonctionService.deletefonction(id);
-	}
+    @DeleteMapping("/supprimerFonction/{id}")
+    public void deleteEmployee(@PathVariable("id") final int id) {
+        fonctionService.deletefonction(id);
+    }
 }

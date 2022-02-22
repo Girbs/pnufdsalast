@@ -15,7 +15,6 @@ import org.modelmapper.ModelMapper;
 import java.util.Collection;
 
 /**
- *
  * @author Ing.Girbson BIJOU
  */
 @Data
@@ -24,20 +23,14 @@ import java.util.Collection;
 @AllArgsConstructor
 public class PlannificationConcoursDTO {
 
-    private int id;
-
-    private Integer concoursid;
-
-    private Integer matiereid;
-
-    private java.util.Date Date;
-
-    private double quotation;
-
-    private double noteDePassage;
-
-    private Collection<HistoriqueExamenConcoursDTO> historiqueExamenConcours;
     private static ModelMapper mapper = new ModelMapper();
+    private int id;
+    private Integer concoursid;
+    private Integer matiereid;
+    private java.util.Date Date;
+    private double quotation;
+    private double noteDePassage;
+    private Collection<HistoriqueExamenConcoursDTO> historiqueExamenConcours;
 
     public static PlannificationConcoursDTO fromEntity(PlannificationConcours plannificationConcours) {
 
@@ -59,11 +52,10 @@ public class PlannificationConcoursDTO {
     }
 
 
-    
     public static PlannificationConcours toEntity(PlannificationConcoursDTO plannificationConcoursDTO) {
-        
+
         PlannificationConcours pc = mapper.map(plannificationConcoursDTO, PlannificationConcours.class);
-    
+
 //        if (pcDTO == null) {
 //            return null;
 //        }
@@ -75,6 +67,6 @@ public class PlannificationConcoursDTO {
 //        pc.setQuotation(pcDTO.getQuotation());
 //        pc.setNoteDePassage(pcDTO.noteDePassage);
 //        pc.setHistoriqueExamenConcourss((Set) pcDTO.getHistoriqueExamenConcoursCollection());
-       return pc;
+        return pc;
     }
 }

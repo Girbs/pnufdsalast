@@ -7,19 +7,19 @@ package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.Model.Discussion;
 import fdsa.edu.pnu.Repository.DiscussionDAO;
-import java.util.Optional;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 /**
- *
  * @author EstherA
  */
 @Data
 @Service
 public class DiscussionService {
-         @Autowired
+    @Autowired
     private DiscussionDAO discussionDAO;
 
     public Optional<Discussion> getDiscussion(final int id) {

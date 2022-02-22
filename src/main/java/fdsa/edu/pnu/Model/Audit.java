@@ -19,7 +19,6 @@ import java.io.Serializable;
 import java.time.Instant;
 
 /**
- *
  * @author Ing.Girbson BIJOU
  */
 
@@ -29,21 +28,17 @@ import java.time.Instant;
 @EntityListeners(AuditingEntityListener.class)
 public class Audit<U> implements Serializable {
 
-  @CreatedDate
-  @Column(name = "creationDate", nullable = true, updatable = false)
-  private Instant creationDate;
-
-  @LastModifiedDate
-  @Column(name = "lastModifiedDate")
-  private Instant lastModifiedDate;
-
-  @CreatedBy
-  @Column(name = "CreatedBy")
-  protected U createdBy;
-
-
-  @LastModifiedBy
-  @Column(name = "LastModifiedBy")
-  protected U lastModifiedBy;
+    @CreatedBy
+    @Column(name = "CreatedBy")
+    protected U createdBy;
+    @LastModifiedBy
+    @Column(name = "LastModifiedBy")
+    protected U lastModifiedBy;
+    @CreatedDate
+    @Column(name = "creationDate", nullable = true, updatable = false)
+    private Instant creationDate;
+    @LastModifiedDate
+    @Column(name = "lastModifiedDate")
+    private Instant lastModifiedDate;
 
 }

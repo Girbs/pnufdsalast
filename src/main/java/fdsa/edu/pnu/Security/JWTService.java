@@ -1,4 +1,5 @@
 package fdsa.edu.pnu.Security;
+
 import fdsa.edu.pnu.Config.SpringSecurityAuditorAware;
 import fdsa.edu.pnu.Model.Role;
 import fdsa.edu.pnu.Model.Utilisateur;
@@ -14,7 +15,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.sql.Timestamp;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -33,6 +33,10 @@ public class JWTService implements UserDetailsService {
     @Autowired
     private SpringSecurityAuditorAware springSecurityAuditorAware;
 
+    public static Date getLastLoginDate() {
+        Date timestamp = new Date(System.currentTimeMillis());
+        return timestamp;
+    }
 
     public JwtResponse createJwtToken(JwtRequest jwtRequest) throws Exception {
 
@@ -74,25 +78,20 @@ public class JWTService implements UserDetailsService {
         Set authorities = new HashSet();
         user.getRole().forEach(role -> {
             // authorities.add(new SimpleGrantedAuthority("ROLE_" + role.getRoleName()));
-            for(String permission:getPermission(role)) {
-                authorities.add(new SimpleGrantedAuthority(  "ROLE_"+permission));
+            for (String permission : getPermission(role)) {
+                authorities.add(new SimpleGrantedAuthority("ROLE_" + permission));
             }
         });
         return authorities;
     }
 
     private Set<String> getPermission(Role role) {
-        Set <String> permissions = new HashSet();
+        Set<String> permissions = new HashSet();
         role.getPermission().forEach(permission ->
         {
             permissions.add(permission.getNomPermission());
         });
         return permissions;
-    }
-
-    public static Date getLastLoginDate() {
-        Date timestamp = new Date(System.currentTimeMillis());
-        return timestamp;
     }
 
     private void authenticate(String userName, String userPassword) throws Exception {

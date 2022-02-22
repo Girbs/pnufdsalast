@@ -7,19 +7,19 @@ package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.Model.Stage;
 import fdsa.edu.pnu.Repository.StageDAO;
-import java.util.Optional;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 /**
- *
  * @author Jephthé Gédéon
  */
 @Data
 @Service
 public class StageService {
-     @Autowired
+    @Autowired
     private StageDAO stageDAO;
 
     public Optional<Stage> getStage(final int id) {
@@ -38,5 +38,5 @@ public class StageService {
         Stage savedStage = stageDAO.save(Stage);
         return savedStage;
     }
-    
+
 }

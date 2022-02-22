@@ -8,9 +8,9 @@ import java.util.Optional;
 @Component
 public class SpringSecurityAuditorAware implements AuditorAware<String> {
 
-    private String currentUser=null;
+    private String currentUser = null;
 
-    public void setCurrentUser(String user){
+    public void setCurrentUser(String user) {
         currentUser = user;
     }
 

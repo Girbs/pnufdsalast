@@ -30,7 +30,7 @@ public interface IHistoriqueExamenController {
             @ApiResponse(code = 200, message = "Le Cours a ete trouve dans la BDD"),
             @ApiResponse(code = 404, message = "Aucun cours n'existe dans la BDD avec l'ID fourni")
     })
-    Optional<HistoriqueExam > findById(@PathVariable("id") Integer id);
+    Optional<HistoriqueExam> findById(@PathVariable("id") Integer id);
 
 
     // @PreAuthorize("hasAnyRole('modifierConcours')")

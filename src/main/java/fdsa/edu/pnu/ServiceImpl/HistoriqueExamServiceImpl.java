@@ -19,7 +19,7 @@ public class HistoriqueExamServiceImpl implements IHistoriqueExamenService {
 
     @Override
     public List<HistoriqueExam> findAll() {
-        return   historiqueExamDAO.findAll();
+        return historiqueExamDAO.findAll();
     }
 
 

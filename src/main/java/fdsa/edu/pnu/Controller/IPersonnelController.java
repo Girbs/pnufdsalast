@@ -2,11 +2,9 @@ package fdsa.edu.pnu.Controller;
 
 
 import fdsa.edu.pnu.Model.Personnel;
-import fdsa.edu.pnu.Model.Professeur;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,7 +35,7 @@ public interface IPersonnelController {
             @ApiResponse(code = 200, message = "L'objet personnel cree / modifie"),
             @ApiResponse(code = 400, message = "L'objet personnel n'est pas valide")
     })
-    Personnel save(@RequestBody  Personnel personnel);
+    Personnel save(@RequestBody Personnel personnel);
 
     @DeleteMapping(value = "/personnel/supprimer/{id}")
     @ApiOperation(value = "Supprimer un personnel", notes = "Cette methode permet de supprimer un personnel par ID")

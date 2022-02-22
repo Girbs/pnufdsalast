@@ -16,13 +16,12 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- *
  * @author Jephthé Gédéon
  */
 @Data
 @Service
 public class RoleServiceImpl implements IRoleService {
-     @Autowired
+    @Autowired
     private RoleDAO roleDAO;
 
 

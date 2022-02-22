@@ -1,7 +1,6 @@
 package fdsa.edu.pnu.Controller;
 
 import fdsa.edu.pnu.Model.Programme;
-import fdsa.edu.pnu.Model.Semestre;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;

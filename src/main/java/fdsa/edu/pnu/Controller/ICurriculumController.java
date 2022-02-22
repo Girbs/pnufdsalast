@@ -1,7 +1,6 @@
 package fdsa.edu.pnu.Controller;
 
 import fdsa.edu.pnu.Model.Curriculum;
-import fdsa.edu.pnu.Model.Session;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;

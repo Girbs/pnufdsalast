@@ -14,6 +14,7 @@ public class RoleControllerImpl implements IRoleController {
 
     @Autowired
     private RoleServiceImpl roleServiceimpl;
+
     @Override
     public List<Role> findAll() {
         return roleServiceimpl.findAll();

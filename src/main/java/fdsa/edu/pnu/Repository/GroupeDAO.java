@@ -1,10 +1,13 @@
 /**
  * "Visual Paradigm: DO NOT MODIFY THIS FILE!"
- * 
- * This is an automatic generated file. It will be regenerated every time 
+ * <p>
+ * This is an automatic generated file. It will be regenerated every time
  * you generate persistence class.
- * 
+ * <p>
  * Modifying its content may cause the program not work, or your work may lost.
+ * <p>
+ * Licensee:
+ * License Type: Evaluation
  */
 
 /**
@@ -14,13 +17,11 @@
 package fdsa.edu.pnu.Repository;
 
 
-
 import fdsa.edu.pnu.Model.Groupe;
-import org.hibernate.LockMode;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
-public interface GroupeDAO extends JpaRepository < Groupe, Integer>  {
+public interface GroupeDAO extends JpaRepository<Groupe, Integer> {
 //	public Groupe loadGroupeByORMID(int idGroupe) throws PersistentException;
 //	public Groupe getGroupeByORMID(int idGroupe) throws PersistentException;
 //	public Groupe loadGroupeByORMID(int idGroupe, org.hibernate.LockMode lockMode) throws PersistentException;

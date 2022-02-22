@@ -1,10 +1,13 @@
 /**
  * "Visual Paradigm: DO NOT MODIFY THIS FILE!"
- * 
- * This is an automatic generated file. It will be regenerated every time 
+ * <p>
+ * This is an automatic generated file. It will be regenerated every time
  * you generate persistence class.
- * 
+ * <p>
  * Modifying its content may cause the program not work, or your work may lost.
+ * <p>
+ * Licensee:
+ * License Type: Evaluation
  */
 
 /**
@@ -15,12 +18,10 @@ package fdsa.edu.pnu.Repository;
 
 
 import fdsa.edu.pnu.Model.HistoriqueExam;
-import org.hibernate.LockMode;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
 
 
-public interface HistoriqueExamDAO extends JpaRepository<HistoriqueExam,Integer> {
+public interface HistoriqueExamDAO extends JpaRepository<HistoriqueExam, Integer> {
 //	public HistoriqueExam loadHistoriqueExamByORMID(int ID) throws PersistentException;
 //	public HistoriqueExam getHistoriqueExamByORMID(int ID) throws PersistentException;
 //	public HistoriqueExam loadHistoriqueExamByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException;

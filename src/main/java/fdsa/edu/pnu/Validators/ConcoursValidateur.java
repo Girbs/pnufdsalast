@@ -6,6 +6,7 @@ import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Component
 public class ConcoursValidateur {
 
@@ -21,7 +22,7 @@ public class ConcoursValidateur {
         if (!StringUtils.hasLength(concours.getDescription())) {
             errors.add("Veuillez renseigner la description du concours");
         }
-        if (concours.getDateDebut()== null) {
+        if (concours.getDateDebut() == null) {
             errors.add("Veuillez renseigner la date de debut du concours");
         }
         if (concours.getDateDebut().after(concours.getDateFin())) {

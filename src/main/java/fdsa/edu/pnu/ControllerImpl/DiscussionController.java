@@ -7,26 +7,21 @@ package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Model.Discussion;
 import fdsa.edu.pnu.ServiceImpl.DiscussionService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 import java.util.Optional;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
- *
  * @author EstherA
  */
 @RestController
 public class DiscussionController {
     @Autowired
-public DiscussionService discussionService;
-     /**
+    public DiscussionService discussionService;
+
+    /**
      * Afficher tous les Discussion
      *
      * @return
@@ -36,11 +31,11 @@ public DiscussionService discussionService;
         return (List<Discussion>) discussionService.getDiscussion();
     }
 
-    
+
     /**
      * Creer nouveau Discussion
      *
-     * @param discussion  
+     * @param discussion
      * @return
      */
     @PostMapping("/nouveauDiscussion")
@@ -48,7 +43,7 @@ public DiscussionService discussionService;
         return discussionService.saveDiscussion(discussion);
     }
 
-    
+
     /**
      * Selectionner par ID
      *
@@ -64,16 +59,18 @@ public DiscussionService discussionService;
             return null;
         }
     }
+
     /**
      * Supprimer une Discussion
-     * @param id 
+     *
+     * @param id
      */
-     @DeleteMapping("/supprimerDiscussion/{id}")
-	public void deleteEmployee(@PathVariable("id") final int id) {
-		discussionService.deleteDiscussion(id);
-	}
-        
-        
-        // TO DO modifier une Discussion
-      
+    @DeleteMapping("/supprimerDiscussion/{id}")
+    public void deleteEmployee(@PathVariable("id") final int id) {
+        discussionService.deleteDiscussion(id);
+    }
+
+
+    // TO DO modifier une Discussion
+
 }

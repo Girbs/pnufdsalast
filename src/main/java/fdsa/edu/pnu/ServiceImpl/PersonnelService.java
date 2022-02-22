@@ -7,10 +7,6 @@ package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.Model.Personnel;
 import fdsa.edu.pnu.Repository.PersonnelDAO;
-
-import java.util.List;
-import java.util.Optional;
-
 import fdsa.edu.pnu.Security.PasswordGenerator;
 import fdsa.edu.pnu.Service.IPersonnel;
 import lombok.Data;
@@ -18,8 +14,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 /**
- *
  * @author Richard
  */
 
@@ -28,7 +26,7 @@ import org.springframework.stereotype.Service;
 
 
 public class PersonnelService implements IPersonnel {
-    
+
     @Autowired
     private PersonnelDAO personnelDAO;
 

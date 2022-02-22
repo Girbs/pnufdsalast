@@ -5,24 +5,19 @@
  */
 package fdsa.edu.pnu.ControllerImpl;
 
+import fdsa.edu.pnu.Controller.IUtilisateurController;
 import fdsa.edu.pnu.DTO.ChangerMotDePasseUtilisateurDto;
 import fdsa.edu.pnu.DTO.UtilisateurDTO;
 import fdsa.edu.pnu.Model.Utilisateur;
 import fdsa.edu.pnu.ServiceImpl.UtilisateurService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RestController;
+
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-import fdsa.edu.pnu.Controller.IUtilisateurController;
-import javax.annotation.PostConstruct;
-import fdsa.edu.pnu.Repository.UtilisateurDAO;
-import org.springframework.security.access.prepost.PreAuthorize;
-
 /**
- *
  * @author Ing.Girbson BIJOU //
  */
 @Transactional

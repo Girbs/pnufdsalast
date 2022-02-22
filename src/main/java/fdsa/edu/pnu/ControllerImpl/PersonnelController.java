@@ -6,20 +6,19 @@
 package fdsa.edu.pnu.ControllerImpl;
 
 
-
 import fdsa.edu.pnu.Controller.IPersonnelController;
 import fdsa.edu.pnu.Model.Personnel;
-import fdsa.edu.pnu.Model.Professeur;
 import fdsa.edu.pnu.ServiceImpl.PersonnelService;
-import java.util.List;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+import java.util.Optional;
+
 @RestController
 public class PersonnelController implements IPersonnelController {
-    
-    @Autowired 
+
+    @Autowired
     public PersonnelService personnelService;
 
 

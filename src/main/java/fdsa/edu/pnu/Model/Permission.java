@@ -1,7 +1,6 @@
 package fdsa.edu.pnu.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,7 +23,7 @@ public class Permission {
     //@ManyToMany(fetch = FetchType.LAZY, targetEntity = Role.class, mappedBy = "permission", cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     //private Set<Role> roles;
 
-    @ManyToMany( targetEntity = Role.class , mappedBy = "permission", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = Role.class, mappedBy = "permission", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonIgnoreProperties("permission")
     private Set<Role> roles;
 }

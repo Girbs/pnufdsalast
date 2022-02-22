@@ -14,11 +14,10 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- *
  * @author EstherA
  */
 public class EtudiantServiceImpl implements IEtudiantService {
-     @Autowired
+    @Autowired
     private EtudiantDAO etudiantDAO;
 
 

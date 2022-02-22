@@ -5,17 +5,15 @@
  */
 package fdsa.edu.pnu.ServiceImpl;
 
-import java.util.Optional;
 import fdsa.edu.pnu.Model.AnneeAcademique;
-
+import fdsa.edu.pnu.Repository.AnneeAcademiqueDAO;
 import fdsa.edu.pnu.Service.IAnneeAcademiqueService;
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import fdsa.edu.pnu.Repository.AnneeAcademiqueDAO;
 
 import java.util.List;
-
-import lombok.Data;
+import java.util.Optional;
 
 @Data
 @Service
@@ -26,7 +24,7 @@ public class AnneeAcademiqueService implements IAnneeAcademiqueService {
 
     @Override
     public List<AnneeAcademique> findAll() {
-        return   anneeAcademiqueDAO.findAll();
+        return anneeAcademiqueDAO.findAll();
     }
 
     @Override

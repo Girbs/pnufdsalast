@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
 
 /**
- *
  * @author Ing.Girbson BIJOU
  */
 
@@ -20,28 +19,27 @@ import org.modelmapper.ModelMapper;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UtilisateurDTO extends PersonneDTO {
-    
-  private static  ModelMapper mapper = new ModelMapper() ;
-  
+
+    private static ModelMapper mapper = new ModelMapper();
+
     private Integer personneid;
     private String password;
     private boolean status;
     private String username;
-   // private Collection<GroupeDTO> groupeCollection;
-   // private Collection<RoleDTO> roleCollection;
+    // private Collection<GroupeDTO> groupeCollection;
+    // private Collection<RoleDTO> roleCollection;
     //private Postulant postulant;
     //private Personne personne;
-   // private Professeur professeur;
+    // private Professeur professeur;
     //private Collection<MessageDTO> messageCollection;
-   // private Personnel personnel;
-    
-    
-    
-     public static UtilisateurDTO fromEntity(Utilisateur utilisateur) {
-   
-          UtilisateurDTO utDTO = mapper.map(utilisateur, UtilisateurDTO.class );
-                return utDTO;
-         
+    // private Personnel personnel;
+
+
+    public static UtilisateurDTO fromEntity(Utilisateur utilisateur) {
+
+        UtilisateurDTO utDTO = mapper.map(utilisateur, UtilisateurDTO.class);
+        return utDTO;
+
 //         if (utilisateur == null) {
 //      return null;
 //      // TODO throw an exception
@@ -53,12 +51,12 @@ public class UtilisateurDTO extends PersonneDTO {
 //       // .status(utilisateur.getStatus())
 //        .username(utilisateur.getUsername())
 //        .build();
-  }
+    }
 
-  public static Utilisateur toEntity(UtilisateurDTO utilisateurDto) {
-      
-      Utilisateur utilisateur =  mapper.map(utilisateurDto, Utilisateur.class);
-      
+    public static Utilisateur toEntity(UtilisateurDTO utilisateurDto) {
+
+        Utilisateur utilisateur = mapper.map(utilisateurDto, Utilisateur.class);
+
 //    if (utlisateurDto == null) {
 //      return null;
 //      // TODO throw an exception
@@ -70,6 +68,6 @@ public class UtilisateurDTO extends PersonneDTO {
 //    //utilisateur.setStatus(utlisateurDto.getStatus())
 //    utilisateur.setUsername(utlisateurDto.getUsername());
 
-    return utilisateur;
-  }
+        return utilisateur;
+    }
 }

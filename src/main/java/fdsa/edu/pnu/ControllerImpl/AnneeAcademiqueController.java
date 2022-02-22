@@ -7,11 +7,8 @@ package fdsa.edu.pnu.ControllerImpl;
 
 
 import fdsa.edu.pnu.Controller.IAnneeAcademiqueController;
-import fdsa.edu.pnu.ServiceImpl.AnneeAcademiqueService;
 import fdsa.edu.pnu.Model.AnneeAcademique;
-
-
-
+import fdsa.edu.pnu.ServiceImpl.AnneeAcademiqueService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,7 +19,7 @@ import java.util.Optional;
 @RestController
 public class AnneeAcademiqueController implements IAnneeAcademiqueController {
 
-   @Autowired
+    @Autowired
     private AnneeAcademiqueService anneeAcademiqueService;
 
     @Override

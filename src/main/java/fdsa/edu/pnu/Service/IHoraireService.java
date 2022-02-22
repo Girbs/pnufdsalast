@@ -1,8 +1,6 @@
 package fdsa.edu.pnu.Service;
 
-import fdsa.edu.pnu.Model.Cours;
 import fdsa.edu.pnu.Model.Horaire;
-import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 import java.util.Optional;

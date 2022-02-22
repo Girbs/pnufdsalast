@@ -64,8 +64,8 @@ public class UtilisateurService implements IUtilisateurService {
     @Override
     public List<Utilisateur> findAll() {
         return utilisateurDAO.findAll();
-       // .stream().map(UtilisateurDTO::fromEntity)
-           //     .collect(Collectors.toList());
+        // .stream().map(UtilisateurDTO::fromEntity)
+        //     .collect(Collectors.toList());
     }
 
 
@@ -76,7 +76,7 @@ public class UtilisateurService implements IUtilisateurService {
 
     @Override
     public Optional<Utilisateur> findById(Integer id) {
-      return  utilisateurDAO.findById(id);
+        return utilisateurDAO.findById(id);
     }
 
     @Override
@@ -108,6 +108,7 @@ public class UtilisateurService implements IUtilisateurService {
                 utilisateurDAO.save(utilisateur)
         );
     }
+
     @Override
     public Utilisateur forgetPassword(Utilisateur user) {
         Optional<Utilisateur> utilisateurOptional = utilisateurDAO.findByUsername(user.getUserName());
@@ -133,6 +134,7 @@ public class UtilisateurService implements IUtilisateurService {
         }
         return utilisateurDAO.save(utilisateur);
     }
+
     private void validate(ChangerMotDePasseUtilisateurDto dto) {
         MessageUtil log = null;
         if (dto == null) {

@@ -7,19 +7,19 @@ package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.Model.Promotion;
 import fdsa.edu.pnu.Repository.PromotionDAO;
-import java.util.Optional;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 /**
- *
  * @author Jephthé Gédéon
  */
 @Data
 @Service
 public class PromotionService {
-     @Autowired
+    @Autowired
     private PromotionDAO promotionDAO;
 
     public Optional<Promotion> getPromotion(final int id) {
@@ -38,5 +38,5 @@ public class PromotionService {
         Promotion savedPromotion = promotionDAO.save(Promotion);
         return savedPromotion;
     }
-    
+
 }

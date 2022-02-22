@@ -8,19 +8,19 @@ package fdsa.edu.pnu.ControllerImpl;
 import fdsa.edu.pnu.Controller.IHoraireController;
 import fdsa.edu.pnu.Model.Horaire;
 import fdsa.edu.pnu.ServiceImpl.HoraireServiceImpl;
-import java.util.List;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+import java.util.Optional;
+
 /**
- *
  * @author Richard
  */
 
 @RestController
 public class HoraireController implements IHoraireController {
-    
+
     @Autowired
     public HoraireServiceImpl horaireServiceImpl;
 

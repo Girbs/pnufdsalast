@@ -71,8 +71,8 @@ public class EmailController {
         message.setText("Professeur  " + prenomProfesseur + " " + nomProfesseur + ", \n\n "
                 + "La Direction Academique  de la FDSA vous souhaite la plus cordiale bienvenue sur sa platforme."
                 + "Priere d'utiliser les informations ci-dessous pour accesder aux ressources de la faculte.\n\n"
-                + "Nom d'utilisateur: "+ nomUtilisateur +"\n"
-                + "Mot de Passe temporaire: "+ motDePasse +"\n\n"
+                + "Nom d'utilisateur: " + nomUtilisateur + "\n"
+                + "Mot de Passe temporaire: " + motDePasse + "\n\n"
 
                 + "Cordialement\n Direction Academique\n Faculte Des Science Appliquees(FDSA)");
 
@@ -89,8 +89,8 @@ public class EmailController {
         message.setText("Cher(e) " + prenom + " " + nom + ", \n\n "
                 + "Votre mot de pass a éte reinitialisé avec succes."
                 + "Priere d'utiliser les informations ci-dessous pour accesder aux ressources de la faculte.\n\n"
-                + "Nom d'utilisateur: "+ nomUtilisateur +"\n"
-                +"Mot de Passe temporaire: "+ motDePasse +"\n\n"
+                + "Nom d'utilisateur: " + nomUtilisateur + "\n"
+                + "Mot de Passe temporaire: " + motDePasse + "\n\n"
 
                 + "Cordialement\nSupport Technique PNU\nFaculte Des Science Appliquees(FDSA)");
 

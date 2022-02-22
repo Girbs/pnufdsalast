@@ -7,11 +7,7 @@ package fdsa.edu.pnu.Controller;
 
 import fdsa.edu.pnu.DTO.APIResponse;
 import fdsa.edu.pnu.DTO.ConcoursDTO;
-import fdsa.edu.pnu.DTO.MatiereDTO;
-import fdsa.edu.pnu.DTO.PostulantDTO;
 import fdsa.edu.pnu.Model.Concours;
-import fdsa.edu.pnu.Model.ExampleStudent;
-import fdsa.edu.pnu.Model.Matiere;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -23,13 +19,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- *
  * @author Ing.Girbson BIJOU
  */
 
 public interface IConcoursController {
 
-   // @PreAuthorize("hasAnyRole( 'lireConcours')")
+    // @PreAuthorize("hasAnyRole( 'lireConcours')")
     @GetMapping(value = "/concours/all", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Renvoi la liste des Concours", notes = "Cette methode permet de chercher et renvoyer la liste des concours qui existent "
             + "dans la BDD", responseContainer = "List<ConcoursDTO>")
@@ -38,7 +33,7 @@ public interface IConcoursController {
     })
     List<ConcoursDTO> findAll();
 
-   // @PreAuthorize("hasAnyRole('lireConcours')")
+    // @PreAuthorize("hasAnyRole('lireConcours')")
     @GetMapping(value = "/concours/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Rechercher un concours par ID", notes = "Cette methode permet de chercher un concours par son ID", response = ConcoursDTO.class)
     @ApiResponses(value = {
@@ -49,16 +44,16 @@ public interface IConcoursController {
 
 
     @PreAuthorize("hasAnyRole('modifierConcours')")
-    @PutMapping  (value = "/concours/modifier/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value = "/concours/modifier/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Enregistrer un COncours", notes = "Cette methode permet d'enregistrer ou modifier un concours", response = ConcoursDTO.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "L'objet le concours cree / modifie"),
             @ApiResponse(code = 400, message = "L'objet concours n'est pas valide")
     })
-    Concours update(@PathVariable("id") Integer id,@RequestBody Concours dto);
+    Concours update(@PathVariable("id") Integer id, @RequestBody Concours dto);
 
 
-  // @PreAuthorize("hasAnyRole('supplrimerConcours')")
+    // @PreAuthorize("hasAnyRole('supplrimerConcours')")
     @DeleteMapping(value = "/concours/supprimer/{id}")
     @ApiOperation(value = "Supprimer un concours", notes = "Cette methode permet de supprimer un concours par ID")
     @ApiResponses(value = {
@@ -66,7 +61,7 @@ public interface IConcoursController {
     })
     void delete(@PathVariable("id") Integer id);
 
-   // @PreAuthorize("hasAnyRole('creerConcours')")
+    // @PreAuthorize("hasAnyRole('creerConcours')")
     @PostMapping(value = "concours/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Enregistrer un COncours", notes = "Cette methode permet d'enregistrer ou modifier un concours", response = ConcoursDTO.class)
     @ApiResponses(value = {
@@ -81,6 +76,6 @@ public interface IConcoursController {
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "La liste des concours / Une liste vide")
     })
-    APIResponse<Page<Concours>> getAllConcourssWithPaginationAndSortv1(@RequestParam(required = true)  int offset, @RequestParam(required = true)  int pageSize,
-                                                                       @RequestParam(required = true) String field, @RequestParam(required = true)  String searchFiled, String sortDirection );
+    APIResponse<Page<Concours>> getAllConcourssWithPaginationAndSortv1(@RequestParam(required = true) int offset, @RequestParam(required = true) int pageSize,
+                                                                       @RequestParam(required = true) String field, @RequestParam(required = true) String searchFiled, String sortDirection);
 }

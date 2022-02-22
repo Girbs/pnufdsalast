@@ -11,13 +11,15 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- *
  * @author gbijou
  */
 public interface IEtudiantService {
 
     List<Etudiant> findAll();
+
     Optional<Etudiant> findById(Integer id);
+
     Etudiant save(Etudiant dto);
+
     void delete(Integer id);
 }

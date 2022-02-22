@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- *
  * @author Ing.Girbson BIJOU
  */
 public interface IPlannificationConcoursService {
@@ -23,8 +22,8 @@ public interface IPlannificationConcoursService {
 
     PlannificationConcours save(PlannificationConcours dto);
 
-//    public PlannificationConcours update(Concours concours);
-Page<PlannificationConcours> findAllWithPaginationAndSortingv1(int offset, int pageSize, String sortField, String searchfield, String sortDirection);
+    //    public PlannificationConcours update(Concours concours);
+    Page<PlannificationConcours> findAllWithPaginationAndSortingv1(int offset, int pageSize, String sortField, String searchfield, String sortDirection);
 
     void delete(Integer id);
 }

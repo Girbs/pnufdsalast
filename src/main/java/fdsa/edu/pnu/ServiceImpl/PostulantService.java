@@ -6,9 +6,7 @@
 package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.DTO.PostulantDTO;
-import fdsa.edu.pnu.Model.Etudiant;
 import fdsa.edu.pnu.Model.Postulant;
-import fdsa.edu.pnu.Model.Role;
 import fdsa.edu.pnu.Repository.EtudiantDAO;
 import fdsa.edu.pnu.Repository.PersonneDAO;
 import fdsa.edu.pnu.Repository.PostulantDAO;
@@ -17,6 +15,8 @@ import fdsa.edu.pnu.Security.PasswordGenerator;
 import fdsa.edu.pnu.Service.IPostulantService;
 import fdsa.edu.pnu.mail.EmailController;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -24,10 +24,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -36,29 +34,22 @@ import java.util.stream.Collectors;
 
 @Service
 public class PostulantService implements IPostulantService {
-
-    @Autowired
-    private PostulantDAO postulantDAO;
-
-    @Autowired
-    private EtudiantDAO etudiantDAO;
-
-    @Autowired
-    private RoleDAO roleDAO;
-
-    @Autowired
-    private PersonneDAO personneDAO;
-
+    private static final Logger logger = LoggerFactory.getLogger(PostulantService.class);
+    private static ModelMapper mapper = new ModelMapper();
     @Autowired
     public EmailController mail;
-
+    @Autowired
+    private PostulantDAO postulantDAO;
+    @Autowired
+    private EtudiantDAO etudiantDAO;
+    @Autowired
+    private RoleDAO roleDAO;
+    @Autowired
+    private PersonneDAO personneDAO;
     @Autowired
     private PasswordGenerator password;
-
     @Autowired
     private PasswordEncoder passwordEncoder;
-
-    private static ModelMapper mapper = new ModelMapper();
 
     /**
      * Lister Tous Les Postulants
@@ -84,12 +75,10 @@ public class PostulantService implements IPostulantService {
     @Override
     public Postulant save(Postulant dto) {
 
-        try {
-            mail.confirmerInscription(dto.getEmail(),dto.getNom(), dto.getPrenom());
 
-        } catch (Exception ex) {
-            System.out.printf("The Error Message is :"+ ex);
-        }
+        mail.confirmerInscription(dto.getEmail(), dto.getNom(), dto.getPrenom());
+        logger.info("This is sample info message is :");
+
         return postulantDAO.save(dto);
 
     }
@@ -120,7 +109,7 @@ public class PostulantService implements IPostulantService {
     @Override
     public List<Postulant> getApplicationParStatut(String statut_application) {
 
-        List <Postulant> lstPostulant = postulantDAO.findAllByStatutApplicatin(statut_application);
+        List<Postulant> lstPostulant = postulantDAO.findAllByStatutApplicatin(statut_application);
         return lstPostulant;
     }
 
@@ -141,10 +130,9 @@ public class PostulantService implements IPostulantService {
     public Page<Postulant> findAllWithPaginationAndSortingv1(int offset, int pageSize, String sortField, String searchfield, String sortDirection) {
         Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() :
                 Sort.by(sortField).descending();
-        Page<Postulant> postulants = postulantDAO.findByAllDynameicSearch( searchfield, PageRequest.of(offset-1, pageSize, sort));
-        return  postulants;
+        Page<Postulant> postulants = postulantDAO.findByAllDynameicSearch(searchfield, PageRequest.of(offset - 1, pageSize, sort));
+        return postulants;
     }
-
 
 
 //    public Page<Postulant> findAllWithFilter(int offset, int pageSize, String field, String prenom) {

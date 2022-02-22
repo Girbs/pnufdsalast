@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
  * @author Ing.Girbson BIJOU
  */
 @Data
@@ -25,17 +24,12 @@ import java.util.List;
 @AllArgsConstructor
 public class ConcoursDTO {
 
-    private Integer id;
-
-    private java.util.Date DateDebut;
-
-    private java.util.Date DateFin;
-
-    private String description;
-
-    private List<PlannificationConcoursDTO> plannificationConcourses = new ArrayList<>();
-
     private static ModelMapper mapper = new ModelMapper();
+    private Integer id;
+    private java.util.Date DateDebut;
+    private java.util.Date DateFin;
+    private String description;
+    private List<PlannificationConcoursDTO> plannificationConcourses = new ArrayList<>();
 
     public static ConcoursDTO fromEntity(Concours concours) {
 

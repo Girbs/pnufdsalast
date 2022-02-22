@@ -8,16 +8,12 @@ package fdsa.edu.pnu.ServiceImpl;
 import fdsa.edu.pnu.DTO.ConcoursDTO;
 import fdsa.edu.pnu.Exception.EntityNotFoundException;
 import fdsa.edu.pnu.Exception.ErrorCodes;
-import fdsa.edu.pnu.Exception.InvalidEntityException;
 import fdsa.edu.pnu.Model.Concours;
 import fdsa.edu.pnu.Model.ExampleStudent;
-import fdsa.edu.pnu.Model.Matiere;
 import fdsa.edu.pnu.Repository.*;
 import fdsa.edu.pnu.Service.IConcoursService;
 import fdsa.edu.pnu.Validators.ConcoursValidateur;
 import lombok.Data;
-import org.aspectj.bridge.ISourceLocation;
-import org.aspectj.bridge.MessageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -28,7 +24,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- *
  * @author EstherA
  */
 @Data
@@ -69,12 +64,10 @@ public class ConcoursService implements IConcoursService {
 
         return concoursDAO.findById(id).map(ConcoursDTO::fromEntity).orElseThrow(()
                 -> new EntityNotFoundException(
-                        "Aucun postulant avec l'ID = " + id + " n' ete trouve dans la BDD",
-                        ErrorCodes.ARTICLE_NOT_FOUND)
+                "Aucun postulant avec l'ID = " + id + " n' ete trouve dans la BDD",
+                ErrorCodes.ARTICLE_NOT_FOUND)
         );
     }
-
-
 
 
     /**
@@ -95,66 +88,22 @@ public class ConcoursService implements IConcoursService {
     }
 
 
-
     @Override
     public Concours update(Integer id, Concours concours) {
         Concours c = concoursDAO.findById(id).get();
-       // Concours c1 = concoursDAO.save(concours);
+        // Concours c1 = concoursDAO.save(concours);
         concours.getPlannificationConcourses().forEach(a -> {
-                a.setConcours(c);
-                a.setMatiere(matiereDAO.findById(a.getMatiere().getId()).get());
-                //a.setMatiere(matiereDAO.findById(matiere.getId()).get());
-                plannificationConcoursDAO.save(a);
-           });
-     c.setDescription(concours.getDescription());
-     c.setDateDebut(concours.getDateDebut());
-     c.setDateFin(concours.getDateFin());
-     c.setStatus(concours.getStatus());
+            a.setConcours(c);
+            a.setMatiere(matiereDAO.findById(a.getMatiere().getId()).get());
+            //a.setMatiere(matiereDAO.findById(matiere.getId()).get());
+            plannificationConcoursDAO.save(a);
+        });
+        c.setDescription(concours.getDescription());
+        c.setDateDebut(concours.getDateDebut());
+        c.setDateFin(concours.getDateFin());
+        c.setStatus(concours.getStatus());
         return concoursDAO.save(c);
     }
-
-
-    @Service
-    public class ExampleStudentService {
-
-        @Autowired
-        private ExampleStudentRepository exampleStudentRepository;
-
-        @Autowired
-        private ExampleAddressRepository exampleAddressRepository;
-
-        public ExampleStudent saveStudent(ExampleStudent exampleStudent) {
-            ExampleStudent s1 = exampleStudentRepository.save(exampleStudent);
-            exampleStudent.getAddresses().forEach(a -> {
-                a.setStudent(s1);
-                exampleAddressRepository.save(a);
-            });
-
-            return exampleStudentRepository.findById(s1.getStudentId()).get();
-        }
-
-        public List<ExampleStudent> getStudent() {
-            return (List<ExampleStudent>) exampleStudentRepository.findAll();
-        }
-    }
-
-
-
-
-//    @Override
-//    public ConcoursDTO save(ConcoursDTO dto) {
-////        List<String> errors = ArticleValidator.validate(dto);
-////        if (!errors.isEmpty()) {
-////            log.error("Article is not valid {}", dto);
-////            throw new InvalidEntityException("L'article n'est pas valide", ErrorCodes.ARTICLE_NOT_VALID, errors);
-////        }
-//
-//        return ConcoursDTO.fromEntity(
-//                concoursDAO.save(
-//                        ConcoursDTO.toEntity(dto)
-//                )
-//        );
-//    }
 
     /**
      * Methode pour supprimer un postulant à l'aide son Id
@@ -184,12 +133,52 @@ public class ConcoursService implements IConcoursService {
         concoursDAO.deleteById(id);
     }
 
+
+//    @Override
+//    public ConcoursDTO save(ConcoursDTO dto) {
+////        List<String> errors = ArticleValidator.validate(dto);
+////        if (!errors.isEmpty()) {
+////            log.error("Article is not valid {}", dto);
+////            throw new InvalidEntityException("L'article n'est pas valide", ErrorCodes.ARTICLE_NOT_VALID, errors);
+////        }
+//
+//        return ConcoursDTO.fromEntity(
+//                concoursDAO.save(
+//                        ConcoursDTO.toEntity(dto)
+//                )
+//        );
+//    }
+
     @Override
     public Page<Concours> findAllWithPaginationAndSortingv1(int offset, int pageSize, String sortField, String searchfield, String sortDirection) {
         Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() :
                 Sort.by(sortField).descending();
-        Page<Concours> concours = concoursDAO.findByAllConcoursDynamiqueSearch( searchfield, PageRequest.of(offset-1, pageSize, sort));
-        return  concours;
+        Page<Concours> concours = concoursDAO.findByAllConcoursDynamiqueSearch(searchfield, PageRequest.of(offset - 1, pageSize, sort));
+        return concours;
+    }
+
+    @Service
+    public class ExampleStudentService {
+
+        @Autowired
+        private ExampleStudentRepository exampleStudentRepository;
+
+        @Autowired
+        private ExampleAddressRepository exampleAddressRepository;
+
+        public ExampleStudent saveStudent(ExampleStudent exampleStudent) {
+            ExampleStudent s1 = exampleStudentRepository.save(exampleStudent);
+            exampleStudent.getAddresses().forEach(a -> {
+                a.setStudent(s1);
+                exampleAddressRepository.save(a);
+            });
+
+            return exampleStudentRepository.findById(s1.getStudentId()).get();
+        }
+
+        public List<ExampleStudent> getStudent() {
+            return (List<ExampleStudent>) exampleStudentRepository.findAll();
+        }
     }
 
 }

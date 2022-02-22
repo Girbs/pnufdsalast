@@ -13,7 +13,6 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- *
  * @author Ing.Girbson BIJOU
  */
 public interface IUtilisateurService {
@@ -27,5 +26,6 @@ public interface IUtilisateurService {
     void delete(Integer id);
 
     UtilisateurDTO changerMotDePasse(ChangerMotDePasseUtilisateurDto dto);
+
     Utilisateur forgetPassword(Utilisateur user);
 }

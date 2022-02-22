@@ -10,12 +10,13 @@ import fdsa.edu.pnu.Exception.ErrorCodes;
 import fdsa.edu.pnu.Model.HistoriqueExamenConcours;
 import fdsa.edu.pnu.Repository.HistoriqueExamenConcoursDAO;
 import fdsa.edu.pnu.Service.IHistoriqueExamenConcoursService;
-import java.util.List;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Data
 @Setter
@@ -38,8 +39,8 @@ public class HistoriqueExamenConcoursService implements IHistoriqueExamenConcour
         }
         return historiqueExamenConcoursDAO.findById(id).orElseThrow(()
                 -> new EntityNotFoundException(
-                        "Aucun postulant avec l'ID = " + id + " n' ete trouve dans la BDD",
-                        ErrorCodes.ARTICLE_NOT_FOUND));
+                "Aucun postulant avec l'ID = " + id + " n' ete trouve dans la BDD",
+                ErrorCodes.ARTICLE_NOT_FOUND));
     }
 
     @Override

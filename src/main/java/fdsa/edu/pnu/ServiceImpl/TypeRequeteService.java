@@ -7,19 +7,19 @@ package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.Model.TypeRequete;
 import fdsa.edu.pnu.Repository.TypeRequeteDAO;
-import java.util.Optional;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 /**
- *
  * @author Jephthé Gédéon
  */
 @Data
 @Service
 public class TypeRequeteService {
-     @Autowired
+    @Autowired
     private TypeRequeteDAO typeRequeteDAO;
 
     public Optional<TypeRequete> getTypeRequete(final int id) {
@@ -38,5 +38,5 @@ public class TypeRequeteService {
         TypeRequete savedTypeRequete = typeRequeteDAO.save(TypeRequete);
         return savedTypeRequete;
     }
-    
+
 }

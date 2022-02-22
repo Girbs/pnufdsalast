@@ -7,28 +7,22 @@ package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Model.Promotion;
 import fdsa.edu.pnu.ServiceImpl.PromotionService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 import java.util.Optional;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
- *
  * @author Jephthé Gédéon
  */
 
 @RestController
 public class PromotionController {
-    
-     @Autowired 
+
+    @Autowired
     public PromotionService promotionService;
-    
+
     /**
      * Afficher toutes les Promotions
      *
@@ -38,11 +32,10 @@ public class PromotionController {
     public List<Promotion> getAllPromotion() {
         return (List<Promotion>) promotionService.getPromotion();
     }
-    
-    
+
+
     /**
      * Creer une nouvelle Promotion
-     *
      *
      * @param promotion
      * @return
@@ -51,33 +44,34 @@ public class PromotionController {
     public Promotion createPromotion(@RequestBody Promotion promotion) {
         return promotionService.savePromotion(promotion);
     }
-    
+
     /**
      * Selectionner par ID
      *
      * @param id
      * @return
      */
-    
+
     @RequestMapping("/Promotion/(id)")
     public Promotion getPromotion(@PathVariable("id") int id) {
         Optional<Promotion> promotion = promotionService.getPromotion(id);
-        if ( promotion.isPresent() ) {
+        if (promotion.isPresent()) {
             return promotion.get();
-        }else {
+        } else {
             return null;
         }
     }
-    
+
     /**
      * Supprimer une Promotion
-     * @param id 
+     *
+     * @param id
      */
-    
+
     @DeleteMapping("/supprimerPromotion")
     public void deletePromotion(@PathVariable("id") final int id) {
         promotionService.deletePromotion(id);
     }
-    
+
 }
 

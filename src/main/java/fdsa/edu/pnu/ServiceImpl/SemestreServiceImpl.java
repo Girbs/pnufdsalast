@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+
 @Service
 public class SemestreServiceImpl implements ISemestreService {
 
@@ -36,6 +37,6 @@ public class SemestreServiceImpl implements ISemestreService {
 
     @Override
     public void delete(Integer id) {
-    semestreDAO.deleteById(id);
+        semestreDAO.deleteById(id);
     }
 }

@@ -8,9 +8,13 @@ import java.util.Optional;
 public interface IAnneeAcademiqueService {
 
     List<AnneeAcademique> findAll();
+
     Optional<AnneeAcademique> findById(Integer id);
+
     AnneeAcademique save(AnneeAcademique anneeAcademique);
+
     AnneeAcademique update(Integer id, AnneeAcademique anneeAcademique);
+
     void delete(Integer id);
 
 }

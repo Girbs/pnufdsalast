@@ -9,19 +9,19 @@ import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
 
 import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProfesseurDTO extends UtilisateurDTO {
 
 
+    private static ModelMapper mapper = new ModelMapper();
     private String codeProfesseur;
     private String titre;
     private String lienCv;
     private List<Cours> cours;
-    private List<PublicationDTO> publications ;
-
-    private static ModelMapper mapper = new ModelMapper();
+    private List<PublicationDTO> publications;
 
     public static ProfesseurDTO fromEntity(Professeur professeur) {
 

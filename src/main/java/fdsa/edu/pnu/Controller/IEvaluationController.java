@@ -1,6 +1,5 @@
 package fdsa.edu.pnu.Controller;
 
-import fdsa.edu.pnu.Model.Cours;
 import fdsa.edu.pnu.Model.Evaluation;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -29,7 +28,7 @@ public interface IEvaluationController {
             @ApiResponse(code = 200, message = "Le Cours a ete trouve dans la BDD"),
             @ApiResponse(code = 404, message = "Aucun cours n'existe dans la BDD avec l'ID fourni")
     })
-    Optional<Evaluation > findById(@PathVariable("id") Integer id);
+    Optional<Evaluation> findById(@PathVariable("id") Integer id);
 
 
     // @PreAuthorize("hasAnyRole('modifierConcours')")

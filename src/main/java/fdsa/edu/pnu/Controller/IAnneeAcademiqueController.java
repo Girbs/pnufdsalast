@@ -39,6 +39,7 @@ public interface IAnneeAcademiqueController {
             @ApiResponse(code = 400, message = "L'objet concours n'est pas valide")
     })
     AnneeAcademique update(@PathVariable("id") Integer id, @RequestBody AnneeAcademique anneeAcademique);
+
     @PreAuthorize("hasAnyRole('supprimerAnneeAcademique')")
     @DeleteMapping(value = "/supprimer/{id}")
     @ApiOperation(value = "Supprimer un concours", notes = "Cette methode permet de supprimer un concours par ID")

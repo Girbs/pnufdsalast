@@ -1,10 +1,13 @@
 /**
  * "Visual Paradigm: DO NOT MODIFY THIS FILE!"
- * 
- * This is an automatic generated file. It will be regenerated every time 
+ * <p>
+ * This is an automatic generated file. It will be regenerated every time
  * you generate persistence class.
- * 
+ * <p>
  * Modifying its content may cause the program not work, or your work may lost.
+ * <p>
+ * Licensee:
+ * License Type: Evaluation
  */
 
 /**
@@ -14,16 +17,15 @@
 package fdsa.edu.pnu.Repository;
 
 import fdsa.edu.pnu.Model.Discussion;
-import org.hibernate.LockMode;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
 public interface DiscussionDAO extends JpaRepository<Discussion, Integer> {
-	//public Discussion loadDiscussionByORMID(int id); //throws PersistentException;
-       // public Discussion getDiscussionByORMID(int id); /*throws PersistentException*/;
-	//public Discussion loadDiscussionByORMID(int id, org.hibernate.LockMode lockMode); //throws PersistentException;
-	//public Discussion getDiscussionByORMID(int id, org.hibernate.LockMode lockMode); //throws PersistentException;
-	//public Discussion loadDiscussionByORMID(PersistentSession session, int id) throws PersistentException;
+    //public Discussion loadDiscussionByORMID(int id); //throws PersistentException;
+    // public Discussion getDiscussionByORMID(int id); /*throws PersistentException*/;
+    //public Discussion loadDiscussionByORMID(int id, org.hibernate.LockMode lockMode); //throws PersistentException;
+    //public Discussion getDiscussionByORMID(int id, org.hibernate.LockMode lockMode); //throws PersistentException;
+    //public Discussion loadDiscussionByORMID(PersistentSession session, int id) throws PersistentException;
 //	public Discussion getDiscussionByORMID(PersistentSession session, int id) throws PersistentException;
 //	public Discussion loadDiscussionByORMID(PersistentSession session, int id, org.hibernate.LockMode lockMode) throws PersistentException;
 //	public Discussion getDiscussionByORMID(PersistentSession session, int id, org.hibernate.LockMode lockMode) throws PersistentException;

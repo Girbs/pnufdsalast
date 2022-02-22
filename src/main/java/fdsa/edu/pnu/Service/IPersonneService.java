@@ -6,14 +6,14 @@
 package fdsa.edu.pnu.Service;
 
 import fdsa.edu.pnu.DTO.PersonneDTO;
+
 import java.util.List;
 
 /**
- *
  * @author gbijou
  */
 public interface IPersonneService {
-    
+
     List<PersonneDTO> findAll();
 
     PersonneDTO findById(Integer id);

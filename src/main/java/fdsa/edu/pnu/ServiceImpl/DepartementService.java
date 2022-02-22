@@ -7,19 +7,19 @@ package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.Model.Departement;
 import fdsa.edu.pnu.Repository.DepartementDAO;
-import java.util.Optional;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 /**
- *
  * @author EstherA
  */
 @Data
 @Service
 public class DepartementService {
-        @Autowired
+    @Autowired
     private DepartementDAO departementDAO;
 
     public Optional<Departement> getDepartement(final int id) {

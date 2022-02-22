@@ -7,26 +7,21 @@ package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Model.DepartementGeographique;
 import fdsa.edu.pnu.ServiceImpl.DepartementGeographiqueService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 import java.util.Optional;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
- *
  * @author EstherA
  */
 @RestController
 public class DepartementGeographiqueController {
-        @Autowired
-public DepartementGeographiqueService departementGeographiqueService;
-     /**
+    @Autowired
+    public DepartementGeographiqueService departementGeographiqueService;
+
+    /**
      * Afficher tous les Departements
      *
      * @return
@@ -36,11 +31,11 @@ public DepartementGeographiqueService departementGeographiqueService;
         return (List<DepartementGeographique>) departementGeographiqueService.getDepartementGeographique();
     }
 
-    
+
     /**
      * Creer nouveau Departement
      *
-     * @param departementGeographique  
+     * @param departementGeographique
      * @return
      */
     @PostMapping("/nouveauDepartementGeographique")
@@ -48,7 +43,7 @@ public DepartementGeographiqueService departementGeographiqueService;
         return departementGeographiqueService.saveDepartementGeographique(departementGeographique);
     }
 
-    
+
     /**
      * Selectionner par ID
      *
@@ -64,15 +59,17 @@ public DepartementGeographiqueService departementGeographiqueService;
             return null;
         }
     }
+
     /**
      * Supprimer un Departement
-     * @param id 
+     *
+     * @param id
      */
-     @DeleteMapping("/supprimerDepartementGeographique/{id}")
-	public void deleteEmployee(@PathVariable("id") final int id) {
-		departementGeographiqueService.deleteDepartementGeographique(id);
-	}
-        
-        
-        // TO DO modifier un DepartementGeographique
+    @DeleteMapping("/supprimerDepartementGeographique/{id}")
+    public void deleteEmployee(@PathVariable("id") final int id) {
+        departementGeographiqueService.deleteDepartementGeographique(id);
+    }
+
+
+    // TO DO modifier un DepartementGeographique
 }

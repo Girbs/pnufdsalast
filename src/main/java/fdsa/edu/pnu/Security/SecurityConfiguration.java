@@ -52,7 +52,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests().antMatchers(
 
 
-                "/authenticate",
+                        "/authenticate",
                         "/postulant/nouveau",
                         "/matiere/listeDynamique",
                         "/postulant/all",
@@ -67,6 +67,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/anneeAcademique/all",
                         "/utilisateur/motDePasseOublie",
                         "/role/all",
+                        "/matiere/all/customQuery",
                         "/concours/all",
                         "/permission/all",
                         "/utilisateur/all",
@@ -82,7 +83,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/matiere/nouveau",
                         "/matiere/supprimer/{id}",
                         "/matiere/{id}",
-                         "concours/all",
+                        "concours/all",
                         "/concours/{id}",
                         "/concours/nouveau",
                         "/concours/listeDynamique",
@@ -90,19 +91,18 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/postulantPageWithFilter",
 
 
-
-                "/saveStudent",
-                "/getStudent",
-                "/modifierConcours/{id}",
-                "/v2/api-docs",
-                "/swagger-resources",
-                "/swagger-resources/**",
-                "/configuration/ui",
-                "/configuration/security",
-                "/swagger-ui.html",
-                "/webjars/**",
-                "/v3/api-docs/**",
-                "/swagger-ui/**").permitAll()
+                        "/saveStudent",
+                        "/getStudent",
+                        "/modifierConcours/{id}",
+                        "/v2/api-docs",
+                        "/swagger-resources",
+                        "/swagger-resources/**",
+                        "/configuration/ui",
+                        "/configuration/security",
+                        "/swagger-ui.html",
+                        "/webjars/**",
+                        "/v3/api-docs/**",
+                        "/swagger-ui/**").permitAll()
                 .antMatchers(HttpHeaders.ALLOW).permitAll()
                 .anyRequest().authenticated()
                 .and()

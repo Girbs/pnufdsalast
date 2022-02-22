@@ -13,7 +13,7 @@ import java.util.Optional;
 
 public interface ICoursController {
 
-   @PreAuthorize("hasAnyRole( 'lireCours')")
+    @PreAuthorize("hasAnyRole( 'lireCours')")
     @GetMapping(value = "/cours/all", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Renvoi la liste des Cours", notes = "Cette methode permet de chercher et renvoyer la liste des concours qui existent "
             + "dans la BDD", responseContainer = "List<Cours>")

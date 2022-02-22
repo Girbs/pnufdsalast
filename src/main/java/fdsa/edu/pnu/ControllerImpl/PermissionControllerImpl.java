@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Optional;
+
 @RestController
 public class PermissionControllerImpl implements IPermissionController {
 
@@ -17,7 +18,7 @@ public class PermissionControllerImpl implements IPermissionController {
 
     @Override
     public List<Permission> findAll() {
-        return permissionServiceImpl.findAll() ;
+        return permissionServiceImpl.findAll();
     }
 
     @Override

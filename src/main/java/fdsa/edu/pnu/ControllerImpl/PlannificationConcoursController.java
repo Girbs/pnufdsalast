@@ -17,28 +17,27 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- *
  * @author Richard
  */
 @RestController
 public class PlannificationConcoursController implements IPlannificationConcoursController {
-    
-    @Autowired 
+
+    @Autowired
     public PlannificationConcoursService plannificationConcoursService;
 
     @Override
     public List<PlannificationConcours> findAll() {
-       return plannificationConcoursService.findAll();
+        return plannificationConcoursService.findAll();
     }
 
     @Override
     public Optional<PlannificationConcours> findById(Integer id) {
-       return plannificationConcoursService.findById(id);
+        return plannificationConcoursService.findById(id);
     }
 
     @Override
     public PlannificationConcours save(PlannificationConcours dto) {
-         return plannificationConcoursService.save(dto);
+        return plannificationConcoursService.save(dto);
     }
 
     @Override

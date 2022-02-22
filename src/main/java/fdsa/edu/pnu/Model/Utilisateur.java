@@ -8,6 +8,9 @@
  * <p>
  * Licensee:
  * License Type: Evaluation
+ * <p>
+ * Licensee:
+ * License Type: Evaluation
  */
 /**
  * Licensee:
@@ -15,9 +18,7 @@
  */
 package fdsa.edu.pnu.Model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -46,7 +47,7 @@ public class Utilisateur extends Personne implements Serializable {
     @Column(name = "Password")
     private String userPassword;
 
-    @ManyToMany( targetEntity = Role.class ,fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = Role.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JsonIgnoreProperties("utlilisateurs")
     private Set<Role> role;
 
