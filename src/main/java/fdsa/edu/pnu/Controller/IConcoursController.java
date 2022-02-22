@@ -33,6 +33,14 @@ public interface IConcoursController {
     })
     List<ConcoursDTO> findAll();
 
+    @GetMapping(value = "/concours/findAllCustomQuery", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Renvoi la liste des Concours", notes = "Cette methode permet de chercher et renvoyer la liste des concours qui existent "
+            + "dans la BDD", responseContainer = "List<Concours>")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "La liste des concours / Une liste vide")
+    })
+    List<Concours> findAllCustomQuery();
+
     // @PreAuthorize("hasAnyRole('lireConcours')")
     @GetMapping(value = "/concours/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Rechercher un concours par ID", notes = "Cette methode permet de chercher un concours par son ID", response = ConcoursDTO.class)

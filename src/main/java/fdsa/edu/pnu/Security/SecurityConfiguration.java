@@ -68,6 +68,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/utilisateur/motDePasseOublie",
                         "/role/all",
                         "/matiere/all/customQuery",
+                        "/concours/findAllCustomQuery",
                         "/concours/all",
                         "/permission/all",
                         "/utilisateur/all",

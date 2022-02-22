@@ -31,6 +31,11 @@ public class ConcoursController implements IConcoursController {
     }
 
     @Override
+    public List<Concours> findAllCustomQuery() {
+        return concoursService.findByAllCustomQuery();
+    }
+
+    @Override
     public ConcoursDTO findById(Integer id) {
         return concoursService.findById(id);
     }

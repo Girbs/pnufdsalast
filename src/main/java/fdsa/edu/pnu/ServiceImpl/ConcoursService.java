@@ -10,6 +10,7 @@ import fdsa.edu.pnu.Exception.EntityNotFoundException;
 import fdsa.edu.pnu.Exception.ErrorCodes;
 import fdsa.edu.pnu.Model.Concours;
 import fdsa.edu.pnu.Model.ExampleStudent;
+import fdsa.edu.pnu.Model.Matiere;
 import fdsa.edu.pnu.Repository.*;
 import fdsa.edu.pnu.Service.IConcoursService;
 import fdsa.edu.pnu.Validators.ConcoursValidateur;
@@ -131,6 +132,11 @@ public class ConcoursService implements IConcoursService {
 //          ErrorCodes.ARTICLE_ALREADY_IN_USE);
 //    }
         concoursDAO.deleteById(id);
+    }
+
+    @Override
+    public List<Concours> findByAllCustomQuery() {
+        return concoursDAO.findByAllCustomQuery() ;
     }
 
 
