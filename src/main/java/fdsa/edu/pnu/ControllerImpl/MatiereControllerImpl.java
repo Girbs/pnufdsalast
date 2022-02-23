@@ -11,6 +11,8 @@ import fdsa.edu.pnu.Model.Matiere;
 import fdsa.edu.pnu.ServiceImpl.MatiereServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -32,6 +34,8 @@ public class MatiereControllerImpl implements IMatiereController {
 
     @Override
     public List<Matiere> findByAllCustomQuerry() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String name = auth.toString(); //get logged in username
         return matiereServiceImpl.findByAllCustumQuerry();
     }
 
@@ -56,4 +60,8 @@ public class MatiereControllerImpl implements IMatiereController {
         Page<Matiere> productsWithPagination = matiereServiceImpl.findAllWithPaginationAndSortingv1(offset, pageSize, field, searchFiled, sortDirection);
         return new APIResponse<>(productsWithPagination.getSize(), productsWithPagination);
     }
+
+//    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//    String name = auth.getName(); //get logged in username
+
 }

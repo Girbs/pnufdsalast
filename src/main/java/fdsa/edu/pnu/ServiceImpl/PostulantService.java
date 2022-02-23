@@ -83,7 +83,7 @@ public class PostulantService implements IPostulantService {
             mail.confirmerInscription(dto.getEmail(), dto.getNom(), dto.getPrenom());
         } catch (Exception e) {
             logger.error("This is sample info message is :" + e);
-            logTrackingDAO.save(new LogTracking("Save Postulant Sevice Impl", e.getMessage()));
+            logTrackingDAO.save(new LogTracking("Save Postulant Sevice Impl", e.toString()));
         }
         return postulantDAO.save(dto);
     }

@@ -27,10 +27,7 @@ import java.io.Serializable;
 @Getter
 @Table(name = "Paiement")
 public class Paiement implements Serializable {
-    @OneToMany(mappedBy = "paiement", targetEntity = Requete.class)
-    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
-    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
-    private final java.util.Set requetes = new java.util.HashSet();
+
     @Column(name = "ID", nullable = false, length = 10)
     @Id
     @GeneratedValue(generator = "PNU_PAIEMENT_ID_GENERATOR")
@@ -49,10 +46,16 @@ public class Paiement implements Serializable {
     @Column(name = "Remarque", nullable = true, length = 255)
     private String remarque;
 
+
     @ManyToOne(targetEntity = Semestre.class, fetch = FetchType.LAZY)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
     @JoinColumns(value = {@JoinColumn(name = "SemestreID", referencedColumnName = "ID")}, foreignKey = @ForeignKey(name = "PaimentSemestre"))
     private Semestre semestre;
+
+    @OneToMany(mappedBy = "paiement", targetEntity = Requete.class)
+    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
+    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
+    private final java.util.Set requetes = new java.util.HashSet();
 
     @ManyToOne(targetEntity = Etudiant.class, fetch = FetchType.LAZY)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})

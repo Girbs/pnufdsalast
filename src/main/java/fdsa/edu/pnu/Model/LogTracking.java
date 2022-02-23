@@ -29,6 +29,8 @@ public class LogTracking implements Serializable {
         }
 
         private String methodName;
+
+       // @Column(name = "exception", columnDefinition = "NVARCHAR(MAX)")
         private String exception;
 
 }

@@ -22,35 +22,19 @@ public class PaiementController {
     @Autowired
     public PaiementService paiementService;
 
-    /**
-     * Afficher tous les paiements
-     *
-     * @return
-     */
+
     @GetMapping(value = "/paiements")
     public List<Paiement> getAllPaiements() {
         return (List<Paiement>) paiementService.getPaiements();
     }
 
 
-    /**
-     * Creer nouveau Paiement
-     *
-     * @param employee
-     * @return
-     */
     @PostMapping("/nouveauPaiement")
     public Paiement createPaiement(@RequestBody Paiement employee) {
         return paiementService.savePaiement(employee);
     }
 
 
-    /**
-     * Selectionner par ID
-     *
-     * @param id
-     * @return
-     */
     @RequestMapping("/paiement/{id}")
     public Paiement getPaiement(@PathVariable("id") int id) {
         Optional<Paiement> paiement = paiementService.getPaiement(id);
@@ -61,11 +45,6 @@ public class PaiementController {
         }
     }
 
-    /**
-     * Supprimer un paiement
-     *
-     * @param id
-     */
     @DeleteMapping("/supprimerPaiement/{id}")
     public void deleteEmployee(@PathVariable("id") final int id) {
         paiementService.deletePaiement(id);
