@@ -6,11 +6,9 @@
 package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.DTO.PostulantDTO;
+import fdsa.edu.pnu.Model.LogTracking;
 import fdsa.edu.pnu.Model.Postulant;
-import fdsa.edu.pnu.Repository.EtudiantDAO;
-import fdsa.edu.pnu.Repository.PersonneDAO;
-import fdsa.edu.pnu.Repository.PostulantDAO;
-import fdsa.edu.pnu.Repository.RoleDAO;
+import fdsa.edu.pnu.Repository.*;
 import fdsa.edu.pnu.Security.PasswordGenerator;
 import fdsa.edu.pnu.Service.IPostulantService;
 import fdsa.edu.pnu.mail.EmailController;
@@ -52,6 +50,9 @@ public class PostulantService implements IPostulantService {
     private PasswordGenerator password;
     @Autowired
     private PasswordEncoder passwordEncoder;
+    @Autowired
+    private LogTrackingDAO logTrackingDAO;
+
 
     /**
      * Lister Tous Les Postulants
@@ -77,9 +78,12 @@ public class PostulantService implements IPostulantService {
     @Override
     public Postulant save(Postulant dto) {
         try {
+            logger.info("Method Called successfully" );
+            logTrackingDAO.save(new LogTracking("postulantService", "No Exeption Error"));
             mail.confirmerInscription(dto.getEmail(), dto.getNom(), dto.getPrenom());
         } catch (Exception e) {
             logger.error("This is sample info message is :" + e);
+            logTrackingDAO.save(new LogTracking("Save Postulant Sevice Impl", e.getMessage()));
         }
         return postulantDAO.save(dto);
     }
