@@ -35,7 +35,7 @@ import java.util.stream.Collectors;
 @Service
 public class PostulantService implements IPostulantService {
 
-    //private static final Logger logger = LoggerFactory.getLogger(PostulantService.class);
+    private static final Logger logger = LoggerFactory.getLogger(PostulantService.class);
 
     private static final ModelMapper mapper = new ModelMapper();
     @Autowired
@@ -76,11 +76,11 @@ public class PostulantService implements IPostulantService {
 
     @Override
     public Postulant save(Postulant dto) {
-//        try {
-//            mail.confirmerInscription(dto.getEmail(), dto.getNom(), dto.getPrenom());
-//        } catch (Exception e) {
-//            logger.error("This is sample info message is :" + e);
-//        }
+        try {
+            mail.confirmerInscription(dto.getEmail(), dto.getNom(), dto.getPrenom());
+        } catch (Exception e) {
+            logger.error("This is sample info message is :" + e);
+        }
         return postulantDAO.save(dto);
     }
 
