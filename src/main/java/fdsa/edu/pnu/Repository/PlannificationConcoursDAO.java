@@ -17,6 +17,7 @@
 package fdsa.edu.pnu.Repository;
 
 
+import fdsa.edu.pnu.Model.Matiere;
 import fdsa.edu.pnu.Model.PlannificationConcours;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -29,4 +30,7 @@ import org.springframework.stereotype.Repository;
 public interface PlannificationConcoursDAO extends JpaRepository<PlannificationConcours, Integer> {
     @Query(value = "SELECT * FROM plannification_concours  WHERE  CONCAT(commentaire,quotation )  LIKE %:text%", nativeQuery = true)
     Page<PlannificationConcours> findByAllPlannificationConcoursDynamiqueSearch(@Param("text") String text, Pageable pageable);
+
+    @Query(value = "{call FindPlannificationConcoursById(:IdPlannificationConcours)}", nativeQuery = true)
+    PlannificationConcours findConcoursById(@Param("IdPlannificationConcours") Integer IdPlannificationConcours);
 }

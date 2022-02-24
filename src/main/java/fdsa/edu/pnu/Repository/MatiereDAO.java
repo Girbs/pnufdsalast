@@ -17,6 +17,7 @@
 package fdsa.edu.pnu.Repository;
 
 
+import fdsa.edu.pnu.Model.Concours;
 import fdsa.edu.pnu.Model.Matiere;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -35,5 +36,8 @@ public interface MatiereDAO extends JpaRepository<Matiere, Integer> {
 
     @Query(value = "SELECT * FROM Matiere", nativeQuery = true)
     List<Matiere> findByAllCustumQuerry();
+
+    @Query(value = "{call FindMatiereById(:Idmatiere)}", nativeQuery = true)
+    Matiere findConcoursById(@Param("Idmatiere") Integer Idmatiere);
 
 }
