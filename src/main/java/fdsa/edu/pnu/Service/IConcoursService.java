@@ -15,7 +15,7 @@ public interface IConcoursService {
 
     List<ConcoursDTO> findAll();
 
-    ConcoursDTO findById(Integer id);
+    Concours findById(Integer id);
 
     Concours save(Concours dto);
 

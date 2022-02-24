@@ -48,7 +48,7 @@ public interface IConcoursController {
             @ApiResponse(code = 200, message = "Le Concours a ete trouve dans la BDD"),
             @ApiResponse(code = 404, message = "Aucun concours n'existe dans la BDD avec l'ID fourni")
     })
-    ConcoursDTO findById(@PathVariable("id") Integer id);
+    Concours findById(@PathVariable("id") Integer id);
 
 
     @PreAuthorize("hasAnyRole('modifierConcours')")

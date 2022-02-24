@@ -57,17 +57,18 @@ public class ConcoursService implements IConcoursService {
      * @return
      */
     @Override
-    public ConcoursDTO findById(Integer id) {
+    public Concours findById(Integer id) {
         if (id == null) {
             // log.error("Article ID is null");
             return null;
         }
 
-        return concoursDAO.findById(id).map(ConcoursDTO::fromEntity).orElseThrow(()
-                -> new EntityNotFoundException(
-                "Aucun postulant avec l'ID = " + id + " n' ete trouve dans la BDD",
-                ErrorCodes.ARTICLE_NOT_FOUND)
-        );
+        return concoursDAO.findConcoursById(id);
+//                .map(ConcoursDTO::fromEntity).orElseThrow(()
+//                -> new EntityNotFoundException(
+//                "Aucun postulant avec l'ID = " + id + " n' ete trouve dans la BDD",
+//                ErrorCodes.ARTICLE_NOT_FOUND)
+//        );
     }
 
 

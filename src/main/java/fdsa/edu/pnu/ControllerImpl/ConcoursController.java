@@ -36,7 +36,7 @@ public class ConcoursController implements IConcoursController {
     }
 
     @Override
-    public ConcoursDTO findById(Integer id) {
+    public Concours findById(Integer id) {
         return concoursService.findById(id);
     }
 
