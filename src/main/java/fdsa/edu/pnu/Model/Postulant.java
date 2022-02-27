@@ -109,11 +109,11 @@ public class Postulant extends Audit<String> implements Serializable {
     private String nomPersonneAcontacter;
     private String prenomPersonneAcontacter;
     private String telephonePersonneAcontacter;
-    private String statutApplication;
+    public String statutApplication;
+    public String commentaireDuDecanat;
     @JsonIgnoreProperties(value = {"postulant"}, allowSetters = true)
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "postulant", targetEntity = HistoriqueExamenConcours.class)
     private List<HistoriqueExamenConcours> historiqueExamenConcourss;
-
 
     public Postulant() {
     }

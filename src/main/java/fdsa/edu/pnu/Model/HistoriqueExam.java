@@ -18,16 +18,19 @@ package fdsa.edu.pnu.Model;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "id")
-@JsonIdentityReference(alwaysAsId = true)
+@Getter
+@Setter
 @Table(name = "HistoriqueExam")
+@JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
 public class HistoriqueExam implements Serializable {
     @Column(name = "ID", nullable = false, length = 10)
     @Id
@@ -36,56 +39,28 @@ public class HistoriqueExam implements Serializable {
     private int ID;
     @Column(name = "Note", nullable = false, length = 10)
     private double note;
-    @OneToOne(targetEntity = Etudiant.class)
-    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
+
+
+    @JsonIgnoreProperties(value = {"historiqueExams"}, allowSetters = true)
+    @ManyToOne(targetEntity =Etudiant.class, fetch = FetchType.LAZY)
+    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
     @JoinColumns({@JoinColumn(name = "EtudiantPersonneID", referencedColumnName = "PersonneID", nullable = false)})
     private Etudiant etudiant;
-    @OneToOne(targetEntity = Evaluation.class)
-    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
+
+    @JsonIgnoreProperties(value = {"historiqueExams"}, allowSetters = true)
+    @ManyToOne(targetEntity =Evaluation.class, fetch = FetchType.LAZY)
+    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
     @JoinColumns({@JoinColumn(name = "EvaluationID", referencedColumnName = "ID", nullable = false)})
     private Evaluation evaluation;
 
+
+
+//    @JsonIgnoreProperties(value = {"historiqueExam"}, allowSetters = true)
+//    @ManyToOne(targetEntity =Evaluation.class, fetch = FetchType.LAZY)
+//    @JoinColumns(value = {@JoinColumn(name = "EvaluationID", referencedColumnName = "ID", nullable = false)}, foreignKey = @ForeignKey(name = "Evaluation_HistoriqueExamen"))
+//    private Evaluation evaluation;
+
     public HistoriqueExam() {
-    }
-
-    public int getID() {
-        return ID;
-    }
-
-    private void setID(int value) {
-        this.ID = value;
-    }
-
-    public int getORMID() {
-        return getID();
-    }
-
-    public double getNote() {
-        return note;
-    }
-
-    public void setNote(double value) {
-        this.note = value;
-    }
-
-    public Evaluation getEvaluation() {
-        return evaluation;
-    }
-
-    public void setEvaluation(Evaluation value) {
-        this.evaluation = value;
-    }
-
-    public Etudiant getEtudiant() {
-        return etudiant;
-    }
-
-    public void setEtudiant(Etudiant value) {
-        this.etudiant = value;
-    }
-
-    public String toString() {
-        return String.valueOf(getID());
     }
 
 }

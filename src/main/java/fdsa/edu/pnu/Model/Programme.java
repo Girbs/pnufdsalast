@@ -30,7 +30,7 @@ import java.util.List;
 @Data
 
 @Table(name = "Programme")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
 public class Programme implements Serializable {
 
     @Column(name = "ID", nullable = false, length = 10)
@@ -45,12 +45,15 @@ public class Programme implements Serializable {
     @Column(name = "Description", nullable = false, length = 255)
     private String description;
 
+
+    @JsonIgnoreProperties(value = {"programme"}, allowSetters = true)
     @OneToMany(mappedBy = "programme", targetEntity = SessionProgramme.class)
     private List<SessionProgramme> sessionProgrammeList;
 
 
 //    @OneToMany(mappedBy = "programme", targetEntity = SessionProgramme.class)
 //    private List<Programme> programmes;
+
 
 
     @ManyToMany(mappedBy = "programmes", targetEntity = Etudiant.class)

@@ -7,6 +7,7 @@ package fdsa.edu.pnu.Controller;
 
 import fdsa.edu.pnu.DTO.APIResponse;
 import fdsa.edu.pnu.DTO.PostulantDTO;
+import fdsa.edu.pnu.Model.Etudiant;
 import fdsa.edu.pnu.Model.Postulant;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -56,7 +57,7 @@ public interface IPostulantController {
     void delete(@PathVariable("id") Integer id);
 
 
-//    @PutMapping(value = "/modifierPostulant/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+//    @PutMapping(value = "/postulant/modifier/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 //    @ApiOperation(value = "Modifier un Postulant", notes = "Cette methode permet de modifier un postulant", response = PostulantDTO.class)
 //    @ApiResponses(value = {
 //            @ApiResponse(code = 200, message = "L'objet postulant cree / modifie"),

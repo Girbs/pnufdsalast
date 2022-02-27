@@ -26,6 +26,9 @@
  * <p>
  * Licensee:
  * License Type: Evaluation
+ * <p>
+ * Licensee:
+ * License Type: Evaluation
  */
 
 /**
@@ -34,11 +37,20 @@
  */
 package fdsa.edu.pnu.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 @Entity
+@Setter
+@Getter
+@AllArgsConstructor
 @Table(name = "Etudiant")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorValue("Etudiants")
@@ -71,6 +83,10 @@ public class Etudiant extends Utilisateur implements Serializable {
 //    @OneToOne(mappedBy = "etudiant", targetEntity = HistoriqueExam.class)
 //    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
 //    private HistoriqueExam historiqueExam;
+
+    @JsonIgnoreProperties(value = {"etudiant"}, allowSetters = true)
+    @OneToMany(mappedBy = "etudiant", targetEntity = HistoriqueExam.class)
+    private List<HistoriqueExam> historiqueExams;
 
     @OneToMany(mappedBy = "etudiant", targetEntity = Paiement.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
@@ -109,84 +125,5 @@ public class Etudiant extends Utilisateur implements Serializable {
         this.messages = messages;
     }
 
-    public String getCodeEtudiant() {
-        return codeEtudiant;
-    }
 
-    public void setCodeEtudiant(String codeEtudiant) {
-        this.codeEtudiant = codeEtudiant;
-    }
-
-    public String getMatricule() {
-        return matricule;
-    }
-
-    public void setMatricule(String matricule) {
-        this.matricule = matricule;
-    }
-
-
-    public Set getCours() {
-        return cours;
-    }
-
-    public void setCours(Set cours) {
-        this.cours = cours;
-    }
-
-    public Set getPromotions() {
-        return promotions;
-    }
-
-    public void setPromotions(Set promotions) {
-        this.promotions = promotions;
-    }
-
-    public Set getProgrammes() {
-        return programmes;
-    }
-
-    public void setProgrammes(Set programmes) {
-        this.programmes = programmes;
-    }
-
-//    public HistoriqueExam getHistoriqueExam() {
-//        return historiqueExam;
-//    }
-//
-//    public void setHistoriqueExam(HistoriqueExam historiqueExam) {
-//        this.historiqueExam = historiqueExam;
-//    }
-
-    public Set getPaiements() {
-        return paiements;
-    }
-
-    public void setPaiements(Set paiements) {
-        this.paiements = paiements;
-    }
-
-    public Set getStages() {
-        return stages;
-    }
-
-    public void setStages(Set stages) {
-        this.stages = stages;
-    }
-
-    public Set getRequetes() {
-        return requetes;
-    }
-
-    public void setRequetes(Set requetes) {
-        this.requetes = requetes;
-    }
-
-    public Set getMessages() {
-        return messages;
-    }
-
-    public void setMessages(Set messages) {
-        this.messages = messages;
-    }
 }

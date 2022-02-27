@@ -39,10 +39,7 @@ public class EmailController {
 
         // Send Message!
         this.emailSender.send(message);
-
-
     }
-
 
     @ResponseBody
     public void applicationApprovee(String emailpostulant, String nomPostulant, String prenomPostulant, String filliere) {

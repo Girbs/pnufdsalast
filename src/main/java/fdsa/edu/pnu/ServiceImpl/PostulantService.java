@@ -6,8 +6,10 @@
 package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.DTO.PostulantDTO;
+import fdsa.edu.pnu.Model.Etudiant;
 import fdsa.edu.pnu.Model.LogTracking;
 import fdsa.edu.pnu.Model.Postulant;
+import fdsa.edu.pnu.Model.Role;
 import fdsa.edu.pnu.Repository.*;
 import fdsa.edu.pnu.Security.PasswordGenerator;
 import fdsa.edu.pnu.Service.IPostulantService;
@@ -22,8 +24,10 @@ import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -77,13 +81,60 @@ public class PostulantService implements IPostulantService {
 
     @Override
     public Postulant save(Postulant dto) {
-        try {
-            logger.info("Method Called successfully" );
-            logTrackingDAO.save(new LogTracking("postulantService", "No Exeption Error"));
-            mail.confirmerInscription(dto.getEmail(), dto.getNom(), dto.getPrenom());
-        } catch (Exception e) {
-            logger.error("This is sample info message is :" + e);
-            logTrackingDAO.save(new LogTracking("Save Postulant Sevice Impl", e.toString()));
+        if (dto.getId() == null) {
+            try {
+                logger.info("The Confirmation email has bean called successfully");
+                logTrackingDAO.save(new LogTracking("The Confirmation email has bean called successfully",
+                        "No Exeption Error"));
+                mail.confirmerInscription(dto.getEmail(), dto.getNom(), dto.getPrenom());
+            } catch (Exception e) {
+                logger.error("This is sample info message is :" + e);
+                logTrackingDAO.save(new LogTracking("Save Postulant Sevice Impl", e.toString()));
+            }
+        } else {
+
+            Optional<Postulant> postulant = findById(dto.getId());
+            String statusToBeUpdated = dto.getStatutApplication();
+            String currentApplicationStatus = postulant.get().getStatutApplication();
+
+            if (!currentApplicationStatus.equals("Accepté") && statusToBeUpdated.equals("Accepté")) {
+
+                try {
+                    //  Now save details in DB
+                    Etudiant etudiant = new Etudiant();
+                    etudiant.setNom(dto.getNom());
+                    etudiant.setPrenom(dto.getPrenom());
+                    etudiant.setCinNif(dto.getNifCin());
+                    etudiant.setSexe(dto.getSexe());
+                    etudiant.setStatus(true);
+                    etudiant.setTelephone1(dto.getTelephone());
+                    etudiant.setCodePostal("");
+                    etudiant.setUserName(dto.getEmail());
+                    //  String pass = password.randomPassword();
+
+                    String pass = "stud@pass";
+                    System.out.println(pass);
+                    System.out.println(pass);
+                    etudiant.setUserPassword(passwordEncoder.encode(pass));
+                    etudiant.setCodeEtudiant("CODE");
+                    etudiant.setMatricule("50967");
+                    Set<Role> role = new HashSet<>();
+                    role.add(roleDAO.findById(1).get());
+                    etudiant.setRole(role);
+                    etudiantDAO.save(etudiant);
+                } catch (Exception e) {
+                    logTrackingDAO.save(new LogTracking("The student record was not created on method" +
+                            " Postulant.Save(...) the error message is" +
+                            "", e.getMessage()));
+                }
+                try {
+                    mail.applicationApprovee(dto.getEmail(), dto.getNom(), dto.getPrenom(), dto.getFilliere());
+                } catch (Exception e) {
+                    logTrackingDAO.save(new LogTracking("The email is not sent on method Postulant.Save(...)" +
+                            " the error message is", e.getMessage()));
+                }
+            }
+
         }
         return postulantDAO.save(dto);
     }

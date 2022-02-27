@@ -18,25 +18,31 @@ package fdsa.edu.pnu.Model;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
-
+@Setter
+@Getter
 @Entity
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "id")
-@JsonIdentityReference(alwaysAsId = true)
+@Table(name = "Horaire")
+@JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
 public class Horaire implements Serializable {
     @Column(name = "ID", nullable = false, length = 10)
     @Id
     @GeneratedValue(generator = "PNU_HORAIRE_ID_GENERATOR")
     @org.hibernate.annotations.GenericGenerator(name = "PNU_HORAIRE_ID_GENERATOR", strategy = "native")
     private int ID;
+
+    @JsonIgnoreProperties(value = {"horaires"}, allowSetters = true)
     @ManyToOne(targetEntity = Cours.class, fetch = FetchType.LAZY)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
     @JoinColumns(value = {@JoinColumn(name = "CoursID", referencedColumnName = "ID", nullable = false)}, foreignKey = @ForeignKey(name = "HoraireCours"))
     private Cours cours;
+
     @Column(name = "Jour", nullable = true, length = 255)
     private String jour;
     @Column(name = "Heure", nullable = true, length = 255)
@@ -48,52 +54,5 @@ public class Horaire implements Serializable {
     public Horaire() {
     }
 
-    public int getID() {
-        return ID;
-    }
-
-    private void setID(int value) {
-        this.ID = value;
-    }
-
-    public int getORMID() {
-        return getID();
-    }
-
-    public String getJour() {
-        return jour;
-    }
-
-    public void setJour(String value) {
-        this.jour = value;
-    }
-
-    public String getHeure() {
-        return heure;
-    }
-
-    public void setHeure(String value) {
-        this.heure = value;
-    }
-
-    public java.util.Date getDatePremierCours() {
-        return datePremierCours;
-    }
-
-    public void setDatePremierCours(java.util.Date value) {
-        this.datePremierCours = value;
-    }
-
-    public Cours getCours() {
-        return cours;
-    }
-
-    public void setCours(Cours value) {
-        this.cours = value;
-    }
-
-    public String toString() {
-        return String.valueOf(getID());
-    }
 
 }

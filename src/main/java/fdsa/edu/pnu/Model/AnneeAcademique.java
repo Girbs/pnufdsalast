@@ -16,16 +16,19 @@
  */
 package fdsa.edu.pnu.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Data
-@org.hibernate.annotations.Proxy(lazy = false)
-
+@Getter
+@Setter
+@JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
 @Table(name = "AnneeAcademique")
 public class AnneeAcademique implements Serializable {
     @Column(name = "ID", nullable = false, length = 10)
@@ -39,6 +42,8 @@ public class AnneeAcademique implements Serializable {
     @Column(name = "Fin", nullable = true)
     @Temporal(TemporalType.DATE)
     private java.util.Date fin;
+
+    @JsonIgnoreProperties(value = {"anneeAcademique"}, allowSetters = true)
     @OneToMany(mappedBy = "anneeAcademique", targetEntity = Semestre.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)

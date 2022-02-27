@@ -8,6 +8,7 @@ package fdsa.edu.pnu.ControllerImpl;
 import fdsa.edu.pnu.Controller.IPostulantController;
 import fdsa.edu.pnu.DTO.APIResponse;
 import fdsa.edu.pnu.DTO.PostulantDTO;
+import fdsa.edu.pnu.Model.Etudiant;
 import fdsa.edu.pnu.Model.Postulant;
 import fdsa.edu.pnu.ServiceImpl.PostulantService;
 import fdsa.edu.pnu.mail.EmailController;

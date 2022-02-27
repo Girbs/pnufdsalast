@@ -1,13 +1,20 @@
 package fdsa.edu.pnu.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
-@Entity(name = "Semestre")
-@Data
+@Entity
+@Getter
+@Setter
+
+@Table(name = "Semestre")
+@JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
 public class Semestre implements Serializable {
 
     @Column(name = "ID", nullable = false, length = 10)
@@ -32,12 +39,14 @@ public class Semestre implements Serializable {
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private List<Paiement> paiement;
 
+    @JsonIgnoreProperties(value = {"semestre"}, allowSetters = true)
     @ManyToOne(targetEntity = AnneeAcademique.class, fetch = FetchType.LAZY)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
     @JoinColumns(value = {@JoinColumn(name = "AnneeAcademiqueID", referencedColumnName = " ID", nullable = false)}, foreignKey = @ForeignKey(name = "FK_Semestre_AnneeAcademique"))
     private AnneeAcademique anneeAcademique;
 
 
+    @JsonIgnoreProperties(value = {"semestre"}, allowSetters = true)
     @OneToMany(mappedBy = "semestre", targetEntity = Cours.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)

@@ -16,6 +16,7 @@
  */
 package fdsa.edu.pnu.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -31,7 +32,7 @@ import java.util.List;
 
 @Table(name = "Professeur")
 @Inheritance(strategy = InheritanceType.JOINED)
-//@DiscriminatorValue("Professeurs")
+@JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
 public class Professeur extends Utilisateur implements Serializable {
 
 
@@ -43,6 +44,12 @@ public class Professeur extends Utilisateur implements Serializable {
 
     @Column(name = "LienCv", nullable = true, length = 255)
     private String lienCv;
+
+    @JsonIgnoreProperties(value = {"professeur"}, allowSetters = true)
+    @OneToMany(mappedBy = "professeur", targetEntity = Cours.class)
+    private List<Cours> cours;
+
+
 
     //	@OneToMany(mappedBy="professeur", targetEntity= Cours.class, fetch=FetchType.EAGER, cascade = CascadeType.ALL)
 //	private List<Cours> cours;

@@ -16,12 +16,15 @@
  */
 package fdsa.edu.pnu.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "`SessionProgramme`")
+@JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
 public class SessionProgramme implements Serializable {
 
     @Column(name = "ID", nullable = false, length = 10)
@@ -30,6 +33,8 @@ public class SessionProgramme implements Serializable {
     @org.hibernate.annotations.GenericGenerator(name = "PNU_SESSION_ID_GENERATOR", strategy = "native")
     private int id;
 
+
+    @JsonIgnoreProperties(value = {"sessionProgrammeList"}, allowSetters = true)
     @ManyToOne(targetEntity = Programme.class, fetch = FetchType.LAZY)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
     @JoinColumns(value = {@JoinColumn(name = "ProgrammeID", referencedColumnName = "ID", nullable = false)})
@@ -44,6 +49,7 @@ public class SessionProgramme implements Serializable {
     @Column(name = "Ordre", nullable = false, length = 10)
     private int ordre;
 
+    @JsonIgnoreProperties(value = {"session"}, allowSetters = true)
     @OneToMany(mappedBy = "session", targetEntity = Curriculum.class)
     private List<Curriculum> curriculum;
 

@@ -31,7 +31,7 @@ import java.util.List;
 @NoArgsConstructor
 
 @Table(name = "Cours")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
 public class Cours implements Serializable {
 
     @Column(name = "ID", nullable = false, length = 10)
@@ -40,21 +40,28 @@ public class Cours implements Serializable {
     @org.hibernate.annotations.GenericGenerator(name = "PNU_COURS_ID_GENERATOR", strategy = "native")
     private int id;
 
+    @JsonIgnoreProperties(value = {"cours"}, allowSetters = true)
     @OneToMany(mappedBy = "cours", targetEntity = Evaluation.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private List<Evaluation> evaluations;
 
+
+    @JsonIgnoreProperties(value = {"cours"}, allowSetters = true)
     @ManyToOne(targetEntity = Semestre.class, fetch = FetchType.LAZY)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
     @JoinColumns(value = {@JoinColumn(name = "SemestreId", referencedColumnName = "ID", nullable = false)}, foreignKey = @ForeignKey(name = "FK_Semestre_COURS"))
     private Semestre semestre;
 
+
+    @JsonIgnoreProperties(value = {"cours"}, allowSetters = true)
     @ManyToOne(targetEntity = Curriculum.class, fetch = FetchType.LAZY)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
     @JoinColumns(value = {@JoinColumn(name = "CurriculumId", referencedColumnName = "ID", nullable = false)}, foreignKey = @ForeignKey(name = "FK_Couriculum_COURS"))
     private Curriculum curriculum;
 
+
+    @JsonIgnoreProperties(value = {"cours"}, allowSetters = true)
     @ManyToOne(targetEntity = Professeur.class, fetch = FetchType.LAZY)
     @JoinColumns(value = {@JoinColumn(name = "ProfesseurPersonneID", referencedColumnName = "PersonneID", nullable = false)}, foreignKey = @ForeignKey(name = "Enseigner"))
     private Professeur professeur;
@@ -64,9 +71,8 @@ public class Cours implements Serializable {
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private List<Etudiant> etudiants;
 
+    @JsonIgnoreProperties(value = {"cours"}, allowSetters = true)
     @OneToMany(mappedBy = "cours", targetEntity = Horaire.class)
-    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
-    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private List<Horaire> horaires;
 
     @OneToMany(mappedBy = "cours", targetEntity = Discussion.class)
