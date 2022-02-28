@@ -14,7 +14,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * @author Richard
@@ -31,7 +30,13 @@ public class PlannificationConcoursController implements IPlannificationConcours
     }
 
     @Override
-    public Optional<PlannificationConcours> findById(Integer id) {
+    public List<PlannificationConcours> findPlannificationConcoursByIdConcours(Integer idConcours) {
+        return plannificationConcoursService.findPlannificationConcoursByIdConcours(idConcours);
+    }
+
+
+    @Override
+    public PlannificationConcours findById(Integer id) {
         return plannificationConcoursService.findById(id);
     }
 

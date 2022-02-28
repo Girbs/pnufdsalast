@@ -9,7 +9,6 @@ import fdsa.edu.pnu.Model.PlannificationConcours;
 import org.springframework.data.domain.Page;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * @author Ing.Girbson BIJOU
@@ -18,12 +17,13 @@ public interface IPlannificationConcoursService {
 
     List<PlannificationConcours> findAll();
 
-    Optional<PlannificationConcours> findById(Integer id);
+    PlannificationConcours findById(Integer id);
 
     PlannificationConcours save(PlannificationConcours dto);
 
     //    public PlannificationConcours update(Concours concours);
     Page<PlannificationConcours> findAllWithPaginationAndSortingv1(int offset, int pageSize, String sortField, String searchfield, String sortDirection);
 
+    List<PlannificationConcours> findPlannificationConcoursByIdConcours(Integer IdConcours);
     void delete(Integer id);
 }

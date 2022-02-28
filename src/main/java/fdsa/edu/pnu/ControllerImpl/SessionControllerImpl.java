@@ -7,28 +7,27 @@ package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Controller.ISessionController;
 import fdsa.edu.pnu.Model.SessionProgramme;
-import fdsa.edu.pnu.ServiceImpl.SessionService;
+import fdsa.edu.pnu.ServiceImpl.SessionProgrammeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @RestController
 public class SessionControllerImpl implements ISessionController {
 
     @Autowired
-    private SessionService sessionService;
+    private SessionProgrammeServiceImpl sessionProgrammeServiceImpl;
 
     @Override
     public List<SessionProgramme> findAll() {
-        return sessionService.findAll();
+        return sessionProgrammeServiceImpl.findAll();
     }
 
     @Override
-    public Optional<SessionProgramme> findById(Integer id) {
-        return sessionService.findById(id);
+    public SessionProgramme findById(Integer id) {
+        return sessionProgrammeServiceImpl.findById(id);
     }
 
     @Override
@@ -38,12 +37,12 @@ public class SessionControllerImpl implements ISessionController {
 
     @Override
     public void delete(Integer id) {
-        sessionService.delete(id);
+        sessionProgrammeServiceImpl.delete(id);
     }
 
     @Override
     public SessionProgramme save(SessionProgramme session) {
-        return sessionService.save(session);
+        return sessionProgrammeServiceImpl.save(session);
     }
 }
 

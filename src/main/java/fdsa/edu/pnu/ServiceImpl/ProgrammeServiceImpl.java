@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * @author Jephthé Gédéon
@@ -26,12 +25,12 @@ public class ProgrammeServiceImpl implements IProgrammeService {
 
     @Override
     public List<Programme> findAll() {
-        return programmeDAO.findAll();
+        return programmeDAO.findByAllCustomQuery();
     }
 
     @Override
-    public Optional<Programme> findById(Integer id) {
-        return programmeDAO.findById(id);
+    public Programme findById(Integer id) {
+        return programmeDAO.findProgrammeById(id);
     }
 
     @Override

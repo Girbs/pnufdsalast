@@ -8,7 +8,6 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @RequestMapping("/session")
@@ -29,7 +28,7 @@ public interface ISessionController {
             @ApiResponse(code = 200, message = "Le SessionProgramme a ete trouve dans la BDD"),
             @ApiResponse(code = 404, message = "Aucun SessionProgramme n'existe dans la BDD avec l'ID fourni")
     })
-    Optional<SessionProgramme> findById(@PathVariable("id") Integer id);
+    SessionProgramme findById(@PathVariable("id") Integer id);
 
 
     @PutMapping(value = "/modifier/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)

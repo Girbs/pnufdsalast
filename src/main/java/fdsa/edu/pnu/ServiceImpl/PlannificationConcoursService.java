@@ -18,7 +18,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * @author Richard
@@ -42,25 +41,16 @@ public class PlannificationConcoursService implements IPlannificationConcoursSer
     }
 
     @Override
-    public Optional<PlannificationConcours> findById(Integer id) {
+    public PlannificationConcours findById(Integer id) {
         if (id == null) {
             return null;
         }
-        return plannificationConcoursDAO.findById(id);
+        return plannificationConcoursDAO.findPlannificationConcoursById(id);
     }
 
 
     @Override
     public PlannificationConcours save(PlannificationConcours plannificationConcours) {
-//        Matiere m = matiereDAO.findById(plannificationConcours.getMatiere().getId()).get();
-//        plannificationConcours.setMatiere(m);
-//        PlannificationConcours pc = plannificationConcoursDAO.save(plannificationConcours);
-//        if( plannificationConcours.getHistoriqueExamenConcours()!=null) {
-//            plannificationConcours.getHistoriqueExamenConcours().forEach(a -> {
-//                a.setPlannificationConcours(pc);
-//                historiqueExamenConcoursDAO.save(a);
-//            });
-//        }
         return plannificationConcoursDAO.save(plannificationConcours);
     }
 
@@ -72,13 +62,11 @@ public class PlannificationConcoursService implements IPlannificationConcoursSer
         return plannificationConcours;
     }
 
-//    public PlannificationConcours save(PlannificationConcours dto) {
-//        return PlannificationConcoursDTO.fromEntity(
-//                plannificationConcoursDAO.save(
-//                        PlannificationConcoursDTO.toEntity(dto)
-//                )
-//        );
-//    }
+    @Override
+    public List<PlannificationConcours> findPlannificationConcoursByIdConcours(Integer IdConcours) {
+        return plannificationConcoursDAO.findPlannificationConcoursByIdConcours(IdConcours);
+    }
+
 
     @Override
     public void delete(Integer id) {

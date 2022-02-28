@@ -6,38 +6,34 @@
 package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.Model.SessionProgramme;
-import fdsa.edu.pnu.Repository.SessionDAO;
+import fdsa.edu.pnu.Repository.SessionProgrammeDAO;
 import fdsa.edu.pnu.Service.ISessionService;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
-/**
- * @author Jephthé Gédéon
- */
+
 @Data
 @Service
-public class SessionService implements ISessionService {
+public class SessionProgrammeServiceImpl implements ISessionService {
     @Autowired
-    private SessionDAO sessionDAO;
-
+    private SessionProgrammeDAO sessionProgrammeDAO;
 
     @Override
     public List<SessionProgramme> findAll() {
-        return sessionDAO.findAll();
+        return sessionProgrammeDAO.findByAllCustomQuery();
     }
 
     @Override
-    public Optional<SessionProgramme> findById(Integer id) {
-        return sessionDAO.findById(id);
+    public SessionProgramme findById(Integer id) {
+        return sessionProgrammeDAO.findSessionProgrammeById(id);
     }
 
     @Override
     public SessionProgramme save(SessionProgramme session) {
-        return sessionDAO.save(session);
+        return sessionProgrammeDAO.save(session);
     }
 
     @Override
@@ -47,7 +43,7 @@ public class SessionService implements ISessionService {
 
     @Override
     public void delete(Integer id) {
-        sessionDAO.deleteById(id);
+        sessionProgrammeDAO.deleteById(id);
     }
 }
 

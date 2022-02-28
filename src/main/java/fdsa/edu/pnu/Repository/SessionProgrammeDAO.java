@@ -18,20 +18,20 @@ package fdsa.edu.pnu.Repository;
 
 
 import fdsa.edu.pnu.Model.Programme;
+import fdsa.edu.pnu.Model.SessionProgramme;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Repository
-public interface ProgrammeDAO extends JpaRepository<Programme, Integer> {
+public interface SessionProgrammeDAO extends JpaRepository<SessionProgramme, Integer> {
 
-    @Query(value = "SELECT * FROM Programme", nativeQuery = true)
-    List<Programme> findByAllCustomQuery();
+    @Query(value = "SELECT * FROM session_programme", nativeQuery = true)
+    List<SessionProgramme> findByAllCustomQuery();
 
-    @Query(value = "{call FindProgrammeById(:IdProgramme)}", nativeQuery = true)
-    Programme findProgrammeById(@Param("IdProgramme") Integer IdProgramme);
+    @Query(value = "{call FindSessionProgrammeById(:IdSessionProgramme)}", nativeQuery = true)
+    SessionProgramme findSessionProgrammeById(@Param("IdSessionProgramme") Integer IdProgramme);
 }

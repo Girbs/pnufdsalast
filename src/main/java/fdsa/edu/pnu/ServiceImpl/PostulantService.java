@@ -54,12 +54,6 @@ public class PostulantService implements IPostulantService {
     @Autowired
     private LogTrackingDAO logTrackingDAO;
 
-
-    /**
-     * Lister Tous Les Postulants
-     *
-     * @return
-     */
     @Override
     public List<PostulantDTO> findAll() {
         return postulantDAO.findAll().stream()
@@ -73,7 +67,6 @@ public class PostulantService implements IPostulantService {
             return null;
         }
         return postulantDAO.findById(id);
-
     }
 
     public static String genererMatriculPostulant(Postulant p) {
@@ -153,6 +146,7 @@ public class PostulantService implements IPostulantService {
 //        Page<Postulant> postulants = postulantDAO.findByAllDynameicSearch( searchfield, PageRequest.of(offset-1, pageSize).withSort(Sort.by((field))));
 //        return  postulants;
 //    }
+
 
     //This is the new metho with the dynamic sort
     @Override

@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @RestController
@@ -27,7 +26,7 @@ public class ProgrammeController implements IProgrammeController {
     }
 
     @Override
-    public Optional<Programme> findById(Integer id) {
+    public Programme findById(Integer id) {
         return programmeServiceImpl.findById(id);
     }
 

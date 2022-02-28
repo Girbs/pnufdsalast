@@ -21,14 +21,16 @@ package fdsa.edu.pnu.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Data
-
+@Setter
+@Getter
 @Table(name = "Programme")
 @JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
 public class Programme implements Serializable {
@@ -50,11 +52,14 @@ public class Programme implements Serializable {
     @OneToMany(mappedBy = "programme", targetEntity = SessionProgramme.class)
     private List<SessionProgramme> sessionProgrammeList;
 
+    @JsonIgnoreProperties(value = {"programme"}, allowSetters = true)
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name ="ProgrammePrerequis")
+    private Programme prerequis;
 
-//    @OneToMany(mappedBy = "programme", targetEntity = SessionProgramme.class)
-//    private List<Programme> programmes;
-
-
+    @JsonIgnoreProperties(value = {"prerequis"}, allowSetters = true)
+    @OneToMany(mappedBy = "prerequis", targetEntity = Programme.class)
+    private List<Programme> programmes;
 
     @ManyToMany(mappedBy = "programmes", targetEntity = Etudiant.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
