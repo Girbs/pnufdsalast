@@ -25,7 +25,7 @@ public class EmailController {
     SimpleMailMessage message = new SimpleMailMessage();
 
     @ResponseBody
-    public void confirmerInscription(String emailpostulant, String nomPostulant, String prenomPostulant) {
+    public void confirmerInscription(String emailpostulant, String nomPostulant, String prenomPostulant, String codeApplication) {
 
 
         message.setTo(emailpostulant);
@@ -33,8 +33,10 @@ public class EmailController {
         message.setText("Chèr(e)  " + prenomPostulant + " " + nomPostulant + ", \n\n "
                 + "La Faculté Des Sciences Appliquées (FDSA) vous remercie de votre"
                 + "interet à ses programmes d'étude tout en vous informant que votre "
-                + "demande d'admssion a été bien recue. Dans les jours qui suivent, "
-                + "un agent vous contara pour les suites necessaires. \n\n "
+                + "demande d'admssion a été bien recue. \n\n" +
+                "Votre code d'application est:"+ codeApplication+ " \n\n"+
+                " Dans les jours qui suivent, "
+                + "un agent vous contactera pour les suites necessaires. \n\n "
                 + "Cordialement\n Bureau d'Admission\n Faculte Des Science Appliquees(FDSA)");
 
         // Send Message!
@@ -89,11 +91,11 @@ public class EmailController {
                 + "Nom d'utilisateur: " + nomUtilisateur + "\n"
                 + "Mot de Passe temporaire: " + motDePasse + "\n\n"
 
+
                 + "Cordialement\nSupport Technique PNU\nFaculte Des Science Appliquees(FDSA)");
 
         // Send Message!
         this.emailSender.send(message);
-
 
     }
 

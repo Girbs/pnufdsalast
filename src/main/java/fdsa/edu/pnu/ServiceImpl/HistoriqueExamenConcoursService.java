@@ -5,6 +5,7 @@
  */
 package fdsa.edu.pnu.ServiceImpl;
 
+import fdsa.edu.pnu.DTO.ResultatConcours;
 import fdsa.edu.pnu.Exception.EntityNotFoundException;
 import fdsa.edu.pnu.Exception.ErrorCodes;
 import fdsa.edu.pnu.Model.HistoriqueExamenConcours;
@@ -14,8 +15,12 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -49,8 +54,30 @@ public class HistoriqueExamenConcoursService implements IHistoriqueExamenConcour
     }
 
     @Override
+    public List<ResultatConcours> findResultatExamenConcours(Integer idConcours) {
+        List<Object> o = historiqueExamenConcoursDAO.findResultatExamenConcours(idConcours);
+        List<ResultatConcours> lstResultatConcours = new ArrayList<>();
+
+        for (int i = 0; i < o.size(); i++) {
+
+            Object[] oo = (Object[]) o.get(i);
+            ResultatConcours rc = new ResultatConcours(String.valueOf(oo[0]), String.valueOf(oo[1]), (double) oo[2]);
+            lstResultatConcours.add(rc);
+        }
+        return lstResultatConcours;
+    }
+
+    @Override
+    public Page findResultatExamenConcoursPageable(int offset, int pageSize, String sortField, Integer idConcours, String sortDirection) {
+        Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() :
+                Sort.by(sortField).descending();
+
+        Page rlt = (Page) historiqueExamenConcoursDAO.findResultatExamenConcoursPageable(idConcours, PageRequest.of(offset - 1, pageSize, sort));
+        return rlt;
+    }
+
+    @Override
     public void delete(Integer id) {
         historiqueExamenConcoursDAO.deleteById(id);
     }
-
 }

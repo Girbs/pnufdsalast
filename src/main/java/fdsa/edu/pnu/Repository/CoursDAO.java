@@ -17,41 +17,16 @@
 package fdsa.edu.pnu.Repository;
 
 import fdsa.edu.pnu.Model.Cours;
+import fdsa.edu.pnu.Model.Postulant;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 
 public interface CoursDAO extends JpaRepository<Cours, Integer> {
-//	public Cours loadCoursByORMID(int id) throws PersistentException;
-//	public Cours getCoursByORMID(int id) throws PersistentException;
-//	public Cours loadCoursByORMID(int id, org.hibernate.LockMode lockMode) throws PersistentException;
-//	public Cours getCoursByORMID(int id, org.hibernate.LockMode lockMode) throws PersistentException;
-//	public Cours loadCoursByORMID(PersistentSession session, int id) throws PersistentException;
-//	public Cours getCoursByORMID(PersistentSession session, int id) throws PersistentException;
-//	public Cours loadCoursByORMID(PersistentSession session, int id, org.hibernate.LockMode lockMode) throws PersistentException;
-//	public Cours getCoursByORMID(PersistentSession session, int id, org.hibernate.LockMode lockMode) throws PersistentException;
-//	public Cours[] listCoursByQuery(String condition, String orderBy) throws PersistentException;
-//	public Cours[] listCoursByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException;
-//	public java.util.List queryCours(String condition, String orderBy) throws PersistentException;
-//	public java.util.List queryCours(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException;
-//	public java.util.Iterator iterateCoursByQuery(String condition, String orderBy) throws PersistentException;
-//	public java.util.Iterator iterateCoursByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException;
-//	public Cours[] listCoursByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException;
-//	public Cours[] listCoursByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException;
-//	public java.util.List queryCours(PersistentSession session, String condition, String orderBy) throws PersistentException;
-//	public java.util.List queryCours(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException;
-//	public java.util.Iterator iterateCoursByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException;
-//	public java.util.Iterator iterateCoursByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException;
-//	public Cours loadCoursByQuery(String condition, String orderBy) throws PersistentException;
-//	public Cours loadCoursByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException;
-//	public Cours loadCoursByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException;
-//	public Cours loadCoursByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException;
-//	public Cours createCours();
-//	public boolean save(pnu.Cours cours) throws PersistentException;
-//	public boolean delete(pnu.Cours cours) throws PersistentException;
-//	public boolean deleteAndDissociate(pnu.Cours cours) throws PersistentException;
-//	public boolean deleteAndDissociate(pnu.Cours cours, org.orm.PersistentSession session) throws PersistentException;
-//	public boolean refresh(pnu.Cours cours) throws PersistentException;
-//	public boolean evict(pnu.Cours cours) throws PersistentException;
-//	public Cours loadCoursByCriteria(CoursCriteria coursCriteria);
-//	public Cours[] listCoursByCriteria(CoursCriteria coursCriteria);
+
+    @Query(value = "SELECT * FROM Cours  WHERE  CONCAT( nom , prenom, adresse, email , telephone, statut_application) LIKE %:text%", nativeQuery = true)
+    Page<Postulant> findByAllDynameicSearch(@Param("text") String text, Pageable pageable);
 }

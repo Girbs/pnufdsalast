@@ -24,10 +24,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -79,64 +76,40 @@ public class PostulantService implements IPostulantService {
 
     }
 
-    @Override
-    public Postulant save(Postulant dto) {
-        if (dto.getId() == null) {
-            try {
-                logger.info("The Confirmation email has bean called successfully");
-                logTrackingDAO.save(new LogTracking("The Confirmation email has bean called successfully",
-                        "No Exeption Error"));
-                mail.confirmerInscription(dto.getEmail(), dto.getNom(), dto.getPrenom());
-            } catch (Exception e) {
-                logger.error("This is sample info message is :" + e);
-                logTrackingDAO.save(new LogTracking("Save Postulant Sevice Impl", e.toString()));
-            }
-        } else {
+    public static String genererMatriculPostulant(Postulant p) {
+        p.getId();
+        String matricule = null;
+        String upperAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String numbers = "0123456789";
 
-            Optional<Postulant> postulant = findById(dto.getId());
-            String statusToBeUpdated = dto.getStatutApplication();
-            String currentApplicationStatus = postulant.get().getStatutApplication();
+        Random random = new Random();
+        int randUpperNumber = 2;
+        int randNumberOfNumbers = 3;
 
-            if (!currentApplicationStatus.equals("Accepté") && statusToBeUpdated.equals("Accepté")) {
+        char[] arrStr = new char[randUpperNumber];
+        char[] arrStrNumber = new char[randNumberOfNumbers];
 
-                try {
-                    //  Now save details in DB
-                    Etudiant etudiant = new Etudiant();
-                    etudiant.setNom(dto.getNom());
-                    etudiant.setPrenom(dto.getPrenom());
-                    etudiant.setCinNif(dto.getNifCin());
-                    etudiant.setSexe(dto.getSexe());
-                    etudiant.setStatus(true);
-                    etudiant.setTelephone1(dto.getTelephone());
-                    etudiant.setCodePostal("");
-                    etudiant.setUserName(dto.getEmail());
-                    //  String pass = password.randomPassword();
+        String upperAlphabetPart = null;
+        String randNumberOfNumbersPart = null;
 
-                    String pass = "stud@pass";
-                    System.out.println(pass);
-                    System.out.println(pass);
-                    etudiant.setUserPassword(passwordEncoder.encode(pass));
-                    etudiant.setCodeEtudiant("CODE");
-                    etudiant.setMatricule("50967");
-                    Set<Role> role = new HashSet<>();
-                    role.add(roleDAO.findById(1).get());
-                    etudiant.setRole(role);
-                    etudiantDAO.save(etudiant);
-                } catch (Exception e) {
-                    logTrackingDAO.save(new LogTracking("The student record was not created on method" +
-                            " Postulant.Save(...) the error message is" +
-                            "", e.getMessage()));
-                }
-                try {
-                    mail.applicationApprovee(dto.getEmail(), dto.getNom(), dto.getPrenom(), dto.getFilliere());
-                } catch (Exception e) {
-                    logTrackingDAO.save(new LogTracking("The email is not sent on method Postulant.Save(...)" +
-                            " the error message is", e.getMessage()));
-                }
-            }
 
+        for (int i = 0; i < randUpperNumber; i++) {
+            int randIndex = random.nextInt(upperAlphabet.length() - 1) + 1;
+            arrStr[i] = upperAlphabet.charAt(randIndex);
         }
-        return postulantDAO.save(dto);
+
+        upperAlphabetPart = String.valueOf(arrStr);
+
+
+        for (int i = 0; i < randNumberOfNumbers; i++) {
+            int randIndexNumber = random.nextInt(numbers.length() - 1) + 1;
+            arrStrNumber[i] = numbers.charAt(randIndexNumber);
+        }
+
+        randNumberOfNumbersPart = String.valueOf(arrStrNumber);
+
+        matricule = p.getId() + upperAlphabetPart + randNumberOfNumbersPart;
+        return matricule;
     }
 
     @Override
@@ -197,50 +170,75 @@ public class PostulantService implements IPostulantService {
 //        return  postulants;
 //    }
 
+    @Override
+    public Postulant save(Postulant dto) {
+        if (dto.getId() == null) {
 
-    //@Override
-//    public Etudiant update(Integer id, Postulant dto) {
-//
-//        // first find that student is present in db or not
-//        Optional<Postulant> postulant = findById(id);
-//
-//        String statusToBeUpdated = dto.getStatutApplication();
-//        String currentApplicationStatus = postulant.
-//
-//        // Now save details in DB
-//        Etudiant etudiant = new Etudiant();
-//        etudiant.setNom(dto.getNom());
-//        etudiant.setPrenom(dto.getPrenom());
-//        etudiant.setCinNif(dto.getNifCin());
-//        etudiant.setSexe(dto.getSexe());
-//        etudiant.setStatus(true);
-//        etudiant.setTelephone1(dto.getTelephone());
-//        etudiant.setCodePostal("");
-//        etudiant.setUserName(dto.getEmail());
-//        // String pass = password.randomPassword();
-//
-//        String pass = "stud@pass";
-//        System.out.println(pass);
-//        System.out.println(pass);
-//        etudiant.setUserPassword(passwordEncoder.encode(pass));
-//        etudiant.setCodeEtudiant("CODE");
-//        etudiant.setMatricule("50967");
-//        Set<Role> role = new HashSet<>();
-//        role.add(roleDAO.findById(1).get());
-//        etudiant.setRole(role);
-//        // PostulantDTO.fromEntity(postulantDAO.save(PostulantDTO.toEntity(dto)));
-//
-//        if (!currentApplicationStatus.equals(statusToBeUpdated) && statusToBeUpdated.equals("Accepté")) {
-//            // Please focus on ! operator in above condition and replace your "Accepté" text if needed.
-//            mail.applicationApprovee(dto.getEmail(), dto.getNom(), dto.getPrenom(), dto.getFilliere());
-//        }
-//        //postulantDAO.save(dto);
-//        return etudiantDAO.save(etudiant);
-//        // If application status is updated then we need to send an email confirmation to applicant.
-//        // So we will check for equality of current status that we have in DB and new status that we now want to store in DB.
-//
-//
-//        // return PostulantDTO.fromEntity(postulantDAO.save(PostulantDTO.toEntity(dto)));
-//    }
+            try {
+                dto = postulantDAO.save(dto);
+            } catch (Exception e) {
+                logTrackingDAO.save(new LogTracking("Save Postulant Sevice Impl", e.toString()));
+            }
+            try {
+                dto.setMatricule(genererMatriculPostulant(dto));
+                logTrackingDAO.save(new LogTracking("setMatricule() Called Successfully",
+                        "Matricule Generate Successfully"));
+            } catch (Exception e) {
+                logTrackingDAO.save(new LogTracking("Error to generate Matricule", e.toString()));
+            }
+            try {
+                mail.confirmerInscription(dto.getEmail(), dto.getNom(), dto.getPrenom(), dto.getMatricule());
+            } catch (Exception e) {
+                logTrackingDAO.save(new LogTracking("Error found when sending confirmation " +
+                        "email", e.toString()));
+            }
+
+        } else {
+
+            Optional<Postulant> postulant = findById(dto.getId());
+            String statusToBeUpdated = dto.getStatutApplication();
+            String currentApplicationStatus = postulant.get().getStatutApplication();
+
+            if (!currentApplicationStatus.equals("Accepté") && statusToBeUpdated.equals("Accepté")) {
+
+                try {
+                    //  Now save details in DB
+                    Etudiant etudiant = new Etudiant();
+                    etudiant.setNom(dto.getNom());
+                    etudiant.setPrenom(dto.getPrenom());
+                    etudiant.setCinNif(dto.getNifCin());
+                    etudiant.setSexe(dto.getSexe());
+                    etudiant.setStatus(true);
+                    etudiant.setTelephone1(dto.getTelephone());
+                    etudiant.setCodePostal("");
+                    etudiant.setUserName(dto.getEmail());
+                    //  String pass = password.randomPassword();
+
+                    String pass = "stud@pass";
+                    System.out.println(pass);
+                    System.out.println(pass);
+                    etudiant.setUserPassword(passwordEncoder.encode(pass));
+                    etudiant.setCodeEtudiant("CODE");
+                    etudiant.setMatricule("50967");
+                    Set<Role> role = new HashSet<>();
+                    role.add(roleDAO.findById(1).get());
+                    etudiant.setRole(role);
+                    etudiantDAO.save(etudiant);
+                } catch (Exception e) {
+                    logTrackingDAO.save(new LogTracking("The student record was not created on method" +
+                            " Postulant.Save(...) the error message is" +
+                            "", e.getMessage()));
+                }
+                try {
+                    mail.applicationApprovee(dto.getEmail(), dto.getNom(), dto.getPrenom(), dto.getFilliere());
+                } catch (Exception e) {
+                    logTrackingDAO.save(new LogTracking("The email is not sent on method Postulant.Save(...)" +
+                            " the error message is", e.getMessage()));
+                }
+            }
+
+        }
+        return postulantDAO.save(dto);
+    }
 
 }

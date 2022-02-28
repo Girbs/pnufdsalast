@@ -13,5 +13,6 @@ public interface IHistoriqueExamenService {
 
     HistoriqueExam save(HistoriqueExam historiqueExam);
 
+
     void delete(Integer id);
 }

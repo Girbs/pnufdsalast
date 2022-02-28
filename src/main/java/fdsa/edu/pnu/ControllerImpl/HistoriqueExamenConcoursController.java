@@ -1,9 +1,11 @@
 package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Controller.IHistoriqueExamenConcoursController;
+import fdsa.edu.pnu.DTO.APIResponse;
 import fdsa.edu.pnu.Model.HistoriqueExamenConcours;
 import fdsa.edu.pnu.ServiceImpl.HistoriqueExamenConcoursService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -20,6 +22,17 @@ public class HistoriqueExamenConcoursController implements IHistoriqueExamenConc
     @Override
     public List<HistoriqueExamenConcours> findAll() {
         return historiqueExamenConcoursService.findAll();
+    }
+
+    @Override
+    public List findResultatExamenConcours(Integer id) {
+        return historiqueExamenConcoursService.findResultatExamenConcours(id);
+    }
+
+    @Override
+    public APIResponse<Page> findResultatExamenConcoursPageable(int offset, int pageSize, String field, Integer IdConcours, String sortDirection) {
+        Page productsWithPagination = historiqueExamenConcoursService.findResultatExamenConcoursPageable(offset, pageSize, field, IdConcours, sortDirection);
+        return new APIResponse<>(productsWithPagination.getSize(), productsWithPagination);
     }
 
     @Override
