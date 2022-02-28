@@ -3,12 +3,11 @@ package fdsa.edu.pnu.Service;
 import fdsa.edu.pnu.Model.Curriculum;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface ICurriculumService {
     List<Curriculum> findAll();
 
-    Optional<Curriculum> findById(Integer id);
+    Curriculum findById(Integer id);
 
     Curriculum save(Curriculum curriculum);
 

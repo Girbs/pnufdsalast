@@ -4,10 +4,10 @@ import fdsa.edu.pnu.Controller.ICurriculumController;
 import fdsa.edu.pnu.Model.Curriculum;
 import fdsa.edu.pnu.ServiceImpl.CurriculumServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
-
+@RestController
 public class CurriculumControllerImpl implements ICurriculumController {
 
     @Autowired
@@ -19,7 +19,7 @@ public class CurriculumControllerImpl implements ICurriculumController {
     }
 
     @Override
-    public Optional<Curriculum> findById(Integer id) {
+    public Curriculum findById(Integer id) {
         return curriculumServiceImpl.findById(id);
     }
 

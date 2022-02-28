@@ -75,6 +75,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/role/all",
                         "/matiere/all/customQuery",
                         "/concours/findAllCustomQuery",
+                        "/historiqueExamenConcours/nouveau",
                         "/concours/all",
                         "/permission/all",
                         "/utilisateur/all",

@@ -4,10 +4,11 @@ import fdsa.edu.pnu.Model.Curriculum;
 import fdsa.edu.pnu.Repository.CurriculumDAO;
 import fdsa.edu.pnu.Service.ICurriculumService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
+@Service
 public class CurriculumServiceImpl implements ICurriculumService {
 
     @Autowired
@@ -15,12 +16,12 @@ public class CurriculumServiceImpl implements ICurriculumService {
 
     @Override
     public List<Curriculum> findAll() {
-        return curriculumDAO.findAll();
+        return curriculumDAO.findByAllCustomQuery();
     }
 
     @Override
-    public Optional<Curriculum> findById(Integer id) {
-        return curriculumDAO.findById(id);
+    public Curriculum findById(Integer id) {
+        return curriculumDAO.findCurriculumById(id);
     }
 
     @Override

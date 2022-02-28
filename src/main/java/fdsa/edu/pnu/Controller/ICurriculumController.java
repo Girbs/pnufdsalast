@@ -8,7 +8,6 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RequestMapping("/curriculum")
 public interface ICurriculumController {
@@ -28,7 +27,7 @@ public interface ICurriculumController {
             @ApiResponse(code = 200, message = "Le Curriculum a ete trouve dans la BDD"),
             @ApiResponse(code = 404, message = "Aucun Curriculum n'existe dans la BDD avec l'ID fourni")
     })
-    Optional<Curriculum> findById(@PathVariable("id") Integer id);
+    Curriculum findById(@PathVariable("id") Integer id);
 
 
     @PutMapping(value = "/modifier/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
