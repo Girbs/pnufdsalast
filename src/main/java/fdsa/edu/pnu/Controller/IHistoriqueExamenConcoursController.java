@@ -57,6 +57,15 @@ public interface IHistoriqueExamenConcoursController {
     })
     HistoriqueExamenConcours findById(@PathVariable("id") Integer id);
 
+
+    @GetMapping(value = "/historiqueExamenConcoursByPlanificationConcours/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Rechercher une historiqueExamenConcours par ID", notes = "Cette methode permet de chercher une historiqueExamenConcours par son ID", response = HistoriqueExamenConcours.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "La historiqueExamenConcours a ete trouve dans la BDD"),
+            @ApiResponse(code = 404, message = "Aucun historiqueExamenConcours n'existe dans la BDD avec l'ID fourni")
+    })
+    List<HistoriqueExamenConcours> findResultatExamenConcoursByPlanificationConcours(@PathVariable("id") Integer id);
+
     @PostMapping(value = "/historiqueExamenConcours/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Enregistrer une plannificationConcours", notes = "Cette methode permet d'enregistrer ou modifier une historiqueExamenConcours", response = HistoriqueExamenConcoursDTO.class)
     @ApiResponses(value = {

@@ -68,6 +68,11 @@ public class HistoriqueExamenConcoursService implements IHistoriqueExamenConcour
     }
 
     @Override
+    public List<HistoriqueExamenConcours> findResultatExamenConcoursByPlanificationConcours(Integer IdPlanificationConcours) {
+        return historiqueExamenConcoursDAO.findResultatExamenConcoursByPlanificationConcours(IdPlanificationConcours);
+    }
+
+    @Override
     public Page findResultatExamenConcoursPageable(int offset, int pageSize, String sortField, Integer idConcours, String sortDirection) {
         Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() :
                 Sort.by(sortField).descending();

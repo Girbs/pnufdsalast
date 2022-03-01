@@ -36,6 +36,9 @@ public interface HistoriqueExamenConcoursDAO extends JpaRepository<HistoriqueExa
     @Query(value = "{call ResultatExamenConcours(:idConcours)}", nativeQuery = true)
     List<Object> findResultatExamenConcours(@Param("idConcours") Integer idConcours);
 
+    @Query(value = "{call FindHistoriqueExamenConcoursByPlannificationConcoursId(:IdPlanificationConcours)}", nativeQuery = true)
+    List<HistoriqueExamenConcours> findResultatExamenConcoursByPlanificationConcours(@Param("IdPlanificationConcours") Integer IdPlanificationConcours);
+
 //    @Query(value = "{call ResultatExamenConcours(:idConcours)}", nativeQuery = true)
 //    List findResultatExamenConcoursPageable(@Param("idConcours") Integer idConcours, Pageable pageable);
 

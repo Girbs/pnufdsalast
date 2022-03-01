@@ -41,6 +41,11 @@ public class HistoriqueExamenConcoursController implements IHistoriqueExamenConc
     }
 
     @Override
+    public List<HistoriqueExamenConcours> findResultatExamenConcoursByPlanificationConcours(Integer id) {
+        return historiqueExamenConcoursService.findResultatExamenConcoursByPlanificationConcours(id);
+    }
+
+    @Override
     public HistoriqueExamenConcours save(HistoriqueExamenConcours dto) {
         return historiqueExamenConcoursService.save(dto);
     }

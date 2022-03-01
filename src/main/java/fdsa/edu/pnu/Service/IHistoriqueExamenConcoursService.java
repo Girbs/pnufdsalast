@@ -8,6 +8,7 @@ package fdsa.edu.pnu.Service;
 import fdsa.edu.pnu.DTO.ResultatConcours;
 import fdsa.edu.pnu.Model.HistoriqueExamenConcours;
 import org.springframework.data.domain.Page;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -23,6 +24,7 @@ public interface IHistoriqueExamenConcoursService {
     HistoriqueExamenConcours save(HistoriqueExamenConcours dto);
 
     List<ResultatConcours> findResultatExamenConcours(Integer idConcours);
+    List<HistoriqueExamenConcours> findResultatExamenConcoursByPlanificationConcours( Integer IdPlanificationConcours);
 
     Page findResultatExamenConcoursPageable(int offset, int pageSize, String sortField, Integer idConcours, String sortDirection);
 
