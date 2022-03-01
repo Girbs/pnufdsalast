@@ -61,7 +61,7 @@ public class HistoriqueExamenConcoursService implements IHistoriqueExamenConcour
         for (int i = 0; i < o.size(); i++) {
 
             Object[] oo = (Object[]) o.get(i);
-            ResultatConcours rc = new ResultatConcours(String.valueOf(oo[0]), String.valueOf(oo[1]), (double) oo[2]);
+            ResultatConcours rc = new ResultatConcours((Integer) oo[0], String.valueOf(oo[1]), String.valueOf(oo[2]), (double) oo[3]);
             lstResultatConcours.add(rc);
         }
         return lstResultatConcours;
