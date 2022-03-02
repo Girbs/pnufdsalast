@@ -50,4 +50,6 @@ public interface HistoriqueExamenConcoursDAO extends JpaRepository<HistoriqueExa
             "GROUP BY p.nom , p.prenom, p.matricule", nativeQuery = true)
     List findResultatExamenConcoursPageable(@Param("idConcours") Integer idConcours, Pageable pageable);
 
+
+
 }

@@ -52,6 +52,8 @@ public class PlannificationConcours extends Audit<String> implements Serializabl
     private java.util.Date Date;
     @Column(name = "Quotation", nullable = false, length = 10)
     private double quotation;
+    @Column(name = "Coefficient", nullable = true, length = 10)
+    private double coefficient;
     @Column(name = "NoteDePassage", nullable = false, length = 10)
     private double noteDePassage;
     @JsonIgnoreProperties(value = {"plannificationConcours"}, allowSetters = true)

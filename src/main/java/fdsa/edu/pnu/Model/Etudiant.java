@@ -38,19 +38,17 @@
 package fdsa.edu.pnu.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Setter
 @Getter
-@AllArgsConstructor
+@JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
 @Table(name = "Etudiant")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorValue("Etudiants")
@@ -74,11 +72,12 @@ public class Etudiant extends Utilisateur implements Serializable {
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private java.util.Set promotions;
 
+    @JsonIgnoreProperties(value = {"etudiant"}, allowSetters = true)
     @ManyToMany(targetEntity = Programme.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
     @JoinTable(name = "Programme_Etudiant", joinColumns = {@JoinColumn(name = "EtudiantPersonneID")}, inverseJoinColumns = {@JoinColumn(name = "ProgrammeID")})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
-    private java.util.Set programmes;
+    private List<Programme> programmes;
 
 //    @OneToOne(mappedBy = "etudiant", targetEntity = HistoriqueExam.class)
 //    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
@@ -88,15 +87,18 @@ public class Etudiant extends Utilisateur implements Serializable {
     @OneToMany(mappedBy = "etudiant", targetEntity = HistoriqueExam.class)
     private List<HistoriqueExam> historiqueExams;
 
+
+    @JsonIgnoreProperties(value = {"etudiant"}, allowSetters = true)
     @OneToMany(mappedBy = "etudiant", targetEntity = Paiement.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
-    private java.util.Set paiements;
+    private List<Paiement> paiements;
 
+    @JsonIgnoreProperties(value = {"etudiant"}, allowSetters = true)
     @OneToMany(mappedBy = "etudiant", targetEntity = Stage.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
-    private java.util.Set stages;
+    private List<Stage> stages;
 
     @OneToMany(mappedBy = "etudiant", targetEntity = Requete.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
@@ -112,18 +114,7 @@ public class Etudiant extends Utilisateur implements Serializable {
 
     }
 
-    public Etudiant(String codeEtudiant, String matricule, Set paiementSessions, Set cours, Set promotions, Set programmes, HistoriqueExam historiqueExam, Set paiements, Set stages, Set requetes, Set messages) {
-        this.codeEtudiant = codeEtudiant;
-        this.matricule = matricule;
-        this.cours = cours;
-        this.promotions = promotions;
-        this.programmes = programmes;
-        //  this.historiqueExam = historiqueExam;
-        this.paiements = paiements;
-        this.stages = stages;
-        this.requetes = requetes;
-        this.messages = messages;
-    }
+
 
 
 }
