@@ -81,6 +81,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/historiqueExamenConcoursByPlanificationConcours/{id}",
                         "/concours/all",
                         "/permission/all",
+                        "/permission/{id}",
                         "/utilisateur/all",
                         "/utilisateur/{id}",
                         "/postulant/all/{offset}/{pageSize}/{field}",

@@ -16,10 +16,7 @@
  */
 package fdsa.edu.pnu.Model;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -51,8 +48,12 @@ public class Evaluation implements Serializable {
     private String session;
     @Column(name = "CotationPourcentage", nullable = true, precision = 19, scale = 0)
     private java.math.BigDecimal cotationPourcentage;
+
     @Column(name = "TypeEvaluation", nullable = true, length = 255)
     private String typeEvaluation;
+
+    @Column(name = "statutResultat", nullable = true, length = 255)
+    private String statutResultat;
 
 
     @JsonIgnoreProperties(value = {"evaluation"}, allowSetters = true)
