@@ -16,10 +16,7 @@
  */
 package fdsa.edu.pnu.Model;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -50,7 +47,7 @@ public class HistoriqueExam implements Serializable {
     @JsonIgnoreProperties(value = {"historiqueExams"}, allowSetters = true)
     @ManyToOne(targetEntity =Evaluation.class, fetch = FetchType.LAZY)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
-    @JoinColumns({@JoinColumn(name = "EvaluationID", referencedColumnName = "ID", nullable = false)})
+    @JoinColumns(value ={@JoinColumn(name = "EvaluationID", referencedColumnName = "ID", nullable = false)},foreignKey = @ForeignKey(name = "Evaluation_HistoriqueExamen"))
     private Evaluation evaluation;
 
 
