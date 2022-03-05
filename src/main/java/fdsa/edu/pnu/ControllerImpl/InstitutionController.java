@@ -5,7 +5,7 @@
  */
 package fdsa.edu.pnu.ControllerImpl;
 
-import fdsa.edu.pnu.Model.Institution;
+import fdsa.edu.pnu.Model.Entreprise;
 import fdsa.edu.pnu.ServiceImpl.InstitutionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,25 +24,25 @@ public class InstitutionController {
     public InstitutionService institutionService;
 
     /**
-     * Afficher tous les Institution
+     * Afficher tous les Entreprise
      *
      * @return
      */
     @GetMapping(value = "/AllInstitutions")
-    public List<Institution> getAllInstitution() {
-        return (List<Institution>) institutionService.getInstitution();
+    public List<Entreprise> getAllInstitution() {
+        return (List<Entreprise>) institutionService.getInstitution();
     }
 
 
     /**
-     * Creer un nouveau Institution
+     * Creer un nouveau Entreprise
      *
-     * @param institution
+     * @param entreprise
      * @return
      */
     @PostMapping("/nouveauInstitution")
-    public Institution createInstitution(@RequestBody Institution institution) {
-        return institutionService.saveInstitution(institution);
+    public Entreprise createInstitution(@RequestBody Entreprise entreprise) {
+        return institutionService.saveInstitution(entreprise);
     }
 
     /**
@@ -53,8 +53,8 @@ public class InstitutionController {
      */
 
     @RequestMapping("/UneInstitution/{id}")
-    public Institution getinstitution(@PathVariable("id") int id) {
-        Optional<Institution> institution = institutionService.getInstitution(id);
+    public Entreprise getinstitution(@PathVariable("id") int id) {
+        Optional<Entreprise> institution = institutionService.getInstitution(id);
         if (institution.isPresent()) {
             return institution.get();
         } else {

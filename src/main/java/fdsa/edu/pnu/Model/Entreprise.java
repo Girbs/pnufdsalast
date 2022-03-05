@@ -28,8 +28,8 @@ import java.util.List;
 @Setter
 @Getter
 @JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
-@Table(name = "Institution")
-public class Institution implements Serializable {
+@Table(name = "Entreprise")
+public class Entreprise implements Serializable {
     @Column(name = "ID", nullable = false, length = 10)
     @Id
     @GeneratedValue(generator = "PNU_INSTITUTION_ID_GENERATOR")
@@ -44,13 +44,19 @@ public class Institution implements Serializable {
     @Column(name = "personneDeContact", nullable = true, length = 255)
     private String personneDeContact;
 
-    @JsonIgnoreProperties(value = {"institution"}, allowSetters = true)
-    @OneToMany(mappedBy = "institution", targetEntity = Stage.class)
+    @JsonIgnoreProperties(value = {"entreprise"}, allowSetters = true)
+    @OneToMany(mappedBy = "entreprise", targetEntity = Stage.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private List<Stage> stages;
 
-    public Institution() {
+    @JsonIgnoreProperties(value = {"entreprise"}, allowSetters = true)
+    @OneToMany(mappedBy = "entreprise", targetEntity = Donation.class)
+    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
+    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
+    private List<Donation> donations;
+
+    public Entreprise() {
     }
 
 

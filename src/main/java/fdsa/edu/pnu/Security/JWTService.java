@@ -33,10 +33,13 @@ public class JWTService implements UserDetailsService {
     @Autowired
     private SpringSecurityAuditorAware springSecurityAuditorAware;
 
+
     public static Date getLastLoginDate() {
         Date timestamp = new Date(System.currentTimeMillis());
         return timestamp;
     }
+
+
 
     public JwtResponse createJwtToken(JwtRequest jwtRequest) throws Exception {
 
@@ -51,11 +54,15 @@ public class JWTService implements UserDetailsService {
         Utilisateur user = userDAO.findByUsername(userName).get();
 
         UserInfo userInfo = new UserInfo();
+        userInfo.setId(user.getId());
+        userInfo.setNom(user.getNom());
+        userInfo.setPrenom(user.getPrenom());
         userInfo.setUserName(user.getUserName());
         userInfo.setUserPassword(user.getUserPassword());
         userInfo.setUserRoles(user.getRole());
-        //user.setDerniereConnexion(getLastLoginDate());
-        // System.out.println("The last login date is:"+getLastLoginDate());
+        user.setDerniereConnexion(getLastLoginDate());
+        userDAO.save(user);
+        System.out.println("The last login date is:"+getLastLoginDate());
         return new JwtResponse(userInfo, newGeneratedToken);
     }
 

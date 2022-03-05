@@ -43,10 +43,10 @@ public class Stage implements Serializable {
     private Etudiant etudiant;
 
     @JsonIgnoreProperties(value = {"stages"}, allowSetters = true)
-    @ManyToOne(targetEntity = Institution.class, fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = Entreprise.class, fetch = FetchType.LAZY)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
     @JoinColumns(value = {@JoinColumn(name = "InstitutionID", referencedColumnName = "ID", nullable = false)}, foreignKey = @ForeignKey(name = "EntrepriseStage"))
-    private Institution institution;
+    private Entreprise entreprise;
 
     @Column(name = "DateDebut", nullable = true)
     private java.sql.Timestamp dateDebut;

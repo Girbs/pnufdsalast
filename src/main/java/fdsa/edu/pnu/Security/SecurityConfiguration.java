@@ -50,8 +50,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         http.csrf().disable()
                 .authorizeRequests().antMatchers(
-
-
                         "/authenticate",
                         "/postulant/nouveau",
                         "/matiere/listeDynamique",
@@ -60,6 +58,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/sessionProgramme/all",
                         "/plannificationConcoursByIdConcours/{id}",
                         "/programme/all",
+                        "/username",
                         "/programme/nouveau",
                         "/postulant/{statut}",
                         "/resultatExamenConcoursPageable",
@@ -103,8 +102,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/concours/listeDynamique",
                         "/concours/supprimer/{id}",
                         "/postulantPageWithFilter",
-
-
                         "/saveStudent",
                         "/getStudent",
                         "/modifierConcours/{id}",

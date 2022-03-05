@@ -5,7 +5,7 @@
  */
 package fdsa.edu.pnu.ServiceImpl;
 
-import fdsa.edu.pnu.Model.Institution;
+import fdsa.edu.pnu.Model.Entreprise;
 import fdsa.edu.pnu.Repository.InstitutionDAO;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,11 +26,11 @@ public class InstitutionService {
 
     private InstitutionDAO institutionDAO;
 
-    public Optional<Institution> getInstitution(final int id) {
+    public Optional<Entreprise> getInstitution(final int id) {
         return institutionDAO.findById(id);
     }
 
-    public Iterable<Institution> getInstitution() {
+    public Iterable<Entreprise> getInstitution() {
         return institutionDAO.findAll();
     }
 
@@ -38,9 +38,9 @@ public class InstitutionService {
         institutionDAO.deleteById(id);
     }
 
-    public Institution saveInstitution(Institution Institution) {
-        Institution savedInstitution = institutionDAO.save(Institution);
-        return savedInstitution;
+    public Entreprise saveInstitution(Entreprise Entreprise) {
+        Entreprise savedEntreprise = institutionDAO.save(Entreprise);
+        return savedEntreprise;
     }
 
 }

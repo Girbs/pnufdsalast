@@ -24,6 +24,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -46,6 +47,10 @@ public class Utilisateur extends Personne implements Serializable {
 
     @Column(name = "Password")
     private String userPassword;
+
+    @Column(name = "derniereConnexion", nullable = true)
+    //@Temporal(TemporalType.DATE)
+    private Date derniereConnexion;
 
     @ManyToMany(targetEntity = Role.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JsonIgnoreProperties("utlilisateurs")
