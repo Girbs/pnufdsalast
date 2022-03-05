@@ -30,7 +30,6 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
-
 @Table(name = "Utilisateur")
 @Inheritance(strategy = InheritanceType.JOINED)
 
@@ -49,12 +48,10 @@ public class Utilisateur extends Personne implements Serializable {
     private String userPassword;
 
     @Column(name = "derniereConnexion", nullable = true)
-    //@Temporal(TemporalType.DATE)
     private Date derniereConnexion;
 
     @ManyToMany(targetEntity = Role.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JsonIgnoreProperties("utlilisateurs")
     private Set<Role> role;
-
 
 }
