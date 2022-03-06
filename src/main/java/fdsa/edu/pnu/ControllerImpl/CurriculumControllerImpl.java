@@ -1,7 +1,7 @@
 package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Controller.ICurriculumController;
-import fdsa.edu.pnu.Model.Curriculum;
+import fdsa.edu.pnu.Model.CoursProgramme;
 import fdsa.edu.pnu.ServiceImpl.CurriculumServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,17 +14,17 @@ public class CurriculumControllerImpl implements ICurriculumController {
     private CurriculumServiceImpl curriculumServiceImpl;
 
     @Override
-    public List<Curriculum> findAll() {
+    public List<CoursProgramme> findAll() {
         return curriculumServiceImpl.findAll();
     }
 
     @Override
-    public Curriculum findById(Integer id) {
+    public CoursProgramme findById(Integer id) {
         return curriculumServiceImpl.findById(id);
     }
 
     @Override
-    public Curriculum update(Integer id, Curriculum curriculum) {
+    public CoursProgramme update(Integer id, CoursProgramme coursProgramme) {
         return null;
     }
 
@@ -34,7 +34,7 @@ public class CurriculumControllerImpl implements ICurriculumController {
     }
 
     @Override
-    public Curriculum save(Curriculum curriculum) {
-        return curriculumServiceImpl.save(curriculum);
+    public CoursProgramme save(CoursProgramme coursProgramme) {
+        return curriculumServiceImpl.save(coursProgramme);
     }
 }

@@ -43,7 +43,6 @@ public class JwtRequestFilter extends OncePerRequestFilter {
             jwToken = header.substring(7);
 
             try {
-
                 userName = jwtUtil.getUserNameFromToken(jwToken);
 
             } catch (IllegalArgumentException e) {
@@ -63,14 +62,11 @@ public class JwtRequestFilter extends OncePerRequestFilter {
             if (jwtUtil.validatToken(jwToken, userDetails)) {
                 UsernamePasswordAuthenticationToken userNamePasswordAuthenticationToken
                         = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-
                 userNamePasswordAuthenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(hsr));
                 SecurityContextHolder.getContext().setAuthentication(userNamePasswordAuthenticationToken);
 
             }
-
         }
         fc.doFilter(hsr, hsr1);
     }
-
 } //End Subclass JwtRequestFilter

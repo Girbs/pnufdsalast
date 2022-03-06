@@ -1,7 +1,7 @@
 package fdsa.edu.pnu.Controller;
 
 import fdsa.edu.pnu.Model.Horaire;
-import fdsa.edu.pnu.Model.Semestre;
+import fdsa.edu.pnu.Model.Session;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -23,19 +23,19 @@ public interface IHoraireController {
 
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Rechercher une Semestre par ID", notes = "Cette methode permet de chercher une Semestre par son ID", response = Horaire.class)
+    @ApiOperation(value = "Rechercher une Session par ID", notes = "Cette methode permet de chercher une Session par son ID", response = Horaire.class)
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Le Semestre a ete trouve dans la BDD"),
-            @ApiResponse(code = 404, message = "Aucun Semestre n'existe dans la BDD avec l'ID fourni")
+            @ApiResponse(code = 200, message = "Le Session a ete trouve dans la BDD"),
+            @ApiResponse(code = 404, message = "Aucun Session n'existe dans la BDD avec l'ID fourni")
     })
     Optional<Horaire> findById(@PathVariable("id") Integer id);
 
 
     @PutMapping(value = "/modifier/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Enregistrer un Semestre", notes = "Cette methode permet d'enregistrer ou modifier une Semestre", response = Semestre.class)
+    @ApiOperation(value = "Enregistrer un Session", notes = "Cette methode permet d'enregistrer ou modifier une Session", response = Session.class)
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "L'objet Semestre cr / modifie"),
-            @ApiResponse(code = 400, message = "L'objet Semestre n'est pas valide")
+            @ApiResponse(code = 200, message = "L'objet Session cr / modifie"),
+            @ApiResponse(code = 400, message = "L'objet Session n'est pas valide")
     })
     Horaire update(@PathVariable("id") Integer id, @RequestBody Horaire horaire);
 

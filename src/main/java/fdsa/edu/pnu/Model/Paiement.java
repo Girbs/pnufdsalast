@@ -47,10 +47,10 @@ public class Paiement implements Serializable {
     private String remarque;
 
 
-    @ManyToOne(targetEntity = Semestre.class, fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = Session.class, fetch = FetchType.LAZY)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
     @JoinColumns(value = {@JoinColumn(name = "SemestreID", referencedColumnName = "ID")}, foreignKey = @ForeignKey(name = "PaimentSemestre"))
-    private Semestre semestre;
+    private Session session;
 
     @OneToMany(mappedBy = "paiement", targetEntity = Requete.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})

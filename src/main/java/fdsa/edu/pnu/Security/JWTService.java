@@ -70,12 +70,15 @@ public class JWTService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Utilisateur user = userDAO.findByUsername(username).get();
         if (user != null) {
-            return new org.springframework.security.core.userdetails.User(
-
-                    user.getUserName(),
-                    user.getUserPassword(),
-                    getAuthorities(user)
-            );
+            if (user.isStatus()) {
+                return new org.springframework.security.core.userdetails.User(
+                        user.getUserName(),
+                        user.getUserPassword(),
+                        getAuthorities(user)
+                );
+            } else {
+                throw new UsernameNotFoundException("UserName Is not Valid");
+            }
         } else {
             throw new UsernameNotFoundException("UserName Is not Valid");
         }

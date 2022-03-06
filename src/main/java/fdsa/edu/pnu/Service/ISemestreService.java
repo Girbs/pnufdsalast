@@ -1,19 +1,19 @@
 package fdsa.edu.pnu.Service;
 
-import fdsa.edu.pnu.Model.Semestre;
+import fdsa.edu.pnu.Model.Session;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface ISemestreService {
 
-    List<Semestre> findAll();
+    List<Session> findAll();
 
-    Optional<Semestre> findById(Integer id);
+    Optional<Session> findById(Integer id);
 
-    Semestre save(Semestre semestre);
+    Session save(Session session);
 
-    Semestre update(Integer id, Semestre semestre);
+    Session update(Integer id, Session session);
 
     void delete(Integer id);
 }

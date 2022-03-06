@@ -1,17 +1,17 @@
 package fdsa.edu.pnu.Service;
 
-import fdsa.edu.pnu.Model.Curriculum;
+import fdsa.edu.pnu.Model.CoursProgramme;
 
 import java.util.List;
 
 public interface ICurriculumService {
-    List<Curriculum> findAll();
+    List<CoursProgramme> findAll();
 
-    Curriculum findById(Integer id);
+    CoursProgramme findById(Integer id);
 
-    Curriculum save(Curriculum curriculum);
+    CoursProgramme save(CoursProgramme coursProgramme);
 
-    Curriculum update(Integer id, Curriculum curriculum);
+    CoursProgramme update(Integer id, CoursProgramme coursProgramme);
 
     void delete(Integer id);
 }

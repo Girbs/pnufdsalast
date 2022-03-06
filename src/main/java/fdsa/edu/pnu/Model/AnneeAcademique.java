@@ -17,7 +17,6 @@
 package fdsa.edu.pnu.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -44,10 +43,10 @@ public class AnneeAcademique implements Serializable {
     private java.util.Date fin;
 
     @JsonIgnoreProperties(value = {"anneeAcademique"}, allowSetters = true)
-    @OneToMany(mappedBy = "anneeAcademique", targetEntity = Semestre.class)
+    @OneToMany(mappedBy = "anneeAcademique", targetEntity = Session.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
-    private List<Semestre> semestre;
+    private List<Session> session;
 
     public AnneeAcademique() {
     }

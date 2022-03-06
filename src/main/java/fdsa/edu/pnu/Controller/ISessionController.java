@@ -34,8 +34,8 @@ public interface ISessionController {
     @PutMapping(value = "/modifier/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Enregistrer un SessionProgramme", notes = "Cette methode permet d'enregistrer ou modifier une SessionProgramme", response = SessionProgramme.class)
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "L'objet Semestre cr / modifie"),
-            @ApiResponse(code = 400, message = "L'objet Semestre n'est pas valide")
+            @ApiResponse(code = 200, message = "L'objet Session cr / modifie"),
+            @ApiResponse(code = 400, message = "L'objet Session n'est pas valide")
     })
     SessionProgramme update(@PathVariable("id") Integer id, @RequestBody SessionProgramme session);
 

@@ -52,9 +52,9 @@ public class SessionProgramme implements Serializable {
     @Column(name = "Ordre", nullable = false, length = 10)
     private int ordre;
 
-    @JsonIgnoreProperties(value = {"session"}, allowSetters = true)
-    @OneToMany(mappedBy = "session", targetEntity = Curriculum.class)
-    private List<Curriculum> curriculum;
+    @JsonIgnoreProperties(value = {"sessionProgramme"}, allowSetters = true)
+    @OneToMany(mappedBy = "sessionProgramme", targetEntity = CoursProgramme.class)
+    private List<CoursProgramme> coursProgrammes;
 
 
     public SessionProgramme() {

@@ -1,7 +1,6 @@
 package fdsa.edu.pnu.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,9 +12,9 @@ import java.util.List;
 @Getter
 @Setter
 
-@Table(name = "Semestre")
+@Table(name = "Session")
 @JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
-public class Semestre implements Serializable {
+public class Session implements Serializable {
 
     @Column(name = "ID", nullable = false, length = 10)
     @Id
@@ -24,30 +23,30 @@ public class Semestre implements Serializable {
     private Integer id;
     @Column(name = "DateDebut", nullable = true)
     @Temporal(TemporalType.DATE)
-    private java.util.Date DateDebut;
+    private java.util.Date dateDebut;
     @Column(name = "DateFin", nullable = true)
     @Temporal(TemporalType.DATE)
-    private java.util.Date DateFin;
+    private java.util.Date dateFin;
     @Column(name = "Description", nullable = true, length = 255)
     private String description;
 
     @Column(name = "status", nullable = true, length = 255)
     private String status;
 
-    @OneToMany(mappedBy = "semestre", targetEntity = Paiement.class)
+    @OneToMany(mappedBy = "session", targetEntity = Paiement.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private List<Paiement> paiement;
 
-    @JsonIgnoreProperties(value = {"semestre"}, allowSetters = true)
+    @JsonIgnoreProperties(value = {"session"}, allowSetters = true)
     @ManyToOne(targetEntity = AnneeAcademique.class, fetch = FetchType.LAZY)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
-    @JoinColumns(value = {@JoinColumn(name = "AnneeAcademiqueID", referencedColumnName = " ID", nullable = false)}, foreignKey = @ForeignKey(name = "FK_Semestre_AnneeAcademique"))
+    @JoinColumns(value = {@JoinColumn(name = "AnneeAcademiqueID", referencedColumnName = " ID", nullable = false)}, foreignKey = @ForeignKey(name = "FK_Session_AnneeAcademique"))
     private AnneeAcademique anneeAcademique;
 
 
-    @JsonIgnoreProperties(value = {"semestre"}, allowSetters = true)
-    @OneToMany(mappedBy = "semestre", targetEntity = Cours.class)
+    @JsonIgnoreProperties(value = {"session"}, allowSetters = true)
+    @OneToMany(mappedBy = "session", targetEntity = Cours.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private List<Cours> cours;

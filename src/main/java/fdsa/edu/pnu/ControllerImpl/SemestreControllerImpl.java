@@ -1,7 +1,7 @@
 package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Controller.ISemestreController;
-import fdsa.edu.pnu.Model.Semestre;
+import fdsa.edu.pnu.Model.Session;
 import fdsa.edu.pnu.ServiceImpl.SemestreServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,17 +16,17 @@ public class SemestreControllerImpl implements ISemestreController {
     private SemestreServiceImpl semestreServiceImpl;
 
     @Override
-    public List<Semestre> findAll() {
+    public List<Session> findAll() {
         return semestreServiceImpl.findAll();
     }
 
     @Override
-    public Optional<Semestre> findById(Integer id) {
+    public Optional<Session> findById(Integer id) {
         return semestreServiceImpl.findById(id);
     }
 
     @Override
-    public Semestre update(Integer id, Semestre semestre) {
+    public Session update(Integer id, Session session) {
         return null;
     }
 
@@ -36,7 +36,7 @@ public class SemestreControllerImpl implements ISemestreController {
     }
 
     @Override
-    public Semestre save(Semestre semestre) {
-        return semestreServiceImpl.save(semestre);
+    public Session save(Session session) {
+        return semestreServiceImpl.save(session);
     }
 }

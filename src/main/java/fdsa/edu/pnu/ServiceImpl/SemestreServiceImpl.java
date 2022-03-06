@@ -1,6 +1,6 @@
 package fdsa.edu.pnu.ServiceImpl;
 
-import fdsa.edu.pnu.Model.Semestre;
+import fdsa.edu.pnu.Model.Session;
 import fdsa.edu.pnu.Repository.SemestreDAO;
 import fdsa.edu.pnu.Service.ISemestreService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,22 +16,22 @@ public class SemestreServiceImpl implements ISemestreService {
     private SemestreDAO semestreDAO;
 
     @Override
-    public List<Semestre> findAll() {
+    public List<Session> findAll() {
         return semestreDAO.findAll();
     }
 
     @Override
-    public Optional<Semestre> findById(Integer id) {
+    public Optional<Session> findById(Integer id) {
         return semestreDAO.findById(id);
     }
 
     @Override
-    public Semestre save(Semestre semestre) {
-        return semestreDAO.save(semestre);
+    public Session save(Session session) {
+        return semestreDAO.save(session);
     }
 
     @Override
-    public Semestre update(Integer id, Semestre semestre) {
+    public Session update(Integer id, Session session) {
         return null;
     }
 

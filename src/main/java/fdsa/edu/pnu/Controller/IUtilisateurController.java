@@ -48,19 +48,19 @@ public interface IUtilisateurController {
     Utilisateur motDePasseOublie(@RequestBody Utilisateur dto);
 
     @GetMapping(value = "/utilisateur/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Rechercher une Semestre par ID", notes = "Cette methode permet de chercher une Semestre par son ID", response = Utilisateur.class)
+    @ApiOperation(value = "Rechercher une Session par ID", notes = "Cette methode permet de chercher une Session par son ID", response = Utilisateur.class)
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Le Semestre a ete trouve dans la BDD"),
-            @ApiResponse(code = 404, message = "Aucun Semestre n'existe dans la BDD avec l'ID fourni")
+            @ApiResponse(code = 200, message = "Le Session a ete trouve dans la BDD"),
+            @ApiResponse(code = 404, message = "Aucun Session n'existe dans la BDD avec l'ID fourni")
     })
     Optional<Utilisateur> findById(@PathVariable("id") Integer id);
 
 
     @PutMapping(value = "/utilisateur/modifier/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Enregistrer un Semestre", notes = "Cette methode permet d'enregistrer ou modifier une Semestre", response = Utilisateur.class)
+    @ApiOperation(value = "Enregistrer un Session", notes = "Cette methode permet d'enregistrer ou modifier une Session", response = Utilisateur.class)
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "L'objet Semestre cr / modifie"),
-            @ApiResponse(code = 400, message = "L'objet Semestre n'est pas valide")
+            @ApiResponse(code = 200, message = "L'objet Session cr / modifie"),
+            @ApiResponse(code = 400, message = "L'objet Session n'est pas valide")
     })
     Utilisateur update(@PathVariable("id") Integer id, @RequestBody Utilisateur utilisateur);
 

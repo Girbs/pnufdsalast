@@ -55,8 +55,8 @@ public class Matiere extends Audit<String> implements Serializable {
     private int nombreDeCreditStandard;
 
     @JsonIgnoreProperties(value = {"matiere"}, allowSetters = true)
-    @OneToMany(mappedBy = "matiere", targetEntity = Curriculum.class)
-    private List<Curriculum> curriculum;
+    @OneToMany(mappedBy = "matiere", targetEntity = CoursProgramme.class)
+    private List<CoursProgramme> coursProgrammes;
 
     @JsonIgnoreProperties(value = {"matiere"}, allowSetters = true)
     @OneToMany(mappedBy = "matiere", targetEntity = PlannificationConcours.class)

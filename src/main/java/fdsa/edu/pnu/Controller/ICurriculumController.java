@@ -1,6 +1,6 @@
 package fdsa.edu.pnu.Controller;
 
-import fdsa.edu.pnu.Model.Curriculum;
+import fdsa.edu.pnu.Model.CoursProgramme;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -13,30 +13,30 @@ import java.util.List;
 public interface ICurriculumController {
 
     @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Renvoi la liste des Curriculum", notes = "Cette methode permet de chercher et renvoyer la liste des Sessions qui existent "
-            + "dans la BDD", responseContainer = "List<Curriculum>")
+    @ApiOperation(value = "Renvoi la liste des CoursProgramme", notes = "Cette methode permet de chercher et renvoyer la liste des Sessions qui existent "
+            + "dans la BDD", responseContainer = "List<CoursProgramme>")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "La liste des SessionProgramme / Une liste vide")
     })
-    List<Curriculum> findAll();
+    List<CoursProgramme> findAll();
 
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Rechercher un Curriculum par ID", notes = "Cette methode permet de chercher une SessionProgramme par son ID", response = Curriculum.class)
+    @ApiOperation(value = "Rechercher un CoursProgramme par ID", notes = "Cette methode permet de chercher une SessionProgramme par son ID", response = CoursProgramme.class)
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Le Curriculum a ete trouve dans la BDD"),
-            @ApiResponse(code = 404, message = "Aucun Curriculum n'existe dans la BDD avec l'ID fourni")
+            @ApiResponse(code = 200, message = "Le CoursProgramme a ete trouve dans la BDD"),
+            @ApiResponse(code = 404, message = "Aucun CoursProgramme n'existe dans la BDD avec l'ID fourni")
     })
-    Curriculum findById(@PathVariable("id") Integer id);
+    CoursProgramme findById(@PathVariable("id") Integer id);
 
 
     @PutMapping(value = "/modifier/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Enregistrer un Curriculum", notes = "Cette methode permet d'enregistrer ou modifier une Curriculum", response = Curriculum.class)
+    @ApiOperation(value = "Enregistrer un CoursProgramme", notes = "Cette methode permet d'enregistrer ou modifier une CoursProgramme", response = CoursProgramme.class)
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "L'objet Curriculum cr / modifie"),
-            @ApiResponse(code = 400, message = "L'objet Curriculum n'est pas valide")
+            @ApiResponse(code = 200, message = "L'objet CoursProgramme cr / modifie"),
+            @ApiResponse(code = 400, message = "L'objet CoursProgramme n'est pas valide")
     })
-    Curriculum update(@PathVariable("id") Integer id, @RequestBody Curriculum curriculum);
+    CoursProgramme update(@PathVariable("id") Integer id, @RequestBody CoursProgramme coursProgramme);
 
     @DeleteMapping(value = "/supprimer/{id}")
     @ApiOperation(value = "Supprimer une session ", notes = "Cette methode permet de supprimer un SessionProgramme par ID")
@@ -47,11 +47,11 @@ public interface ICurriculumController {
 
 
     @PostMapping(value = "/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Enregistrer un Curriculum", notes = "Cette methode permet d'enregistrer ou modifier un Curriculum", response = Curriculum.class)
+    @ApiOperation(value = "Enregistrer un CoursProgramme", notes = "Cette methode permet d'enregistrer ou modifier un CoursProgramme", response = CoursProgramme.class)
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "L'objet le Curriculum crée modifie"),
-            @ApiResponse(code = 400, message = "L'objet Curriculum n'est pas valide")
+            @ApiResponse(code = 200, message = "L'objet le CoursProgramme crée modifie"),
+            @ApiResponse(code = 400, message = "L'objet CoursProgramme n'est pas valide")
     })
-    Curriculum save(@RequestBody Curriculum curriculum);
+    CoursProgramme save(@RequestBody CoursProgramme coursProgramme);
 
 }

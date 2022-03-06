@@ -8,9 +8,9 @@ import java.util.List;
 
 @Entity
 @Data
-@Table(name = "Curriculum")
+@Table(name = "CoursProgramme")
 @JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
-public class Curriculum {
+public class CoursProgramme {
     @Column(name = "ID", nullable = false, length = 10)
     @Id
     @GeneratedValue(generator = "PNU_CURRICULUM")
@@ -18,21 +18,20 @@ public class Curriculum {
     private int id;
 
     private double nombreDeCredit;
-    @JsonIgnoreProperties(value = {"curriculum"}, allowSetters = true)
+    @JsonIgnoreProperties(value = {"coursProgrammes"}, allowSetters = true)
     @ManyToOne(targetEntity = Matiere.class, fetch = FetchType.LAZY)
-    @JoinColumns(value = {@JoinColumn(name = "matiereId", referencedColumnName = "ID", nullable = true)}, foreignKey = @ForeignKey(name = "CoursProgramme"))
+    @JoinColumns(value = {@JoinColumn(name = "matiereId", referencedColumnName = "ID", nullable = true)}, foreignKey = @ForeignKey(name = "CoursProgrammes"))
     private Matiere matiere;
 
-    @JsonIgnoreProperties(value = {"curriculum"}, allowSetters = true)
+    @JsonIgnoreProperties(value = {"coursProgrammes"}, allowSetters = true)
     @ManyToOne(targetEntity = SessionProgramme.class, fetch = FetchType.LAZY)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
-    @JoinColumns(value = {@JoinColumn(name = "SessionId", referencedColumnName = "ID", nullable = false)}, foreignKey = @ForeignKey(name = "FK_SESSIONS_Curriculum"))
-    private SessionProgramme session;
+    @JoinColumns(value = {@JoinColumn(name = "SessionId", referencedColumnName = "ID", nullable = false)}, foreignKey = @ForeignKey(name = "FK_SESSIONS_CoursProgramme"))
+    private SessionProgramme sessionProgramme;
 
-    @JsonIgnoreProperties(value = {"curriculum"}, allowSetters = true)
-    @OneToMany(mappedBy = "curriculum", targetEntity = Cours.class)
+    @JsonIgnoreProperties(value = {"coursProgramme"}, allowSetters = true)
+    @OneToMany(mappedBy = "coursProgramme", targetEntity = Cours.class)
     private List<Cours> cours;
-
 
 }
 
