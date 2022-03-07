@@ -38,6 +38,18 @@ public class Session implements Serializable {
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private List<Paiement> paiement;
 
+
+    @OneToMany(mappedBy = "session", targetEntity = Cours.class)
+    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
+    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
+    private List<Cours> cours;
+
+    @JsonIgnoreProperties(value = {"session"}, allowSetters = true)
+    @OneToMany(mappedBy = "session", targetEntity = Examen.class)
+    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
+    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
+    private List<Examen> examens;
+
     @JsonIgnoreProperties(value = {"session"}, allowSetters = true)
     @ManyToOne(targetEntity = AnneeAcademique.class, fetch = FetchType.LAZY)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
@@ -45,10 +57,5 @@ public class Session implements Serializable {
     private AnneeAcademique anneeAcademique;
 
 
-    @JsonIgnoreProperties(value = {"session"}, allowSetters = true)
-    @OneToMany(mappedBy = "session", targetEntity = Cours.class)
-    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
-    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
-    private List<Cours> cours;
 
 }

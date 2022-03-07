@@ -5,7 +5,7 @@
  */
 package fdsa.edu.pnu.ServiceImpl;
 
-import fdsa.edu.pnu.Model.Evaluation;
+import fdsa.edu.pnu.Model.EvaluationOrdinaire;
 import fdsa.edu.pnu.Repository.EvaluationDAO;
 import fdsa.edu.pnu.Service.IEvaluationService;
 import lombok.Data;
@@ -25,18 +25,18 @@ public class EvaluationServiceImpl implements IEvaluationService {
     private EvaluationDAO evaluationDAO;
 
     @Override
-    public List<Evaluation> findAll() {
+    public List<EvaluationOrdinaire> findAll() {
         return evaluationDAO.findAll();
     }
 
     @Override
-    public Optional<Evaluation> findById(Integer id) {
+    public Optional<EvaluationOrdinaire> findById(Integer id) {
         return evaluationDAO.findById(id);
     }
 
     @Override
-    public Evaluation save(Evaluation evaluation) {
-        return evaluationDAO.save(evaluation);
+    public EvaluationOrdinaire save(EvaluationOrdinaire evaluationOrdinaire) {
+        return evaluationDAO.save(evaluationOrdinaire);
     }
 
     @Override

@@ -7,12 +7,12 @@
  * Modifying its content may cause the program not work, or your work may lost.
  * <p>
  * Licensee:
- * License Type: Evaluation
+ * License Type: EvaluationOrdinaire
  */
 
 /**
  * Licensee: 
- * License Type: Evaluation
+ * License Type: EvaluationOrdinaire
  */
 package fdsa.edu.pnu.Model;
 
@@ -45,17 +45,17 @@ public class HistoriqueExam implements Serializable {
     private Etudiant etudiant;
 
     @JsonIgnoreProperties(value = {"historiqueExams"}, allowSetters = true)
-    @ManyToOne(targetEntity =Evaluation.class, fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = EvaluationOrdinaire.class, fetch = FetchType.LAZY)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
     @JoinColumns(value ={@JoinColumn(name = "EvaluationID", referencedColumnName = "ID", nullable = false)},foreignKey = @ForeignKey(name = "Evaluation_HistoriqueExamen"))
-    private Evaluation evaluation;
+    private EvaluationOrdinaire evaluationOrdinaire;
 
 
 
 //    @JsonIgnoreProperties(value = {"historiqueExam"}, allowSetters = true)
-//    @ManyToOne(targetEntity =Evaluation.class, fetch = FetchType.LAZY)
+//    @ManyToOne(targetEntity =EvaluationOrdinaire.class, fetch = FetchType.LAZY)
 //    @JoinColumns(value = {@JoinColumn(name = "EvaluationID", referencedColumnName = "ID", nullable = false)}, foreignKey = @ForeignKey(name = "Evaluation_HistoriqueExamen"))
-//    private Evaluation evaluation;
+//    private EvaluationOrdinaire evaluationOrdinaire;
 
     public HistoriqueExam() {
     }

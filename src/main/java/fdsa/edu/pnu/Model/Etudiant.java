@@ -7,33 +7,33 @@
  * Modifying its content may cause the program not work, or your work may lost.
  * <p>
  * Licensee:
- * License Type: Evaluation
+ * License Type: EvaluationOrdinaire
  * <p>
  * Licensee:
- * License Type: Evaluation
+ * License Type: EvaluationOrdinaire
  * <p>
  * Licensee:
- * License Type: Evaluation
+ * License Type: EvaluationOrdinaire
  * <p>
  * Licensee:
- * License Type: Evaluation
+ * License Type: EvaluationOrdinaire
  * <p>
  * Licensee:
- * License Type: Evaluation
+ * License Type: EvaluationOrdinaire
  * <p>
  * Licensee:
- * License Type: Evaluation
+ * License Type: EvaluationOrdinaire
  * <p>
  * Licensee:
- * License Type: Evaluation
+ * License Type: EvaluationOrdinaire
  * <p>
  * Licensee:
- * License Type: Evaluation
+ * License Type: EvaluationOrdinaire
  */
 
 /**
  * Licensee: 
- * License Type: Evaluation
+ * License Type: EvaluationOrdinaire
  */
 package fdsa.edu.pnu.Model;
 
@@ -60,11 +60,7 @@ public class Etudiant extends Utilisateur implements Serializable {
     @Column(name = "Matricule")
     private String matricule;
 
-    @ManyToMany(targetEntity = Cours.class)
-    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
-    @JoinTable(name = "Cours_Etudiant", joinColumns = {@JoinColumn(name = "EtudiantPersonneID")}, inverseJoinColumns = {@JoinColumn(name = "CoursID")})
-    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
-    private java.util.Set cours;
+
 
     @ManyToMany(targetEntity = Promotion.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
@@ -78,6 +74,8 @@ public class Etudiant extends Utilisateur implements Serializable {
     @JoinTable(name = "Programme_Etudiant", joinColumns = {@JoinColumn(name = "EtudiantPersonneID")}, inverseJoinColumns = {@JoinColumn(name = "ProgrammeID")})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private List<Programme> programmes;
+
+
 
 //    @OneToOne(mappedBy = "etudiant", targetEntity = HistoriqueExam.class)
 //    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
@@ -93,6 +91,12 @@ public class Etudiant extends Utilisateur implements Serializable {
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private List<Paiement> paiements;
+
+    @JsonIgnoreProperties(value = {"etudiant"}, allowSetters = true)
+    @OneToMany(mappedBy = "etudiant", targetEntity = CoursEtudiant.class)
+    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
+    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
+    private List<CoursEtudiant> coursEtudiants;
 
     @JsonIgnoreProperties(value = {"etudiant"}, allowSetters = true)
     @OneToMany(mappedBy = "etudiant", targetEntity = Stage.class)

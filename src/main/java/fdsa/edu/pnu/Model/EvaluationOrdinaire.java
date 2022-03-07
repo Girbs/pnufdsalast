@@ -7,12 +7,12 @@
  * Modifying its content may cause the program not work, or your work may lost.
  * <p>
  * Licensee:
- * License Type: Evaluation
+ * License Type: EvaluationOrdinaire
  */
 
 /**
  * Licensee: 
- * License Type: Evaluation
+ * License Type: EvaluationOrdinaire
  */
 package fdsa.edu.pnu.Model;
 
@@ -28,15 +28,15 @@ import java.util.List;
 @Getter
 @Setter
 @JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
-@Table(name = "Evaluation")
-public class Evaluation implements Serializable {
+@Table(name = "EvaluationOrdinaire")
+public class EvaluationOrdinaire implements Serializable {
     @Column(name = "ID", nullable = false, length = 10)
     @Id
     @GeneratedValue(generator = "PNU_EVALUATION_ID_GENERATOR")
     @org.hibernate.annotations.GenericGenerator(name = "PNU_EVALUATION_ID_GENERATOR", strategy = "native")
     private int id;
 
-    @JsonIgnoreProperties(value = {"evaluations"}, allowSetters = true)
+    @JsonIgnoreProperties(value = {"evaluationOrdinaires"}, allowSetters = true)
     @ManyToOne(targetEntity = Cours.class, fetch = FetchType.LAZY)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
     @JoinColumns(value = {@JoinColumn(name = "CoursID", referencedColumnName = "ID", nullable = false)}, foreignKey = @ForeignKey(name = "FK_EVALUATIONS_COURS"))
@@ -56,19 +56,13 @@ public class Evaluation implements Serializable {
     private String statutResultat;
 
 
-    @JsonIgnoreProperties(value = {"evaluation"}, allowSetters = true)
-    @OneToMany(mappedBy = "evaluation", targetEntity = HistoriqueExam.class)
+    @JsonIgnoreProperties(value = {"evaluationOrdinaire"}, allowSetters = true)
+    @OneToMany(mappedBy = "evaluationOrdinaire", targetEntity = HistoriqueExam.class)
     private List<HistoriqueExam> historiqueExams;
 
-//    @JsonIgnoreProperties(value = {"evaluation"}, allowSetters = true)
-//    @OneToMany(mappedBy = "evaluation", targetEntity = HistoriqueExam.class)
-//    private HistoriqueExam historiqueExam;
 
-//    @OneToOne(mappedBy = "evaluation", targetEntity = HistoriqueExam.class)
-//    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
-//    private HistoriqueExam historiqueExam;
 
-    public Evaluation() {
+    public EvaluationOrdinaire() {
     }
 
 

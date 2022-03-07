@@ -7,15 +7,15 @@
  * Modifying its content may cause the program not work, or your work may lost.
  * <p>
  * Licensee:
- * License Type: Evaluation
+ * License Type: EvaluationOrdinaire
  * <p>
  * Licensee:
- * License Type: Evaluation
+ * License Type: EvaluationOrdinaire
  */
 
 /**
  * Licensee: 
- * License Type: Evaluation
+ * License Type: EvaluationOrdinaire
  */
 package fdsa.edu.pnu.Model;
 

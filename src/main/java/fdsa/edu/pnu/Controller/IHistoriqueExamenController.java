@@ -1,6 +1,6 @@
 package fdsa.edu.pnu.Controller;
 
-import fdsa.edu.pnu.Model.Evaluation;
+import fdsa.edu.pnu.Model.EvaluationOrdinaire;
 import fdsa.edu.pnu.Model.HistoriqueExam;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -17,7 +17,7 @@ public interface IHistoriqueExamenController {
     //  @PreAuthorize("hasAnyRole( 'lireConcours')")
     @GetMapping(value = "/historiqueExamen/all", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Renvoi la liste des evaluations", notes = "Cette methode permet de chercher et renvoyer la liste des evaluation qui existent "
-            + "dans la BDD", responseContainer = "List<Evaluation>")
+            + "dans la BDD", responseContainer = "List<EvaluationOrdinaire>")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "La liste des evaluation / Une liste vide")
     })
@@ -25,7 +25,7 @@ public interface IHistoriqueExamenController {
 
     // @PreAuthorize("hasAnyRole('lireConcours')")
     @GetMapping(value = "/historiqueExamen/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Rechercher un cours par ID", notes = "Cette methode permet de chercher un cours par son ID", response = Evaluation.class)
+    @ApiOperation(value = "Rechercher un cours par ID", notes = "Cette methode permet de chercher un cours par son ID", response = EvaluationOrdinaire.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Le Cours a ete trouve dans la BDD"),
             @ApiResponse(code = 404, message = "Aucun cours n'existe dans la BDD avec l'ID fourni")
