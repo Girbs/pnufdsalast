@@ -18,6 +18,11 @@ public class SessionProgrammeControllerImpl implements ISessionProgrammeControll
     }
 
     @Override
+    public List<SessionProgramme> findSessionProgrammeByIdProgramme(Integer idProgramme) {
+        return sessionProgrammeService.findSessionProgrammeByIdProgramme(idProgramme);
+    }
+
+    @Override
     public SessionProgramme findById(Integer id) {
         return sessionProgrammeService.findById(id);
     }

@@ -106,6 +106,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/postulantPageWithFilter",
                         "/saveStudent",
                         "/getStudent",
+                        "/sessionProgramme/{id}",
+                        "/sessionProgrammeByIdProgramme/{idProgramme}",
                         "/modifierConcours/{id}",
                         "/v2/api-docs",
                         "/swagger-resources",

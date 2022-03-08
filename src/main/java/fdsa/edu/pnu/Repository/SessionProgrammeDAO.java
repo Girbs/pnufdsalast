@@ -17,7 +17,6 @@
 package fdsa.edu.pnu.Repository;
 
 
-import fdsa.edu.pnu.Model.Programme;
 import fdsa.edu.pnu.Model.SessionProgramme;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -34,4 +33,8 @@ public interface SessionProgrammeDAO extends JpaRepository<SessionProgramme, Int
 
     @Query(value = "{call FindSessionProgrammeById(:IdSessionProgramme)}", nativeQuery = true)
     SessionProgramme findSessionProgrammeById(@Param("IdSessionProgramme") Integer IdProgramme);
+
+    @Query(value = "{call FindSessionProgrammeById(:IdProgramme)}", nativeQuery = true)
+    List<SessionProgramme>  findSessionProgrammeByIdProgramme(@Param("IdProgramme") Integer IdProgramme);
+
 }

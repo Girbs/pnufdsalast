@@ -19,6 +19,14 @@ public interface ISessionProgrammeController {
     })
     List<SessionProgramme> findAll();
 
+    @GetMapping(value = "/sessionProgrammeByIdProgramme/{idProgramme}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Renvoi la liste des Programmes", notes = "Cette methode permet de chercher et renvoyer la liste des Programmes qui existent "
+            + "dans la BDD", responseContainer = "List<Programme>")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "La liste des Programmes / Une liste vide")
+    })
+    List<SessionProgramme> findSessionProgrammeByIdProgramme(@PathVariable("idProgramme") Integer idProgramme);
+
 
     @GetMapping(value = "/sessionProgramme/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Rechercher une SessionProgramme par ID", notes = "Cette methode permet de chercher un Programme par son ID", response = Programme.class)

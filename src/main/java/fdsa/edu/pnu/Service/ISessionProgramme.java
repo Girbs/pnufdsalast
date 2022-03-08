@@ -7,6 +7,8 @@ import java.util.List;
 public interface ISessionProgramme {
     List<SessionProgramme> findAll();
 
+    List<SessionProgramme>  findSessionProgrammeByIdProgramme( Integer IdProgramme);
+
     SessionProgramme findById(Integer id);
 
     SessionProgramme save(SessionProgramme sessionProgramme);

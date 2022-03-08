@@ -2195,3 +2195,1103 @@ com.microsoft.sqlserver.jdbc.SQLServerException: Invalid object name 'CoursProgr
 08-03-2022 14:28:10.111 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_13
 08-03-2022 14:28:10.142 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStarted - Started PnuApplication in 40.61 seconds (JVM running for 41.676)
 08-03-2022 14:29:31.456 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+08-03-2022 14:42:12.166 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+08-03-2022 14:42:12.417 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+08-03-2022 14:42:12.580 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+08-03-2022 14:42:22.666 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStarting - Starting PnuApplication using Java 16.0.2 on M638 with PID 30268 (C:\Users\gbijou\Desktop\pnu\pnufdsalast\target\classes started by gbijou in C:\Users\gbijou\Desktop\pnu\pnufdsalast)
+08-03-2022 14:42:22.671 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+08-03-2022 14:42:22.756 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+08-03-2022 14:42:22.756 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+08-03-2022 14:42:24.821 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08-03-2022 14:42:25.211 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 374 ms. Found 39 JPA repository interfaces.
+08-03-2022 14:42:25.777 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@14492b08' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+08-03-2022 14:42:25.784 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+08-03-2022 14:42:26.408 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+08-03-2022 14:42:26.429 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+08-03-2022 14:42:26.430 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.53]
+08-03-2022 14:42:26.633 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+08-03-2022 14:42:26.634 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 3877 ms
+08-03-2022 14:42:27.090 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+08-03-2022 14:42:27.232 [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.4.32.Final
+08-03-2022 14:42:27.472 [restartedMain] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+08-03-2022 14:42:27.621 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+08-03-2022 14:42:29.313 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+08-03-2022 14:42:29.398 [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+08-03-2022 14:42:49.762 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08-03-2022 14:42:49.789 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+08-03-2022 14:42:51.379 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08-03-2022 14:42:58.128 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+08-03-2022 14:42:58.872 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@76765be4, org.springframework.security.web.context.SecurityContextPersistenceFilter@3b4109c4, org.springframework.security.web.header.HeaderWriterFilter@231f08b6, org.springframework.web.filter.CorsFilter@acff340, org.springframework.security.web.authentication.logout.LogoutFilter@5379f7c8, fdsa.edu.pnu.Security.JwtRequestFilter@7148df14, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7a70b5b3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5f740f26, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@58c1c294, org.springframework.security.web.session.SessionManagementFilter@433fe45c, org.springframework.security.web.access.ExceptionTranslationFilter@6074b4ee, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3dcdd593]
+08-03-2022 14:42:59.550 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+08-03-2022 14:43:00.214 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8080 (http) with context path ''
+08-03-2022 14:43:00.219 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+08-03-2022 14:43:00.264 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+08-03-2022 14:43:00.332 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+08-03-2022 14:43:01.498 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_1
+08-03-2022 14:43:01.548 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_1
+08-03-2022 14:43:01.666 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_1
+08-03-2022 14:43:02.107 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_1
+08-03-2022 14:43:02.117 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_1
+08-03-2022 14:43:02.123 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_2
+08-03-2022 14:43:02.152 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_2
+08-03-2022 14:43:02.217 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_2
+08-03-2022 14:43:02.247 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_2
+08-03-2022 14:43:02.252 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_2
+08-03-2022 14:43:02.258 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_3
+08-03-2022 14:43:02.292 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_3
+08-03-2022 14:43:02.343 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_3
+08-03-2022 14:43:02.388 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_3
+08-03-2022 14:43:02.397 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_3
+08-03-2022 14:43:02.406 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_1
+08-03-2022 14:43:02.422 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_2
+08-03-2022 14:43:02.487 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_3
+08-03-2022 14:43:02.533 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_4
+08-03-2022 14:43:02.580 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_4
+08-03-2022 14:43:02.644 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_4
+08-03-2022 14:43:02.673 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_4
+08-03-2022 14:43:02.678 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_4
+08-03-2022 14:43:02.682 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_5
+08-03-2022 14:43:02.720 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_5
+08-03-2022 14:43:02.800 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_5
+08-03-2022 14:43:02.849 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_5
+08-03-2022 14:43:02.854 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_5
+08-03-2022 14:43:02.870 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_4
+08-03-2022 14:43:02.908 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_5
+08-03-2022 14:43:02.940 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_6
+08-03-2022 14:43:02.992 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_6
+08-03-2022 14:43:03.032 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_6
+08-03-2022 14:43:03.083 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_6
+08-03-2022 14:43:03.093 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_7
+08-03-2022 14:43:03.141 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_7
+08-03-2022 14:43:03.185 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_7
+08-03-2022 14:43:03.275 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_7
+08-03-2022 14:43:03.279 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_6
+08-03-2022 14:43:03.284 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_8
+08-03-2022 14:43:03.310 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_8
+08-03-2022 14:43:03.362 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_8
+08-03-2022 14:43:03.396 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_8
+08-03-2022 14:43:03.439 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_7
+08-03-2022 14:43:03.564 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_9
+08-03-2022 14:43:03.600 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_9
+08-03-2022 14:43:03.637 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_9
+08-03-2022 14:43:03.860 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_9
+08-03-2022 14:43:04.141 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_6
+08-03-2022 14:43:04.186 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_10
+08-03-2022 14:43:04.189 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_10
+08-03-2022 14:43:04.195 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_10
+08-03-2022 14:43:04.198 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_10
+08-03-2022 14:43:04.216 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_11
+08-03-2022 14:43:04.224 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_11
+08-03-2022 14:43:04.263 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_11
+08-03-2022 14:43:04.274 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_11
+08-03-2022 14:43:04.277 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_12
+08-03-2022 14:43:04.282 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_12
+08-03-2022 14:43:04.292 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_12
+08-03-2022 14:43:04.327 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_12
+08-03-2022 14:43:04.335 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_13
+08-03-2022 14:43:04.379 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_13
+08-03-2022 14:43:04.416 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_13
+08-03-2022 14:43:04.628 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_13
+08-03-2022 14:43:04.632 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_14
+08-03-2022 14:43:04.635 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_14
+08-03-2022 14:43:04.666 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_14
+08-03-2022 14:43:04.888 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_14
+08-03-2022 14:43:04.893 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_15
+08-03-2022 14:43:04.931 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_15
+08-03-2022 14:43:04.983 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_15
+08-03-2022 14:43:05.080 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_15
+08-03-2022 14:43:05.088 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_16
+08-03-2022 14:43:05.124 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_16
+08-03-2022 14:43:05.152 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_16
+08-03-2022 14:43:05.181 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_16
+08-03-2022 14:43:05.186 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_8
+08-03-2022 14:43:05.439 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_17
+08-03-2022 14:43:05.442 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_17
+08-03-2022 14:43:05.448 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_17
+08-03-2022 14:43:05.450 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_17
+08-03-2022 14:43:05.454 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_9
+08-03-2022 14:43:05.457 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_18
+08-03-2022 14:43:05.489 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_18
+08-03-2022 14:43:05.523 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_18
+08-03-2022 14:43:05.555 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_18
+08-03-2022 14:43:05.559 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_10
+08-03-2022 14:43:05.562 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_19
+08-03-2022 14:43:05.596 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_19
+08-03-2022 14:43:05.628 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_19
+08-03-2022 14:43:05.659 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_19
+08-03-2022 14:43:05.663 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_11
+08-03-2022 14:43:05.665 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_20
+08-03-2022 14:43:05.667 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_20
+08-03-2022 14:43:05.672 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_20
+08-03-2022 14:43:05.677 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_20
+08-03-2022 14:43:05.681 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_12
+08-03-2022 14:43:05.782 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_21
+08-03-2022 14:43:05.786 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_21
+08-03-2022 14:43:05.791 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_21
+08-03-2022 14:43:05.795 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_13
+08-03-2022 14:43:05.827 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStarted - Started PnuApplication in 43.958 seconds (JVM running for 44.928)
+08-03-2022 14:48:46.900 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+08-03-2022 14:48:47.049 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+08-03-2022 14:48:47.136 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+08-03-2022 14:48:58.306 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStarting - Starting PnuApplication using Java 16.0.2 on M638 with PID 11164 (C:\Users\gbijou\Desktop\pnu\pnufdsalast\target\classes started by gbijou in C:\Users\gbijou\Desktop\pnu\pnufdsalast)
+08-03-2022 14:48:58.311 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+08-03-2022 14:48:58.406 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+08-03-2022 14:48:58.406 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+08-03-2022 14:49:00.369 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08-03-2022 14:49:00.761 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 380 ms. Found 39 JPA repository interfaces.
+08-03-2022 14:49:01.386 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7228c1fe' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+08-03-2022 14:49:01.393 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+08-03-2022 14:49:01.996 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+08-03-2022 14:49:02.010 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+08-03-2022 14:49:02.011 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.53]
+08-03-2022 14:49:02.149 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+08-03-2022 14:49:02.150 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 3743 ms
+08-03-2022 14:49:02.577 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+08-03-2022 14:49:02.677 [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.4.32.Final
+08-03-2022 14:49:02.934 [restartedMain] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+08-03-2022 14:49:03.169 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+08-03-2022 14:49:04.992 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+08-03-2022 14:49:05.072 [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+08-03-2022 14:49:29.019 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08-03-2022 14:49:29.085 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+08-03-2022 14:49:29.954 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08-03-2022 14:49:32.246 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+08-03-2022 14:49:32.575 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@15be1668, org.springframework.security.web.context.SecurityContextPersistenceFilter@7f01ddea, org.springframework.security.web.header.HeaderWriterFilter@13fb58b2, org.springframework.web.filter.CorsFilter@3dcc4721, org.springframework.security.web.authentication.logout.LogoutFilter@551b5b6c, fdsa.edu.pnu.Security.JwtRequestFilter@37ce8e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@dbbf6ca, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7a2592f8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6f12670e, org.springframework.security.web.session.SessionManagementFilter@5e67cebf, org.springframework.security.web.access.ExceptionTranslationFilter@141d0bc0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@46f7642d]
+08-03-2022 14:49:32.712 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+08-03-2022 14:49:33.048 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8080 (http) with context path ''
+08-03-2022 14:49:33.050 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+08-03-2022 14:49:33.076 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+08-03-2022 14:49:33.129 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+08-03-2022 14:49:34.124 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_1
+08-03-2022 14:49:34.177 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_1
+08-03-2022 14:49:34.390 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_1
+08-03-2022 14:49:34.842 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_1
+08-03-2022 14:49:34.852 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_1
+08-03-2022 14:49:34.861 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_2
+08-03-2022 14:49:34.921 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_2
+08-03-2022 14:49:35.033 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_2
+08-03-2022 14:49:35.105 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_2
+08-03-2022 14:49:35.111 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_2
+08-03-2022 14:49:35.117 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_3
+08-03-2022 14:49:35.195 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_3
+08-03-2022 14:49:35.276 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_3
+08-03-2022 14:49:35.369 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_3
+08-03-2022 14:49:35.377 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_3
+08-03-2022 14:49:35.387 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_1
+08-03-2022 14:49:35.402 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_2
+08-03-2022 14:49:35.536 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_3
+08-03-2022 14:49:35.603 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_4
+08-03-2022 14:49:35.649 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_4
+08-03-2022 14:49:35.740 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_4
+08-03-2022 14:49:35.787 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_4
+08-03-2022 14:49:35.792 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_4
+08-03-2022 14:49:35.796 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_5
+08-03-2022 14:49:35.856 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_5
+08-03-2022 14:49:35.969 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_5
+08-03-2022 14:49:36.021 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_5
+08-03-2022 14:49:36.026 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_5
+08-03-2022 14:49:36.038 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_4
+08-03-2022 14:49:36.052 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_5
+08-03-2022 14:49:36.068 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_6
+08-03-2022 14:49:36.111 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_6
+08-03-2022 14:49:36.159 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_6
+08-03-2022 14:49:36.225 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_6
+08-03-2022 14:49:36.228 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_7
+08-03-2022 14:49:36.280 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_7
+08-03-2022 14:49:36.366 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_7
+08-03-2022 14:49:36.466 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_7
+08-03-2022 14:49:36.473 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_6
+08-03-2022 14:49:36.478 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_8
+08-03-2022 14:49:36.517 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_8
+08-03-2022 14:49:36.572 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_8
+08-03-2022 14:49:36.601 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_8
+08-03-2022 14:49:36.639 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_7
+08-03-2022 14:49:36.784 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_9
+08-03-2022 14:49:36.834 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_9
+08-03-2022 14:49:36.880 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_9
+08-03-2022 14:49:37.066 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_9
+08-03-2022 14:49:37.316 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_6
+08-03-2022 14:49:37.378 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_10
+08-03-2022 14:49:37.380 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_10
+08-03-2022 14:49:37.385 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_10
+08-03-2022 14:49:37.387 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_10
+08-03-2022 14:49:37.398 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_11
+08-03-2022 14:49:37.405 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_11
+08-03-2022 14:49:37.429 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_11
+08-03-2022 14:49:37.440 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_11
+08-03-2022 14:49:37.443 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_12
+08-03-2022 14:49:37.452 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_12
+08-03-2022 14:49:37.458 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_12
+08-03-2022 14:49:37.463 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_12
+08-03-2022 14:49:37.466 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_13
+08-03-2022 14:49:37.500 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_13
+08-03-2022 14:49:37.532 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_13
+08-03-2022 14:49:37.707 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_13
+08-03-2022 14:49:37.711 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_14
+08-03-2022 14:49:37.714 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_14
+08-03-2022 14:49:37.750 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_14
+08-03-2022 14:49:37.978 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_14
+08-03-2022 14:49:37.981 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_15
+08-03-2022 14:49:38.010 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_15
+08-03-2022 14:49:38.035 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_15
+08-03-2022 14:49:38.087 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_15
+08-03-2022 14:49:38.090 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_16
+08-03-2022 14:49:38.125 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_16
+08-03-2022 14:49:38.160 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_16
+08-03-2022 14:49:38.197 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_16
+08-03-2022 14:49:38.201 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_8
+08-03-2022 14:49:38.481 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_17
+08-03-2022 14:49:38.483 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_17
+08-03-2022 14:49:38.486 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_17
+08-03-2022 14:49:38.489 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_17
+08-03-2022 14:49:38.492 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_9
+08-03-2022 14:49:38.495 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_18
+08-03-2022 14:49:38.528 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_18
+08-03-2022 14:49:38.562 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_18
+08-03-2022 14:49:38.598 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_18
+08-03-2022 14:49:38.602 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_10
+08-03-2022 14:49:38.604 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_19
+08-03-2022 14:49:38.641 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_19
+08-03-2022 14:49:38.677 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_19
+08-03-2022 14:49:38.717 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_19
+08-03-2022 14:49:38.721 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_11
+08-03-2022 14:49:38.723 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_20
+08-03-2022 14:49:38.733 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_20
+08-03-2022 14:49:38.735 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_20
+08-03-2022 14:49:38.738 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_20
+08-03-2022 14:49:38.743 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_12
+08-03-2022 14:49:38.862 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_21
+08-03-2022 14:49:38.866 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_21
+08-03-2022 14:49:38.871 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_21
+08-03-2022 14:49:38.873 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_13
+08-03-2022 14:49:38.903 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStarted - Started PnuApplication in 41.405 seconds (JVM running for 42.442)
+08-03-2022 14:56:46.164 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+08-03-2022 14:56:46.225 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+08-03-2022 14:56:46.279 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+08-03-2022 14:56:57.765 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStarting - Starting PnuApplication using Java 16.0.2 on M638 with PID 24732 (C:\Users\gbijou\Desktop\pnu\pnufdsalast\target\classes started by gbijou in C:\Users\gbijou\Desktop\pnu\pnufdsalast)
+08-03-2022 14:56:57.771 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+08-03-2022 14:56:57.869 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+08-03-2022 14:56:57.870 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+08-03-2022 14:56:59.998 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08-03-2022 14:57:00.480 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 465 ms. Found 39 JPA repository interfaces.
+08-03-2022 14:57:01.107 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6dedd461' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+08-03-2022 14:57:01.114 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+08-03-2022 14:57:01.722 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+08-03-2022 14:57:01.738 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+08-03-2022 14:57:01.739 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.53]
+08-03-2022 14:57:01.886 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+08-03-2022 14:57:01.887 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 4015 ms
+08-03-2022 14:57:02.351 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+08-03-2022 14:57:02.460 [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.4.32.Final
+08-03-2022 14:57:02.674 [restartedMain] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+08-03-2022 14:57:02.812 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+08-03-2022 14:57:04.188 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+08-03-2022 14:57:04.274 [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+08-03-2022 14:57:27.021 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08-03-2022 14:57:27.060 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+08-03-2022 14:57:27.991 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08-03-2022 14:57:30.389 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+08-03-2022 14:57:30.682 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6bc35555, org.springframework.security.web.context.SecurityContextPersistenceFilter@61d45e43, org.springframework.security.web.header.HeaderWriterFilter@4a5aae09, org.springframework.web.filter.CorsFilter@179ec594, org.springframework.security.web.authentication.logout.LogoutFilter@4d8238cf, fdsa.edu.pnu.Security.JwtRequestFilter@325d8c45, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1e2d4e36, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@651f7177, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@37123ef8, org.springframework.security.web.session.SessionManagementFilter@31925982, org.springframework.security.web.access.ExceptionTranslationFilter@4495b99a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@722ac117]
+08-03-2022 14:57:30.820 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+08-03-2022 14:57:31.137 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8080 (http) with context path ''
+08-03-2022 14:57:31.139 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+08-03-2022 14:57:31.165 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+08-03-2022 14:57:31.220 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+08-03-2022 14:57:32.131 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_1
+08-03-2022 14:57:32.145 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_1
+08-03-2022 14:57:32.314 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_1
+08-03-2022 14:57:32.759 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_1
+08-03-2022 14:57:32.768 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_1
+08-03-2022 14:57:32.775 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_2
+08-03-2022 14:57:32.855 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_2
+08-03-2022 14:57:32.980 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_2
+08-03-2022 14:57:33.039 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_2
+08-03-2022 14:57:33.047 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_2
+08-03-2022 14:57:33.053 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_3
+08-03-2022 14:57:33.124 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_3
+08-03-2022 14:57:33.182 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_3
+08-03-2022 14:57:33.233 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_3
+08-03-2022 14:57:33.241 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_3
+08-03-2022 14:57:33.248 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_1
+08-03-2022 14:57:33.263 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_2
+08-03-2022 14:57:33.347 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_3
+08-03-2022 14:57:33.390 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_4
+08-03-2022 14:57:33.421 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_4
+08-03-2022 14:57:33.486 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_4
+08-03-2022 14:57:33.521 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_4
+08-03-2022 14:57:33.527 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_4
+08-03-2022 14:57:33.533 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_5
+08-03-2022 14:57:33.577 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_5
+08-03-2022 14:57:33.667 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_5
+08-03-2022 14:57:33.710 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_5
+08-03-2022 14:57:33.715 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_5
+08-03-2022 14:57:33.726 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_4
+08-03-2022 14:57:33.741 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_5
+08-03-2022 14:57:33.752 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_6
+08-03-2022 14:57:33.806 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_6
+08-03-2022 14:57:33.857 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_6
+08-03-2022 14:57:33.909 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_6
+08-03-2022 14:57:33.913 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_7
+08-03-2022 14:57:33.967 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_7
+08-03-2022 14:57:34.030 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_7
+08-03-2022 14:57:34.125 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_7
+08-03-2022 14:57:34.131 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_6
+08-03-2022 14:57:34.134 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_8
+08-03-2022 14:57:34.168 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_8
+08-03-2022 14:57:34.226 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_8
+08-03-2022 14:57:34.256 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_8
+08-03-2022 14:57:34.301 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_7
+08-03-2022 14:57:34.404 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_9
+08-03-2022 14:57:34.435 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_9
+08-03-2022 14:57:34.485 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_9
+08-03-2022 14:57:34.689 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_9
+08-03-2022 14:57:34.932 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_6
+08-03-2022 14:57:34.979 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_10
+08-03-2022 14:57:34.983 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_10
+08-03-2022 14:57:34.988 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_10
+08-03-2022 14:57:34.992 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_10
+08-03-2022 14:57:35.001 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_11
+08-03-2022 14:57:35.009 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_11
+08-03-2022 14:57:35.028 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_11
+08-03-2022 14:57:35.042 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_11
+08-03-2022 14:57:35.045 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_12
+08-03-2022 14:57:35.050 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_12
+08-03-2022 14:57:35.056 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_12
+08-03-2022 14:57:35.061 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_12
+08-03-2022 14:57:35.065 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_13
+08-03-2022 14:57:35.096 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_13
+08-03-2022 14:57:35.127 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_13
+08-03-2022 14:57:35.313 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_13
+08-03-2022 14:57:35.317 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_14
+08-03-2022 14:57:35.320 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_14
+08-03-2022 14:57:35.354 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_14
+08-03-2022 14:57:35.575 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_14
+08-03-2022 14:57:35.578 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_15
+08-03-2022 14:57:35.608 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_15
+08-03-2022 14:57:35.635 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_15
+08-03-2022 14:57:35.687 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_15
+08-03-2022 14:57:35.690 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_16
+08-03-2022 14:57:35.735 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_16
+08-03-2022 14:57:35.780 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_16
+08-03-2022 14:57:35.820 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_16
+08-03-2022 14:57:35.826 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_8
+08-03-2022 14:57:36.128 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_17
+08-03-2022 14:57:36.131 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_17
+08-03-2022 14:57:36.135 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_17
+08-03-2022 14:57:36.140 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_17
+08-03-2022 14:57:36.142 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_9
+08-03-2022 14:57:36.145 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_18
+08-03-2022 14:57:36.182 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_18
+08-03-2022 14:57:36.228 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_18
+08-03-2022 14:57:36.264 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_18
+08-03-2022 14:57:36.269 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_10
+08-03-2022 14:57:36.272 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_19
+08-03-2022 14:57:36.314 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_19
+08-03-2022 14:57:36.356 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_19
+08-03-2022 14:57:36.405 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_19
+08-03-2022 14:57:36.413 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_11
+08-03-2022 14:57:36.418 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_20
+08-03-2022 14:57:36.421 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_20
+08-03-2022 14:57:36.427 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_20
+08-03-2022 14:57:36.432 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_20
+08-03-2022 14:57:36.440 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_12
+08-03-2022 14:57:36.573 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_21
+08-03-2022 14:57:36.579 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_21
+08-03-2022 14:57:36.585 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_21
+08-03-2022 14:57:36.588 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_13
+08-03-2022 14:57:36.618 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStarted - Started PnuApplication in 39.663 seconds (JVM running for 40.559)
+08-03-2022 15:09:14.609 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+08-03-2022 15:09:14.746 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+08-03-2022 15:09:14.882 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+08-03-2022 15:09:36.433 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStarting - Starting PnuApplication using Java 16.0.2 on M638 with PID 18028 (C:\Users\gbijou\Desktop\pnu\pnufdsalast\target\classes started by gbijou in C:\Users\gbijou\Desktop\pnu\pnufdsalast)
+08-03-2022 15:09:36.439 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+08-03-2022 15:09:36.542 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+08-03-2022 15:09:36.543 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+08-03-2022 15:09:38.539 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08-03-2022 15:09:38.952 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 404 ms. Found 39 JPA repository interfaces.
+08-03-2022 15:09:39.492 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@ffe7545' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+08-03-2022 15:09:39.498 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+08-03-2022 15:09:40.092 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+08-03-2022 15:09:40.110 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+08-03-2022 15:09:40.112 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.53]
+08-03-2022 15:09:40.249 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+08-03-2022 15:09:40.250 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 3706 ms
+08-03-2022 15:09:40.687 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+08-03-2022 15:09:40.796 [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.4.32.Final
+08-03-2022 15:09:41.025 [restartedMain] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+08-03-2022 15:09:41.175 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+08-03-2022 15:09:42.472 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+08-03-2022 15:09:42.576 [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+08-03-2022 15:10:13.145 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08-03-2022 15:10:13.211 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+08-03-2022 15:10:14.259 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08-03-2022 15:10:16.597 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+08-03-2022 15:10:16.939 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@f6dcd5c, org.springframework.security.web.context.SecurityContextPersistenceFilter@3a9689f9, org.springframework.security.web.header.HeaderWriterFilter@1b230578, org.springframework.web.filter.CorsFilter@534b9b60, org.springframework.security.web.authentication.logout.LogoutFilter@72b637df, fdsa.edu.pnu.Security.JwtRequestFilter@38753ec2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@9876745, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2fbcf4cd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@716c3ba4, org.springframework.security.web.session.SessionManagementFilter@673680f9, org.springframework.security.web.access.ExceptionTranslationFilter@576fd996, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@57c4298e]
+08-03-2022 15:10:17.116 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+08-03-2022 15:10:17.498 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8080 (http) with context path ''
+08-03-2022 15:10:17.500 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+08-03-2022 15:10:17.527 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+08-03-2022 15:10:17.589 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+08-03-2022 15:10:18.558 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_1
+08-03-2022 15:10:18.574 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_1
+08-03-2022 15:10:18.743 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_1
+08-03-2022 15:10:19.166 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_1
+08-03-2022 15:10:19.176 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_1
+08-03-2022 15:10:19.182 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_2
+08-03-2022 15:10:19.229 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_2
+08-03-2022 15:10:19.345 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_2
+08-03-2022 15:10:19.402 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_2
+08-03-2022 15:10:19.408 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_2
+08-03-2022 15:10:19.414 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_3
+08-03-2022 15:10:19.460 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_3
+08-03-2022 15:10:19.499 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_3
+08-03-2022 15:10:19.538 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_3
+08-03-2022 15:10:19.547 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_3
+08-03-2022 15:10:19.555 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_1
+08-03-2022 15:10:19.570 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_2
+08-03-2022 15:10:19.658 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_3
+08-03-2022 15:10:19.712 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_4
+08-03-2022 15:10:19.753 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_4
+08-03-2022 15:10:19.823 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_4
+08-03-2022 15:10:19.862 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_4
+08-03-2022 15:10:19.868 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_4
+08-03-2022 15:10:19.875 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_5
+08-03-2022 15:10:19.924 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_5
+08-03-2022 15:10:20.024 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_5
+08-03-2022 15:10:20.079 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_5
+08-03-2022 15:10:20.084 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_5
+08-03-2022 15:10:20.097 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_4
+08-03-2022 15:10:20.111 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_5
+08-03-2022 15:10:20.122 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_6
+08-03-2022 15:10:20.163 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_6
+08-03-2022 15:10:20.206 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_6
+08-03-2022 15:10:20.263 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_6
+08-03-2022 15:10:20.267 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_7
+08-03-2022 15:10:20.318 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_7
+08-03-2022 15:10:20.378 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_7
+08-03-2022 15:10:20.495 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_7
+08-03-2022 15:10:20.501 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_6
+08-03-2022 15:10:20.505 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_8
+08-03-2022 15:10:20.542 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_8
+08-03-2022 15:10:20.609 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_8
+08-03-2022 15:10:20.643 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_8
+08-03-2022 15:10:20.688 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_7
+08-03-2022 15:10:20.803 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_9
+08-03-2022 15:10:20.838 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_9
+08-03-2022 15:10:20.887 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_9
+08-03-2022 15:10:21.062 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_9
+08-03-2022 15:10:21.290 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_6
+08-03-2022 15:10:21.331 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_10
+08-03-2022 15:10:21.334 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_10
+08-03-2022 15:10:21.338 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_10
+08-03-2022 15:10:21.341 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_10
+08-03-2022 15:10:21.350 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_11
+08-03-2022 15:10:21.356 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_11
+08-03-2022 15:10:21.374 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_11
+08-03-2022 15:10:21.383 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_11
+08-03-2022 15:10:21.386 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_12
+08-03-2022 15:10:21.390 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_12
+08-03-2022 15:10:21.394 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_12
+08-03-2022 15:10:21.399 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_12
+08-03-2022 15:10:21.401 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_13
+08-03-2022 15:10:21.426 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_13
+08-03-2022 15:10:21.451 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_13
+08-03-2022 15:10:21.579 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_13
+08-03-2022 15:10:21.582 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_14
+08-03-2022 15:10:21.585 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_14
+08-03-2022 15:10:21.611 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_14
+08-03-2022 15:10:21.769 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_14
+08-03-2022 15:10:21.772 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_15
+08-03-2022 15:10:21.793 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_15
+08-03-2022 15:10:21.811 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_15
+08-03-2022 15:10:21.847 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_15
+08-03-2022 15:10:21.849 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_16
+08-03-2022 15:10:21.876 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_16
+08-03-2022 15:10:21.904 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_16
+08-03-2022 15:10:21.931 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_16
+08-03-2022 15:10:21.934 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_8
+08-03-2022 15:10:22.150 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_17
+08-03-2022 15:10:22.154 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_17
+08-03-2022 15:10:22.156 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_17
+08-03-2022 15:10:22.158 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_17
+08-03-2022 15:10:22.162 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_9
+08-03-2022 15:10:22.164 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_18
+08-03-2022 15:10:22.183 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_18
+08-03-2022 15:10:22.205 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_18
+08-03-2022 15:10:22.227 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_18
+08-03-2022 15:10:22.229 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_10
+08-03-2022 15:10:22.232 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_19
+08-03-2022 15:10:22.259 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_19
+08-03-2022 15:10:22.283 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_19
+08-03-2022 15:10:22.307 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_19
+08-03-2022 15:10:22.310 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_11
+08-03-2022 15:10:22.312 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_20
+08-03-2022 15:10:22.314 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_20
+08-03-2022 15:10:22.317 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_20
+08-03-2022 15:10:22.320 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_20
+08-03-2022 15:10:22.324 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_12
+08-03-2022 15:10:22.402 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_21
+08-03-2022 15:10:22.405 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_21
+08-03-2022 15:10:22.410 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_21
+08-03-2022 15:10:22.412 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_13
+08-03-2022 15:10:22.436 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStarted - Started PnuApplication in 46.841 seconds (JVM running for 48.891)
+08-03-2022 15:12:09.238 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+08-03-2022 15:12:09.252 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+08-03-2022 15:12:09.266 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+08-03-2022 15:12:16.479 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStarting - Starting PnuApplication using Java 16.0.2 on M638 with PID 13944 (C:\Users\gbijou\Desktop\pnu\pnufdsalast\target\classes started by gbijou in C:\Users\gbijou\Desktop\pnu\pnufdsalast)
+08-03-2022 15:12:16.483 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+08-03-2022 15:12:16.570 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+08-03-2022 15:12:16.572 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+08-03-2022 15:12:18.522 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08-03-2022 15:12:18.924 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 388 ms. Found 39 JPA repository interfaces.
+08-03-2022 15:12:19.668 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6bef1cb' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+08-03-2022 15:12:19.675 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+08-03-2022 15:12:20.303 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+08-03-2022 15:12:20.322 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+08-03-2022 15:12:20.323 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.53]
+08-03-2022 15:12:20.499 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+08-03-2022 15:12:20.500 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 3926 ms
+08-03-2022 15:12:20.961 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+08-03-2022 15:12:21.060 [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.4.32.Final
+08-03-2022 15:12:21.264 [restartedMain] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+08-03-2022 15:12:21.404 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+08-03-2022 15:12:22.746 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+08-03-2022 15:12:22.833 [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+08-03-2022 15:12:48.415 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08-03-2022 15:12:48.437 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+08-03-2022 15:12:49.321 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08-03-2022 15:12:51.846 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+08-03-2022 15:12:52.147 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@832a141, org.springframework.security.web.context.SecurityContextPersistenceFilter@7e8291ff, org.springframework.security.web.header.HeaderWriterFilter@1b088419, org.springframework.web.filter.CorsFilter@9595e4e, org.springframework.security.web.authentication.logout.LogoutFilter@2e613287, fdsa.edu.pnu.Security.JwtRequestFilter@62857201, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@29d5b992, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6a32feec, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@476ece61, org.springframework.security.web.session.SessionManagementFilter@4924c319, org.springframework.security.web.access.ExceptionTranslationFilter@67207102, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@41f2dad7]
+08-03-2022 15:12:52.297 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+08-03-2022 15:12:52.598 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8080 (http) with context path ''
+08-03-2022 15:12:52.600 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+08-03-2022 15:12:52.625 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+08-03-2022 15:12:52.676 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+08-03-2022 15:12:53.684 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_1
+08-03-2022 15:12:53.697 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_1
+08-03-2022 15:12:53.867 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_1
+08-03-2022 15:12:54.294 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_1
+08-03-2022 15:12:54.304 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_1
+08-03-2022 15:12:54.315 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_2
+08-03-2022 15:12:54.379 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_2
+08-03-2022 15:12:54.501 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_2
+08-03-2022 15:12:54.547 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_2
+08-03-2022 15:12:54.556 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_2
+08-03-2022 15:12:54.561 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_3
+08-03-2022 15:12:54.608 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_3
+08-03-2022 15:12:54.644 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_3
+08-03-2022 15:12:54.682 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_3
+08-03-2022 15:12:54.688 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_3
+08-03-2022 15:12:54.697 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_1
+08-03-2022 15:12:54.710 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_2
+08-03-2022 15:12:54.810 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_3
+08-03-2022 15:12:54.855 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_4
+08-03-2022 15:12:54.889 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_4
+08-03-2022 15:12:54.955 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_4
+08-03-2022 15:12:54.985 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_4
+08-03-2022 15:12:54.989 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_4
+08-03-2022 15:12:54.993 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_5
+08-03-2022 15:12:55.034 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_5
+08-03-2022 15:12:55.118 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_5
+08-03-2022 15:12:55.156 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_5
+08-03-2022 15:12:55.161 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_5
+08-03-2022 15:12:55.174 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_4
+08-03-2022 15:12:55.188 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_5
+08-03-2022 15:12:55.202 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_6
+08-03-2022 15:12:55.247 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_6
+08-03-2022 15:12:55.288 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_6
+08-03-2022 15:12:55.350 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_6
+08-03-2022 15:12:55.354 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_7
+08-03-2022 15:12:55.430 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_7
+08-03-2022 15:12:55.483 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_7
+08-03-2022 15:12:55.574 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_7
+08-03-2022 15:12:55.582 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_6
+08-03-2022 15:12:55.586 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_8
+08-03-2022 15:12:55.615 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_8
+08-03-2022 15:12:55.670 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_8
+08-03-2022 15:12:55.698 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_8
+08-03-2022 15:12:55.742 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_7
+08-03-2022 15:12:55.850 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_9
+08-03-2022 15:12:55.886 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_9
+08-03-2022 15:12:55.927 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_9
+08-03-2022 15:12:56.127 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_9
+08-03-2022 15:12:56.399 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_6
+08-03-2022 15:12:56.451 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_10
+08-03-2022 15:12:56.456 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_10
+08-03-2022 15:12:56.464 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_10
+08-03-2022 15:12:56.467 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_10
+08-03-2022 15:12:56.478 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_11
+08-03-2022 15:12:56.497 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_11
+08-03-2022 15:12:56.518 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_11
+08-03-2022 15:12:56.533 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_11
+08-03-2022 15:12:56.541 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_12
+08-03-2022 15:12:56.571 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_12
+08-03-2022 15:12:56.581 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_12
+08-03-2022 15:12:56.589 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_12
+08-03-2022 15:12:56.600 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_13
+08-03-2022 15:12:56.674 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_13
+08-03-2022 15:12:56.707 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_13
+08-03-2022 15:12:56.871 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_13
+08-03-2022 15:12:56.875 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_14
+08-03-2022 15:12:56.878 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_14
+08-03-2022 15:12:56.924 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_14
+08-03-2022 15:12:57.260 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_14
+08-03-2022 15:12:57.266 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_15
+08-03-2022 15:12:57.311 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_15
+08-03-2022 15:12:57.348 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_15
+08-03-2022 15:12:57.424 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_15
+08-03-2022 15:12:57.431 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_16
+08-03-2022 15:12:57.497 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_16
+08-03-2022 15:12:57.555 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_16
+08-03-2022 15:12:57.615 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_16
+08-03-2022 15:12:57.624 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_8
+08-03-2022 15:12:58.056 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_17
+08-03-2022 15:12:58.059 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_17
+08-03-2022 15:12:58.063 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_17
+08-03-2022 15:12:58.065 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_17
+08-03-2022 15:12:58.069 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_9
+08-03-2022 15:12:58.072 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_18
+08-03-2022 15:12:58.106 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_18
+08-03-2022 15:12:58.143 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_18
+08-03-2022 15:12:58.176 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_18
+08-03-2022 15:12:58.179 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_10
+08-03-2022 15:12:58.182 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_19
+08-03-2022 15:12:58.223 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_19
+08-03-2022 15:12:58.259 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_19
+08-03-2022 15:12:58.303 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_19
+08-03-2022 15:12:58.307 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_11
+08-03-2022 15:12:58.310 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_20
+08-03-2022 15:12:58.313 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_20
+08-03-2022 15:12:58.316 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_20
+08-03-2022 15:12:58.323 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_20
+08-03-2022 15:12:58.330 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_12
+08-03-2022 15:12:58.454 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_21
+08-03-2022 15:12:58.460 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_21
+08-03-2022 15:12:58.464 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_21
+08-03-2022 15:12:58.468 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_13
+08-03-2022 15:12:58.556 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStarted - Started PnuApplication in 42.781 seconds (JVM running for 44.109)
+08-03-2022 15:13:50.514 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+08-03-2022 15:13:50.946 [http-nio-8080-exec-1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logExceptions - SQL Error: 208, SQLState: S0002
+08-03-2022 15:13:50.947 [http-nio-8080-exec-1] ERROR o.h.e.jdbc.spi.SqlExceptionHelper.logExceptions - Invalid object name 'SessionProgramme'.
+08-03-2022 15:13:50.982 [http-nio-8080-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet].log - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessResourceUsageException: could not extract ResultSet; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not extract ResultSet] with root cause
+com.microsoft.sqlserver.jdbc.SQLServerException: Invalid object name 'SessionProgramme'.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:262)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1632)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:602)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:524)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7418)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:3272)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:247)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:222)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:446)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:57)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2297)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2050)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2012)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:948)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:349)
+	at org.hibernate.loader.Loader.doList(Loader.java:2843)
+	at org.hibernate.loader.Loader.doList(Loader.java:2825)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2657)
+	at org.hibernate.loader.Loader.list(Loader.java:2652)
+	at org.hibernate.loader.custom.CustomLoader.list(CustomLoader.java:338)
+	at org.hibernate.internal.SessionImpl.listCustomQuery(SessionImpl.java:2141)
+	at org.hibernate.internal.AbstractSharedSessionContract.list(AbstractSharedSessionContract.java:1169)
+	at org.hibernate.query.internal.NativeQueryImpl.doList(NativeQueryImpl.java:176)
+	at org.hibernate.query.internal.AbstractProducedQuery.list(AbstractProducedQuery.java:1604)
+	at org.hibernate.query.internal.AbstractProducedQuery.getSingleResult(AbstractProducedQuery.java:1652)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$SingleEntityExecution.doExecute(JpaQueryExecution.java:196)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:88)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:155)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:143)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:159)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:145)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at jdk.proxy4/jdk.proxy4.$Proxy186.findSessionProgrammeById(Unknown Source)
+	at fdsa.edu.pnu.ServiceImpl.SessionProgrammeServiceImpl.findById(SessionProgrammeServiceImpl.java:31)
+	at fdsa.edu.pnu.ControllerImpl.SessionProgrammeControllerImpl.findById(SessionProgrammeControllerImpl.java:22)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:121)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:115)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at fdsa.edu.pnu.Security.JwtRequestFilter.doFilterInternal(JwtRequestFilter.java:70)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+08-03-2022 15:29:55.263 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+08-03-2022 15:29:55.457 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+08-03-2022 15:29:55.590 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+08-03-2022 15:30:06.655 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStarting - Starting PnuApplication using Java 16.0.2 on M638 with PID 31864 (C:\Users\gbijou\Desktop\pnu\pnufdsalast\target\classes started by gbijou in C:\Users\gbijou\Desktop\pnu\pnufdsalast)
+08-03-2022 15:30:06.660 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+08-03-2022 15:30:06.740 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+08-03-2022 15:30:06.741 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+08-03-2022 15:30:08.803 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08-03-2022 15:30:09.269 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 452 ms. Found 39 JPA repository interfaces.
+08-03-2022 15:30:09.842 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@72fd8bad' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+08-03-2022 15:30:09.849 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+08-03-2022 15:30:10.489 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+08-03-2022 15:30:10.508 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+08-03-2022 15:30:10.508 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.53]
+08-03-2022 15:30:10.682 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+08-03-2022 15:30:10.683 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 3941 ms
+08-03-2022 15:30:11.144 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+08-03-2022 15:30:11.246 [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.4.32.Final
+08-03-2022 15:30:11.464 [restartedMain] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+08-03-2022 15:30:11.609 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+08-03-2022 15:30:13.534 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+08-03-2022 15:30:13.625 [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+08-03-2022 15:30:36.604 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08-03-2022 15:30:36.626 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+08-03-2022 15:30:37.732 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08-03-2022 15:30:39.987 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+08-03-2022 15:30:40.294 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5403413d, org.springframework.security.web.context.SecurityContextPersistenceFilter@1c0b03b1, org.springframework.security.web.header.HeaderWriterFilter@7177752c, org.springframework.web.filter.CorsFilter@8a571ff, org.springframework.security.web.authentication.logout.LogoutFilter@4747f5a7, fdsa.edu.pnu.Security.JwtRequestFilter@5509634, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@294eb8c6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2e5f00cc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@41117747, org.springframework.security.web.session.SessionManagementFilter@4220d61f, org.springframework.security.web.access.ExceptionTranslationFilter@1f6d67eb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4badfbc1]
+08-03-2022 15:30:40.444 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+08-03-2022 15:30:40.780 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8080 (http) with context path ''
+08-03-2022 15:30:40.782 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+08-03-2022 15:30:40.813 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+08-03-2022 15:30:40.866 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+08-03-2022 15:30:41.836 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_1
+08-03-2022 15:30:41.852 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_1
+08-03-2022 15:30:42.020 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_1
+08-03-2022 15:30:42.407 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_1
+08-03-2022 15:30:42.417 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_1
+08-03-2022 15:30:42.426 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_2
+08-03-2022 15:30:42.469 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_2
+08-03-2022 15:30:42.533 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_2
+08-03-2022 15:30:42.569 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_2
+08-03-2022 15:30:42.574 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_2
+08-03-2022 15:30:42.578 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_3
+08-03-2022 15:30:42.612 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_3
+08-03-2022 15:30:42.645 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_3
+08-03-2022 15:30:42.704 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_3
+08-03-2022 15:30:42.710 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_3
+08-03-2022 15:30:42.718 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_1
+08-03-2022 15:30:42.734 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_2
+08-03-2022 15:30:42.815 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_3
+08-03-2022 15:30:42.865 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_4
+08-03-2022 15:30:42.905 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_4
+08-03-2022 15:30:42.970 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_4
+08-03-2022 15:30:43.005 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_4
+08-03-2022 15:30:43.011 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_4
+08-03-2022 15:30:43.016 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_5
+08-03-2022 15:30:43.064 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_5
+08-03-2022 15:30:43.145 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_5
+08-03-2022 15:30:43.188 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_5
+08-03-2022 15:30:43.194 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_5
+08-03-2022 15:30:43.204 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_4
+08-03-2022 15:30:43.217 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_5
+08-03-2022 15:30:43.229 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_6
+08-03-2022 15:30:43.260 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_6
+08-03-2022 15:30:43.293 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_6
+08-03-2022 15:30:43.382 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_6
+08-03-2022 15:30:43.391 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_7
+08-03-2022 15:30:43.461 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_7
+08-03-2022 15:30:43.508 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_7
+08-03-2022 15:30:43.600 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_7
+08-03-2022 15:30:43.606 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_6
+08-03-2022 15:30:43.612 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_8
+08-03-2022 15:30:43.638 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_8
+08-03-2022 15:30:43.687 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_8
+08-03-2022 15:30:43.717 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_8
+08-03-2022 15:30:43.754 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_7
+08-03-2022 15:30:43.864 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_9
+08-03-2022 15:30:43.899 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_9
+08-03-2022 15:30:43.939 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_9
+08-03-2022 15:30:44.137 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_9
+08-03-2022 15:30:44.365 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_6
+08-03-2022 15:30:44.415 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_10
+08-03-2022 15:30:44.418 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_10
+08-03-2022 15:30:44.423 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_10
+08-03-2022 15:30:44.426 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_10
+08-03-2022 15:30:44.434 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_11
+08-03-2022 15:30:44.441 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_11
+08-03-2022 15:30:44.467 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_11
+08-03-2022 15:30:44.478 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_11
+08-03-2022 15:30:44.481 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_12
+08-03-2022 15:30:44.486 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_12
+08-03-2022 15:30:44.491 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_12
+08-03-2022 15:30:44.496 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_12
+08-03-2022 15:30:44.500 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_13
+08-03-2022 15:30:44.529 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_13
+08-03-2022 15:30:44.559 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_13
+08-03-2022 15:30:44.715 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_13
+08-03-2022 15:30:44.720 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_14
+08-03-2022 15:30:44.724 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_14
+08-03-2022 15:30:44.759 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_14
+08-03-2022 15:30:44.979 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_14
+08-03-2022 15:30:44.982 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_15
+08-03-2022 15:30:45.015 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_15
+08-03-2022 15:30:45.040 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_15
+08-03-2022 15:30:45.087 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_15
+08-03-2022 15:30:45.090 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_16
+08-03-2022 15:30:45.124 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_16
+08-03-2022 15:30:45.161 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_16
+08-03-2022 15:30:45.195 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_16
+08-03-2022 15:30:45.199 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_8
+08-03-2022 15:30:45.470 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_17
+08-03-2022 15:30:45.472 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_17
+08-03-2022 15:30:45.477 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_17
+08-03-2022 15:30:45.479 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_17
+08-03-2022 15:30:45.482 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_9
+08-03-2022 15:30:45.484 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_18
+08-03-2022 15:30:45.516 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_18
+08-03-2022 15:30:45.547 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_18
+08-03-2022 15:30:45.577 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_18
+08-03-2022 15:30:45.580 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_10
+08-03-2022 15:30:45.583 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_19
+08-03-2022 15:30:45.616 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_19
+08-03-2022 15:30:45.645 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_19
+08-03-2022 15:30:45.681 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_19
+08-03-2022 15:30:45.685 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_11
+08-03-2022 15:30:45.687 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_20
+08-03-2022 15:30:45.689 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_20
+08-03-2022 15:30:45.693 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_20
+08-03-2022 15:30:45.696 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_20
+08-03-2022 15:30:45.701 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_12
+08-03-2022 15:30:45.795 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_21
+08-03-2022 15:30:45.800 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_21
+08-03-2022 15:30:45.805 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_21
+08-03-2022 15:30:45.809 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_13
+08-03-2022 15:30:45.837 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStarted - Started PnuApplication in 39.966 seconds (JVM running for 40.93)
+08-03-2022 15:33:34.180 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+08-03-2022 15:33:34.190 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+08-03-2022 15:33:34.204 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+08-03-2022 15:44:40.305 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStarting - Starting PnuApplication using Java 16.0.2 on M638 with PID 29036 (C:\Users\gbijou\Desktop\pnu\pnufdsalast\target\classes started by gbijou in C:\Users\gbijou\Desktop\pnu\pnufdsalast)
+08-03-2022 15:44:40.310 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+08-03-2022 15:44:40.377 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+08-03-2022 15:44:40.377 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+08-03-2022 15:44:41.916 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08-03-2022 15:44:42.292 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 364 ms. Found 39 JPA repository interfaces.
+08-03-2022 15:44:42.864 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5926e5a6' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+08-03-2022 15:44:42.870 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+08-03-2022 15:44:43.449 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+08-03-2022 15:44:43.465 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+08-03-2022 15:44:43.466 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.53]
+08-03-2022 15:44:43.594 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+08-03-2022 15:44:43.595 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 3216 ms
+08-03-2022 15:44:44.040 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+08-03-2022 15:44:44.144 [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.4.32.Final
+08-03-2022 15:44:44.342 [restartedMain] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+08-03-2022 15:44:44.485 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+08-03-2022 15:44:46.083 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+08-03-2022 15:44:46.174 [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+08-03-2022 15:45:12.579 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08-03-2022 15:45:12.642 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+08-03-2022 15:45:13.633 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08-03-2022 15:45:15.959 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+08-03-2022 15:45:16.283 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4a5cd7ec, org.springframework.security.web.context.SecurityContextPersistenceFilter@505ade13, org.springframework.security.web.header.HeaderWriterFilter@2c8c063, org.springframework.web.filter.CorsFilter@396b4ec8, org.springframework.security.web.authentication.logout.LogoutFilter@37f07ebe, fdsa.edu.pnu.Security.JwtRequestFilter@7ee938dc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@447a004a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3dff1f04, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@b0cd0b9, org.springframework.security.web.session.SessionManagementFilter@76328e87, org.springframework.security.web.access.ExceptionTranslationFilter@30171f67, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@100c480f]
+08-03-2022 15:45:16.420 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+08-03-2022 15:45:16.729 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8080 (http) with context path ''
+08-03-2022 15:45:16.731 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+08-03-2022 15:45:16.764 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+08-03-2022 15:45:16.815 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+08-03-2022 15:45:17.734 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_1
+08-03-2022 15:45:17.746 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_1
+08-03-2022 15:45:17.901 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_1
+08-03-2022 15:45:18.294 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_1
+08-03-2022 15:45:18.300 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_1
+08-03-2022 15:45:18.306 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_2
+08-03-2022 15:45:18.370 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_2
+08-03-2022 15:45:18.501 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_2
+08-03-2022 15:45:18.617 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_2
+08-03-2022 15:45:18.624 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_2
+08-03-2022 15:45:18.627 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_3
+08-03-2022 15:45:18.741 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_3
+08-03-2022 15:45:18.849 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_3
+08-03-2022 15:45:18.950 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_3
+08-03-2022 15:45:18.957 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_3
+08-03-2022 15:45:18.965 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_1
+08-03-2022 15:45:18.975 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_2
+08-03-2022 15:45:19.142 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_3
+08-03-2022 15:45:19.198 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_4
+08-03-2022 15:45:19.258 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_4
+08-03-2022 15:45:19.367 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_4
+08-03-2022 15:45:19.407 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_4
+08-03-2022 15:45:19.412 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_4
+08-03-2022 15:45:19.415 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_5
+08-03-2022 15:45:19.467 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_5
+08-03-2022 15:45:19.565 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_5
+08-03-2022 15:45:19.612 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_5
+08-03-2022 15:45:19.618 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_5
+08-03-2022 15:45:19.631 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_4
+08-03-2022 15:45:19.642 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_5
+08-03-2022 15:45:19.652 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_6
+08-03-2022 15:45:19.700 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_6
+08-03-2022 15:45:19.747 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_6
+08-03-2022 15:45:19.815 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_6
+08-03-2022 15:45:19.820 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_7
+08-03-2022 15:45:19.883 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_7
+08-03-2022 15:45:19.936 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_7
+08-03-2022 15:45:20.030 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_7
+08-03-2022 15:45:20.035 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_6
+08-03-2022 15:45:20.038 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_8
+08-03-2022 15:45:20.068 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_8
+08-03-2022 15:45:20.122 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_8
+08-03-2022 15:45:20.154 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_8
+08-03-2022 15:45:20.213 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_7
+08-03-2022 15:45:20.313 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_9
+08-03-2022 15:45:20.341 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_9
+08-03-2022 15:45:20.377 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_9
+08-03-2022 15:45:20.585 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_9
+08-03-2022 15:45:20.806 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_6
+08-03-2022 15:45:20.848 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_10
+08-03-2022 15:45:20.850 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_10
+08-03-2022 15:45:20.854 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_10
+08-03-2022 15:45:20.856 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_10
+08-03-2022 15:45:20.864 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_11
+08-03-2022 15:45:20.870 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_11
+08-03-2022 15:45:20.891 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_11
+08-03-2022 15:45:20.896 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_11
+08-03-2022 15:45:20.899 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_12
+08-03-2022 15:45:20.903 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_12
+08-03-2022 15:45:20.908 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_12
+08-03-2022 15:45:20.914 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_12
+08-03-2022 15:45:20.917 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_13
+08-03-2022 15:45:20.946 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_13
+08-03-2022 15:45:20.983 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_13
+08-03-2022 15:45:21.149 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_13
+08-03-2022 15:45:21.155 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_14
+08-03-2022 15:45:21.158 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_14
+08-03-2022 15:45:21.190 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_14
+08-03-2022 15:45:21.392 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_14
+08-03-2022 15:45:21.396 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_15
+08-03-2022 15:45:21.421 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_15
+08-03-2022 15:45:21.443 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_15
+08-03-2022 15:45:21.488 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_15
+08-03-2022 15:45:21.491 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_16
+08-03-2022 15:45:21.523 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_16
+08-03-2022 15:45:21.553 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_16
+08-03-2022 15:45:21.582 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_16
+08-03-2022 15:45:21.585 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_8
+08-03-2022 15:45:21.795 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_17
+08-03-2022 15:45:21.797 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_17
+08-03-2022 15:45:21.802 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_17
+08-03-2022 15:45:21.803 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_17
+08-03-2022 15:45:21.806 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_9
+08-03-2022 15:45:21.809 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_18
+08-03-2022 15:45:21.832 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_18
+08-03-2022 15:45:21.859 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_18
+08-03-2022 15:45:21.887 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_18
+08-03-2022 15:45:21.890 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_10
+08-03-2022 15:45:21.893 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_19
+08-03-2022 15:45:21.920 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_19
+08-03-2022 15:45:21.945 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_19
+08-03-2022 15:45:21.972 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_19
+08-03-2022 15:45:21.974 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_11
+08-03-2022 15:45:21.977 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_20
+08-03-2022 15:45:21.978 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_20
+08-03-2022 15:45:21.981 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_20
+08-03-2022 15:45:21.985 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_20
+08-03-2022 15:45:21.988 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_12
+08-03-2022 15:45:22.064 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_21
+08-03-2022 15:45:22.071 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_21
+08-03-2022 15:45:22.075 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_21
+08-03-2022 15:45:22.078 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_13
+08-03-2022 15:45:22.144 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStarted - Started PnuApplication in 42.497 seconds (JVM running for 43.663)
+08-03-2022 15:47:12.164 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+08-03-2022 15:48:00.666 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+08-03-2022 15:48:00.678 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+08-03-2022 15:48:00.695 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.

@@ -7,7 +7,7 @@ package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.Model.SessionProgramme;
 import fdsa.edu.pnu.Repository.SessionProgrammeDAO;
-import fdsa.edu.pnu.Service.ISessionService;
+import fdsa.edu.pnu.Service.ISessionProgramme;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,13 +17,18 @@ import java.util.List;
 
 @Data
 @Service
-public class SessionProgrammeServiceImpl implements ISessionService {
+public class SessionProgrammeServiceImpl implements ISessionProgramme {
     @Autowired
     private SessionProgrammeDAO sessionProgrammeDAO;
 
     @Override
     public List<SessionProgramme> findAll() {
         return sessionProgrammeDAO.findByAllCustomQuery();
+    }
+
+    @Override
+    public List<SessionProgramme> findSessionProgrammeByIdProgramme(Integer IdProgramme) {
+        return sessionProgrammeDAO.findSessionProgrammeByIdProgramme(IdProgramme);
     }
 
     @Override

@@ -2,19 +2,23 @@ package fdsa.edu.pnu.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Data
+@Setter
+@Getter
 @Table(name = "CoursProgramme")
 @JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
 public class CoursProgramme {
+
     @Column(name = "ID", nullable = false, length = 10)
     @Id
-    @GeneratedValue(generator = "PNU_CURRICULUM")
-    @org.hibernate.annotations.GenericGenerator(name = "PNU_DEPARTEMENT_ID_GENERATOR", strategy = "native")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private double nombreDeCredit;
