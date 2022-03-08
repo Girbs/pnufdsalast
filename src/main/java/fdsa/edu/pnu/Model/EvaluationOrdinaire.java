@@ -29,7 +29,7 @@ import java.util.List;
 @Setter
 @JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
 @Table(name = "EvaluationOrdinaire")
-public class EvaluationOrdinaire implements Serializable {
+public class EvaluationOrdinaire extends Audit<String> implements Serializable {
     @Column(name = "ID", nullable = false, length = 10)
     @Id
     @GeneratedValue(generator = "PNU_EVALUATION_ID_GENERATOR")
@@ -42,12 +42,18 @@ public class EvaluationOrdinaire implements Serializable {
     @JoinColumns(value = {@JoinColumn(name = "CoursID", referencedColumnName = "ID", nullable = false)}, foreignKey = @ForeignKey(name = "FK_EVALUATIONS_COURS"))
     private Cours cours;
 
+
+    @JsonIgnoreProperties(value = {"evaluationOrdinaires"}, allowSetters = true)
+    @ManyToOne(targetEntity = Examen.class, fetch = FetchType.LAZY)
+    @JoinColumns(value = {@JoinColumn(name = "examen_id", referencedColumnName = "ID", nullable = true)}, foreignKey = @ForeignKey(name = "EvaluationOrdinaireExamen"))
+    private Examen examen;
+
     @Column(name = "DateEvaluation", nullable = false)
     private java.sql.Timestamp dateEvaluation;
     @Column(name = "`SessionProgramme`", nullable = true, length = 255)
     private String session;
-    @Column(name = "CotationPourcentage", nullable = true, precision = 19, scale = 0)
-    private java.math.BigDecimal cotationPourcentage;
+    @Column(name = "pourcentage", nullable = true)
+    private double pourcentage;
 
     @Column(name = "TypeEvaluation", nullable = true, length = 255)
     private String typeEvaluation;
@@ -57,10 +63,8 @@ public class EvaluationOrdinaire implements Serializable {
 
 
     @JsonIgnoreProperties(value = {"evaluationOrdinaire"}, allowSetters = true)
-    @OneToMany(mappedBy = "evaluationOrdinaire", targetEntity = HistoriqueExam.class)
-    private List<HistoriqueExam> historiqueExams;
-
-
+    @OneToMany(mappedBy = "evaluationOrdinaire", targetEntity = HistoriqueEvaluationOrdinaire.class)
+    private List<HistoriqueEvaluationOrdinaire> historiqueEvaluationOrdinaires;
 
     public EvaluationOrdinaire() {
     }

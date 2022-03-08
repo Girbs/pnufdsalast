@@ -77,13 +77,9 @@ public class Etudiant extends Utilisateur implements Serializable {
 
 
 
-//    @OneToOne(mappedBy = "etudiant", targetEntity = HistoriqueExam.class)
+//    @OneToOne(mappedBy = "etudiant", targetEntity = HistoriqueEvaluationOrdinaire.class)
 //    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
-//    private HistoriqueExam historiqueExam;
-
-    @JsonIgnoreProperties(value = {"etudiant"}, allowSetters = true)
-    @OneToMany(mappedBy = "etudiant", targetEntity = HistoriqueExam.class)
-    private List<HistoriqueExam> historiqueExams;
+//    private HistoriqueEvaluationOrdinaire historiqueExam;
 
 
     @JsonIgnoreProperties(value = {"etudiant"}, allowSetters = true)

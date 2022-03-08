@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 
 @Entity
@@ -30,8 +31,16 @@ public class CoursEtudiant implements Serializable {
     private Etudiant etudiant;
 
 
-    @JsonIgnoreProperties(value = {"coursEtudiants"}, allowSetters = true)
+    @JsonIgnoreProperties(value = {"coursEtudiant"}, allowSetters = true)
     @ManyToOne(targetEntity = Cours.class, fetch = FetchType.LAZY)
     @JoinColumns(value = {@JoinColumn(name = "coursId", referencedColumnName = "id", nullable = false)}, foreignKey = @ForeignKey(name = "CoursId"))
     private Cours cours;
+
+    @JsonIgnoreProperties(value = {"coursEtudiant"}, allowSetters = true)
+    @OneToMany(mappedBy = "coursEtudiant", targetEntity = HistoriqueEvaluationExtraOrdinaire.class)
+    private List<HistoriqueEvaluationExtraOrdinaire> historiqueEvaluationExtraOrdinaireList;
+
+    @JsonIgnoreProperties(value = {"coursEtudiant"}, allowSetters = true)
+    @OneToMany(mappedBy = "coursEtudiant", targetEntity = HistoriqueEvaluationOrdinaire.class)
+    private List<HistoriqueEvaluationOrdinaire> historiqueEvaluationOrdinaires;
 }

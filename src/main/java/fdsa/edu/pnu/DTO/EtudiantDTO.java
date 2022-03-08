@@ -18,7 +18,7 @@ public class EtudiantDTO {
 //	private java.util.Set cours = new java.util.HashSet();
 //	private java.util.Set promotions = new java.util.HashSet();
 //	private java.util.Set programmes = new java.util.HashSet();
-//	private fdsa.edu.pnu.Model.HistoriqueExam historiqueExam;
+//	private fdsa.edu.pnu.Model.HistoriqueEvaluationOrdinaire historiqueExam;
 //	private java.util.Set paiements = new java.util.HashSet();
 //	private java.util.Set stages = new java.util.HashSet();
 //	private java.util.Set requetes = new java.util.HashSet();

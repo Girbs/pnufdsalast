@@ -21,6 +21,7 @@ public class CoursProgramme {
     @JsonIgnoreProperties(value = {"coursProgrammes"}, allowSetters = true)
     @ManyToOne(targetEntity = Matiere.class, fetch = FetchType.LAZY)
     @JoinColumns(value = {@JoinColumn(name = "matiereId", referencedColumnName = "ID", nullable = true)}, foreignKey = @ForeignKey(name = "CoursProgrammes"))
+
     private Matiere matiere;
 
     @JsonIgnoreProperties(value = {"coursProgrammes"}, allowSetters = true)
@@ -33,6 +34,9 @@ public class CoursProgramme {
     @OneToMany(mappedBy = "coursProgramme", targetEntity = Cours.class)
     private List<Cours> cours;
 
+    @JsonIgnoreProperties(value = {"coursProgramme"}, allowSetters = true)
+    @OneToMany(mappedBy = "coursProgramme", targetEntity = EvaluationExtraordinaire.class)
+    private List<EvaluationExtraordinaire> evaluationExtraordinaireList;
 }
 
 

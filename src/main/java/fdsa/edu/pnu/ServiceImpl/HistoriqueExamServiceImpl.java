@@ -1,6 +1,6 @@
 package fdsa.edu.pnu.ServiceImpl;
 
-import fdsa.edu.pnu.Model.HistoriqueExam;
+import fdsa.edu.pnu.Model.HistoriqueEvaluationOrdinaire;
 import fdsa.edu.pnu.Repository.HistoriqueExamDAO;
 import fdsa.edu.pnu.Service.IHistoriqueExamenService;
 import lombok.Data;
@@ -18,19 +18,19 @@ public class HistoriqueExamServiceImpl implements IHistoriqueExamenService {
     private HistoriqueExamDAO historiqueExamDAO;
 
     @Override
-    public List<HistoriqueExam> findAll() {
+    public List<HistoriqueEvaluationOrdinaire> findAll() {
         return historiqueExamDAO.findAll();
     }
 
 
     @Override
-    public Optional<HistoriqueExam> findById(Integer id) {
+    public Optional<HistoriqueEvaluationOrdinaire> findById(Integer id) {
         return historiqueExamDAO.findById(id);
     }
 
     @Override
-    public HistoriqueExam save(HistoriqueExam historiqueExam) {
-        return historiqueExamDAO.save(historiqueExam);
+    public HistoriqueEvaluationOrdinaire save(HistoriqueEvaluationOrdinaire historiqueEvaluationOrdinaire) {
+        return historiqueExamDAO.save(historiqueEvaluationOrdinaire);
     }
 
     @Override

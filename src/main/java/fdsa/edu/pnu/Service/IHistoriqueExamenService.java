@@ -1,17 +1,17 @@
 package fdsa.edu.pnu.Service;
 
-import fdsa.edu.pnu.Model.HistoriqueExam;
+import fdsa.edu.pnu.Model.HistoriqueEvaluationOrdinaire;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface IHistoriqueExamenService {
 
-    List<HistoriqueExam> findAll();
+    List<HistoriqueEvaluationOrdinaire> findAll();
 
-    Optional<HistoriqueExam> findById(Integer id);
+    Optional<HistoriqueEvaluationOrdinaire> findById(Integer id);
 
-    HistoriqueExam save(HistoriqueExam historiqueExam);
+    HistoriqueEvaluationOrdinaire save(HistoriqueEvaluationOrdinaire historiqueEvaluationOrdinaire);
 
 
     void delete(Integer id);

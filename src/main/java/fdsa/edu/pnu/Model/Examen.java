@@ -8,6 +8,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Getter
@@ -25,10 +26,23 @@ public class Examen extends Audit<String> implements Serializable {
     private Date dateDebut;
     private Date dateFin;
 
-     @JsonIgnoreProperties(value = {"examens"}, allowSetters = true)
-     @ManyToOne(targetEntity = Examen.class, fetch = FetchType.LAZY)
-     @JoinColumns(value = {@JoinColumn(name = "session_id", referencedColumnName = "ID", nullable = true)}, foreignKey = @ForeignKey(name = "SessionExamen"))
+
+    @JsonIgnoreProperties(value = {"examens"}, allowSetters = true)
+     @ManyToOne
+     @JoinColumn(name = "session_id")
      private Session session;
+
+    @JsonIgnoreProperties(value = {"examen"}, allowSetters = true)
+    @OneToMany(mappedBy = "examen", targetEntity = EvaluationOrdinaire.class)
+    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
+    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
+    private List<EvaluationOrdinaire> evaluationOrdinaires;
+
+    @JsonIgnoreProperties(value = {"examen"}, allowSetters = true)
+    @OneToMany(mappedBy = "examen", targetEntity = EvaluationExtraordinaire.class)
+    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
+    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
+    private List<EvaluationExtraordinaire> evaluationExtraordinaires;
 
 
 }

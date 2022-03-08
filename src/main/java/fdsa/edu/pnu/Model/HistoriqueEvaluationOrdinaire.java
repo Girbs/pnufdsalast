@@ -26,9 +26,9 @@ import java.io.Serializable;
 @Entity
 @Getter
 @Setter
-@Table(name = "HistoriqueExam")
+@Table(name = "HistoriqueEvaluationOrdinaire")
 @JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
-public class HistoriqueExam implements Serializable {
+public class HistoriqueEvaluationOrdinaire implements Serializable {
     @Column(name = "ID", nullable = false, length = 10)
     @Id
     @GeneratedValue(generator = "PNU_HISTORIQUEEXAM_ID_GENERATOR")
@@ -38,26 +38,19 @@ public class HistoriqueExam implements Serializable {
     private double note;
 
 
-    @JsonIgnoreProperties(value = {"historiqueExams"}, allowSetters = true)
-    @ManyToOne(targetEntity =Etudiant.class, fetch = FetchType.LAZY)
-    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
-    @JoinColumns({@JoinColumn(name = "EtudiantPersonneID", referencedColumnName = "PersonneID", nullable = false)})
-    private Etudiant etudiant;
-
-    @JsonIgnoreProperties(value = {"historiqueExams"}, allowSetters = true)
+    @JsonIgnoreProperties(value = {"historiqueEvaluationOrdinaires"}, allowSetters = true)
     @ManyToOne(targetEntity = EvaluationOrdinaire.class, fetch = FetchType.LAZY)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
-    @JoinColumns(value ={@JoinColumn(name = "EvaluationID", referencedColumnName = "ID", nullable = false)},foreignKey = @ForeignKey(name = "Evaluation_HistoriqueExamen"))
+    @JoinColumns(value ={@JoinColumn(name = "EvaluationOrdinaireID", referencedColumnName = "ID", nullable = false)},foreignKey = @ForeignKey(name = "HistoriqueEvaluationOrdinaireEvaluationOrdinaire"))
     private EvaluationOrdinaire evaluationOrdinaire;
 
+    @ManyToOne(targetEntity = CoursEtudiant.class, fetch = FetchType.LAZY)
+    @JsonIgnoreProperties(value = {"historiqueEvaluationOrdinaires"}, allowSetters = true)
+    @JoinColumns(value = {@JoinColumn(name = "cours_etudiant_id", referencedColumnName = "ID", nullable = true)}, foreignKey = @ForeignKey(name = "historiqueEvaluationOrdinairesCoursEtudiant"))
+    private CoursEtudiant coursEtudiant;
 
 
-//    @JsonIgnoreProperties(value = {"historiqueExam"}, allowSetters = true)
-//    @ManyToOne(targetEntity =EvaluationOrdinaire.class, fetch = FetchType.LAZY)
-//    @JoinColumns(value = {@JoinColumn(name = "EvaluationID", referencedColumnName = "ID", nullable = false)}, foreignKey = @ForeignKey(name = "Evaluation_HistoriqueExamen"))
-//    private EvaluationOrdinaire evaluationOrdinaire;
-
-    public HistoriqueExam() {
+    public HistoriqueEvaluationOrdinaire() {
     }
 
 }
