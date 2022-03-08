@@ -4,7 +4,7 @@ import fdsa.edu.pnu.Model.CoursProgramme;
 
 import java.util.List;
 
-public interface ICurriculumService {
+public interface ICoursProgrammeService {
     List<CoursProgramme> findAll();
 
     CoursProgramme findById(Integer id);

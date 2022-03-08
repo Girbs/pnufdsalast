@@ -8,11 +8,11 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 @Repository
-public interface CurriculumDAO extends JpaRepository<CoursProgramme, Integer> {
+public interface CoursProgrammeDAO extends JpaRepository<CoursProgramme, Integer> {
 
 
 
-    @Query(value = "SELECT * FROM CoursProgramme", nativeQuery = true)
+    @Query(value = "SELECT * FROM cours_programme", nativeQuery = true)
     List<CoursProgramme> findByAllCustomQuery();
 
     @Query(value = "{call FindCurriculumById(:IdCurriculum)}", nativeQuery = true)

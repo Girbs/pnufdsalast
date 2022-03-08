@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("/curriculum")
-public interface ICurriculumController {
+@RequestMapping("/coursProgramme")
+public interface ICoursProgrammeController {
 
     @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Renvoi la liste des CoursProgramme", notes = "Cette methode permet de chercher et renvoyer la liste des Sessions qui existent "
             + "dans la BDD", responseContainer = "List<CoursProgramme>")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "La liste des SessionProgramme / Une liste vide")
+            @ApiResponse(code = 200, message = "La liste des CoursProgramme / Une liste vide")
     })
     List<CoursProgramme> findAll();
 

@@ -1,32 +1,32 @@
 package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.Model.CoursProgramme;
-import fdsa.edu.pnu.Repository.CurriculumDAO;
-import fdsa.edu.pnu.Service.ICurriculumService;
+import fdsa.edu.pnu.Repository.CoursProgrammeDAO;
+import fdsa.edu.pnu.Service.ICoursProgrammeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class CurriculumServiceImpl implements ICurriculumService {
+public class CoursProgrammeServiceImpl implements ICoursProgrammeService {
 
     @Autowired
-    private CurriculumDAO curriculumDAO;
+    private CoursProgrammeDAO coursProgrammeDAO;
 
     @Override
     public List<CoursProgramme> findAll() {
-        return curriculumDAO.findByAllCustomQuery();
+        return coursProgrammeDAO.findByAllCustomQuery();
     }
 
     @Override
     public CoursProgramme findById(Integer id) {
-        return curriculumDAO.findCurriculumById(id);
+        return coursProgrammeDAO.findCurriculumById(id);
     }
 
     @Override
     public CoursProgramme save(CoursProgramme coursProgramme) {
-        return curriculumDAO.save(coursProgramme);
+        return coursProgrammeDAO.save(coursProgramme);
     }
 
     @Override
@@ -36,6 +36,6 @@ public class CurriculumServiceImpl implements ICurriculumService {
 
     @Override
     public void delete(Integer id) {
-        curriculumDAO.deleteById(id);
+        coursProgrammeDAO.deleteById(id);
     }
 }
