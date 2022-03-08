@@ -34,7 +34,7 @@ public interface SessionProgrammeDAO extends JpaRepository<SessionProgramme, Int
     @Query(value = "{call FindSessionProgrammeById(:IdSessionProgramme)}", nativeQuery = true)
     SessionProgramme findSessionProgrammeById(@Param("IdSessionProgramme") Integer IdProgramme);
 
-    @Query(value = "{call findSessionProgrammeByIdProgramme(:IdProgramme)}", nativeQuery = true)
+    @Query(value = "{call FindSessionProgrammeByIdProgramme(:IdProgramme)}", nativeQuery = true)
     List<SessionProgramme>  findSessionProgrammeByIdProgramme(@Param("IdProgramme") Integer IdProgramme);
 
 }
