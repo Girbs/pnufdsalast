@@ -8,11 +8,8 @@ import java.util.Optional;
 public interface IHistoriqueExamenService {
 
     List<HistoriqueEvaluationOrdinaire> findAll();
-
     Optional<HistoriqueEvaluationOrdinaire> findById(Integer id);
-
     HistoriqueEvaluationOrdinaire save(HistoriqueEvaluationOrdinaire historiqueEvaluationOrdinaire);
-
-
+    double CalculerMoyenne(Integer IdEtudiantCours);
     void delete(Integer id);
 }

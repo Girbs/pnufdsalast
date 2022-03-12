@@ -50,8 +50,7 @@ public class EvaluationOrdinaire extends Audit<String> implements Serializable {
 
     @Column(name = "DateEvaluation", nullable = false)
     private java.sql.Timestamp dateEvaluation;
-    @Column(name = "`SessionProgramme`", nullable = true, length = 255)
-    private String session;
+
     @Column(name = "pourcentage", nullable = true)
     private double pourcentage;
 

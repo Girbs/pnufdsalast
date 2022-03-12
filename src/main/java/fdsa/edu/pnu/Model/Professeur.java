@@ -46,7 +46,7 @@ public class Professeur extends Utilisateur implements Serializable {
     private String lienCv;
 
     @JsonIgnoreProperties(value = {"professeur"}, allowSetters = true)
-    @OneToMany(mappedBy = "professeur", targetEntity = Cours.class)
+    @OneToMany(mappedBy = "professeur", targetEntity = Cours.class, fetch = FetchType.LAZY)
     private List<Cours> cours;
 
 

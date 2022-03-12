@@ -28,9 +28,11 @@ public class Examen extends Audit<String> implements Serializable {
 
 
     @JsonIgnoreProperties(value = {"examens"}, allowSetters = true)
-     @ManyToOne
-     @JoinColumn(name = "session_id")
-     private Session session;
+    @ManyToOne(targetEntity = Session.class, fetch = FetchType.LAZY)
+    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
+    @JoinColumns(value = {  @JoinColumn(name = "session_id", referencedColumnName = "ID", nullable = false)}, foreignKey = @ForeignKey(name = "FK_Examen_Session"))
+    private Session session;
+
 
     @JsonIgnoreProperties(value = {"examen"}, allowSetters = true)
     @OneToMany(mappedBy = "examen", targetEntity = EvaluationOrdinaire.class)
@@ -43,6 +45,5 @@ public class Examen extends Audit<String> implements Serializable {
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private List<EvaluationExtraordinaire> evaluationExtraordinaires;
-
 
 }

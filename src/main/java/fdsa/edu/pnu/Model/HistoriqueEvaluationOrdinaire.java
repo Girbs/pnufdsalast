@@ -37,7 +37,6 @@ public class HistoriqueEvaluationOrdinaire implements Serializable {
     @Column(name = "Note", nullable = false, length = 10)
     private double note;
 
-
     @JsonIgnoreProperties(value = {"historiqueEvaluationOrdinaires"}, allowSetters = true)
     @ManyToOne(targetEntity = EvaluationOrdinaire.class, fetch = FetchType.LAZY)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})

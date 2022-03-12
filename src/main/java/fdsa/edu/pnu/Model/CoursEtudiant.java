@@ -24,6 +24,8 @@ public class CoursEtudiant implements Serializable {
     private Integer id;
     private double note;
     private String mention;
+    private String cote;
+    private double numbrePoint;
 
     @JsonIgnoreProperties(value = {"coursEtudiants"}, allowSetters = true)
     @ManyToOne(targetEntity = Etudiant.class, fetch = FetchType.LAZY)

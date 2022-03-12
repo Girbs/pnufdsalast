@@ -1,6 +1,8 @@
 package fdsa.edu.pnu.ServiceImpl;
 
+import fdsa.edu.pnu.Model.CoursEtudiant;
 import fdsa.edu.pnu.Model.HistoriqueEvaluationOrdinaire;
+import fdsa.edu.pnu.Repository.CoursEtudiantDAO;
 import fdsa.edu.pnu.Repository.HistoriqueExamDAO;
 import fdsa.edu.pnu.Service.IHistoriqueExamenService;
 import lombok.Data;
@@ -17,6 +19,9 @@ public class HistoriqueExamServiceImpl implements IHistoriqueExamenService {
     @Autowired
     private HistoriqueExamDAO historiqueExamDAO;
 
+    @Autowired
+    private CoursEtudiantDAO coursEtudiantDAO;
+
     @Override
     public List<HistoriqueEvaluationOrdinaire> findAll() {
         return historiqueExamDAO.findAll();
@@ -30,7 +35,17 @@ public class HistoriqueExamServiceImpl implements IHistoriqueExamenService {
 
     @Override
     public HistoriqueEvaluationOrdinaire save(HistoriqueEvaluationOrdinaire historiqueEvaluationOrdinaire) {
+        int idCoursEtudiant = historiqueEvaluationOrdinaire.getCoursEtudiant().getId();
+        Optional<CoursEtudiant> ce = coursEtudiantDAO.findById(idCoursEtudiant);
+        double note = CalculerMoyenne(idCoursEtudiant);
+        ce.get().setNote(note);
+       // coursEtudiantDAO.save(ce);
         return historiqueExamDAO.save(historiqueEvaluationOrdinaire);
+    }
+
+    @Override
+    public double CalculerMoyenne(Integer IdEtudiantCours) {
+        return historiqueExamDAO.calculerMoyenne(IdEtudiantCours);
     }
 
     @Override

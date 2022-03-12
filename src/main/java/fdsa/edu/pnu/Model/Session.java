@@ -38,7 +38,7 @@ public class Session implements Serializable {
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private List<Paiement> paiement;
 
-
+    @JsonIgnoreProperties(value = {"session"}, allowSetters = true)
     @OneToMany(mappedBy = "session", targetEntity = Cours.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)

@@ -49,14 +49,14 @@ public class Cours implements Serializable {
     @JsonIgnoreProperties(value = {"cours"}, allowSetters = true)
     @ManyToOne(targetEntity = Session.class, fetch = FetchType.LAZY)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
-    @JoinColumns(value = {@JoinColumn(name = "sessionId", referencedColumnName = " ID", nullable = false)}, foreignKey = @ForeignKey(name = "FK_Session_Cours"))
+    @JoinColumns(value = {@JoinColumn(name = "sessionId", referencedColumnName = " ID", nullable = false)}, foreignKey = @ForeignKey(name = "Session_Cours"))
     private Session session;
 
 
     @JsonIgnoreProperties(value = {"cours"}, allowSetters = true)
     @ManyToOne(targetEntity = CoursProgramme.class, fetch = FetchType.LAZY)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
-    @JoinColumns(value = {@JoinColumn(name = "CurriculumId", referencedColumnName = "ID", nullable = false)}, foreignKey = @ForeignKey(name = "FK_Couriculum_COURS"))
+    @JoinColumns(value = {@JoinColumn(name = "CoursProgrammId", referencedColumnName = "ID", nullable = false)}, foreignKey = @ForeignKey(name = "FK_Couriculum_COURS"))
     private CoursProgramme coursProgramme;
 
 
