@@ -4,10 +4,11 @@ import fdsa.edu.pnu.Model.CoursEtudiant;
 import fdsa.edu.pnu.Repository.CoursEtudiantDAO;
 import fdsa.edu.pnu.Service.ICoursEtudiantService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class CoursEtudiantServiceImpl implements ICoursEtudiantService {
 
     @Autowired
@@ -39,27 +40,27 @@ public class CoursEtudiantServiceImpl implements ICoursEtudiantService {
     }
 
     @Override
-    public CoursEtudiant calculCote(CoursEtudiant coursEtudiant) {
-            if (coursEtudiant.getNote() >= 95) {
-                coursEtudiant.setMention("Exeptionnel");
-                coursEtudiant.setCote("A+");
-                coursEtudiant.setNumbrePoint(4);
-            } else if (coursEtudiant.getNote() < 95 && coursEtudiant.getNote() >= 85) {
-                coursEtudiant.setMention("Excellent");
-                coursEtudiant.setCote("A");
-                coursEtudiant.setNumbrePoint(4);
-            } else if (coursEtudiant.getNote() < 85 && coursEtudiant.getNote() >= 80) {
-                coursEtudiant.setMention("Très Bien");
-                coursEtudiant.setCote("B+");
-                coursEtudiant.setNumbrePoint(3.5);
-            } else if (coursEtudiant.getNote() < 80 && coursEtudiant.getNote() >= 70) {
-                coursEtudiant.setMention("Très Bien");
-                coursEtudiant.setCote("B");
-                coursEtudiant.setNumbrePoint(3);
-            } else if (coursEtudiant.getNote() < 70 && coursEtudiant.getNote() >= 65) {
-                coursEtudiant.setMention("Bien");
-                coursEtudiant.setCote("C+");
-                coursEtudiant.setNumbrePoint(2.5);
+    public CoursEtudiant calculmoyenneHelper(CoursEtudiant coursEtudiant) {
+        if (coursEtudiant.getNote() >= 95) {
+            coursEtudiant.setMention("Exeptionnel");
+            coursEtudiant.setCote("A+");
+            coursEtudiant.setNumbrePoint(4);
+        } else if (coursEtudiant.getNote() < 95 && coursEtudiant.getNote() >= 85) {
+            coursEtudiant.setMention("Excellent");
+            coursEtudiant.setCote("A");
+            coursEtudiant.setNumbrePoint(4);
+        } else if (coursEtudiant.getNote() < 85 && coursEtudiant.getNote() >= 80) {
+            coursEtudiant.setMention("Très Bien");
+            coursEtudiant.setCote("B+");
+            coursEtudiant.setNumbrePoint(3.5);
+        } else if (coursEtudiant.getNote() < 80 && coursEtudiant.getNote() >= 70) {
+            coursEtudiant.setMention("Très Bien");
+            coursEtudiant.setCote("B");
+            coursEtudiant.setNumbrePoint(3);
+        } else if (coursEtudiant.getNote() < 70 && coursEtudiant.getNote() >= 65) {
+            coursEtudiant.setMention("Bien");
+            coursEtudiant.setCote("C+");
+            coursEtudiant.setNumbrePoint(2.5);
             } else if (coursEtudiant.getNote() < 65 && coursEtudiant.getNote() >= 60) {
                 coursEtudiant.setMention("Bien");
                 coursEtudiant.setCote("C");
@@ -79,8 +80,4 @@ public class CoursEtudiantServiceImpl implements ICoursEtudiantService {
             }
       return coursEtudiantDAO.save(coursEtudiant);
     }
-
-
-
-
 }

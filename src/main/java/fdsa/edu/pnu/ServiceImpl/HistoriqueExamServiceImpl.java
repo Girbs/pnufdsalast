@@ -2,8 +2,10 @@ package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.Model.CoursEtudiant;
 import fdsa.edu.pnu.Model.HistoriqueEvaluationOrdinaire;
+import fdsa.edu.pnu.Model.LogTracking;
 import fdsa.edu.pnu.Repository.CoursEtudiantDAO;
 import fdsa.edu.pnu.Repository.HistoriqueExamDAO;
+import fdsa.edu.pnu.Repository.LogTrackingDAO;
 import fdsa.edu.pnu.Service.IHistoriqueExamenService;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +20,12 @@ public class HistoriqueExamServiceImpl implements IHistoriqueExamenService {
 
     @Autowired
     private HistoriqueExamDAO historiqueExamDAO;
-
+    @Autowired
+    private LogTrackingDAO logTrackingDAO;
     @Autowired
     private CoursEtudiantDAO coursEtudiantDAO;
+    @Autowired
+    private CoursEtudiantServiceImpl coursEtudiantServiceImpl;
 
     @Override
     public List<HistoriqueEvaluationOrdinaire> findAll() {
@@ -36,10 +41,21 @@ public class HistoriqueExamServiceImpl implements IHistoriqueExamenService {
     @Override
     public HistoriqueEvaluationOrdinaire save(HistoriqueEvaluationOrdinaire historiqueEvaluationOrdinaire) {
         int idCoursEtudiant = historiqueEvaluationOrdinaire.getCoursEtudiant().getId();
-        Optional<CoursEtudiant> ce = coursEtudiantDAO.findById(idCoursEtudiant);
+        System.out.println("The Sudent Id is: "+idCoursEtudiant);
+        CoursEtudiant ce = coursEtudiantDAO.findById(idCoursEtudiant).get();
         double note = CalculerMoyenne(idCoursEtudiant);
-        ce.get().setNote(note);
-       // coursEtudiantDAO.save(ce);
+        try {
+            ce.setNote(note);
+            coursEtudiantDAO.save(ce);
+        } catch (Exception e) {
+            logTrackingDAO.save(new LogTracking("Erreur lors du sauvegarde la moyenne:", e.toString()));
+        }
+        try {
+            coursEtudiantServiceImpl.calculmoyenneHelper(ce);
+            logTrackingDAO.save(new LogTracking("Appel de la methode coursEtudiantServiceImpl", "avec success"));
+        } catch (Exception e) {
+            logTrackingDAO.save(new LogTracking("Erreur dans l'appel du methode coursEtudiantServiceImpl", e.toString()));
+        }
         return historiqueExamDAO.save(historiqueEvaluationOrdinaire);
     }
 

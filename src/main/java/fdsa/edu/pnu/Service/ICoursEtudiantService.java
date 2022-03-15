@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface ICoursEtudiantService {
     List<CoursEtudiant> findAll();
 
-   Optional<CoursEtudiant> findById(Integer id);
+    Optional<CoursEtudiant> findById(Integer id);
 
     CoursEtudiant save(CoursEtudiant dto);
 
@@ -16,5 +16,6 @@ public interface ICoursEtudiantService {
 
     void delete(Integer id);
 
-    public CoursEtudiant calculCote(CoursEtudiant coursEtudiant);
+
+    CoursEtudiant calculmoyenneHelper(CoursEtudiant coursEtudiant);
 }

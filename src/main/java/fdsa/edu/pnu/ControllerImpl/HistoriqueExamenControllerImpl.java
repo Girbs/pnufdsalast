@@ -25,6 +25,11 @@ public class HistoriqueExamenControllerImpl implements IHistoriqueExamenControll
     }
 
     @Override
+    public double note(Integer id) {
+        return historiqueExamServiceImpl.CalculerMoyenne(id);
+    }
+
+    @Override
     public HistoriqueEvaluationOrdinaire update(Integer id, HistoriqueEvaluationOrdinaire historiqueEvaluationOrdinaire) {
         return null;
     }

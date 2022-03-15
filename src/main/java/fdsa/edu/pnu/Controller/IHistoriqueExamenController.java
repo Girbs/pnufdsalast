@@ -32,6 +32,14 @@ public interface IHistoriqueExamenController {
     })
     Optional<HistoriqueEvaluationOrdinaire> findById(@PathVariable("id") Integer id);
 
+    @GetMapping(value = "/historiqueExamenEtudiant/{idEtudiant}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Rechercher un cours par ID", notes = "Cette methode permet de chercher un cours par son ID", response = EvaluationOrdinaire.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Le Cours a ete trouve dans la BDD"),
+            @ApiResponse(code = 404, message = "Aucun cours n'existe dans la BDD avec l'ID fourni")
+    })
+   double note(@PathVariable("idEtudiant") Integer id);
+
 
     // @PreAuthorize("hasAnyRole('modifierConcours')")
     @PutMapping(value = "/historiqueExamen/modifier/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)

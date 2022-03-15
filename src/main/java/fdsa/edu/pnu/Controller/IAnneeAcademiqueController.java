@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @RequestMapping("/anneeAcademique")
 public interface IAnneeAcademiqueController {
-    @PreAuthorize("hasAnyRole('lireAnneeAcademique')")
+    //@PreAuthorize("hasAnyRole('lireAnneeAcademique')")
     @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Renvoi la liste des Annee Academique", notes = "Cette methode permet de chercher et renvoyer la liste des Annees Academiques qui existent "
             + "dans la BDD", responseContainer = "List<AnneeAcademique>")
