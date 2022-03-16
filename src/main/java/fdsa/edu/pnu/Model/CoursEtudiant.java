@@ -1,6 +1,7 @@
 package fdsa.edu.pnu.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,6 +17,7 @@ import java.util.List;
 @Table(name = "CoursEtudiant")
 @JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
 public class CoursEtudiant implements Serializable {
+
 
     @Column(name = "ID", nullable = false, length = 10)
     @Id
@@ -43,6 +45,10 @@ public class CoursEtudiant implements Serializable {
     private List<HistoriqueEvaluationExtraOrdinaire> historiqueEvaluationExtraOrdinaireList;
 
     @JsonIgnoreProperties(value = {"coursEtudiant"}, allowSetters = true)
+    @JsonManagedReference
     @OneToMany(mappedBy = "coursEtudiant", targetEntity = HistoriqueEvaluationOrdinaire.class)
+
     private List<HistoriqueEvaluationOrdinaire> historiqueEvaluationOrdinaires;
+
+
 }

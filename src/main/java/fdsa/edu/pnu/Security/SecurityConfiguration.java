@@ -99,6 +99,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/personnel/supprimer/{id}",
                         "/matiere/all",
                         "/matiere/nouveau",
+                        "/cours/all",
                         "/matiere/supprimer/{id}",
                         "/historiqueExamen/nouveau",
                         "/matiere/{id}",

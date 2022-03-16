@@ -16,6 +16,7 @@
  */
 package fdsa.edu.pnu.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
@@ -43,6 +44,8 @@ public class HistoriqueEvaluationOrdinaire implements Serializable {
     @JoinColumns(value ={@JoinColumn(name = "EvaluationOrdinaireID", referencedColumnName = "ID", nullable = false)},foreignKey = @ForeignKey(name = "HistoriqueEvaluationOrdinaireEvaluationOrdinaire"))
     private EvaluationOrdinaire evaluationOrdinaire;
 
+
+    @JsonBackReference
     @ManyToOne(targetEntity = CoursEtudiant.class, fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = {"historiqueEvaluationOrdinaires"}, allowSetters = true)
     @JoinColumns(value = {@JoinColumn(name = "cours_etudiant_id", referencedColumnName = "ID", nullable = true)}, foreignKey = @ForeignKey(name = "historiqueEvaluationOrdinairesCoursEtudiant"))
