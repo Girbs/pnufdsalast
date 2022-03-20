@@ -1,7 +1,7 @@
 package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.Model.CoursEtudiant;
-import fdsa.edu.pnu.Model.HistoriqueEvaluationOrdinaire;
+import fdsa.edu.pnu.Model.HistoriqueEvaluation;
 import fdsa.edu.pnu.Model.LogTracking;
 import fdsa.edu.pnu.Repository.CoursEtudiantDAO;
 import fdsa.edu.pnu.Repository.HistoriqueExamDAO;
@@ -26,21 +26,18 @@ public class HistoriqueExamServiceImpl implements IHistoriqueExamenService {
     private CoursEtudiantDAO coursEtudiantDAO;
     @Autowired
     private CoursEtudiantServiceImpl coursEtudiantServiceImpl;
-
     @Override
-    public List<HistoriqueEvaluationOrdinaire> findAll() {
+    public List<HistoriqueEvaluation> findAll() {
         return historiqueExamDAO.findAll();
     }
-
-
     @Override
-    public Optional<HistoriqueEvaluationOrdinaire> findById(Integer id) {
+    public Optional<HistoriqueEvaluation> findById(Integer id) {
         return historiqueExamDAO.findById(id);
     }
 
     @Override
-    public HistoriqueEvaluationOrdinaire save(HistoriqueEvaluationOrdinaire historiqueEvaluationOrdinaire) {
-        int idCoursEtudiant = historiqueEvaluationOrdinaire.getCoursEtudiant().getId();
+    public HistoriqueEvaluation save(HistoriqueEvaluation historiqueEvaluation) {
+        int idCoursEtudiant = historiqueEvaluation.getCoursEtudiant().getId();
         System.out.println("The Sudent Id is: "+idCoursEtudiant);
         CoursEtudiant ce = coursEtudiantDAO.findById(idCoursEtudiant).get();
         double note = CalculerMoyenne(idCoursEtudiant);
@@ -56,7 +53,7 @@ public class HistoriqueExamServiceImpl implements IHistoriqueExamenService {
         } catch (Exception e) {
             logTrackingDAO.save(new LogTracking("Erreur dans l'appel du methode coursEtudiantServiceImpl", e.toString()));
         }
-        return historiqueExamDAO.save(historiqueEvaluationOrdinaire);
+        return historiqueExamDAO.save(historiqueEvaluation);
     }
 
     @Override

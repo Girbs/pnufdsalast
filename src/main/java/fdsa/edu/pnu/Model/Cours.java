@@ -17,6 +17,7 @@
 package fdsa.edu.pnu.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -43,10 +44,10 @@ public class Cours implements Serializable {
     private int id;
 
     @JsonIgnoreProperties(value = {"cours"}, allowSetters = true)
-    @OneToMany(mappedBy = "cours", targetEntity = EvaluationOrdinaire.class)
+    @OneToMany(mappedBy = "cours", targetEntity = Evaluation.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
-    private List<EvaluationOrdinaire> evaluationOrdinaires;
+    private List<Evaluation> evaluation;
 
     @JsonIgnoreProperties(value = {"cours"}, allowSetters = true)
     @ManyToOne(targetEntity = Session.class, fetch = FetchType.LAZY)
@@ -77,13 +78,10 @@ public class Cours implements Serializable {
     private List<Discussion> discussions;
 
     @JsonIgnoreProperties(value = {"cours"}, allowSetters = true)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToMany(mappedBy = "cours", targetEntity = CoursEtudiant.class,  fetch = FetchType.LAZY)
-    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
-    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private List<CoursEtudiant> coursEtudiants;
 
-    //	@Column(name="CreditReel", nullable=true, length=10)
-//	private int creditReel;
 
     @Column(name = "Duree", nullable = true, length = 255)
     private String duree;

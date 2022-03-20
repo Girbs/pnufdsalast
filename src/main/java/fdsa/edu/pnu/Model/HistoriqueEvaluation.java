@@ -11,7 +11,7 @@
  */
 
 /**
- * Licensee: 
+ * Licensee:
  * License Type: EvaluationOrdinaire
  */
 package fdsa.edu.pnu.Model;
@@ -26,10 +26,10 @@ import java.io.Serializable;
 @Entity
 @Getter
 @Setter
-@Table(name = "HistoriqueEvaluationOrdinaire")
+@Table(name = "HistoriqueEvaluation")
 
 @JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
-public class HistoriqueEvaluationOrdinaire implements Serializable {
+public class HistoriqueEvaluation implements Serializable {
     @Column(name = "ID", nullable = false, length = 10)
     @Id
     @GeneratedValue(generator = "PNU_HISTORIQUEEXAM_ID_GENERATOR")
@@ -39,23 +39,23 @@ public class HistoriqueEvaluationOrdinaire implements Serializable {
     @Column(name = "Note", nullable = false, length = 10)
     private double note;
 
-  @JsonIgnoreProperties(value = {"historiqueEvaluationOrdinaires"}, allowSetters = true)
+    @JsonIgnoreProperties(value = {"historiqueEvaluations"}, allowSetters = true)
     @ManyToOne
 //    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-   // @JoinColumns(value ={@JoinColumn(name = "EvaluationOrdinaireID", referencedColumnName = "ID", nullable = false)},foreignKey = @ForeignKey(name = "HistoriqueEvaluationOrdinaireEvaluationOrdinaire"))
-    private EvaluationOrdinaire evaluationOrdinaire;
+    // @JoinColumns(value ={@JoinColumn(name = "EvaluationOrdinaireID", referencedColumnName = "ID", nullable = false)},foreignKey = @ForeignKey(name = "HistoriqueEvaluationOrdinaireEvaluationOrdinaire"))
+    private Evaluation evaluation;
 
 
     //@ManyToOne(targetEntity = CoursEtudiant.class, fetch = FetchType.LAZY)
     @ManyToOne
-  //  @JsonIgnoreProperties(value = {"historiqueEvaluationOrdinaires"}, allowSetters = true)
+     @JsonIgnoreProperties(value = {"historiqueEvaluations"}, allowSetters = true)
     //@JoinColumns(value = {@JoinColumn(name = "cours_etudiant_id", referencedColumnName = "ID", nullable = true)}, foreignKey = @ForeignKey(name = "historiqueEvaluationOrdinairesCoursEtudiant"))
 
 
     private CoursEtudiant coursEtudiant;
 
 
-    public HistoriqueEvaluationOrdinaire() {
+    public HistoriqueEvaluation() {
     }
 
 }

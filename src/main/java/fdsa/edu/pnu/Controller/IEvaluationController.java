@@ -1,6 +1,6 @@
 package fdsa.edu.pnu.Controller;
 
-import fdsa.edu.pnu.Model.EvaluationOrdinaire;
+import fdsa.edu.pnu.Model.Evaluation;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -19,26 +19,26 @@ public interface IEvaluationController {
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "La liste des evaluation / Une liste vide")
     })
-    List<EvaluationOrdinaire> findAll();
+    List<Evaluation> findAll();
 
     // @PreAuthorize("hasAnyRole('lireConcours')")
     @GetMapping(value = "/evaluation/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Rechercher un cours par ID", notes = "Cette methode permet de chercher un cours par son ID", response = EvaluationOrdinaire.class)
+    @ApiOperation(value = "Rechercher un cours par ID", notes = "Cette methode permet de chercher un cours par son ID", response = Evaluation.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Le Cours a ete trouve dans la BDD"),
             @ApiResponse(code = 404, message = "Aucun cours n'existe dans la BDD avec l'ID fourni")
     })
-    Optional<EvaluationOrdinaire> findById(@PathVariable("id") Integer id);
+    Optional<Evaluation > findById(@PathVariable("id") Integer id);
 
 
     // @PreAuthorize("hasAnyRole('modifierConcours')")
     @PutMapping(value = "/evaluationOrdinaire/modifier/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Enregistrer un evaluationOrdinaire", notes = "Cette methode permet d'enregistrer ou modifier un evaluationOrdinaire", response = EvaluationOrdinaire.class)
+    @ApiOperation(value = "Enregistrer un evaluationOrdinaire", notes = "Cette methode permet d'enregistrer ou modifier un evaluationOrdinaire", response = Evaluation.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "L'objet le evaluationOrdinaire cree / modifie"),
             @ApiResponse(code = 400, message = "L'objet evaluationOrdinaire n'est pas valide")
     })
-    EvaluationOrdinaire update(@PathVariable("id") Integer id, @RequestBody EvaluationOrdinaire evaluationOrdinaire);
+    Evaluation  update(@PathVariable("id") Integer id, @RequestBody Evaluation  evaluationOrdinaire);
 
 
     // @PreAuthorize("hasAnyRole('supplrimerConcours')")
@@ -51,11 +51,11 @@ public interface IEvaluationController {
 
     // @PreAuthorize("hasAnyRole('creerConcours')")
     @PostMapping(value = "/evaluationOrdinaire/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Enregistrer un evaluationOrdinaire", notes = "Cette methode permet d'enregistrer ou modifier un evaluationOrdinaire", response = EvaluationOrdinaire.class)
+    @ApiOperation(value = "Enregistrer un evaluationOrdinaire", notes = "Cette methode permet d'enregistrer ou modifier un evaluationOrdinaire", response = Evaluation.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "L'objet l' evaluationOrdinaire cree / modifie"),
             @ApiResponse(code = 400, message = "L'objet evaluationOrdinaire n'est pas valide")
     })
-    EvaluationOrdinaire save(@RequestBody EvaluationOrdinaire evaluationOrdinaire);
+    Evaluation  save(@RequestBody Evaluation  evaluationOrdinaire);
 
 }

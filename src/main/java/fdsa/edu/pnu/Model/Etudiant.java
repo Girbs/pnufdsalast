@@ -50,7 +50,7 @@ import java.util.List;
 @Getter
 @JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
 @Table(name = "Etudiant")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorValue("Etudiants")
 public class Etudiant extends Utilisateur implements Serializable {
 

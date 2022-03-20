@@ -6,7 +6,7 @@
 package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Controller.IEvaluationController;
-import fdsa.edu.pnu.Model.EvaluationOrdinaire;
+import fdsa.edu.pnu.Model.Evaluation;
 import fdsa.edu.pnu.ServiceImpl.EvaluationServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,17 +21,17 @@ public class EvaluationControllerImpl implements IEvaluationController {
     public EvaluationServiceImpl evaluationServiceImpl;
 
     @Override
-    public List<EvaluationOrdinaire> findAll() {
+    public List<Evaluation> findAll() {
         return evaluationServiceImpl.findAll();
     }
 
     @Override
-    public Optional<EvaluationOrdinaire> findById(Integer id) {
+    public Optional<Evaluation> findById(Integer id) {
         return evaluationServiceImpl.findById(id);
     }
 
     @Override
-    public EvaluationOrdinaire update(Integer id, EvaluationOrdinaire evaluationOrdinaire) {
+    public Evaluation update(Integer id, Evaluation evaluationOrdinaire) {
         return null;
     }
 
@@ -41,7 +41,7 @@ public class EvaluationControllerImpl implements IEvaluationController {
     }
 
     @Override
-    public EvaluationOrdinaire save(EvaluationOrdinaire evaluationOrdinaire) {
+    public Evaluation save(Evaluation evaluationOrdinaire) {
         return evaluationServiceImpl.save(evaluationOrdinaire);
     }
 }

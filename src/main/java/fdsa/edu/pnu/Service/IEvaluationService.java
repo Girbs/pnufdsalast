@@ -1,16 +1,16 @@
 package fdsa.edu.pnu.Service;
 
-import fdsa.edu.pnu.Model.EvaluationOrdinaire;
+import fdsa.edu.pnu.Model.Evaluation;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface IEvaluationService {
-    List<EvaluationOrdinaire> findAll();
+    List<Evaluation> findAll();
 
-    Optional<EvaluationOrdinaire> findById(Integer id);
+    Optional<Evaluation> findById(Integer id);
 
-    EvaluationOrdinaire save(EvaluationOrdinaire dto);
+    Evaluation save(Evaluation dto);
 
     void delete(Integer id);
 }

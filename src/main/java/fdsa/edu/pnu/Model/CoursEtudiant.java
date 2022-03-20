@@ -13,11 +13,9 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-
 @Table(name = "CoursEtudiant")
 @JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
 public class CoursEtudiant implements Serializable {
-
 
     @Column(name = "ID", nullable = false, length = 10)
     @Id
@@ -28,6 +26,7 @@ public class CoursEtudiant implements Serializable {
     private String mention;
     private String cote;
     private double numbrePoint;
+    private String type;
 
 
     @JsonIgnoreProperties(value = {"coursEtudiants"}, allowSetters = true)
@@ -37,18 +36,14 @@ public class CoursEtudiant implements Serializable {
 
 
     @JsonIgnoreProperties(value = {"coursEtudiant"}, allowSetters = true)
-    @ManyToOne(targetEntity = Cours.class, fetch = FetchType.LAZY)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @ManyToOne(targetEntity = Cours.class)
     @JoinColumns(value = {@JoinColumn(name = "coursId", referencedColumnName = "id", nullable = false)}, foreignKey = @ForeignKey(name = "CoursId"))
     private Cours cours;
 
-//   // @JsonIgnoreProperties(value = {"coursEtudiant"}, allowSetters = true)
-//   // @OneToMany(mappedBy = "coursEtudiant", targetEntity = HistoriqueEvaluationExtraOrdinaire.class)
-//    private List<HistoriqueEvaluationExtraOrdinaire> historiqueEvaluationExtraOrdinaireList;
-
-//    //@JsonIgnoreProperties(value = {"coursEtudiant"}, allowSetters = true)
+    @JsonIgnoreProperties(value = {"coursEtudiant"}, allowSetters = true)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToMany(mappedBy = "coursEtudiant", fetch = FetchType.LAZY)
-    private List<HistoriqueEvaluationOrdinaire> historiqueEvaluationOrdinaires;
-//
+    private List<HistoriqueEvaluation> historiqueEvaluations;
 
 }

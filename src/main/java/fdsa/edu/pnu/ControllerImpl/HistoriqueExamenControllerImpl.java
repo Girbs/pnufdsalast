@@ -1,7 +1,7 @@
 package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Controller.IHistoriqueExamenController;
-import fdsa.edu.pnu.Model.HistoriqueEvaluationOrdinaire;
+import fdsa.edu.pnu.Model.HistoriqueEvaluation;
 import fdsa.edu.pnu.ServiceImpl.HistoriqueExamServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,12 +15,12 @@ public class HistoriqueExamenControllerImpl implements IHistoriqueExamenControll
     private HistoriqueExamServiceImpl historiqueExamServiceImpl;
 
     @Override
-    public List<HistoriqueEvaluationOrdinaire> findAll() {
+    public List<HistoriqueEvaluation> findAll() {
         return historiqueExamServiceImpl.findAll();
     }
 
     @Override
-    public Optional<HistoriqueEvaluationOrdinaire> findById(Integer id) {
+    public Optional<HistoriqueEvaluation> findById(Integer id) {
         return historiqueExamServiceImpl.findById(id);
     }
 
@@ -30,7 +30,7 @@ public class HistoriqueExamenControllerImpl implements IHistoriqueExamenControll
     }
 
     @Override
-    public HistoriqueEvaluationOrdinaire update(Integer id, HistoriqueEvaluationOrdinaire historiqueEvaluationOrdinaire) {
+    public HistoriqueEvaluation update(Integer id, HistoriqueEvaluation historiqueEvaluationOrdinaire) {
         return null;
     }
 
@@ -40,7 +40,7 @@ public class HistoriqueExamenControllerImpl implements IHistoriqueExamenControll
     }
 
     @Override
-    public HistoriqueEvaluationOrdinaire save(HistoriqueEvaluationOrdinaire historiqueEvaluationOrdinaire) {
+    public HistoriqueEvaluation save(HistoriqueEvaluation historiqueEvaluationOrdinaire) {
         return historiqueExamServiceImpl.save(historiqueEvaluationOrdinaire);
     }
 }

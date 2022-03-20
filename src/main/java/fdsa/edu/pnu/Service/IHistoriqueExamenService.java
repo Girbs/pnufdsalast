@@ -1,15 +1,15 @@
 package fdsa.edu.pnu.Service;
 
-import fdsa.edu.pnu.Model.HistoriqueEvaluationOrdinaire;
+import fdsa.edu.pnu.Model.HistoriqueEvaluation;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface IHistoriqueExamenService {
 
-    List<HistoriqueEvaluationOrdinaire> findAll();
-    Optional<HistoriqueEvaluationOrdinaire> findById(Integer id);
-    HistoriqueEvaluationOrdinaire save(HistoriqueEvaluationOrdinaire historiqueEvaluationOrdinaire);
+    List<HistoriqueEvaluation> findAll();
+    Optional<HistoriqueEvaluation> findById(Integer id);
+    HistoriqueEvaluation save(HistoriqueEvaluation historiqueEvaluation);
     double CalculerMoyenne(Integer IdEtudiantCours);
     void delete(Integer id);
 }

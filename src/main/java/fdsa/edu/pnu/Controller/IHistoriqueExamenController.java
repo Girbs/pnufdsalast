@@ -1,7 +1,6 @@
 package fdsa.edu.pnu.Controller;
 
-import fdsa.edu.pnu.Model.EvaluationOrdinaire;
-import fdsa.edu.pnu.Model.HistoriqueEvaluationOrdinaire;
+import fdsa.edu.pnu.Model.HistoriqueEvaluation;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -21,19 +20,19 @@ public interface IHistoriqueExamenController {
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "La liste des evaluation / Une liste vide")
     })
-    List<HistoriqueEvaluationOrdinaire> findAll();
+    List<HistoriqueEvaluation> findAll();
 
     // @PreAuthorize("hasAnyRole('lireConcours')")
     @GetMapping(value = "/historiqueExamen/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Rechercher un cours par ID", notes = "Cette methode permet de chercher un cours par son ID", response = EvaluationOrdinaire.class)
+    @ApiOperation(value = "Rechercher un cours par ID", notes = "Cette methode permet de chercher un cours par son ID", response = HistoriqueEvaluation.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Le Cours a ete trouve dans la BDD"),
             @ApiResponse(code = 404, message = "Aucun cours n'existe dans la BDD avec l'ID fourni")
     })
-    Optional<HistoriqueEvaluationOrdinaire> findById(@PathVariable("id") Integer id);
+    Optional<HistoriqueEvaluation> findById(@PathVariable("id") Integer id);
 
     @GetMapping(value = "/historiqueExamenEtudiant/{idEtudiant}", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Rechercher un cours par ID", notes = "Cette methode permet de chercher un cours par son ID", response = EvaluationOrdinaire.class)
+    @ApiOperation(value = "Rechercher un cours par ID", notes = "Cette methode permet de chercher un cours par son ID", response = HistoriqueEvaluation.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Le Cours a ete trouve dans la BDD"),
             @ApiResponse(code = 404, message = "Aucun cours n'existe dans la BDD avec l'ID fourni")
@@ -43,12 +42,12 @@ public interface IHistoriqueExamenController {
 
     // @PreAuthorize("hasAnyRole('modifierConcours')")
     @PutMapping(value = "/historiqueExamen/modifier/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Enregistrer un evaluation", notes = "Cette methode permet d'enregistrer ou modifier un evaluation", response = HistoriqueEvaluationOrdinaire.class)
+    @ApiOperation(value = "Enregistrer un evaluation", notes = "Cette methode permet d'enregistrer ou modifier un evaluation", response = HistoriqueEvaluation.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "L'objet le evaluation cree / modifie"),
             @ApiResponse(code = 400, message = "L'objet evaluation n'est pas valide")
     })
-    HistoriqueEvaluationOrdinaire update(@PathVariable("id") Integer id, @RequestBody HistoriqueEvaluationOrdinaire historiqueEvaluationOrdinaire);
+    HistoriqueEvaluation update(@PathVariable("id") Integer id, @RequestBody HistoriqueEvaluation historiqueEvaluation);
 
 
     // @PreAuthorize("hasAnyRole('supplrimerConcours')")
@@ -61,11 +60,11 @@ public interface IHistoriqueExamenController {
 
     // @PreAuthorize("hasAnyRole('creerConcours')")
     @PostMapping(value = "/historiqueExamen/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Enregistrer un evaluation", notes = "Cette methode permet d'enregistrer ou modifier un evaluation", response = HistoriqueEvaluationOrdinaire.class)
+    @ApiOperation(value = "Enregistrer un evaluation", notes = "Cette methode permet d'enregistrer ou modifier un evaluation", response = HistoriqueEvaluation.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "L'objet l' evaluation cree / modifie"),
             @ApiResponse(code = 400, message = "L'objet evaluation n'est pas valide")
     })
-    HistoriqueEvaluationOrdinaire save(@RequestBody HistoriqueEvaluationOrdinaire historiqueEvaluationOrdinaire);
+    HistoriqueEvaluation save(@RequestBody HistoriqueEvaluation historiqueEvaluation);
 
 }

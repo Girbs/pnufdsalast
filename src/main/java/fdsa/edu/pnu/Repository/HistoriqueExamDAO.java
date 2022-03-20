@@ -17,13 +17,13 @@
 package fdsa.edu.pnu.Repository;
 
 
-import fdsa.edu.pnu.Model.HistoriqueEvaluationOrdinaire;
+import fdsa.edu.pnu.Model.HistoriqueEvaluation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 
-public interface HistoriqueExamDAO extends JpaRepository<HistoriqueEvaluationOrdinaire, Integer> {
+public interface HistoriqueExamDAO extends JpaRepository<HistoriqueEvaluation, Integer> {
 
     @Query(value = "{call calculMoyenne(:IdCoursEtudiant)}", nativeQuery = true)
     double calculerMoyenne(@Param("IdCoursEtudiant") Integer IdCoursEtudiant);
