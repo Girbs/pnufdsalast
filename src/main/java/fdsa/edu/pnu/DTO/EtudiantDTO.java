@@ -14,19 +14,21 @@ import org.modelmapper.ModelMapper;
 //Begin Subclass EtudiantDTO
 public class EtudiantDTO {
 
-    //	private java.util.Set paiementSessions = new java.util.HashSet();
-//	private java.util.Set cours = new java.util.HashSet();
-//	private java.util.Set promotions = new java.util.HashSet();
-//	private java.util.Set programmes = new java.util.HashSet();
-//	private fdsa.edu.pnu.Model.HistoriqueEvaluationOrdinaire historiqueExam;
-//	private java.util.Set paiements = new java.util.HashSet();
-//	private java.util.Set stages = new java.util.HashSet();
-//	private java.util.Set requetes = new java.util.HashSet();
-//	private java.util.Set messages = new java.util.HashSet();
-    private static final ModelMapper mapper = new ModelMapper();
-    private String codeEtudiant;
-    private String matricule;
+         private Integer id;
+         private String commune;
+         private String nom;
+         private String prenom;
+         private String cinNif;
+         private String sexe;
+         private String telephone1;
+         private String telephone2;
+         private String adresse;
+         private String codePostal;
+         private String status;
+         private String userName;
+         private String matricule;
 
+    private static final ModelMapper mapper = new ModelMapper();
     public static EtudiantDTO fromEntity(Etudiant etudiant) {
 
         //mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STANDARD);
@@ -39,4 +41,4 @@ public class EtudiantDTO {
         return etudiant;
     }
 
-} //End Subclass EtudiantDTO
+}

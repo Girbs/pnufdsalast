@@ -9,6 +9,9 @@ import fdsa.edu.pnu.Model.Etudiant;
 import fdsa.edu.pnu.Repository.EtudiantDAO;
 import fdsa.edu.pnu.Service.IEtudiantService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 
 import java.util.List;
 import java.util.Optional;
@@ -39,5 +42,13 @@ public class EtudiantServiceImpl implements IEtudiantService {
     @Override
     public void delete(Integer id) {
         etudiantDAO.deleteById(id);
+    }
+
+    @Override
+    public Page<Etudiant> findAllWithPaginationAndSorting(int offset, int pageSize, String sortField, String searchfield, String sortDirection) {
+        Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() :
+                Sort.by(sortField).descending();
+        Page<Etudiant> etudiants = etudiantDAO.findByAllDynameicSearch(searchfield, PageRequest.of(offset - 1, pageSize, sort));
+        return etudiants;
     }
 }

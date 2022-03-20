@@ -17,6 +17,7 @@
 package fdsa.edu.pnu.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,8 +28,8 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "cours","examen" })
 @Table(name = "EvaluationOrdinaire")
+@JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
 public class EvaluationOrdinaire extends Audit<String> implements Serializable {
     @Column(name = "ID", nullable = false, length = 10)
     @Id
@@ -36,14 +37,15 @@ public class EvaluationOrdinaire extends Audit<String> implements Serializable {
     @org.hibernate.annotations.GenericGenerator(name = "PNU_EVALUATION_ID_GENERATOR", strategy = "native")
     private int id;
 
+
     @JsonIgnoreProperties(value = {"evaluationOrdinaires"}, allowSetters = true)
-    @ManyToOne(targetEntity = Cours.class, fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = Cours.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
     @JoinColumns(value = {@JoinColumn(name = "CoursID", referencedColumnName = "ID", nullable = false)}, foreignKey = @ForeignKey(name = "FK_EVALUATIONS_COURS"))
     private Cours cours;
 
     @JsonIgnoreProperties(value = {"evaluationOrdinaires"}, allowSetters = true)
-    @ManyToOne(targetEntity = Examen.class, fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = Examen.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
     @JoinColumns(value = {@JoinColumn(name = "ExamenId", referencedColumnName = "ID", nullable = true)}, foreignKey = @ForeignKey(name = "FK_EVALUATIONS_EXAMEN"))
     private Examen examen;
@@ -63,9 +65,12 @@ public class EvaluationOrdinaire extends Audit<String> implements Serializable {
     @Column(name = "statutResultat", nullable = true, length = 255)
     private String statutResultat;
 
-    @Basic(fetch = FetchType.LAZY)
+
     @JsonIgnoreProperties(value = {"evaluationOrdinaire"}, allowSetters = true)
-    @OneToMany(mappedBy = "evaluationOrdinaire", targetEntity = HistoriqueEvaluationOrdinaire.class)
+  //  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @OneToMany(mappedBy = "evaluationOrdinaire", fetch = FetchType.LAZY)
     private List<HistoriqueEvaluationOrdinaire> historiqueEvaluationOrdinaires;
 
     public EvaluationOrdinaire() {

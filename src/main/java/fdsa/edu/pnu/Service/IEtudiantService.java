@@ -6,6 +6,7 @@
 package fdsa.edu.pnu.Service;
 
 import fdsa.edu.pnu.Model.Etudiant;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 import java.util.Optional;
@@ -22,4 +23,6 @@ public interface IEtudiantService {
     Etudiant save(Etudiant dto);
 
     void delete(Integer id);
+
+    Page<Etudiant> findAllWithPaginationAndSorting(int offset, int pageSize, String sortField, String searchfield, String sortDirection);
 }
