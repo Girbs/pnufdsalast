@@ -1,13 +1,14 @@
 package fdsa.edu.pnu.Model;
 
-        import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-        import lombok.AllArgsConstructor;
-        import lombok.Getter;
-        import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-        import javax.persistence.*;
-        import java.io.Serializable;
-        import java.util.List;
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Getter
@@ -51,13 +52,15 @@ public class Evaluation extends Audit<String> implements Serializable {
 
 
     @JsonIgnoreProperties(value = {"evaluation"}, allowSetters = true)
-    // @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToMany(mappedBy = "evaluation", fetch = FetchType.LAZY)
     private List<HistoriqueEvaluation> historiqueEvaluations;
+
+
 
     public Evaluation() {
     }
 
-
 }
+
 

@@ -46,6 +46,10 @@ public interface PostulantDAO extends JpaRepository<Postulant, Integer> {
     @Query(value = "SELECT * FROM Postulant  WHERE  CONCAT( nom , prenom, adresse, email , telephone, statut_application) LIKE %:text%", nativeQuery = true)
     Page<Postulant> findByAllDynameicSearch(@Param("text") String text, Pageable pageable);
 
+//        @Query(value = "{call VerifyIfCoursAlreadyTaken(:IdProgrammeCours,: IdEtudiant)}", nativeQuery = true)
+//    Integer verifierChoixCours(@Param("IdProgrammeCours") Integer IdCoursProgramme , @Param("IdEtudiant") Integer IdEtudiant);
+
+
     // @Query(value = "SELECT * FROM parent WHERE CONCAT(receiver, sender) like %:text%", nativeQuery = true)
 
 //    @Procedure(procedureName = "ApplicationParStatut")

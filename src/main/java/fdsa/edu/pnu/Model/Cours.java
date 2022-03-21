@@ -17,7 +17,6 @@
 package fdsa.edu.pnu.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -77,10 +76,14 @@ public class Cours implements Serializable {
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private List<Discussion> discussions;
 
+
+
     @JsonIgnoreProperties(value = {"cours"}, allowSetters = true)
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @OneToMany(mappedBy = "cours", targetEntity = CoursEtudiant.class,  fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "cours", targetEntity = CoursEtudiant.class,fetch = FetchType.LAZY)
+    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
+    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private List<CoursEtudiant> coursEtudiants;
+
 
 
     @Column(name = "Duree", nullable = true, length = 255)

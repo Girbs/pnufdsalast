@@ -33,6 +33,7 @@ public class OrganisationExamen extends Audit<String> implements Serializable {
     private Date dateDebut;
     private Date dateFin;
 
+
     @JsonIgnoreProperties(value = {"organisationExamen"}, allowSetters = true)
     @OneToMany(mappedBy = "organisationExamen", targetEntity = Evaluation.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})

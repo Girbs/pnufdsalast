@@ -50,8 +50,6 @@ public class HistoriqueEvaluation implements Serializable {
     @ManyToOne
      @JsonIgnoreProperties(value = {"historiqueEvaluations"}, allowSetters = true)
     //@JoinColumns(value = {@JoinColumn(name = "cours_etudiant_id", referencedColumnName = "ID", nullable = true)}, foreignKey = @ForeignKey(name = "historiqueEvaluationOrdinairesCoursEtudiant"))
-
-
     private CoursEtudiant coursEtudiant;
 
 

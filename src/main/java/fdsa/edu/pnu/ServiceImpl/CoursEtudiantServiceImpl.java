@@ -16,7 +16,7 @@ public class CoursEtudiantServiceImpl implements ICoursEtudiantService {
 
     @Override
     public List<CoursEtudiant> findAll() {
-        return null;
+        return coursEtudiantDAO.findAll();
     }
 
     @Override
@@ -26,7 +26,15 @@ public class CoursEtudiantServiceImpl implements ICoursEtudiantService {
 
     @Override
     public CoursEtudiant save(CoursEtudiant dto) {
-        return null;
+//
+//        CoursEtudiant ce = verifierChoixCours(dto.getCours().getCoursProgramme().getId() , dto.getEtudiant().getId());
+//        if(ce==null){
+//            dto.setType("Session Ordinaire");
+//        }else{
+//            dto.setType("Rappel");
+//        }
+
+        return coursEtudiantDAO.save(dto);
     }
 
     @Override
@@ -37,6 +45,12 @@ public class CoursEtudiantServiceImpl implements ICoursEtudiantService {
     @Override
     public void delete(Integer id) {
 
+    }
+
+    @Override
+    public CoursEtudiant verifierChoixCours(Integer IdCoursProgramme, Integer IdEtudiant) {
+        //return coursEtudiantDAO.verifierChoixCours(IdCoursProgramme, IdEtudiant);
+        return  null;
     }
 
     @Override

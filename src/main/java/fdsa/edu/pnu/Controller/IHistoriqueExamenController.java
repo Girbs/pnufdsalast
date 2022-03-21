@@ -14,7 +14,7 @@ public interface IHistoriqueExamenController {
 
 
     //  @PreAuthorize("hasAnyRole( 'lireConcours')")
-    @GetMapping(value = "/historiqueExamen/all", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/historiqueEvaluation/all", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Renvoi la liste des evaluations", notes = "Cette methode permet de chercher et renvoyer la liste des evaluation qui existent "
             + "dans la BDD", responseContainer = "List<EvaluationOrdinaire>")
     @ApiResponses(value = {
