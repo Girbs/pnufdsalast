@@ -419,3 +419,785 @@ Caused by: java.net.SocketException: Connection reset
 21-03-2022 00:02:06.803 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
 21-03-2022 00:02:19.536 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
 21-03-2022 00:02:19.577 [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+21-03-2022 00:05:47.496 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStarting - Starting PnuApplication using Java 16.0.2 on M638 with PID 17344 (C:\Users\gbijou\Desktop\pnu\pnufdsalast\target\classes started by gbijou in C:\Users\gbijou\Desktop\pnu\pnufdsalast)
+21-03-2022 00:05:47.499 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+21-03-2022 00:05:47.561 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+21-03-2022 00:05:47.562 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+21-03-2022 00:05:49.237 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+21-03-2022 00:05:49.576 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 326 ms. Found 40 JPA repository interfaces.
+21-03-2022 00:05:50.113 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@64e098fb' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+21-03-2022 00:05:50.119 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+21-03-2022 00:05:50.715 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+21-03-2022 00:05:50.734 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+21-03-2022 00:05:50.735 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.53]
+21-03-2022 00:05:50.875 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+21-03-2022 00:05:50.876 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 3313 ms
+21-03-2022 00:05:51.291 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+21-03-2022 00:05:51.394 [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.4.32.Final
+21-03-2022 00:05:51.626 [restartedMain] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+21-03-2022 00:05:51.760 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+21-03-2022 00:06:02.974 [restartedMain] ERROR com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException - HikariPool-1 - Exception during pool initialization.
+com.microsoft.sqlserver.jdbc.SQLServerException: The driver could not establish a secure connection to SQL Server by using Secure Sockets Layer (SSL) encryption. Error: "Unexpected rethrowing".
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.terminate(SQLServerConnection.java:3206)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL(IOBuffer.java:1916)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:2760)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:2418)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2265)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1291)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:881)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:693)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:510)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:374)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:134)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1707)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1452)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:212)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:175)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:170)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:155)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:87)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:260)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:234)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5219)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1396)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1386)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:919)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:835)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1396)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1386)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:919)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:263)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:432)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:927)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:450)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:199)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:182)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:160)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at fdsa.edu.pnu.PnuApplication.main(PnuApplication.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: javax.net.ssl.SSLException: Unexpected rethrowing
+	at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:341)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:312)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:307)
+	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:145)
+	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1506)
+	at java.base/sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1416)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:451)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:422)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL(IOBuffer.java:1824)
+	... 137 common frames omitted
+Caused by: java.io.IOException: Connection reset ClientConnectionId:bfc99846-9fb9-4de0-b302-8867e6cd9562
+	at com.microsoft.sqlserver.jdbc.TDSChannel$SSLHandshakeInputStream.ensureSSLPayload(IOBuffer.java:806)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$SSLHandshakeInputStream.readInternal(IOBuffer.java:856)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$SSLHandshakeInputStream.read(IOBuffer.java:849)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.readInternal(IOBuffer.java:1019)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.read(IOBuffer.java:1009)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:478)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:472)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:160)
+	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:111)
+	... 142 common frames omitted
+21-03-2022 00:06:02.976 [restartedMain] WARN  o.h.e.j.e.i.JdbcEnvironmentInitiator.initiateService - HHH000342: Could not obtain connection to query metadata
+com.microsoft.sqlserver.jdbc.SQLServerException: The driver could not establish a secure connection to SQL Server by using Secure Sockets Layer (SSL) encryption. Error: "Unexpected rethrowing".
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.terminate(SQLServerConnection.java:3206)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL(IOBuffer.java:1916)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:2760)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:2418)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2265)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1291)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:881)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:693)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:510)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:374)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:134)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1707)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1452)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:212)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:175)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:170)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:155)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:87)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:260)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:234)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5219)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1396)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1386)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:919)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:835)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1396)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1386)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:919)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:263)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:432)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:927)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:450)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:199)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:182)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:160)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at fdsa.edu.pnu.PnuApplication.main(PnuApplication.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: javax.net.ssl.SSLException: Unexpected rethrowing
+	at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:127)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:341)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:312)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:307)
+	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:145)
+	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1506)
+	at java.base/sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1416)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:451)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:422)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL(IOBuffer.java:1824)
+	... 137 common frames omitted
+Caused by: java.io.IOException: Connection reset ClientConnectionId:bfc99846-9fb9-4de0-b302-8867e6cd9562
+	at com.microsoft.sqlserver.jdbc.TDSChannel$SSLHandshakeInputStream.ensureSSLPayload(IOBuffer.java:806)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$SSLHandshakeInputStream.readInternal(IOBuffer.java:856)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$SSLHandshakeInputStream.read(IOBuffer.java:849)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.readInternal(IOBuffer.java:1019)
+	at com.microsoft.sqlserver.jdbc.TDSChannel$ProxyInputStream.read(IOBuffer.java:1009)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:478)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:472)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:160)
+	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:111)
+	... 142 common frames omitted
+21-03-2022 00:06:02.980 [restartedMain] ERROR o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+21-03-2022 00:06:02.982 [restartedMain] ERROR o.s.b.w.e.tomcat.TomcatStarter.onStartup - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtRequestFilter': Unsatisfied dependency expressed through field 'jwtService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'JWTService': Unsatisfied dependency expressed through field 'userDAO'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'utilisateurDAO' defined in fdsa.edu.pnu.Repository.UtilisateurDAO defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot create inner bean '(inner bean)#ee152f3' of type [org.springframework.orm.jpa.SharedEntityManagerCreator] while setting bean property 'entityManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#ee152f3': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+21-03-2022 00:06:03.008 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Stopping service [Tomcat]
+21-03-2022 00:06:03.013 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+21-03-2022 00:06:03.024 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener.logMessage - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+21-03-2022 00:06:03.054 [restartedMain] ERROR o.s.boot.SpringApplication.reportFailure - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at fdsa.edu.pnu.PnuApplication.main(PnuApplication.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:142)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:450)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:199)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:182)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:160)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtRequestFilter': Unsatisfied dependency expressed through field 'jwtService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'JWTService': Unsatisfied dependency expressed through field 'userDAO'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'utilisateurDAO' defined in fdsa.edu.pnu.Repository.UtilisateurDAO defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot create inner bean '(inner bean)#ee152f3' of type [org.springframework.orm.jpa.SharedEntityManagerCreator] while setting bean property 'entityManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#ee152f3': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:212)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:175)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:170)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:155)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:87)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:260)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:234)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5219)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1396)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1386)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:919)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:835)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1396)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1386)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:919)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:263)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:432)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:927)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	... 18 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'JWTService': Unsatisfied dependency expressed through field 'userDAO'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'utilisateurDAO' defined in fdsa.edu.pnu.Repository.UtilisateurDAO defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot create inner bean '(inner bean)#ee152f3' of type [org.springframework.orm.jpa.SharedEntityManagerCreator] while setting bean property 'entityManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#ee152f3': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
+	... 60 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'utilisateurDAO' defined in fdsa.edu.pnu.Repository.UtilisateurDAO defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot create inner bean '(inner bean)#ee152f3' of type [org.springframework.orm.jpa.SharedEntityManagerCreator] while setting bean property 'entityManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#ee152f3': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:389)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:134)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1707)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1452)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
+	... 74 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#ee152f3': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:342)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:693)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:510)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:374)
+	... 87 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330)
+	... 95 common frames omitted
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:275)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 102 common frames omitted
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:100)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:54)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:137)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	... 119 common frames omitted
+21-03-2022 00:06:54.783 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStarting - Starting PnuApplication using Java 16.0.2 on M638 with PID 20008 (C:\Users\gbijou\Desktop\pnu\pnufdsalast\target\classes started by gbijou in C:\Users\gbijou\Desktop\pnu\pnufdsalast)
+21-03-2022 00:06:54.786 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+21-03-2022 00:06:54.845 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+21-03-2022 00:06:54.846 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+21-03-2022 00:06:56.659 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+21-03-2022 00:06:57.037 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 367 ms. Found 40 JPA repository interfaces.
+21-03-2022 00:06:57.653 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@64e098fb' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+21-03-2022 00:06:57.658 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+21-03-2022 00:06:58.320 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+21-03-2022 00:06:58.337 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+21-03-2022 00:06:58.337 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.53]
+21-03-2022 00:06:58.469 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+21-03-2022 00:06:58.470 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 3623 ms
+21-03-2022 00:06:58.910 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+21-03-2022 00:06:59.003 [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.4.32.Final
+21-03-2022 00:06:59.219 [restartedMain] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+21-03-2022 00:06:59.350 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+21-03-2022 00:07:01.179 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+21-03-2022 00:07:01.218 [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+21-03-2022 00:07:31.757 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+21-03-2022 00:07:31.777 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+21-03-2022 00:07:32.590 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+21-03-2022 00:07:34.903 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+21-03-2022 00:07:35.278 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@16eb6ebe, org.springframework.security.web.context.SecurityContextPersistenceFilter@4718c311, org.springframework.security.web.header.HeaderWriterFilter@1f6537a4, org.springframework.web.filter.CorsFilter@1510b0ae, org.springframework.security.web.authentication.logout.LogoutFilter@2465c7c0, fdsa.edu.pnu.Security.JwtRequestFilter@1ed2a97, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@331e0e94, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@67710927, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2e22ba83, org.springframework.security.web.session.SessionManagementFilter@7f016c0d, org.springframework.security.web.access.ExceptionTranslationFilter@62831701, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7a24a204]
+21-03-2022 00:07:35.464 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+21-03-2022 00:07:35.807 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8080 (http) with context path ''
+21-03-2022 00:07:35.809 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+21-03-2022 00:07:35.839 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+21-03-2022 00:07:35.873 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+21-03-2022 00:07:36.501 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_1
+21-03-2022 00:07:36.512 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_1
+21-03-2022 00:07:36.544 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_1
+21-03-2022 00:07:36.613 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_1
+21-03-2022 00:07:36.620 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_1
+21-03-2022 00:07:36.627 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_2
+21-03-2022 00:07:36.638 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_2
+21-03-2022 00:07:36.655 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_2
+21-03-2022 00:07:36.668 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_2
+21-03-2022 00:07:36.674 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_2
+21-03-2022 00:07:36.681 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_3
+21-03-2022 00:07:36.694 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_3
+21-03-2022 00:07:36.712 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_3
+21-03-2022 00:07:36.731 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_3
+21-03-2022 00:07:36.740 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_4
+21-03-2022 00:07:36.754 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_4
+21-03-2022 00:07:36.770 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_4
+21-03-2022 00:07:36.795 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_4
+21-03-2022 00:07:36.803 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_3
+21-03-2022 00:07:36.815 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_1
+21-03-2022 00:07:36.841 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_2
+21-03-2022 00:07:36.886 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_3
+21-03-2022 00:07:36.914 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_5
+21-03-2022 00:07:36.922 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_5
+21-03-2022 00:07:36.939 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_5
+21-03-2022 00:07:36.984 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_5
+21-03-2022 00:07:36.991 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_6
+21-03-2022 00:07:37.003 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_6
+21-03-2022 00:07:37.019 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_6
+21-03-2022 00:07:37.037 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_6
+21-03-2022 00:07:37.043 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_4
+21-03-2022 00:07:37.060 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_4
+21-03-2022 00:07:37.076 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_5
+21-03-2022 00:07:37.082 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_7
+21-03-2022 00:07:37.091 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_7
+21-03-2022 00:07:37.100 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_7
+21-03-2022 00:07:37.120 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_7
+21-03-2022 00:07:37.123 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_8
+21-03-2022 00:07:37.136 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_8
+21-03-2022 00:07:37.164 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_8
+21-03-2022 00:07:37.185 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_8
+21-03-2022 00:07:37.190 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_5
+21-03-2022 00:07:37.196 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_9
+21-03-2022 00:07:37.204 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_9
+21-03-2022 00:07:37.221 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_9
+21-03-2022 00:07:37.235 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_9
+21-03-2022 00:07:37.249 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_6
+21-03-2022 00:07:37.286 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_10
+21-03-2022 00:07:37.293 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_10
+21-03-2022 00:07:37.311 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_10
+21-03-2022 00:07:37.362 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_10
+21-03-2022 00:07:37.445 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_6
+21-03-2022 00:07:37.463 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_11
+21-03-2022 00:07:37.465 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_11
+21-03-2022 00:07:37.469 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_11
+21-03-2022 00:07:37.473 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_11
+21-03-2022 00:07:37.481 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_12
+21-03-2022 00:07:37.487 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_12
+21-03-2022 00:07:37.503 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_12
+21-03-2022 00:07:37.509 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_12
+21-03-2022 00:07:37.512 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_13
+21-03-2022 00:07:37.516 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_13
+21-03-2022 00:07:37.520 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_13
+21-03-2022 00:07:37.525 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_13
+21-03-2022 00:07:37.529 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_14
+21-03-2022 00:07:37.537 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_14
+21-03-2022 00:07:37.548 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_14
+21-03-2022 00:07:37.594 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_14
+21-03-2022 00:07:37.597 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_15
+21-03-2022 00:07:37.598 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_15
+21-03-2022 00:07:37.613 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_15
+21-03-2022 00:07:37.670 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_15
+21-03-2022 00:07:37.674 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_16
+21-03-2022 00:07:37.686 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_16
+21-03-2022 00:07:37.700 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_16
+21-03-2022 00:07:37.721 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_16
+21-03-2022 00:07:37.725 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_17
+21-03-2022 00:07:37.734 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_17
+21-03-2022 00:07:37.746 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_17
+21-03-2022 00:07:37.768 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_17
+21-03-2022 00:07:37.774 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_7
+21-03-2022 00:07:37.854 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_18
+21-03-2022 00:07:37.855 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_18
+21-03-2022 00:07:37.859 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_18
+21-03-2022 00:07:37.862 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_18
+21-03-2022 00:07:37.865 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_8
+21-03-2022 00:07:37.868 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_19
+21-03-2022 00:07:37.876 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_19
+21-03-2022 00:07:37.887 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_19
+21-03-2022 00:07:37.904 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_19
+21-03-2022 00:07:37.908 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_9
+21-03-2022 00:07:37.911 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_20
+21-03-2022 00:07:37.921 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_20
+21-03-2022 00:07:37.932 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_20
+21-03-2022 00:07:37.945 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_20
+21-03-2022 00:07:37.949 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_10
+21-03-2022 00:07:37.953 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_21
+21-03-2022 00:07:37.957 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_21
+21-03-2022 00:07:37.962 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_21
+21-03-2022 00:07:37.972 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_21
+21-03-2022 00:07:37.978 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_11
+21-03-2022 00:07:38.016 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_22
+21-03-2022 00:07:38.018 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_22
+21-03-2022 00:07:38.022 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_22
+21-03-2022 00:07:38.023 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_12
+21-03-2022 00:07:38.049 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStarted - Started PnuApplication in 44.188 seconds (JVM running for 45.117)
+21-03-2022 00:07:44.266 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+21-03-2022 00:22:56.133 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+21-03-2022 00:22:56.189 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+21-03-2022 00:22:56.223 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+21-03-2022 00:23:08.786 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStarting - Starting PnuApplication using Java 16.0.2 on M638 with PID 12180 (C:\Users\gbijou\Desktop\pnu\pnufdsalast\target\classes started by gbijou in C:\Users\gbijou\Desktop\pnu\pnufdsalast)
+21-03-2022 00:23:08.790 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+21-03-2022 00:23:08.870 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+21-03-2022 00:23:08.871 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+21-03-2022 00:23:10.384 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+21-03-2022 00:23:10.780 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 385 ms. Found 41 JPA repository interfaces.
+21-03-2022 00:23:11.369 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7687809e' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+21-03-2022 00:23:11.375 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+21-03-2022 00:23:11.984 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+21-03-2022 00:23:12.003 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+21-03-2022 00:23:12.004 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.53]
+21-03-2022 00:23:12.153 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+21-03-2022 00:23:12.154 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 3282 ms
+21-03-2022 00:23:12.629 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+21-03-2022 00:23:12.735 [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.4.32.Final
+21-03-2022 00:23:12.920 [restartedMain] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+21-03-2022 00:23:13.036 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+21-03-2022 00:23:15.316 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+21-03-2022 00:23:15.351 [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+21-03-2022 00:24:07.300 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+21-03-2022 00:24:07.308 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+21-03-2022 00:24:07.852 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+21-03-2022 00:24:09.416 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+21-03-2022 00:24:09.622 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@b175183, org.springframework.security.web.context.SecurityContextPersistenceFilter@75a6be65, org.springframework.security.web.header.HeaderWriterFilter@1a0180ec, org.springframework.web.filter.CorsFilter@7df8aadd, org.springframework.security.web.authentication.logout.LogoutFilter@1e6ee96a, fdsa.edu.pnu.Security.JwtRequestFilter@4295d977, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7c0afe05, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7d46ff0c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@22c2a576, org.springframework.security.web.session.SessionManagementFilter@ec83b5f, org.springframework.security.web.access.ExceptionTranslationFilter@19c5f425, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1f661c0c]
+21-03-2022 00:24:09.742 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+21-03-2022 00:24:09.969 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8080 (http) with context path ''
+21-03-2022 00:24:09.971 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Context refreshed
+21-03-2022 00:24:09.994 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start - Found 1 custom documentation plugin(s)
+21-03-2022 00:24:10.031 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan - Scanning for api listing references
+21-03-2022 00:24:10.476 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_1
+21-03-2022 00:24:10.486 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_1
+21-03-2022 00:24:10.509 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_1
+21-03-2022 00:24:10.565 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_1
+21-03-2022 00:24:10.573 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_1
+21-03-2022 00:24:10.580 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_2
+21-03-2022 00:24:10.588 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_2
+21-03-2022 00:24:10.603 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_2
+21-03-2022 00:24:10.612 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_2
+21-03-2022 00:24:10.620 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_2
+21-03-2022 00:24:10.627 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_3
+21-03-2022 00:24:10.636 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_3
+21-03-2022 00:24:10.657 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_3
+21-03-2022 00:24:10.669 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_3
+21-03-2022 00:24:10.672 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_4
+21-03-2022 00:24:10.680 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_4
+21-03-2022 00:24:10.689 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_4
+21-03-2022 00:24:10.702 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_4
+21-03-2022 00:24:10.707 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_3
+21-03-2022 00:24:10.714 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_1
+21-03-2022 00:24:10.723 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_2
+21-03-2022 00:24:10.750 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_3
+21-03-2022 00:24:10.767 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_5
+21-03-2022 00:24:10.779 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_5
+21-03-2022 00:24:10.799 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_5
+21-03-2022 00:24:10.841 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_5
+21-03-2022 00:24:10.843 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_6
+21-03-2022 00:24:10.850 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_6
+21-03-2022 00:24:10.866 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_6
+21-03-2022 00:24:10.880 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_6
+21-03-2022 00:24:10.884 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_4
+21-03-2022 00:24:10.893 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_4
+21-03-2022 00:24:10.903 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_5
+21-03-2022 00:24:10.910 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_7
+21-03-2022 00:24:10.921 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_7
+21-03-2022 00:24:10.935 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_7
+21-03-2022 00:24:10.964 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_7
+21-03-2022 00:24:10.969 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_8
+21-03-2022 00:24:10.986 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_8
+21-03-2022 00:24:11.018 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_8
+21-03-2022 00:24:11.044 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_8
+21-03-2022 00:24:11.050 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_5
+21-03-2022 00:24:11.054 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_9
+21-03-2022 00:24:11.062 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_9
+21-03-2022 00:24:11.077 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_9
+21-03-2022 00:24:11.091 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_9
+21-03-2022 00:24:11.104 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_6
+21-03-2022 00:24:11.143 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_10
+21-03-2022 00:24:11.153 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_10
+21-03-2022 00:24:11.173 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_10
+21-03-2022 00:24:11.232 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_10
+21-03-2022 00:24:11.286 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_11
+21-03-2022 00:24:11.292 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_11
+21-03-2022 00:24:11.307 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_11
+21-03-2022 00:24:11.321 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_11
+21-03-2022 00:24:11.342 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteEmployeeUsingDELETE_6
+21-03-2022 00:24:11.357 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_12
+21-03-2022 00:24:11.359 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_12
+21-03-2022 00:24:11.364 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_12
+21-03-2022 00:24:11.367 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_12
+21-03-2022 00:24:11.375 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_13
+21-03-2022 00:24:11.382 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_13
+21-03-2022 00:24:11.405 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_13
+21-03-2022 00:24:11.413 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_13
+21-03-2022 00:24:11.417 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_14
+21-03-2022 00:24:11.423 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_14
+21-03-2022 00:24:11.428 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_14
+21-03-2022 00:24:11.435 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_14
+21-03-2022 00:24:11.438 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_15
+21-03-2022 00:24:11.449 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_15
+21-03-2022 00:24:11.458 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_15
+21-03-2022 00:24:11.504 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_15
+21-03-2022 00:24:11.506 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_16
+21-03-2022 00:24:11.508 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_16
+21-03-2022 00:24:11.516 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_16
+21-03-2022 00:24:11.585 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_16
+21-03-2022 00:24:11.588 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_17
+21-03-2022 00:24:11.602 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_17
+21-03-2022 00:24:11.611 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_17
+21-03-2022 00:24:11.631 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_17
+21-03-2022 00:24:11.635 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_18
+21-03-2022 00:24:11.646 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_18
+21-03-2022 00:24:11.656 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_18
+21-03-2022 00:24:11.671 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_18
+21-03-2022 00:24:11.674 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_7
+21-03-2022 00:24:11.768 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_19
+21-03-2022 00:24:11.770 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_19
+21-03-2022 00:24:11.775 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_19
+21-03-2022 00:24:11.778 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_19
+21-03-2022 00:24:11.784 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_8
+21-03-2022 00:24:11.787 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_20
+21-03-2022 00:24:11.797 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_20
+21-03-2022 00:24:11.823 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_20
+21-03-2022 00:24:11.842 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_20
+21-03-2022 00:24:11.851 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_9
+21-03-2022 00:24:11.854 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_21
+21-03-2022 00:24:11.867 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_21
+21-03-2022 00:24:11.881 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_21
+21-03-2022 00:24:11.900 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_21
+21-03-2022 00:24:11.909 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_10
+21-03-2022 00:24:11.913 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: deleteUsingDELETE_22
+21-03-2022 00:24:11.916 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_22
+21-03-2022 00:24:11.920 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_22
+21-03-2022 00:24:11.926 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_22
+21-03-2022 00:24:11.931 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_11
+21-03-2022 00:24:11.987 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findAllUsingGET_23
+21-03-2022 00:24:11.990 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: findByIdUsingGET_23
+21-03-2022 00:24:11.993 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_23
+21-03-2022 00:24:11.994 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_12
+21-03-2022 00:24:12.012 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStarted - Started PnuApplication in 63.85 seconds (JVM running for 64.699)
+21-03-2022 00:25:07.218 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
