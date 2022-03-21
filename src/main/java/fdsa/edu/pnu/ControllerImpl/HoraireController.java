@@ -27,12 +27,12 @@ public class HoraireController implements IHoraireController {
 
     @Override
     public List<Horaire> findAll() {
-        return null;
+        return horaireServiceImpl.findAll();
     }
 
     @Override
     public Optional<Horaire> findById(Integer id) {
-        return Optional.empty();
+        return horaireServiceImpl.findById(id);
     }
 
     @Override
@@ -42,11 +42,11 @@ public class HoraireController implements IHoraireController {
 
     @Override
     public void delete(Integer id) {
-
+        horaireServiceImpl.delete(id);
     }
 
     @Override
     public Horaire save(Horaire horaire) {
-        return null;
+        return horaireServiceImpl.save(horaire);
     }
 }
