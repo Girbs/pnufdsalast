@@ -45,4 +45,9 @@ public class CoursServiceImpl implements ICoursService {
     public void delete(Integer id) {
         coursDAO.deleteById(id);
     }
+
+    @Override
+    public Cours findCoursProgramByIdCours(Integer id) {
+        return coursDAO.findCoursProgramByIdCours(id);
+    }
 }

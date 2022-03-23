@@ -23,10 +23,7 @@ public class CoursEtudiant implements Serializable {
 
     @Column(name = "ID", nullable = false, length = 10)
     @Id
-    @GeneratedValue(generator = "PNU_Cours_Etudiant_ID_GENERATOR")
-    @org.hibernate.annotations.GenericGenerator(name = "PNU_Cours_Etudiant_ID_GENERATOR", strategy = "native")
-
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Integer id;
     private double note;

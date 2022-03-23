@@ -17,7 +17,7 @@ public interface ICoursEtudiantService {
 
     void delete(Integer id);
 
-    CoursEtudiant verifierChoixCours(Integer IdCoursProgramme , Integer IdEtudiant);
+    List<Integer> verifierChoixCours(Integer IdCoursProgramme , Integer IdEtudiant);
 
     CoursEtudiant calculmoyenneHelper(CoursEtudiant coursEtudiant);
 }

@@ -36,6 +36,11 @@ public class EvaluationControllerImpl implements IEvaluationController {
     }
 
     @Override
+    public List<Evaluation> findEvaluationsByOrganisationExamenId(Integer idOrganisationExamen) {
+        return evaluationServiceImpl.findEvaluationsByOrganisationExamenId(idOrganisationExamen);
+    }
+
+    @Override
     public void delete(Integer id) {
         evaluationServiceImpl.delete(id);
     }

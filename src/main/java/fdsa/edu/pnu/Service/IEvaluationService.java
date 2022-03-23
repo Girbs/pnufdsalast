@@ -13,4 +13,6 @@ public interface IEvaluationService {
     Evaluation save(Evaluation dto);
 
     void delete(Integer id);
+
+    List<Evaluation> findEvaluationsByOrganisationExamenId( Integer idOrganisationExamen);
 }

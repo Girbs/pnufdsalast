@@ -1,5 +1,6 @@
 package fdsa.edu.pnu.ServiceImpl;
 
+import fdsa.edu.pnu.Model.Cours;
 import fdsa.edu.pnu.Model.CoursEtudiant;
 import fdsa.edu.pnu.Repository.CoursEtudiantDAO;
 import fdsa.edu.pnu.Service.ICoursEtudiantService;
@@ -14,6 +15,9 @@ public class CoursEtudiantServiceImpl implements ICoursEtudiantService {
     @Autowired
     private CoursEtudiantDAO coursEtudiantDAO;
 
+    @Autowired
+    private CoursServiceImpl coursService;
+
     @Override
     public List<CoursEtudiant> findAll() {
         return coursEtudiantDAO.findAll();
@@ -26,14 +30,13 @@ public class CoursEtudiantServiceImpl implements ICoursEtudiantService {
 
     @Override
     public CoursEtudiant save(CoursEtudiant dto) {
-//
-//        CoursEtudiant ce = verifierChoixCours(dto.getCours().getCoursProgramme().getId() , dto.getEtudiant().getId());
-//        if(ce==null){
-//            dto.setType("Session Ordinaire");
-//        }else{
-//            dto.setType("Rappel");
-//        }
-
+         Cours c = coursService.findCoursProgramByIdCours(dto.getCours().getId());
+         List<Integer> ce = verifierChoixCours(c.getCoursProgramme().getId(), dto.getEtudiant().getId());
+            if(ce.isEmpty()){
+                dto.setType("Session Ordinaire");
+            }else{
+                dto.setType("Rappel");
+            }
         return coursEtudiantDAO.save(dto);
     }
 
@@ -46,11 +49,10 @@ public class CoursEtudiantServiceImpl implements ICoursEtudiantService {
     public void delete(Integer id) {
 
     }
-
     @Override
-    public CoursEtudiant verifierChoixCours(Integer IdCoursProgramme, Integer IdEtudiant) {
-        //return coursEtudiantDAO.verifierChoixCours(IdCoursProgramme, IdEtudiant);
-        return  null;
+    public List<Integer> verifierChoixCours(Integer IdCoursProgramme, Integer IdEtudiant) {
+        return coursEtudiantDAO.verifierChoixCours(IdCoursProgramme, IdEtudiant);
+
     }
 
     @Override

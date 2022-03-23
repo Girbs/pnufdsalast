@@ -19,8 +19,16 @@ package fdsa.edu.pnu.Repository;
 
 import fdsa.edu.pnu.Model.Evaluation;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import java.util.List;
 
 
 public interface EvaluationDAO extends JpaRepository<Evaluation, Integer> {
+
+    @Query(value = "{call findEvaluationsByOrganisationExamenId(:idOrganisationExamen)}", nativeQuery = true)
+    List<Evaluation> findEvaluationsByOrganisationExamenId(@Param("idOrganisationExamen") Integer idOrganisationExamen);
+
 
 }

@@ -52,6 +52,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests().antMatchers(
                         "/authenticate",
                         "/postulant/nouveau",
+                        "/coursEtudiant/nouveau",
+                        "/getEvaluationsByOrganisationExamenId/{idOrganisationExamen}",
                         "/organisationExamen/all",
                         "/matiere/listeDynamique",
                         "/resultatExamenConcours/{id}",

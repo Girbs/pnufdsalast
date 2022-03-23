@@ -13,4 +13,6 @@ public interface ICoursService {
     Cours save(Cours cours);
 
     void delete(Integer id);
+
+   Cours findCoursProgramByIdCours(Integer idCours);
 }

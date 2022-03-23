@@ -29,4 +29,8 @@ public interface CoursDAO extends JpaRepository<Cours, Integer> {
 
     @Query(value = "SELECT * FROM Cours  WHERE  CONCAT( nom , prenom, adresse, email , telephone, statut_application) LIKE %:text%", nativeQuery = true)
     Page<Postulant> findByAllDynameicSearch(@Param("text") String text, Pageable pageable);
+
+
+    @Query("SELECT c FROM  Cours c WHERE c.id  = :idNouveauCours")
+    Cours findCoursProgramByIdCours(@Param("idNouveauCours")  Integer idNouveauCours);
 }

@@ -40,6 +40,16 @@ public interface IEvaluationController {
     })
     Evaluation  update(@PathVariable("id") Integer id, @RequestBody Evaluation  evaluationOrdinaire);
 
+    @GetMapping(value ="/getEvaluationsByOrganisationExamenId/{idOrganisationExamen}",  produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Renvoi la liste des evaluations", notes = "Cette methode permet de chercher et renvoyer la liste des evaluation qui existent "
+            + "dans la BDD", responseContainer = "List<EvaluationOrdinaire>")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "La liste des evaluation / Une liste vide")
+    })
+
+   List<Evaluation> findEvaluationsByOrganisationExamenId(@PathVariable("idOrganisationExamen") Integer idOrganisationExamen);
+
+
 
     // @PreAuthorize("hasAnyRole('supplrimerConcours')")
     @DeleteMapping(value = "/evaluation/supprimer/{id}")

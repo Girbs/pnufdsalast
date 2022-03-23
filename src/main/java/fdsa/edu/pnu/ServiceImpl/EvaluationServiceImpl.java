@@ -44,4 +44,9 @@ public class EvaluationServiceImpl implements IEvaluationService {
     public void delete(Integer id) {
         evaluationDAO.deleteById(id);
     }
+
+    @Override
+    public List<Evaluation> findEvaluationsByOrganisationExamenId(Integer idOrganisationExamen) {
+        return evaluationDAO.findEvaluationsByOrganisationExamenId(idOrganisationExamen);
+    }
 }
