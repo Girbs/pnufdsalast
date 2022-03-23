@@ -23,7 +23,7 @@ public interface IHistoriqueExamenController {
     List<HistoriqueEvaluation> findAll();
 
     // @PreAuthorize("hasAnyRole('lireConcours')")
-    @GetMapping(value = "/historiqueExamen/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/historiqueEvaluation/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Rechercher un cours par ID", notes = "Cette methode permet de chercher un cours par son ID", response = HistoriqueEvaluation.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Le Cours a ete trouve dans la BDD"),
@@ -41,7 +41,7 @@ public interface IHistoriqueExamenController {
 
 
     // @PreAuthorize("hasAnyRole('modifierConcours')")
-    @PutMapping(value = "/historiqueExamen/modifier/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value = "/historiqueEvaluation/modifier/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Enregistrer un evaluation", notes = "Cette methode permet d'enregistrer ou modifier un evaluation", response = HistoriqueEvaluation.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "L'objet le evaluation cree / modifie"),
@@ -51,7 +51,7 @@ public interface IHistoriqueExamenController {
 
 
     // @PreAuthorize("hasAnyRole('supplrimerConcours')")
-    @DeleteMapping(value = "/historiqueExamen/supprimer/{id}")
+    @DeleteMapping(value = "/historiqueEvaluation/supprimer/{id}")
     @ApiOperation(value = "Supprimer un cours", notes = "Cette methode permet de supprimer un cours par ID")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Le cours a ete supprime")
@@ -59,7 +59,7 @@ public interface IHistoriqueExamenController {
     void delete(@PathVariable("id") Integer id);
 
     // @PreAuthorize("hasAnyRole('creerConcours')")
-    @PostMapping(value = "/historiqueExamen/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/historiqueEvaluation/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Enregistrer un evaluation", notes = "Cette methode permet d'enregistrer ou modifier un evaluation", response = HistoriqueEvaluation.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "L'objet l' evaluation cree / modifie"),
