@@ -1,6 +1,7 @@
 package fdsa.edu.pnu.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -43,7 +44,7 @@ public class CoursEtudiant implements Serializable {
     private Cours cours;
 
     @JsonIgnoreProperties(value = {"coursEtudiant"}, allowSetters = true)
-    //@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToMany(mappedBy = "coursEtudiant", fetch = FetchType.LAZY)
     private List<HistoriqueEvaluation> historiqueEvaluations;
 
