@@ -38,6 +38,7 @@ public class HistoriqueExamenConcours implements Serializable {
     @ManyToOne(targetEntity = PlannificationConcours.class)
     @JoinColumns({@JoinColumn(name = "PlannificationConcoursID", referencedColumnName = "ID")})
     public PlannificationConcours plannificationConcours;
+
     @Column(name = "ID", nullable = false, length = 10)
     @Id
     @GeneratedValue(generator = "PNU_HISTORIQUEEXAMENCONCOURS_ID_GENERATOR")
@@ -45,6 +46,7 @@ public class HistoriqueExamenConcours implements Serializable {
     private int ID;
     @Column(name = "NoteObtenue", nullable = false, length = 10)
     private double noteObtenue;
+
     @JsonIgnoreProperties(value = {"historiqueExamenConcourss"}, allowSetters = true)
     @ManyToOne(targetEntity = Postulant.class)
     @JoinColumns({@JoinColumn(name = "PostulantID", referencedColumnName = "ID")})

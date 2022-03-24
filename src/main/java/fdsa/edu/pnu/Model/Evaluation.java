@@ -1,7 +1,6 @@
 package fdsa.edu.pnu.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,6 +14,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @Table(name = "Evaluation")
+@JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
 public class Evaluation extends Audit<String> implements Serializable {
     @Column(name = "ID", nullable = false, length = 10)
     @Id
@@ -50,13 +50,17 @@ public class Evaluation extends Audit<String> implements Serializable {
     @Column(name = "statutResultat", nullable = true, length = 255)
     private String statutResultat;
 
+//
+//    @JsonIgnoreProperties(value = {"evaluation"}, allowSetters = true)
+//    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+//    @OneToMany(mappedBy = "evaluation", fetch = FetchType.EAGER)
+//    private List<HistoriqueEvaluation> historiqueEvaluations;
 
     @JsonIgnoreProperties(value = {"evaluation"}, allowSetters = true)
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @OneToMany(mappedBy = "evaluation", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "evaluation", targetEntity = HistoriqueEvaluation.class)
+    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
+    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private List<HistoriqueEvaluation> historiqueEvaluations;
-
-
 
     public Evaluation() {
     }

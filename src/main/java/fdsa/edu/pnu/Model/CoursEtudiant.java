@@ -18,7 +18,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "CoursEtudiant")
-
+@JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
 public class CoursEtudiant implements Serializable {
 
     @Column(name = "ID", nullable = false, length = 10)
