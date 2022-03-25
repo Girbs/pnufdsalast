@@ -60,7 +60,7 @@ public interface IEvaluationController {
     void delete(@PathVariable("id") Integer id);
 
     // @PreAuthorize("hasAnyRole('creerConcours')")
-    @PostMapping(value = "/evaluationOrdinaire/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/evaluation/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Enregistrer un evaluationOrdinaire", notes = "Cette methode permet d'enregistrer ou modifier un evaluationOrdinaire", response = Evaluation.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "L'objet l' evaluationOrdinaire cree / modifie"),

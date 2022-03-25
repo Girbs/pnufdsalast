@@ -99,5 +99,23 @@ public class EmailController {
 
     }
 
+    @ResponseBody
+    public void notificationResultatExamenPostee(String email, String cours, String typeEvaluation) {
+
+        message.setTo(email);
+        message.setSubject("Nouvelle note postée");
+        message.setText(
+                 "La Presente est pour vous informer qu'une nouvelle note vient d'etre postée.\n\n"
+
+                + "Cours:"+ cours +"\n\n"
+                + "Type d'evaluation"+ typeEvaluation+ "\n\n"
+
+
+                + "Cordialement\nDirection Academique\nFaculte Des Science Appliquees(FDSA)");
+
+        this.emailSender.send(message);
+
+    }
+
 
 }

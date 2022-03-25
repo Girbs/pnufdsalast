@@ -6,8 +6,11 @@
 package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Controller.IEvaluationController;
+import fdsa.edu.pnu.Model.CoursEtudiant;
 import fdsa.edu.pnu.Model.Evaluation;
+import fdsa.edu.pnu.ServiceImpl.CoursEtudiantServiceImpl;
 import fdsa.edu.pnu.ServiceImpl.EvaluationServiceImpl;
+import fdsa.edu.pnu.mail.EmailController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,6 +22,12 @@ import java.util.Optional;
 public class EvaluationControllerImpl implements IEvaluationController {
     @Autowired
     public EvaluationServiceImpl evaluationServiceImpl;
+
+    @Autowired
+    private EmailController emailController;
+
+    @Autowired
+    public CoursEtudiantServiceImpl coursEtudiantServiceImpl;
 
     @Override
     public List<Evaluation> findAll() {
@@ -47,6 +56,31 @@ public class EvaluationControllerImpl implements IEvaluationController {
 
     @Override
     public Evaluation save(Evaluation evaluationOrdinaire) {
-        return evaluationServiceImpl.save(evaluationOrdinaire);
+
+        Optional<Evaluation> e = evaluationServiceImpl.findById(evaluationOrdinaire.getId());
+        String nouveauStatut = evaluationOrdinaire.getStatutResultat();
+
+        if(e.isPresent()) {
+
+            String ancienStatut = e.get().getStatutResultat();
+
+            System.out.println("The is is:" + e.get().getId());
+
+            if (ancienStatut != "Posted" && nouveauStatut == "Posted") {
+
+                    List<CoursEtudiant> ce = coursEtudiantServiceImpl.findListCoursEtudiantByIdCours(e.get().getCours().getId());
+                    System.out.println("Liste  de cours:" + ce);
+                    for (CoursEtudiant etudiant : ce) {
+                        emailController.notificationResultatExamenPostee(etudiant.getEtudiant().getUserName(),
+                                e.get().getCours().getCoursProgramme().getMatiere().getDescription(),
+                                evaluationOrdinaire.getTypeEvaluation());
+                        System.out.println("Email sent to:" + etudiant.getEtudiant().getUserName());
+                    }
+                    // }
+
+                }
+            }
+
+        return   evaluationServiceImpl.save(evaluationOrdinaire);
     }
 }

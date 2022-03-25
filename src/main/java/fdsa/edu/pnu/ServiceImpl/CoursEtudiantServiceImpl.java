@@ -96,4 +96,9 @@ public class CoursEtudiantServiceImpl implements ICoursEtudiantService {
             }
       return coursEtudiantDAO.save(coursEtudiant);
     }
+
+    @Override
+    public List<CoursEtudiant> findListCoursEtudiantByIdCours(Integer idCours) {
+        return coursEtudiantDAO.findListCoursEtudiantByIdCours(idCours);
+    }
 }

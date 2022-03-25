@@ -20,4 +20,6 @@ public interface ICoursEtudiantService {
     List<Integer> verifierChoixCours(Integer IdCoursProgramme , Integer IdEtudiant);
 
     CoursEtudiant calculmoyenneHelper(CoursEtudiant coursEtudiant);
+
+    List<CoursEtudiant> findListCoursEtudiantByIdCours ( Integer idCours);
 }
