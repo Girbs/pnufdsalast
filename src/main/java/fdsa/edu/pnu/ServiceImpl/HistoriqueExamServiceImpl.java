@@ -57,6 +57,16 @@ public class HistoriqueExamServiceImpl implements IHistoriqueExamenService {
     }
 
     @Override
+    public List<HistoriqueEvaluation> findHistoriqueEvaluationByIdEvaluation(Integer IdEvaluation) {
+        return historiqueExamDAO.findHistoriqueEvaluationByIdEvaluation(IdEvaluation);
+    }
+
+    @Override
+    public List<HistoriqueEvaluation> findHistoriqueEvaluationByIdCoursEtudiant(Integer IdCoursEtudiant) {
+        return historiqueExamDAO.findHistoriqueEvaluationByIdCoursEtudiant(IdCoursEtudiant);
+    }
+
+    @Override
     public double CalculerMoyenne(Integer IdEtudiantCours) {
         return historiqueExamDAO.calculerMoyenne(IdEtudiantCours);
     }

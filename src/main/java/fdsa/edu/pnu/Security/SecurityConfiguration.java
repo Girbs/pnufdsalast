@@ -56,6 +56,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/getEvaluationsByOrganisationExamenId/{idOrganisationExamen}",
                         "/organisationExamen/all",
                         "/matiere/listeDynamique",
+                        "/findHistoriqueEvaluationByIdEvaluation/{IdEvaluation}",
+                        "/findHistoriqueEvaluationByIdCoursEtudiant/{IdCoursEtudiant}",
                         "/resultatExamenConcours/{id}",
                         "/postulant/all",
                 "/etudiant/all",

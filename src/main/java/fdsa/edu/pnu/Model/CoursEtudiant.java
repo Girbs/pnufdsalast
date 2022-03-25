@@ -43,9 +43,13 @@ public class CoursEtudiant implements Serializable {
     @JoinColumns(value = {@JoinColumn(name = "coursId", referencedColumnName = "id", nullable = false)}, foreignKey = @ForeignKey(name = "CoursId"))
     private Cours cours;
 
-    @JsonIgnoreProperties(value = {"coursEtudiant"}, allowSetters = true)
+
+
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @OneToMany(mappedBy = "coursEtudiant", fetch = FetchType.LAZY)
+    @JsonIgnoreProperties(value = {"coursEtudiant"}, allowSetters = true)
+    @OneToMany(mappedBy = "coursEtudiant", targetEntity = HistoriqueEvaluation.class)
+    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
+    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private List<HistoriqueEvaluation> historiqueEvaluations;
 
 }

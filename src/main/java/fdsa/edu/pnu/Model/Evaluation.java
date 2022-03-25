@@ -1,6 +1,7 @@
 package fdsa.edu.pnu.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -56,6 +57,7 @@ public class Evaluation extends Audit<String> implements Serializable {
 //    @OneToMany(mappedBy = "evaluation", fetch = FetchType.EAGER)
 //    private List<HistoriqueEvaluation> historiqueEvaluations;
 
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @JsonIgnoreProperties(value = {"evaluation"}, allowSetters = true)
     @OneToMany(mappedBy = "evaluation", targetEntity = HistoriqueEvaluation.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})

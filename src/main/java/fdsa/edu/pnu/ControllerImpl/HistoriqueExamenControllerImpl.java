@@ -20,6 +20,16 @@ public class HistoriqueExamenControllerImpl implements IHistoriqueExamenControll
     }
 
     @Override
+    public List<HistoriqueEvaluation> findHistoriqueEvaluationByIdEvaluation(Integer IdEvaluation) {
+        return historiqueExamServiceImpl.findHistoriqueEvaluationByIdEvaluation(IdEvaluation);
+    }
+
+    @Override
+    public List<HistoriqueEvaluation> findHistoriqueEvaluationByIdCoursEtudiant(Integer IdCoursEtudiant) {
+        return historiqueExamServiceImpl.findHistoriqueEvaluationByIdCoursEtudiant(IdCoursEtudiant);
+    }
+
+    @Override
     public Optional<HistoriqueEvaluation> findById(Integer id) {
         return historiqueExamServiceImpl.findById(id);
     }

@@ -22,10 +22,18 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
+
 
 public interface HistoriqueExamDAO extends JpaRepository<HistoriqueEvaluation, Integer> {
 
     @Query(value = "{call calculMoyenne(:IdCoursEtudiant)}", nativeQuery = true)
     double calculerMoyenne(@Param("IdCoursEtudiant") Integer IdCoursEtudiant);
+
+    @Query(value = "{call findHistoriqueEvaluationByIdEvaluation(:IdEvaluation)}", nativeQuery = true)
+    List< HistoriqueEvaluation> findHistoriqueEvaluationByIdEvaluation  (@Param("IdEvaluation") Integer IdEvaluation);
+
+    @Query(value = "{call findHistoriqueEvaluationByIdCoursEtudiant(:IdCoursEtudiant)}", nativeQuery = true)
+    List< HistoriqueEvaluation>  findHistoriqueEvaluationByIdCoursEtudiant (@Param("IdCoursEtudiant") Integer IdCoursEtudiant);
 
 }

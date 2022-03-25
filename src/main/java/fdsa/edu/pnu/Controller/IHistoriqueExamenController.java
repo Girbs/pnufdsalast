@@ -22,6 +22,25 @@ public interface IHistoriqueExamenController {
     })
     List<HistoriqueEvaluation> findAll();
 
+
+    @GetMapping(value = "/findHistoriqueEvaluationByIdEvaluation/{IdEvaluation}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Renvoi la liste des evaluations", notes = "Cette methode permet de chercher et renvoyer la liste des evaluation qui existent "
+            + "dans la BDD", responseContainer = "List<HistoriqueEvaluation>")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "La liste des evaluation / Une liste vide")
+    })
+    List<HistoriqueEvaluation> findHistoriqueEvaluationByIdEvaluation (@PathVariable("IdEvaluation") Integer IdEvaluation);
+
+    @GetMapping(value = "/findHistoriqueEvaluationByIdCoursEtudiant/{IdCoursEtudiant}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Renvoi la liste des evaluations", notes = "Cette methode permet de chercher et renvoyer la liste des evaluation qui existent "
+            + "dans la BDD", responseContainer = "List<HistoriqueEvaluation>")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "La liste des evaluation / Une liste vide")
+    })
+
+   List<HistoriqueEvaluation> findHistoriqueEvaluationByIdCoursEtudiant(@PathVariable("IdCoursEtudiant")Integer IdCoursEtudiant);
+
+
     // @PreAuthorize("hasAnyRole('lireConcours')")
     @GetMapping(value = "/historiqueEvaluation/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Rechercher un cours par ID", notes = "Cette methode permet de chercher un cours par son ID", response = HistoriqueEvaluation.class)

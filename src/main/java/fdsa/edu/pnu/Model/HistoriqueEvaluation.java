@@ -43,25 +43,12 @@ public class HistoriqueEvaluation implements Serializable {
     @Column(name = "Note", nullable = false, length = 10)
     private double note;
 
-//    @JsonIgnoreProperties(value = {"historiqueEvaluations"}, allowSetters = true)
-//    @ManyToOne
-////    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-//    // @JoinColumns(value ={@JoinColumn(name = "EvaluationOrdinaireID", referencedColumnName = "ID", nullable = false)},foreignKey = @ForeignKey(name = "HistoriqueEvaluationOrdinaireEvaluationOrdinaire"))
-//    private Evaluation evaluation;
-//
 
-//    //@ManyToOne(targetEntity = CoursEtudiant.class, fetch = FetchType.LAZY)
-//    @ManyToOne
-////     @JsonIgnoreProperties(value = {"historiqueEvaluations"}, allowSetters = true)
-////    //@JoinColumns(value = {@JoinColumn(name = "cours_etudiant_id", referencedColumnName = "ID", nullable = true)}, foreignKey = @ForeignKey(name = "historiqueEvaluationOrdinairesCoursEtudiant"))
-//   private CoursEtudiant coursEtudiant;
-
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @JsonIgnoreProperties(value = {"historiqueEvaluations"}, allowSetters = true)
+    @JsonIgnoreProperties(value = {"historiqueEvaluations"},  allowSetters = true)
     @ManyToOne(targetEntity = CoursEtudiant.class)
+    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
     @JoinColumns({@JoinColumn(name = "cours_etudiant_id", referencedColumnName = "ID")})
     public CoursEtudiant coursEtudiant;
-
 
     @JsonIgnoreProperties(value = {"historiqueEvaluations"}, allowSetters = true)
     @ManyToOne(targetEntity = Evaluation.class)
