@@ -24,8 +24,8 @@ public interface IPostulantService {
 
     Postulant save(Postulant dto);
 
-    
-     //Etudiant update(Integer id, PostulantDTO dto);
+
+    //Etudiant update(Integer id, PostulantDTO dto);
 
     void delete(Integer id);
 

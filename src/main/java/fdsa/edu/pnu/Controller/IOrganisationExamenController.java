@@ -21,7 +21,6 @@ public interface IOrganisationExamenController {
     List<OrganisationExamen> findAll();
 
 
-
     @GetMapping(value = "/organisationExamen/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Rechercher une matiere par ID", notes = "Cette methode permet de chercher une matiere par son ID", response = OrganisationExamen.class)
     @ApiResponses(value = {

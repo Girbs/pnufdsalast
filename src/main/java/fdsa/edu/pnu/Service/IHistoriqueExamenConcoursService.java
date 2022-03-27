@@ -24,7 +24,8 @@ public interface IHistoriqueExamenConcoursService {
     HistoriqueExamenConcours save(HistoriqueExamenConcours dto);
 
     List<ResultatConcours> findResultatExamenConcours(Integer idConcours);
-    List<HistoriqueExamenConcours> findResultatExamenConcoursByPlanificationConcours( Integer IdPlanificationConcours);
+
+    List<HistoriqueExamenConcours> findResultatExamenConcoursByPlanificationConcours(Integer IdPlanificationConcours);
 
     Page findResultatExamenConcoursPageable(int offset, int pageSize, String sortField, Integer idConcours, String sortDirection);
 

@@ -39,10 +39,9 @@ public class CoursEtudiant implements Serializable {
 
 
     @JsonIgnoreProperties(value = {"coursEtudiants"}, allowSetters = true)
-    @ManyToOne(targetEntity = Cours.class,  fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = Cours.class, fetch = FetchType.LAZY)
     @JoinColumns(value = {@JoinColumn(name = "coursId", referencedColumnName = "id", nullable = false)}, foreignKey = @ForeignKey(name = "CoursId"))
     private Cours cours;
-
 
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)

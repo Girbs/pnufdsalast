@@ -29,7 +29,7 @@ public interface IHistoriqueExamenController {
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "La liste des evaluation / Une liste vide")
     })
-    List<HistoriqueEvaluation> findHistoriqueEvaluationByIdEvaluation (@PathVariable("IdEvaluation") Integer IdEvaluation);
+    List<HistoriqueEvaluation> findHistoriqueEvaluationByIdEvaluation(@PathVariable("IdEvaluation") Integer IdEvaluation);
 
     @GetMapping(value = "/findHistoriqueEvaluationByIdCoursEtudiant/{IdCoursEtudiant}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Renvoi la liste des evaluations", notes = "Cette methode permet de chercher et renvoyer la liste des evaluation qui existent "
@@ -37,8 +37,7 @@ public interface IHistoriqueExamenController {
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "La liste des evaluation / Une liste vide")
     })
-
-   List<HistoriqueEvaluation> findHistoriqueEvaluationByIdCoursEtudiant(@PathVariable("IdCoursEtudiant")Integer IdCoursEtudiant);
+    List<HistoriqueEvaluation> findHistoriqueEvaluationByIdCoursEtudiant(@PathVariable("IdCoursEtudiant") Integer IdCoursEtudiant);
 
 
     // @PreAuthorize("hasAnyRole('lireConcours')")
@@ -56,7 +55,7 @@ public interface IHistoriqueExamenController {
             @ApiResponse(code = 200, message = "Le Cours a ete trouve dans la BDD"),
             @ApiResponse(code = 404, message = "Aucun cours n'existe dans la BDD avec l'ID fourni")
     })
-   double note(@PathVariable("idEtudiant") Integer id);
+    double note(@PathVariable("idEtudiant") Integer id);
 
 
     // @PreAuthorize("hasAnyRole('modifierConcours')")

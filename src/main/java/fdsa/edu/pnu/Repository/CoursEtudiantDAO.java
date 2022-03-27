@@ -11,15 +11,15 @@ import java.util.List;
 @Repository
 public interface CoursEtudiantDAO extends JpaRepository<CoursEtudiant, Integer> {
 
-   //Integer findByCoursProgrammeIdAndEtudiantId(Integer CoursProgrammeId, Integer EtudiantId);
+    //Integer findByCoursProgrammeIdAndEtudiantId(Integer CoursProgrammeId, Integer EtudiantId);
 
 
     @Query(value = "{call VerifyIfCoursAlreadyTaken(:IdProgrammeCours,:idEtudiant)}", nativeQuery = true)
-    List<Integer> verifierChoixCours(@Param("IdProgrammeCours") Integer IdCoursProgramme , @Param("idEtudiant") Integer idEtudiant);
+    List<Integer> verifierChoixCours(@Param("IdProgrammeCours") Integer IdCoursProgramme, @Param("idEtudiant") Integer idEtudiant);
 
 
     @Query(value = "{call findListCoursEtudiantByIdCours(:idCours)}", nativeQuery = true)
-    List<CoursEtudiant> findListCoursEtudiantByIdCours (@Param("idCours") Integer idCours);
+    List<CoursEtudiant> findListCoursEtudiantByIdCours(@Param("idCours") Integer idCours);
 
 //    @Query(value ="{call VerifyIfCoursAlreadyTaken(:IdProgrammeCours)}", nativeQuery = true)
 //    List<CoursEtudiant> verifierChoixCours(@Param("IdProgrammeCours") Integer IdCoursProgramme );

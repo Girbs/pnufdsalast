@@ -8,6 +8,9 @@
  * <p>
  * Licensee:
  * License Type: EvaluationOrdinaire
+ * <p>
+ * Licensee:
+ * License Type: EvaluationOrdinaire
  */
 
 /**
@@ -23,6 +26,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
+
 @Setter
 @Getter
 @Entity

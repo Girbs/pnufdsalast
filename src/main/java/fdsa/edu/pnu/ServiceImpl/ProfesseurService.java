@@ -47,8 +47,8 @@ public class ProfesseurService implements IProfesseurService {
     private RoleDAO roleDAO;
 
     @Override
-    public List<ProfesseurDTO> findAll() {
-        return null;
+    public List<Professeur> findAll() {
+        return professeurDAO.findAll();
     }
 
     @Override

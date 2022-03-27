@@ -6,11 +6,8 @@
 package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.DTO.ConcoursDTO;
-import fdsa.edu.pnu.Exception.EntityNotFoundException;
-import fdsa.edu.pnu.Exception.ErrorCodes;
 import fdsa.edu.pnu.Model.Concours;
 import fdsa.edu.pnu.Model.ExampleStudent;
-import fdsa.edu.pnu.Model.Matiere;
 import fdsa.edu.pnu.Repository.*;
 import fdsa.edu.pnu.Service.IConcoursService;
 import fdsa.edu.pnu.Validators.ConcoursValidateur;
@@ -137,7 +134,7 @@ public class ConcoursService implements IConcoursService {
 
     @Override
     public List<Concours> findByAllCustomQuery() {
-        return concoursDAO.findByAllCustomQuery() ;
+        return concoursDAO.findByAllCustomQuery();
     }
 
 

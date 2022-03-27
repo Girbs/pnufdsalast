@@ -8,6 +8,9 @@
  * <p>
  * Licensee:
  * License Type: EvaluationOrdinaire
+ * <p>
+ * Licensee:
+ * License Type: EvaluationOrdinaire
  */
 
 /**
@@ -32,5 +35,5 @@ public interface CoursDAO extends JpaRepository<Cours, Integer> {
 
 
     @Query("SELECT c FROM  Cours c WHERE c.id  = :idNouveauCours")
-    Cours findCoursProgramByIdCours(@Param("idNouveauCours")  Integer idNouveauCours);
+    Cours findCoursProgramByIdCours(@Param("idNouveauCours") Integer idNouveauCours);
 }

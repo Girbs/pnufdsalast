@@ -56,5 +56,4 @@ public class Session implements Serializable {
     private AnneeAcademique anneeAcademique;
 
 
-
 }

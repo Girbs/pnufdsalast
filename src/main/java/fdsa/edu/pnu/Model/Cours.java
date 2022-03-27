@@ -8,6 +8,9 @@
  * <p>
  * Licensee:
  * License Type: EvaluationOrdinaire
+ * <p>
+ * Licensee:
+ * License Type: EvaluationOrdinaire
  */
 
 /**
@@ -77,13 +80,11 @@ public class Cours implements Serializable {
     private List<Discussion> discussions;
 
 
-
     @JsonIgnoreProperties(value = {"cours"}, allowSetters = true)
-    @OneToMany(mappedBy = "cours", targetEntity = CoursEtudiant.class,fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "cours", targetEntity = CoursEtudiant.class, fetch = FetchType.LAZY)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private List<CoursEtudiant> coursEtudiants;
-
 
 
     @Column(name = "Duree", nullable = true, length = 255)

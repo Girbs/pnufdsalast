@@ -59,6 +59,6 @@ public interface IEtudiantController {
             @ApiResponse(code = 200, message = "La liste des article / Une liste vide")
     })
     APIResponse<Page<Etudiant>> getAllEtudiantsWithPaginationAndSort(@RequestParam(required = true) int offset, @RequestParam(required = true) int pageSize,
-                                                                       @RequestParam(required = true) String field, @RequestParam(required = true) String searchFiled, String sortDirection);
+                                                                     @RequestParam(required = true) String field, @RequestParam(required = true) String searchFiled, String sortDirection);
 
 }

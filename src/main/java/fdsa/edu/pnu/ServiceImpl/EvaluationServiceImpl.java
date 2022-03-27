@@ -31,12 +31,12 @@ public class EvaluationServiceImpl implements IEvaluationService {
     }
 
     @Override
-    public Optional<Evaluation > findById(Integer id) {
+    public Optional<Evaluation> findById(Integer id) {
         return evaluationDAO.findById(id);
     }
 
     @Override
-    public Evaluation  save(Evaluation  evaluationOrdinaire) {
+    public Evaluation save(Evaluation evaluationOrdinaire) {
         return evaluationDAO.save(evaluationOrdinaire);
     }
 

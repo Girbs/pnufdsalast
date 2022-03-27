@@ -10,8 +10,8 @@ import java.io.Serializable;
 @Entity
 @Setter
 @Getter
-@Table(name ="Donation")
-public class Donation extends Audit<String> implements Serializable{
+@Table(name = "Donation")
+public class Donation extends Audit<String> implements Serializable {
     @Column(name = "ID", nullable = false, length = 10)
     @Id
     @GeneratedValue(generator = "PNU_Donation")

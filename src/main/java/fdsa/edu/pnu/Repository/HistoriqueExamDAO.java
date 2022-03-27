@@ -8,6 +8,9 @@
  * <p>
  * Licensee:
  * License Type: EvaluationOrdinaire
+ * <p>
+ * Licensee:
+ * License Type: EvaluationOrdinaire
  */
 
 /**
@@ -31,9 +34,9 @@ public interface HistoriqueExamDAO extends JpaRepository<HistoriqueEvaluation, I
     double calculerMoyenne(@Param("IdCoursEtudiant") Integer IdCoursEtudiant);
 
     @Query(value = "{call findHistoriqueEvaluationByIdEvaluation(:IdEvaluation)}", nativeQuery = true)
-    List< HistoriqueEvaluation> findHistoriqueEvaluationByIdEvaluation  (@Param("IdEvaluation") Integer IdEvaluation);
+    List<HistoriqueEvaluation> findHistoriqueEvaluationByIdEvaluation(@Param("IdEvaluation") Integer IdEvaluation);
 
     @Query(value = "{call findHistoriqueEvaluationByIdCoursEtudiant(:IdCoursEtudiant)}", nativeQuery = true)
-    List< HistoriqueEvaluation>  findHistoriqueEvaluationByIdCoursEtudiant (@Param("IdCoursEtudiant") Integer IdCoursEtudiant);
+    List<HistoriqueEvaluation> findHistoriqueEvaluationByIdCoursEtudiant(@Param("IdCoursEtudiant") Integer IdCoursEtudiant);
 
 }

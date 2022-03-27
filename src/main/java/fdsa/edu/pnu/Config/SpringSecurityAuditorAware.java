@@ -11,6 +11,7 @@ public class SpringSecurityAuditorAware implements AuditorAware<String> {
 
     private String currentUser = "gbijou";
     private JWTService jwtService;
+
     public void setCurrentUser(String user) {
         currentUser = user;
     }

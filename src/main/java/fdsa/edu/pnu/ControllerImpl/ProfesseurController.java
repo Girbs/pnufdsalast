@@ -25,7 +25,7 @@ public class ProfesseurController implements IProfesseurController {
 
 
     @Override
-    public List<ProfesseurDTO> findAll() {
+    public List<Professeur> findAll() {
         return professeurService.findAll();
     }
 

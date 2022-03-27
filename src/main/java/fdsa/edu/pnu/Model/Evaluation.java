@@ -37,8 +37,6 @@ public class Evaluation extends Audit<String> implements Serializable {
     private OrganisationExamen organisationExamen;
 
 
-
-
     @Column(name = "DateEvaluation", nullable = false)
     private java.sql.Timestamp dateEvaluation;
 

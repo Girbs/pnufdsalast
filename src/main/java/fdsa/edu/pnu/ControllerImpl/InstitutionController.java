@@ -24,7 +24,7 @@ public class InstitutionController {
     public InstitutionService institutionService;
 
     /**
-     * Afficher tous les Entreprise
+     * Afficher tous les EntrepriseDAO
      *
      * @return
      */
@@ -35,7 +35,7 @@ public class InstitutionController {
 
 
     /**
-     * Creer un nouveau Entreprise
+     * Creer un nouveau EntrepriseDAO
      *
      * @param entreprise
      * @return

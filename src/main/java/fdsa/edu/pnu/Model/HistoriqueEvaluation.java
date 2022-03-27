@@ -8,6 +8,9 @@
  * <p>
  * Licensee:
  * License Type: EvaluationOrdinaire
+ * <p>
+ * Licensee:
+ * License Type: EvaluationOrdinaire
  */
 
 /**
@@ -34,22 +37,18 @@ import java.io.Serializable;
 @AllArgsConstructor
 @JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
 public class HistoriqueEvaluation implements Serializable {
+    @JsonIgnoreProperties(value = {"historiqueEvaluations"}, allowSetters = true)
+    @ManyToOne(targetEntity = CoursEtudiant.class)
+    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
+    @JoinColumns({@JoinColumn(name = "cours_etudiant_id", referencedColumnName = "ID")})
+    public CoursEtudiant coursEtudiant;
     @Column(name = "ID", nullable = false, length = 10)
     @Id
     @GeneratedValue(generator = "PNU_HISTORIQUEEXAM_ID_GENERATOR")
     @org.hibernate.annotations.GenericGenerator(name = "PNU_HISTORIQUEEXAM_ID_GENERATOR", strategy = "native")
     private int id;
-
     @Column(name = "Note", nullable = false, length = 10)
     private double note;
-
-
-    @JsonIgnoreProperties(value = {"historiqueEvaluations"},  allowSetters = true)
-    @ManyToOne(targetEntity = CoursEtudiant.class)
-    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
-    @JoinColumns({@JoinColumn(name = "cours_etudiant_id", referencedColumnName = "ID")})
-    public CoursEtudiant coursEtudiant;
-
     @JsonIgnoreProperties(value = {"historiqueEvaluations"}, allowSetters = true)
     @ManyToOne(targetEntity = Evaluation.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})

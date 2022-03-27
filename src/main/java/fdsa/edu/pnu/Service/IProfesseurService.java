@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface IProfesseurService {
 
-    List<ProfesseurDTO> findAll();
+    List<Professeur> findAll();
 
     ProfesseurDTO findById(Integer id);
 

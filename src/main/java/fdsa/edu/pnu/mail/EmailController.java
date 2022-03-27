@@ -34,7 +34,7 @@ public class EmailController {
                 + "La Faculté Des Sciences Appliquées (FDSA) vous remercie de votre"
                 + "interet à ses programmes d'étude tout en vous informant que votre "
                 + "demande d'admssion a été bien recue. \n\n" +
-                "Votre code d'application est:"+ codeApplication+ " \n\n"+
+                "Votre code d'application est:" + codeApplication + " \n\n" +
                 " Dans les jours qui suivent, "
                 + "un agent vous contactera pour les suites necessaires. \n\n "
                 + "Cordialement\n Bureau d'Admission\n Faculte Des Science Appliquees(FDSA)");
@@ -105,13 +105,13 @@ public class EmailController {
         message.setTo(email);
         message.setSubject("Nouvelle note postée");
         message.setText(
-                 "La Presente est pour vous informer qu'une nouvelle note vient d'etre postée.\n\n"
+                "La Presente est pour vous informer qu'une nouvelle note vient d'etre postée.\n\n"
 
-                + "Cours:"+ cours +"\n\n"
-                + "Type d'evaluation"+ typeEvaluation+ "\n\n"
+                        + "Cours:" + cours + "\n\n"
+                        + "Type d'evaluation" + typeEvaluation + "\n\n"
 
 
-                + "Cordialement\nDirection Academique\nFaculte Des Science Appliquees(FDSA)");
+                        + "Cordialement\nDirection Academique\nFaculte Des Science Appliquees(FDSA)");
 
         this.emailSender.send(message);
 

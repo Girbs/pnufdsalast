@@ -22,7 +22,6 @@ public interface ICoursEtudiantController {
     List<CoursEtudiant> findAll();
 
 
-
     // @PreAuthorize("hasAnyRole('lireConcours')")
     @GetMapping(value = "/coursEtudiant/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Rechercher un concours par ID", notes = "Cette methode permet de chercher un concours par son ID", response = CoursEtudiant.class)
@@ -31,8 +30,6 @@ public interface ICoursEtudiantController {
             @ApiResponse(code = 404, message = "Aucun concours n'existe dans la BDD avec l'ID fourni")
     })
     Optional<CoursEtudiant> findById(@PathVariable("id") Integer id);
-
-
 
 
     // @PreAuthorize("hasAnyRole('supplrimerConcours')")

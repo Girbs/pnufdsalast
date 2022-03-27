@@ -17,6 +17,7 @@ import java.util.Optional;
 public interface IMatiereService {
 
     List<Matiere> findAll();
+
     List<Matiere> findByAllCustumQuerry();
 
     Optional<Matiere> findById(Integer id);

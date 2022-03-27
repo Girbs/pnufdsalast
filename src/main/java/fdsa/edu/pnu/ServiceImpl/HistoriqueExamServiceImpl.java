@@ -26,10 +26,12 @@ public class HistoriqueExamServiceImpl implements IHistoriqueExamenService {
     private CoursEtudiantDAO coursEtudiantDAO;
     @Autowired
     private CoursEtudiantServiceImpl coursEtudiantServiceImpl;
+
     @Override
     public List<HistoriqueEvaluation> findAll() {
         return historiqueExamDAO.findAll();
     }
+
     @Override
     public Optional<HistoriqueEvaluation> findById(Integer id) {
         return historiqueExamDAO.findById(id);
@@ -38,7 +40,7 @@ public class HistoriqueExamServiceImpl implements IHistoriqueExamenService {
     @Override
     public HistoriqueEvaluation save(HistoriqueEvaluation historiqueEvaluation) {
         int idCoursEtudiant = historiqueEvaluation.getCoursEtudiant().getId();
-        System.out.println("The Sudent Id is: "+idCoursEtudiant);
+        System.out.println("The Sudent Id is: " + idCoursEtudiant);
         CoursEtudiant ce = coursEtudiantDAO.findById(idCoursEtudiant).get();
         double note = CalculerMoyenne(idCoursEtudiant);
         try {

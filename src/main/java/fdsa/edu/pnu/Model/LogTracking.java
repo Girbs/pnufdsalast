@@ -17,20 +17,18 @@ import java.io.Serializable;
 public class LogTracking implements Serializable {
 
 
-        @Column(name = "ID", nullable = false, length = 10)
-        @Id
-        @GeneratedValue(generator = "LOGID")
-        @org.hibernate.annotations.GenericGenerator(name = "LOG ID", strategy = "native")
-        private int id;
+    @Column(name = "ID", nullable = false, length = 10)
+    @Id
+    @GeneratedValue(generator = "LOGID")
+    @org.hibernate.annotations.GenericGenerator(name = "LOG ID", strategy = "native")
+    private int id;
+    private String methodName;
+    // @Column(name = "exception", columnDefinition = "NVARCHAR(MAX)")
+    private String exception;
 
-        public LogTracking(String methodName, String exception) {
-                this.methodName = methodName;
-                this.exception = exception;
-        }
-
-        private String methodName;
-
-       // @Column(name = "exception", columnDefinition = "NVARCHAR(MAX)")
-        private String exception;
+    public LogTracking(String methodName, String exception) {
+        this.methodName = methodName;
+        this.exception = exception;
+    }
 
 }

@@ -8,6 +8,9 @@
  * <p>
  * Licensee:
  * License Type: EvaluationOrdinaire
+ * <p>
+ * Licensee:
+ * License Type: EvaluationOrdinaire
  */
 
 /**
@@ -49,7 +52,6 @@ public interface HistoriqueExamenConcoursDAO extends JpaRepository<HistoriqueExa
             "WHERE [dbo].[plannification_concours].concours_id =?1\n" +
             "GROUP BY p.nom , p.prenom, p.matricule", nativeQuery = true)
     List findResultatExamenConcoursPageable(@Param("idConcours") Integer idConcours, Pageable pageable);
-
 
 
 }

@@ -29,6 +29,9 @@
  * <p>
  * Licensee:
  * License Type: EvaluationOrdinaire
+ * <p>
+ * Licensee:
+ * License Type: EvaluationOrdinaire
  */
 
 /**
@@ -61,7 +64,6 @@ public class Etudiant extends Utilisateur implements Serializable {
     private String matricule;
 
 
-
     @ManyToMany(targetEntity = Promotion.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
     @JoinTable(name = "Promotion_Etudiant", joinColumns = {@JoinColumn(name = "EtudiantPersonneID")}, inverseJoinColumns = {@JoinColumn(name = "PromotionID")})
@@ -74,7 +76,6 @@ public class Etudiant extends Utilisateur implements Serializable {
     @JoinTable(name = "Programme_Etudiant", joinColumns = {@JoinColumn(name = "EtudiantPersonneID")}, inverseJoinColumns = {@JoinColumn(name = "ProgrammeID")})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private List<Programme> programmes;
-
 
 
 //    @OneToOne(mappedBy = "etudiant", targetEntity = HistoriqueEvaluationOrdinaire.class)
@@ -113,8 +114,6 @@ public class Etudiant extends Utilisateur implements Serializable {
     public Etudiant() {
 
     }
-
-
 
 
 }

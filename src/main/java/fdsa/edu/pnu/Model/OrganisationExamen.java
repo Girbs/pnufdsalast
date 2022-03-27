@@ -1,17 +1,16 @@
-
 package fdsa.edu.pnu.Model;
 
 
-        import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-        import lombok.AllArgsConstructor;
-        import lombok.Getter;
-        import lombok.NoArgsConstructor;
-        import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-        import javax.persistence.*;
-        import java.io.Serializable;
-        import java.util.Date;
-        import java.util.List;
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
 
 @Entity
 @Setter
@@ -39,7 +38,6 @@ public class OrganisationExamen extends Audit<String> implements Serializable {
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private List<Evaluation> evaluation;
-
 
 
 }

@@ -7,9 +7,9 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
 @Repository
 public interface CoursProgrammeDAO extends JpaRepository<CoursProgramme, Integer> {
-
 
 
     @Query(value = "SELECT * FROM cours_programme", nativeQuery = true)

@@ -40,7 +40,6 @@ public class JWTService implements UserDetailsService {
     }
 
 
-
     public JwtResponse createJwtToken(JwtRequest jwtRequest) throws Exception {
 
         String userName = jwtRequest.getUserName();
@@ -62,7 +61,7 @@ public class JWTService implements UserDetailsService {
         userInfo.setUserRoles(user.getRole());
         user.setDerniereConnexion(getLastLoginDate());
         userDAO.save(user);
-        System.out.println("The last login date is:"+getLastLoginDate());
+        System.out.println("The last login date is:" + getLastLoginDate());
         return new JwtResponse(userInfo, newGeneratedToken);
     }
 

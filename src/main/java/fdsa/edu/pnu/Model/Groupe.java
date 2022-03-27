@@ -8,6 +8,9 @@
  * <p>
  * Licensee:
  * License Type: EvaluationOrdinaire
+ * <p>
+ * Licensee:
+ * License Type: EvaluationOrdinaire
  */
 
 /**
@@ -37,7 +40,7 @@ public class Groupe implements Serializable {
     @Column(name = "Nom", nullable = true, length = 255)
     private String nom;
 
-//	@ManyToMany(targetEntity=fdsa.edu.pnu.Model.Utilisateur.class)	
+    //	@ManyToMany(targetEntity=fdsa.edu.pnu.Model.Utilisateur.class)
 //	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 //	@JoinTable(name="Utlilisateur_Groupe", joinColumns={ @JoinColumn(name="GroupeID") }, inverseJoinColumns={ @JoinColumn(name="UtlilisateurPersonneID") })	
 //	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	

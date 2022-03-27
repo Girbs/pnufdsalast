@@ -30,7 +30,7 @@ public interface IMatiereController {
     })
     List<Matiere> findAll();
 
-     @PreAuthorize("hasAnyRole('lireConcours')")
+    @PreAuthorize("hasAnyRole('lireConcours')")
     @GetMapping(value = "/matiere/all/customQuery", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Renvoi la liste des matieres", notes = "Cette methode permet de chercher et renvoyer la liste des matieres qui existent "
             + "dans la BDD", responseContainer = "List<Matiere>")

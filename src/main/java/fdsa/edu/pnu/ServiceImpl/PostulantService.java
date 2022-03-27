@@ -54,21 +54,6 @@ public class PostulantService implements IPostulantService {
     @Autowired
     private LogTrackingDAO logTrackingDAO;
 
-    @Override
-    public List<PostulantDTO> findAll() {
-        return postulantDAO.findAll().stream()
-                .map(PostulantDTO::fromEntity)
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    public Optional<Postulant> findById(Integer id) {
-        if (id == null) {
-            return null;
-        }
-        return postulantDAO.findById(id);
-    }
-
     public static String genererMatriculPostulant(Postulant p) {
         p.getId();
         String matricule = null;
@@ -103,6 +88,21 @@ public class PostulantService implements IPostulantService {
 
         matricule = p.getId() + upperAlphabetPart + randNumberOfNumbersPart;
         return matricule;
+    }
+
+    @Override
+    public List<PostulantDTO> findAll() {
+        return postulantDAO.findAll().stream()
+                .map(PostulantDTO::fromEntity)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public Optional<Postulant> findById(Integer id) {
+        if (id == null) {
+            return null;
+        }
+        return postulantDAO.findById(id);
     }
 
     @Override

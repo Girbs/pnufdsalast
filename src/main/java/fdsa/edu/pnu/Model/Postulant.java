@@ -8,6 +8,9 @@
  * <p>
  * Licensee:
  * License Type: EvaluationOrdinaire
+ * <p>
+ * Licensee:
+ * License Type: EvaluationOrdinaire
  */
 
 /**
@@ -32,6 +35,8 @@ import java.util.List;
 @JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
 @Table(name = "Postulant")
 public class Postulant extends Audit<String> implements Serializable {
+    public String statutApplication;
+    public String commentaireDuDecanat;
     @Column(name = "ID", nullable = false, length = 10)
     @Id
     @GeneratedValue(generator = "PNU_POSTULANT_ID_GENERATOR")
@@ -109,8 +114,6 @@ public class Postulant extends Audit<String> implements Serializable {
     private String nomPersonneAcontacter;
     private String prenomPersonneAcontacter;
     private String telephonePersonneAcontacter;
-    public String statutApplication;
-    public String commentaireDuDecanat;
     @JsonIgnoreProperties(value = {"postulant"}, allowSetters = true)
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "postulant", targetEntity = HistoriqueExamenConcours.class)
     private List<HistoriqueExamenConcours> historiqueExamenConcourss;

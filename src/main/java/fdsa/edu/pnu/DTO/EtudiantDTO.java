@@ -14,21 +14,21 @@ import org.modelmapper.ModelMapper;
 //Begin Subclass EtudiantDTO
 public class EtudiantDTO {
 
-         private Integer id;
-         private String commune;
-         private String nom;
-         private String prenom;
-         private String cinNif;
-         private String sexe;
-         private String telephone1;
-         private String telephone2;
-         private String adresse;
-         private String codePostal;
-         private String status;
-         private String userName;
-         private String matricule;
-
     private static final ModelMapper mapper = new ModelMapper();
+    private Integer id;
+    private String commune;
+    private String nom;
+    private String prenom;
+    private String cinNif;
+    private String sexe;
+    private String telephone1;
+    private String telephone2;
+    private String adresse;
+    private String codePostal;
+    private String status;
+    private String userName;
+    private String matricule;
+
     public static EtudiantDTO fromEntity(Etudiant etudiant) {
 
         //mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STANDARD);

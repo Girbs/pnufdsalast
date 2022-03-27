@@ -35,7 +35,7 @@ public class CoursProgramme {
     private SessionProgramme sessionProgramme;
 
     @JsonIgnoreProperties(value = {"coursProgramme"}, allowSetters = true)
-    @OneToMany(mappedBy = "coursProgramme", targetEntity = Cours.class,  fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "coursProgramme", targetEntity = Cours.class, fetch = FetchType.LAZY)
     private List<Cours> cours;
 
 }

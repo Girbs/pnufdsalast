@@ -11,6 +11,9 @@
  * <p>
  * Licensee:
  * License Type: EvaluationOrdinaire
+ * <p>
+ * Licensee:
+ * License Type: EvaluationOrdinaire
  */
 
 /**
@@ -53,7 +56,7 @@ public class Programme implements Serializable {
 
     @JsonIgnoreProperties(value = {"programme"}, allowSetters = true)
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name ="ProgrammePrerequis")
+    @JoinColumn(name = "ProgrammePrerequis")
     private Programme prerequis;
 
     @JsonIgnoreProperties(value = {"prerequis"}, allowSetters = true)

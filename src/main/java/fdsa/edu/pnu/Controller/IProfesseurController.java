@@ -19,7 +19,7 @@ public interface IProfesseurController {
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "La liste des article / Une liste vide")
     })
-    List<ProfesseurDTO> findAll();
+    List<Professeur> findAll();
 
     @GetMapping(value = "/professeur/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Rechercher un article par ID", notes = "Cette methode permet de chercher un professeur par son ID", response = PostulantDTO.class)

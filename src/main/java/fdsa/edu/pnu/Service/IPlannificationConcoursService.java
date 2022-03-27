@@ -25,5 +25,6 @@ public interface IPlannificationConcoursService {
     Page<PlannificationConcours> findAllWithPaginationAndSortingv1(int offset, int pageSize, String sortField, String searchfield, String sortDirection);
 
     List<PlannificationConcours> findPlannificationConcoursByIdConcours(Integer IdConcours);
+
     void delete(Integer id);
 }

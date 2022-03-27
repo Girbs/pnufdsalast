@@ -8,6 +8,9 @@
  * <p>
  * Licensee:
  * License Type: EvaluationOrdinaire
+ * <p>
+ * Licensee:
+ * License Type: EvaluationOrdinaire
  */
 
 /**
@@ -35,6 +38,6 @@ public interface SessionProgrammeDAO extends JpaRepository<SessionProgramme, Int
     SessionProgramme findSessionProgrammeById(@Param("IdSessionProgramme") Integer IdProgramme);
 
     @Query(value = "{call FindSessionProgrammeByIdProgramme(:IdProgramme)}", nativeQuery = true)
-    List<SessionProgramme>  findSessionProgrammeByIdProgramme(@Param("IdProgramme") Integer IdProgramme);
+    List<SessionProgramme> findSessionProgrammeByIdProgramme(@Param("IdProgramme") Integer IdProgramme);
 
 }

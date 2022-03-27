@@ -8,6 +8,9 @@
  * <p>
  * Licensee:
  * License Type: EvaluationOrdinaire
+ * <p>
+ * Licensee:
+ * License Type: EvaluationOrdinaire
  */
 
 /**
@@ -28,7 +31,7 @@ import java.util.List;
 @Setter
 @Getter
 @JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
-@Table(name = "Entreprise")
+@Table(name = "EntrepriseDAO")
 public class Entreprise implements Serializable {
     @Column(name = "ID", nullable = false, length = 10)
     @Id

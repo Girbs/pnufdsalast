@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+
 @Service
 public class CoursEtudiantServiceImpl implements ICoursEtudiantService {
 
@@ -30,13 +31,13 @@ public class CoursEtudiantServiceImpl implements ICoursEtudiantService {
 
     @Override
     public CoursEtudiant save(CoursEtudiant dto) {
-         Cours c = coursService.findCoursProgramByIdCours(dto.getCours().getId());
-         List<Integer> ce = verifierChoixCours(c.getCoursProgramme().getId(), dto.getEtudiant().getId());
-            if(ce.isEmpty()){
-                dto.setType("Session Ordinaire");
-            }else{
-                dto.setType("Rappel");
-            }
+        Cours c = coursService.findCoursProgramByIdCours(dto.getCours().getId());
+        List<Integer> ce = verifierChoixCours(c.getCoursProgramme().getId(), dto.getEtudiant().getId());
+        if (ce.isEmpty()) {
+            dto.setType("Session Ordinaire");
+        } else {
+            dto.setType("Rappel");
+        }
         return coursEtudiantDAO.save(dto);
     }
 
@@ -49,6 +50,7 @@ public class CoursEtudiantServiceImpl implements ICoursEtudiantService {
     public void delete(Integer id) {
 
     }
+
     @Override
     public List<Integer> verifierChoixCours(Integer IdCoursProgramme, Integer IdEtudiant) {
         return coursEtudiantDAO.verifierChoixCours(IdCoursProgramme, IdEtudiant);
@@ -77,24 +79,24 @@ public class CoursEtudiantServiceImpl implements ICoursEtudiantService {
             coursEtudiant.setMention("Bien");
             coursEtudiant.setCote("C+");
             coursEtudiant.setNumbrePoint(2.5);
-            } else if (coursEtudiant.getNote() < 65 && coursEtudiant.getNote() >= 60) {
-                coursEtudiant.setMention("Bien");
-                coursEtudiant.setCote("C");
-                coursEtudiant.setNumbrePoint(2);
-            } else if (coursEtudiant.getNote() < 60 && coursEtudiant.getNote() >= 55) {
-                coursEtudiant.setMention("Passable");
-                coursEtudiant.setCote("D+");
-                coursEtudiant.setNumbrePoint(1.5);
-            } else if (coursEtudiant.getNote() < 55 && coursEtudiant.getNote() >= 50) {
-                coursEtudiant.setMention("Passable");
-                coursEtudiant.setCote("D");
-                coursEtudiant.setNumbrePoint(1);
-            } else {
-                coursEtudiant.setMention("Echèc");
-                coursEtudiant.setCote("F");
-                coursEtudiant.setNumbrePoint(0);
-            }
-      return coursEtudiantDAO.save(coursEtudiant);
+        } else if (coursEtudiant.getNote() < 65 && coursEtudiant.getNote() >= 60) {
+            coursEtudiant.setMention("Bien");
+            coursEtudiant.setCote("C");
+            coursEtudiant.setNumbrePoint(2);
+        } else if (coursEtudiant.getNote() < 60 && coursEtudiant.getNote() >= 55) {
+            coursEtudiant.setMention("Passable");
+            coursEtudiant.setCote("D+");
+            coursEtudiant.setNumbrePoint(1.5);
+        } else if (coursEtudiant.getNote() < 55 && coursEtudiant.getNote() >= 50) {
+            coursEtudiant.setMention("Passable");
+            coursEtudiant.setCote("D");
+            coursEtudiant.setNumbrePoint(1);
+        } else {
+            coursEtudiant.setMention("Echèc");
+            coursEtudiant.setCote("F");
+            coursEtudiant.setNumbrePoint(0);
+        }
+        return coursEtudiantDAO.save(coursEtudiant);
     }
 
     @Override

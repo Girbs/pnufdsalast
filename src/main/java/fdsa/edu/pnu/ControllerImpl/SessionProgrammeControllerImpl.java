@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+
 @RestController
 public class SessionProgrammeControllerImpl implements ISessionProgrammeController {
     @Autowired
@@ -29,7 +30,7 @@ public class SessionProgrammeControllerImpl implements ISessionProgrammeControll
 
     @Override
     public SessionProgramme update(Integer id, SessionProgramme sessionProgramme) {
-        return sessionProgrammeService.update(id, sessionProgramme );
+        return sessionProgrammeService.update(id, sessionProgramme);
     }
 
     @Override

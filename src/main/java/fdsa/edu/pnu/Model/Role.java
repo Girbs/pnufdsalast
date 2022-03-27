@@ -21,11 +21,9 @@ public class Role implements Serializable {
     private String roleDescription;
 
 
-
     @ManyToMany(targetEntity = Utilisateur.class, mappedBy = "role", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonIgnoreProperties("role")
     private Set<Utilisateur> utlilisateurs;
-
 
 
     @ManyToMany(targetEntity = Permission.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)

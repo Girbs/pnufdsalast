@@ -8,6 +8,9 @@
  * <p>
  * Licensee:
  * License Type: EvaluationOrdinaire
+ * <p>
+ * Licensee:
+ * License Type: EvaluationOrdinaire
  */
 
 /**
@@ -35,11 +38,10 @@ public class Commune implements Serializable {
     @org.hibernate.annotations.GenericGenerator(name = "PNU_COMMUNE_ID_GENERATOR", strategy = "native")
     private int id;
     @ManyToOne(targetEntity = DepartementGeographique.class, fetch = FetchType.LAZY)
-    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
-    @JoinColumns(value = {@JoinColumn(name = "DepartementGeographiqueID", referencedColumnName = "ID", nullable = false)}, foreignKey = @ForeignKey(name = "appartenir"))
     private DepartementGeographique departementGeographique;
-    @Column(name = "Description", nullable = true, length = 255)
+    @Column(name = "description", nullable = true, length = 255)
     private String description;
+
     @OneToMany(mappedBy = "commune", targetEntity = Personne.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)

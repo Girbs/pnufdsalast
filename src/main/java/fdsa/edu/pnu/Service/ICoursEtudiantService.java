@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+
 @Service
 public interface ICoursEtudiantService {
     List<CoursEtudiant> findAll();
@@ -17,9 +18,9 @@ public interface ICoursEtudiantService {
 
     void delete(Integer id);
 
-    List<Integer> verifierChoixCours(Integer IdCoursProgramme , Integer IdEtudiant);
+    List<Integer> verifierChoixCours(Integer IdCoursProgramme, Integer IdEtudiant);
 
     CoursEtudiant calculmoyenneHelper(CoursEtudiant coursEtudiant);
 
-    List<CoursEtudiant> findListCoursEtudiantByIdCours ( Integer idCours);
+    List<CoursEtudiant> findListCoursEtudiantByIdCours(Integer idCours);
 }
