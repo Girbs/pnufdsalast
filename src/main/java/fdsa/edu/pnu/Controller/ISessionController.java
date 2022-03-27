@@ -1,6 +1,6 @@
 package fdsa.edu.pnu.Controller;
 
-import fdsa.edu.pnu.Model.SessionProgramme;
+import fdsa.edu.pnu.Model.Session;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -8,6 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RequestMapping("/session")
@@ -19,25 +20,17 @@ public interface ISessionController {
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "La liste des SessionProgramme / Une liste vide")
     })
-    List<SessionProgramme> findAll();
+    List<Session> findAll();
 
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Rechercher une SessionProgramme par ID", notes = "Cette methode permet de chercher une SessionProgramme par son ID", response = SessionProgramme.class)
+    @ApiOperation(value = "Rechercher une SessionProgramme par ID", notes = "Cette methode permet de chercher une SessionProgramme par son ID", response = Session.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Le SessionProgramme a ete trouve dans la BDD"),
             @ApiResponse(code = 404, message = "Aucun SessionProgramme n'existe dans la BDD avec l'ID fourni")
     })
-    SessionProgramme findById(@PathVariable("id") Integer id);
+    Optional<Session> findById(@PathVariable("id") Integer id);
 
-
-    @PutMapping(value = "/modifier/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Enregistrer un SessionProgramme", notes = "Cette methode permet d'enregistrer ou modifier une SessionProgramme", response = SessionProgramme.class)
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "L'objet Session cr / modifie"),
-            @ApiResponse(code = 400, message = "L'objet Session n'est pas valide")
-    })
-    SessionProgramme update(@PathVariable("id") Integer id, @RequestBody SessionProgramme session);
 
     @DeleteMapping(value = "/supprimer/{id}")
     @ApiOperation(value = "Supprimer une session ", notes = "Cette methode permet de supprimer un SessionProgramme par ID")
@@ -48,11 +41,11 @@ public interface ISessionController {
 
 
     @PostMapping(value = "/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Enregistrer un SessionProgramme", notes = "Cette methode permet d'enregistrer ou modifier un SessionProgramme", response = SessionProgramme.class)
+    @ApiOperation(value = "Enregistrer un SessionProgramme", notes = "Cette methode permet d'enregistrer ou modifier un SessionProgramme", response = Session.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "L'objet le SessionProgramme crée modifie"),
             @ApiResponse(code = 400, message = "L'objet SessionProgramme n'est pas valide")
     })
-    SessionProgramme save(@RequestBody SessionProgramme session);
+    Session save(@RequestBody Session session);
 
 }

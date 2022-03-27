@@ -1,7 +1,7 @@
 package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.Model.Session;
-import fdsa.edu.pnu.Repository.SemestreDAO;
+import fdsa.edu.pnu.Repository.SessionDAO;
 import fdsa.edu.pnu.Service.ISemestreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,24 +10,24 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class SemestreServiceImpl implements ISemestreService {
+public class SessionServiceImpl implements ISemestreService {
 
     @Autowired
-    private SemestreDAO semestreDAO;
+    private SessionDAO sessionDAO;
 
     @Override
     public List<Session> findAll() {
-        return semestreDAO.findAll();
+        return sessionDAO.findAll();
     }
 
     @Override
     public Optional<Session> findById(Integer id) {
-        return semestreDAO.findById(id);
+        return sessionDAO.findById(id);
     }
 
     @Override
     public Session save(Session session) {
-        return semestreDAO.save(session);
+        return sessionDAO.save(session);
     }
 
     @Override
@@ -37,6 +37,6 @@ public class SemestreServiceImpl implements ISemestreService {
 
     @Override
     public void delete(Integer id) {
-        semestreDAO.deleteById(id);
+        sessionDAO.deleteById(id);
     }
 }
