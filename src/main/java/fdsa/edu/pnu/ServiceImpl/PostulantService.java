@@ -193,7 +193,7 @@ public class PostulantService implements IPostulantService {
             String statusToBeUpdated = dto.getStatutApplication();
             String currentApplicationStatus = postulant.get().getStatutApplication();
 
-            if (!currentApplicationStatus.equals("Accepté") && statusToBeUpdated.equals("Accepté")) {
+            if (!currentApplicationStatus.equals("Acceptée") && statusToBeUpdated.equals("Acceptée")) {
 
                 try {
                     //  Now save details in DB

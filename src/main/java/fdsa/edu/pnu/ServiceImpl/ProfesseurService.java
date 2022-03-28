@@ -7,7 +7,6 @@ package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.DTO.ProfesseurDTO;
 import fdsa.edu.pnu.Model.Professeur;
-import fdsa.edu.pnu.Model.Role;
 import fdsa.edu.pnu.Repository.ProfesseurDAO;
 import fdsa.edu.pnu.Repository.RoleDAO;
 import fdsa.edu.pnu.Security.PasswordGenerator;
@@ -18,9 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * @author Richard
@@ -70,18 +67,18 @@ public class ProfesseurService implements IProfesseurService {
     @Override
     public Professeur save(Professeur professeur) {
 
-        //String pass = "Pass";
-        String pass = password.randomPassword();
-        System.out.println(pass);
-        System.out.println(pass);
-        professeur.setUserPassword(passwordEncoder.encode(pass));
-        Set<Role> role = new HashSet<>();
-        // role.add(new Role());
-        role.add(roleDAO.findById(2).get());
-        //  role.add(roleDAO.findById(2).get());
-        professeur.setRole(role);
-        ec.confirmerCreationProfesseur(professeur.getUserName(), professeur.getPrenom(), professeur.getNom(), professeur.getUserName(), pass);
-        return professeurDAO.save(professeur);
+//        //String pass = "Pass";
+//        String pass = password.randomPassword();
+//        System.out.println(pass);
+//        System.out.println(pass);
+//        professeur.setUserPassword(passwordEncoder.encode(pass));
+//        Set<Role> role = new HashSet<>();
+//        // role.add(new Role());
+//        role.add(roleDAO.findById(2).get());
+//        //  role.add(roleDAO.findById(2).get());
+//        professeur.setRole(role);
+//        ec.confirmerCreationProfesseur(professeur.getUserName(), professeur.getPrenom(), professeur.getNom(), professeur.getUserName(), pass);
+       return professeurDAO.save(professeur);
     }
 
     @Override

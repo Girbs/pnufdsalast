@@ -9,6 +9,7 @@ import fdsa.edu.pnu.Model.Personnel;
 import fdsa.edu.pnu.Repository.PersonnelDAO;
 import fdsa.edu.pnu.Security.PasswordGenerator;
 import fdsa.edu.pnu.Service.IPersonnel;
+import fdsa.edu.pnu.mail.EmailController;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -31,6 +32,9 @@ public class PersonnelService implements IPersonnel {
     private PersonnelDAO personnelDAO;
 
     @Autowired
+    private EmailController ec;
+
+    @Autowired
     private PasswordGenerator password;
 
     @Autowired
@@ -49,10 +53,12 @@ public class PersonnelService implements IPersonnel {
 
     @Override
     public Personnel save(Personnel personnel) {
-        String pass = "admin";
-        //String pass = password.randomPassword();
-        System.out.println(pass);
-        System.out.println(pass);
+
+        String pass = password.randomPassword();
+        personnel.setUserPassword(passwordEncoder.encode(pass));
+
+        ec.confirmerCreationPersonnel(personnel.getUserName(), personnel.getPrenom(), personnel.getNom(), personnel.getUserName(), pass);
+
         personnel.setUserPassword(passwordEncoder.encode(pass));
         return personnelDAO.save(personnel);
     }

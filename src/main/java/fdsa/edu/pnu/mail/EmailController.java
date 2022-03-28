@@ -81,6 +81,24 @@ public class EmailController {
     }
 
     @ResponseBody
+    public void confirmerCreationPersonnel(String emailProfesseur, String nomProfesseur, String prenomProfesseur, String nomUtilisateur, String motDePasse) {
+
+        message.setTo(emailProfesseur);
+        message.setSubject("Bienvenue à la FDSA");
+        message.setText("Professeur  " + prenomProfesseur + " " + nomProfesseur + ", \n\n "
+                + "La Faculté Des Sciences Appliquées vous souhaite la plus cordiale bienvenue sur sa platforme."
+                + "Priere d'utiliser les informations ci-dessous pour accesder aux ressources de la faculte.\n\n"
+                + "Nom d'utilisateur: " + nomUtilisateur + "\n"
+                + "Mot de Passe temporaire: " + motDePasse + "\n\n"
+
+                + "Cordialement\n Decanat\n Faculte Des Science Appliquees(FDSA)");
+
+        // Send Message!
+        this.emailSender.send(message);
+
+    }
+
+    @ResponseBody
     public void motDePasseOublieConfirmationEmail(String email, String nom, String prenom, String nomUtilisateur, String motDePasse) {
 
         message.setTo(email);

@@ -59,7 +59,8 @@ public class EvaluationControllerImpl implements IEvaluationController {
         if (e.isPresent()) {
             String ancienStatut = e.get().getStatutResultat();
             System.out.println("The is is:" + e.get().getId());
-            if (ancienStatut != "Posted" && nouveauStatut == "Posted") {
+
+            if(!ancienStatut.equals("Posté") && nouveauStatut.equals("Posté")) {
                 List<CoursEtudiant> ce = coursEtudiantServiceImpl.findListCoursEtudiantByIdCours(e.get().getCours().getId());
                 System.out.println("Liste  de cours:" + ce);
                 for (CoursEtudiant etudiant : ce) {
