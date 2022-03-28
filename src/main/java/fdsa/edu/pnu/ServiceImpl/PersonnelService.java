@@ -53,13 +53,9 @@ public class PersonnelService implements IPersonnel {
 
     @Override
     public Personnel save(Personnel personnel) {
-
         String pass = password.randomPassword();
         personnel.setUserPassword(passwordEncoder.encode(pass));
-
         ec.confirmerCreationPersonnel(personnel.getUserName(), personnel.getPrenom(), personnel.getNom(), personnel.getUserName(), pass);
-
-        personnel.setUserPassword(passwordEncoder.encode(pass));
         return personnelDAO.save(personnel);
     }
 
