@@ -31,6 +31,8 @@ public class Concours extends Audit<String> implements Serializable {
 
     @Column(name = "status", nullable = true, length = 255)
     private String status;
+    @Column(name = "code", nullable = true, length = 255)
+    private String code;
 
     @JsonIgnoreProperties(value = {"concours"}, allowSetters = true)
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "concours", targetEntity = PlannificationConcours.class)

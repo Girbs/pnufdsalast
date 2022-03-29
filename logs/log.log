@@ -351,3 +351,6 @@ Consider defining a bean of type 'fdsa.edu.pnu.ControllerImpl.DepartementControl
 27-03-2022 14:19:44.872 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: saveUsingPOST_25
 27-03-2022 14:19:44.880 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith - Generating unique operation named: updateUsingPUT_10
 27-03-2022 14:19:44.921 [restartedMain] INFO  fdsa.edu.pnu.PnuApplication.logStarted - Started PnuApplication in 42.534 seconds (JVM running for 43.676)
+27-03-2022 14:50:14.775 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+27-03-2022 14:50:14.809 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+27-03-2022 14:50:14.819 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
