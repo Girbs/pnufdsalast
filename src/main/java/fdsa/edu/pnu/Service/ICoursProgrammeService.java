@@ -7,6 +7,7 @@ import java.util.List;
 public interface ICoursProgrammeService {
     List<CoursProgramme> findAll();
 
+
     CoursProgramme findById(Integer id);
 
     CoursProgramme save(CoursProgramme coursProgramme);
@@ -14,4 +15,6 @@ public interface ICoursProgrammeService {
     CoursProgramme update(Integer id, CoursProgramme coursProgramme);
 
     void delete(Integer id);
+
+    List<CoursProgramme> FindCoursProgrammeBySessionId(Integer IdSession);
 }

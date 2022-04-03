@@ -38,4 +38,9 @@ public class CoursProgrammeControllerImpl implements ICoursProgrammeController {
     public CoursProgramme save(CoursProgramme coursProgramme) {
         return coursProgrammeServiceImpl.save(coursProgramme);
     }
+
+    @Override
+    public List<CoursProgramme> FindCoursProgrammeBySessionId(Integer idSession) {
+        return coursProgrammeServiceImpl.FindCoursProgrammeBySessionId(idSession);
+    }
 }

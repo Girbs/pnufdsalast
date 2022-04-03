@@ -53,7 +53,7 @@ public interface ISessionProgrammeController {
     void delete(@PathVariable("id") Integer id);
 
 
-    @PostMapping(value = "/sessionprogramme/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/sessionProgramme/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Enregistrer une SessionProgramme", notes = "Cette methode permet d'enregistrer ou modifier un Programme", response = SessionProgramme.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "L'objet le Programme crée modifie"),

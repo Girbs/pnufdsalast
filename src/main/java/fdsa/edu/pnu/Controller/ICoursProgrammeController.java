@@ -54,4 +54,15 @@ public interface ICoursProgrammeController {
     })
     CoursProgramme save(@RequestBody CoursProgramme coursProgramme);
 
+
+
+    @GetMapping(value = "/findBySessionId/{idSession}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Renvoi la liste des CoursProgramme", notes = "Cette methode permet de chercher et renvoyer la liste des Sessions qui existent "
+            + "dans la BDD", responseContainer = "List<CoursProgramme>")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "La liste des CoursProgramme / Une liste vide")
+    })
+    List<CoursProgramme> FindCoursProgrammeBySessionId(@PathVariable("idSession") Integer idSession);
+
+
 }

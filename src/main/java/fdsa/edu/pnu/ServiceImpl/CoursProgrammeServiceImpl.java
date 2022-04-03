@@ -38,4 +38,9 @@ public class CoursProgrammeServiceImpl implements ICoursProgrammeService {
     public void delete(Integer id) {
         coursProgrammeDAO.deleteById(id);
     }
+
+    @Override
+    public List<CoursProgramme> FindCoursProgrammeBySessionId(Integer IdSession) {
+        return coursProgrammeDAO.FindCoursProgrammeBySessionId(IdSession);
+    }
 }
