@@ -46,6 +46,7 @@ public class Promotion implements Serializable {
     private double MontantfraisGeneraux;
     @Column(name = "NomPromotion", nullable = true, length = 255)
     private String nomPromotion;
+
     @ManyToMany(mappedBy = "promotions", targetEntity = Etudiant.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)

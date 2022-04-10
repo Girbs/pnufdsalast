@@ -8,6 +8,7 @@ package fdsa.edu.pnu.ControllerImpl;
 import fdsa.edu.pnu.Controller.IEvaluationController;
 import fdsa.edu.pnu.Model.CoursEtudiant;
 import fdsa.edu.pnu.Model.Evaluation;
+import fdsa.edu.pnu.SMS.SmsRequest;
 import fdsa.edu.pnu.ServiceImpl.CoursEtudiantServiceImpl;
 import fdsa.edu.pnu.ServiceImpl.EvaluationServiceImpl;
 import fdsa.edu.pnu.mail.EmailController;
@@ -26,6 +27,10 @@ public class EvaluationControllerImpl implements IEvaluationController {
     public CoursEtudiantServiceImpl coursEtudiantServiceImpl;
     @Autowired
     private EmailController emailController;
+    @Autowired
+   // private SmsRequest smsRequest;
+
+
 
     @Override
     public List<Evaluation> findAll() {
@@ -55,6 +60,7 @@ public class EvaluationControllerImpl implements IEvaluationController {
     @Override
     public Evaluation save(Evaluation evaluationOrdinaire) {
         Optional<Evaluation> e = evaluationServiceImpl.findById(evaluationOrdinaire.getId());
+       String smsMessage ="La note de l'valuation est disponible";
         String nouveauStatut = evaluationOrdinaire.getStatutResultat();
         if (e.isPresent()) {
             String ancienStatut = e.get().getStatutResultat();
@@ -62,8 +68,12 @@ public class EvaluationControllerImpl implements IEvaluationController {
 
             if(!ancienStatut.equals("Posté") && nouveauStatut.equals("Posté")) {
                 List<CoursEtudiant> ce = coursEtudiantServiceImpl.findListCoursEtudiantByIdCours(e.get().getCours().getId());
-                System.out.println("Liste  de cours:" + ce);
                 for (CoursEtudiant etudiant : ce) {
+                    //call the constructor to send sms
+                    System.out.println("Phone number is:"+etudiant.getEtudiant().getTelephone1());
+                    System.out.println("message is:"+smsMessage);
+                    
+                    SmsRequest sms =  new SmsRequest(etudiant.getEtudiant().getTelephone1(),smsMessage);
                     emailController.notificationResultatExamenPostee(etudiant.getEtudiant().getUserName(),
                             e.get().getCours().getCoursProgramme().getMatiere().getDescription(),
                             evaluationOrdinaire.getTypeEvaluation());

@@ -137,6 +137,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/postulantPageWithFilter",
                         "/saveStudent",
                         "/getStudent",
+                        "/api/v1/sms",
                         "/historiqueExamen/all",
                         "/sessionProgramme/{id}",
                 "/sessionProgramme/all",

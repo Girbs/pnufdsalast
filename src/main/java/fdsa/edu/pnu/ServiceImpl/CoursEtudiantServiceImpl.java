@@ -103,4 +103,9 @@ public class CoursEtudiantServiceImpl implements ICoursEtudiantService {
     public List<CoursEtudiant> findListCoursEtudiantByIdCours(Integer idCours) {
         return coursEtudiantDAO.findListCoursEtudiantByIdCours(idCours);
     }
+
+    @Override
+    public List<CoursEtudiant> FindCoursEtudiantByIdEtudiant(Integer idEtudiant) {
+        return coursEtudiantDAO.FindCoursEtudiantByIdEtudiant(idEtudiant);
+    }
 }

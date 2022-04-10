@@ -34,4 +34,9 @@ public class CoursEtudiantControllerImpl implements ICoursEtudiantController {
     public CoursEtudiant save(CoursEtudiant dto) {
         return coursEtudiantServiceImpl.save(dto);
     }
+
+    @Override
+    public List<CoursEtudiant> FindCoursEtudiantByIdEtudiant(Integer idEtudiant) {
+        return coursEtudiantServiceImpl.FindCoursEtudiantByIdEtudiant(idEtudiant);
+    }
 }

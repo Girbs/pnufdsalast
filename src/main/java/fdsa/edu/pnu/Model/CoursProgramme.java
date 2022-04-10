@@ -38,6 +38,10 @@ public class CoursProgramme {
     @OneToMany(mappedBy = "coursProgramme", targetEntity = Cours.class, fetch = FetchType.LAZY)
     private List<Cours> cours;
 
+    @ManyToOne(targetEntity = CoursProgramme.class, fetch = FetchType.LAZY)
+    private CoursProgramme prerequis;
+
+
 }
 
 

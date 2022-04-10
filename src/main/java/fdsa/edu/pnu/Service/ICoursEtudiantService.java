@@ -23,4 +23,6 @@ public interface ICoursEtudiantService {
     CoursEtudiant calculmoyenneHelper(CoursEtudiant coursEtudiant);
 
     List<CoursEtudiant> findListCoursEtudiantByIdCours(Integer idCours);
+
+    List<CoursEtudiant> FindCoursEtudiantByIdEtudiant( Integer idEtudiant);
 }

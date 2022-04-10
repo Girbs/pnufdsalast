@@ -40,6 +40,18 @@
             <scope>runtime</scope>
         </dependency>
         <dependency>
+            <groupId>com.twilio.sdk</groupId>
+            <artifactId>twilio</artifactId>
+            <version>8.28.0</version>
+        </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>com.twilio.sdk</groupId>-->
+<!--            <artifactId>twilio</artifactId>-->
+<!--            <version>7.34.0</version>-->
+<!--        </dependency>-->
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
