@@ -138,6 +138,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/saveStudent",
                         "/getStudent",
                         "/api/v1/sms",
+                "/coursEtudiantByIdEtudiant/{idEtudiant}",
                         "/historiqueExamen/all",
                         "/sessionProgramme/{id}",
                 "/sessionProgramme/all",
