@@ -73,7 +73,7 @@ public class PostulantControllerImpl implements IPostulantController {
 //        return new APIResponse<>(productsWithPagination.getSize(), productsWithPagination);
 //    }
 
-    // This is the Original Controller. It works fine
+    // This is the Original SmsController. It works fine
 //    @Override
 //    public APIResponse<Page<Postulant>> getAllPostulantsWithPaginationAndSortv1(int offset, int pageSize, String field, String searchFiled) {
 //        Page<Postulant> productsWithPagination = postulantService.findAllWithPaginationAndSortingv1(offset, pageSize, field, searchFiled);

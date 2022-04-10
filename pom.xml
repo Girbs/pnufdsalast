@@ -140,6 +140,13 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.7.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.twilio.sdk</groupId>
+            <artifactId>twilio</artifactId>
+            <version>8.28.0</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>

@@ -8,6 +8,7 @@ package fdsa.edu.pnu.ControllerImpl;
 import fdsa.edu.pnu.Controller.IEvaluationController;
 import fdsa.edu.pnu.Model.CoursEtudiant;
 import fdsa.edu.pnu.Model.Evaluation;
+import fdsa.edu.pnu.SMS.SmsService;
 import fdsa.edu.pnu.SMS.SmsRequest;
 import fdsa.edu.pnu.ServiceImpl.CoursEtudiantServiceImpl;
 import fdsa.edu.pnu.ServiceImpl.EvaluationServiceImpl;
@@ -28,7 +29,7 @@ public class EvaluationControllerImpl implements IEvaluationController {
     @Autowired
     private EmailController emailController;
     @Autowired
-   // private SmsRequest smsRequest;
+    private SmsService smsRequest;
 
 
 
@@ -72,11 +73,17 @@ public class EvaluationControllerImpl implements IEvaluationController {
                     //call the constructor to send sms
                     System.out.println("Phone number is:"+etudiant.getEtudiant().getTelephone1());
                     System.out.println("message is:"+smsMessage);
-                    
-                    SmsRequest sms =  new SmsRequest(etudiant.getEtudiant().getTelephone1(),smsMessage);
                     emailController.notificationResultatExamenPostee(etudiant.getEtudiant().getUserName(),
                             e.get().getCours().getCoursProgramme().getMatiere().getDescription(),
                             evaluationOrdinaire.getTypeEvaluation());
+                    SmsRequest sms =  new SmsRequest(etudiant.getEtudiant().getTelephone1(),smsMessage);
+                 try {
+                         smsRequest.sendSms(sms);
+                         System.out.print("Sms sent");
+
+                 }catch(Exception ex){
+                     System.out.print("Sms does not sent");
+                 }
                     System.out.println("Email sent to:" + etudiant.getEtudiant().getUserName());
                 }
             }
