@@ -70,11 +70,15 @@ public class Etudiant extends Utilisateur implements Serializable {
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private java.util.Set promotions;
 
-    @JsonIgnoreProperties(value = {"etudiant"}, allowSetters = true)
-    @ManyToMany(targetEntity = Programme.class)
-    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
-    @JoinTable(name = "Programme_Etudiant", joinColumns = {@JoinColumn(name = "EtudiantPersonneID")}, inverseJoinColumns = {@JoinColumn(name = "ProgrammeID")})
-    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
+//    //@JsonIgnoreProperties(value = {"etudiant"}, allowSetters = true)
+//    @ManyToMany(targetEntity = Programme.class)
+//    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
+//    @JoinTable(name = "Programme_Etudiant", joinColumns = {@JoinColumn(name = "EtudiantPersonneID")}, inverseJoinColumns = {@JoinColumn(name = "ProgrammeID")})
+//    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
+//    private List<Programme> programmes;
+
+    @ManyToMany(cascade=CascadeType.ALL)
+    @JoinTable(name="Programme_Etudiant", joinColumns=@JoinColumn(name="bookEtudiantPersonneID_id"), inverseJoinColumns=@JoinColumn(name="ProgrammeID"))
     private List<Programme> programmes;
 
 

@@ -63,11 +63,15 @@ public class Programme implements Serializable {
     @OneToMany(mappedBy = "prerequis", targetEntity = Programme.class)
     private List<Programme> programmes;
 
-    @JsonIgnoreProperties(value = {"programmes"}, allowSetters = true)
-    @ManyToMany(mappedBy = "programmes", targetEntity = Etudiant.class)
-    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
-    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
-    private List<Etudiant> etudiants;
+
+//    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+//    @ManyToMany(mappedBy = "programmes", targetEntity = Etudiant.class)
+//    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
+//    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
+//    private List<Etudiant> etudiants;
+
+
+
 
     public Programme() {
     }
