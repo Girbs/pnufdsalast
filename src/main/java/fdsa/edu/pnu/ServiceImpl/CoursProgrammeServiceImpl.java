@@ -21,16 +21,19 @@ public class CoursProgrammeServiceImpl implements ICoursProgrammeService {
 
     @Override
     public CoursProgramme findById(Integer id) {
+
         return coursProgrammeDAO.findCurriculumById(id);
     }
 
     @Override
     public CoursProgramme save(CoursProgramme coursProgramme) {
+
         return coursProgrammeDAO.save(coursProgramme);
     }
 
     @Override
     public CoursProgramme update(Integer id, CoursProgramme coursProgramme) {
+
         return null;
     }
 
@@ -42,5 +45,20 @@ public class CoursProgrammeServiceImpl implements ICoursProgrammeService {
     @Override
     public List<CoursProgramme> FindCoursProgrammeBySessionId(Integer IdSession) {
         return coursProgrammeDAO.FindCoursProgrammeBySessionId(IdSession);
+    }
+
+    @Override
+    public List<CoursProgramme> FindListCoursProgrammeByEtudiant(Integer IdProgramme, Integer idEtudiant) {
+        return coursProgrammeDAO.FindListCoursProgrammeByIdEtudiant(IdProgramme,idEtudiant );
+    }
+
+    @Override
+    public Integer findNombredeCreditsByProgramme(Integer IdProgramme) {
+        return coursProgrammeDAO.findNombredeCreditByProgramme(IdProgramme);
+    }
+
+    @Override
+    public Integer findNombreDeCreditCompletedByEtudiantByProgramme(Integer IdProgramme, Integer idEtudiant) {
+        return coursProgrammeDAO.findNombreDeCreditCompletedByEtudiantByProgramme(IdProgramme,idEtudiant);
     }
 }

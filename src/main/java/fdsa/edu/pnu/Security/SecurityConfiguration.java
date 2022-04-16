@@ -1,13 +1,5 @@
 package fdsa.edu.pnu.Security;
 
-/**
- * @Course: Platforme Numerique Universitaire - FDSA
- * @Author Name: Girbson Bijou
- * @Assignment Name: fdsa.edu.pnu.config
- * @Date: Sep 18, 2021
- * @Subclass SecurityConfiguration Description:
- */
-//Imports
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -144,6 +136,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 "/sessionProgramme/all",
                         "/sessionProgrammeByIdProgramme/{idProgramme}",
                         "/coursProgramme/findBySessionId/{idSession}",
+                        "/coursProgramme/findNombreDeCreditCompletedByEtudiantByProgramme/{IdProgramme}/{idEtudiant}",
                         "/modifierConcours/{id}",
                         "/v2/api-docs",
                         "/swagger-resources",
@@ -151,7 +144,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/configuration/ui",
                         "/configuration/security",
                         "/sessionProgramme/nouveau",
+                        "/coursProgramme/findNombredeCreditsByProgramme/{IdProgramme}",
                         "/swagger-ui.html",
+                        "/coursProgramme/findListCoursProgrammeByEtudiant/{IdProgramme}/{idEtudiant}",
                         "/webjars/**",
                         "/v3/api-docs/**",
                         "/swagger-ui/**").permitAll()

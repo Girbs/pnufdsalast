@@ -11,6 +11,7 @@ import java.util.List;
 @RestController
 public class CoursProgrammeControllerImpl implements ICoursProgrammeController {
 
+
     @Autowired
     private CoursProgrammeServiceImpl coursProgrammeServiceImpl;
 
@@ -42,5 +43,32 @@ public class CoursProgrammeControllerImpl implements ICoursProgrammeController {
     @Override
     public List<CoursProgramme> FindCoursProgrammeBySessionId(Integer idSession) {
         return coursProgrammeServiceImpl.FindCoursProgrammeBySessionId(idSession);
+    }
+
+
+
+    @Override
+    public List<CoursProgramme> FindListCoursProgrammeByEtudiant(Integer IdProgramme, Integer idEtudiant) {
+        return coursProgrammeServiceImpl.FindListCoursProgrammeByEtudiant(IdProgramme, idEtudiant);
+    }
+
+    @Override
+    public Integer findNombredeCreditsByProgramme(Integer IdProgramme) {
+        int nombreDeCredit;
+        if(coursProgrammeServiceImpl.findNombredeCreditsByProgramme(IdProgramme)==null){
+            nombreDeCredit=0;
+        }
+       else nombreDeCredit = coursProgrammeServiceImpl.findNombredeCreditsByProgramme(IdProgramme);
+      return  nombreDeCredit;
+    }
+
+    @Override
+    public Integer findNombreDeCreditCompletedByEtudiantByProgramme(Integer IdProgramme, Integer idEtudiant) {
+        int nombreDeCredit;
+        if(coursProgrammeServiceImpl.findNombreDeCreditCompletedByEtudiantByProgramme(IdProgramme, idEtudiant)==null){
+            nombreDeCredit=0;
+        }
+        else nombreDeCredit = coursProgrammeServiceImpl.findNombreDeCreditCompletedByEtudiantByProgramme(IdProgramme, idEtudiant);
+        return  nombreDeCredit;
     }
 }

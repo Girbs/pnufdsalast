@@ -65,4 +65,31 @@ public interface ICoursProgrammeController {
     List<CoursProgramme> FindCoursProgrammeBySessionId(@PathVariable("idSession") Integer idSession);
 
 
+
+    @GetMapping(value = "/findListCoursProgrammeByEtudiant/{IdProgramme}/{idEtudiant}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Renvoi la liste des CoursProgramme par Etudiant", notes = "Cette methode permet de chercher et renvoyer la liste des Sessions qui existent "
+            + "dans la BDD", responseContainer = "List<CoursProgramme>")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "La liste des CoursProgramme / Une liste vide")
+    })
+    List <CoursProgramme>  FindListCoursProgrammeByEtudiant ( @PathVariable("IdProgramme") Integer IdProgramme,  @PathVariable("idEtudiant") Integer idEtudiant);
+
+
+    @GetMapping(value = "/findNombredeCreditsByProgramme/{IdProgramme}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Renvoi le nombre de credits par programme ", notes = "Cette methode permet de chercher et renvoyer la liste des Sessions qui existent "
+            + "dans la BDD", responseContainer = "List<CoursProgramme>")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "numbre de credits / Une liste vide")
+    })
+    public Integer findNombredeCreditsByProgramme(@PathVariable("IdProgramme") Integer IdProgramme);
+
+    @GetMapping(value = "/findNombreDeCreditCompletedByEtudiantByProgramme/{IdProgramme}/{idEtudiant}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Renvoi le nombre de credits  completé par etudiant par programme ", notes = "Cette methode permet de chercher et renvoyer la liste des Sessions qui existent "
+            + "dans la BDD", responseContainer = "List<CoursProgramme>")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "numbre de credits / Une liste vide")
+    })
+    public Integer findNombreDeCreditCompletedByEtudiantByProgramme(@PathVariable("IdProgramme") Integer IdProgramme , @PathVariable("idEtudiant")  Integer idEtudiant);
+
+
 }

@@ -18,7 +18,17 @@ public interface CoursProgrammeDAO extends JpaRepository<CoursProgramme, Integer
     @Query(value = "{call FindCurriculumById(:IdCurriculum)}", nativeQuery = true)
     CoursProgramme findCurriculumById(@Param("IdCurriculum") Integer IdCurriculum);
 
-
     @Query(value = "{call FindCoursProgrammeBySessionId(:IdSession)}", nativeQuery = true)
-   List <CoursProgramme> FindCoursProgrammeBySessionId(@Param("IdSession") Integer IdSession);
+    List <CoursProgramme> FindCoursProgrammeBySessionId(@Param("IdSession") Integer IdSession);
+
+    @Query(value = "{call FindListCoursProgrammeByIdEtudiant(:IdProgramme, :idEtudiant)}", nativeQuery = true)
+    List <CoursProgramme> FindListCoursProgrammeByIdEtudiant (@Param("IdProgramme")   Integer IdProgramme,  @Param("idEtudiant")  Integer idEtudiant);
+
+
+    @Query(value = "{call findNombredeCreditByProgram(:IdProgramme)}", nativeQuery = true)
+    Integer  findNombredeCreditByProgramme (@Param("IdProgramme")   Integer IdProgramme);
+
+    @Query(value = "{call findNombreDeCreditCompletedByEtudiantByProgramme(:IdProgramme, :idEtudiant)}", nativeQuery = true)
+    Integer  findNombreDeCreditCompletedByEtudiantByProgramme (@Param("IdProgramme")   Integer IdProgramme , @Param("idEtudiant")  Integer idEtudiant);
+
 }

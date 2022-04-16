@@ -17,4 +17,13 @@ public interface ICoursProgrammeService {
     void delete(Integer id);
 
     List<CoursProgramme> FindCoursProgrammeBySessionId(Integer IdSession);
+
+   List <CoursProgramme>  FindListCoursProgrammeByEtudiant (Integer IdProgramme, Integer idEtudiant);
+    Integer  findNombredeCreditsByProgramme (Integer IdProgramme);
+
+    Integer  findNombreDeCreditCompletedByEtudiantByProgramme (  Integer IdProgramme ,  Integer idEtudiant);
+
+
+
+
 }
