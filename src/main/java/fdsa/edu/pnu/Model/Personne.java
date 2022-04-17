@@ -29,6 +29,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.UUID;
 
 @Entity
 @Table(name = "Personne")
@@ -54,6 +55,8 @@ public class Personne extends Audit<String> implements Serializable {
 
     @Column(name = "Nom", nullable = true, length = 255)
     private String nom;
+
+    private UUID personneUid = UUID.randomUUID();
 
     @Column(name = "Prenom", nullable = true, length = 255)
     private String prenom;
