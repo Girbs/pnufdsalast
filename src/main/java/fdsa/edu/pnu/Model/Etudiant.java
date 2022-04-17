@@ -77,9 +77,11 @@ public class Etudiant extends Utilisateur implements Serializable {
 //    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
 //    private List<Programme> programmes;
 
-    @ManyToMany(cascade=CascadeType.ALL)
-    @JoinTable(name="Programme_Etudiant", joinColumns=@JoinColumn(name="bookEtudiantPersonneID_id"), inverseJoinColumns=@JoinColumn(name="ProgrammeID"))
-    private List<Programme> programmes;
+    @JsonIgnoreProperties(value = {"etudiant"}, allowSetters = true)
+    @OneToMany(mappedBy = "etudiant", targetEntity = ProgrammeEtudiant.class)
+    private List<ProgrammeEtudiant> programmesEtudiant;
+
+
 
 
     @JsonIgnoreProperties(value = {"etudiant"}, allowSetters = true)

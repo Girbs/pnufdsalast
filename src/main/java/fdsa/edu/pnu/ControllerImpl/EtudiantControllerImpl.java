@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-public class EtudiantControllerImpl implements IEtudiantController {
+public class EtudiantControllerImpl<id> implements IEtudiantController {
     @Autowired
     private EtudiantServiceImpl etudiantServiceImpl;
 
@@ -26,6 +26,12 @@ public class EtudiantControllerImpl implements IEtudiantController {
         return etudiantServiceImpl.findById(id);
     }
 
+
+//
+// id   public ResponseEntity<Etudiant> findetudById(Integer id) {
+//        Optional<Etudiant> e =  etudiantServiceImpl.findById(id);
+//        return new ResponseEntity<T>(e, HttpStatus.OK);
+//    }
     @Override
     public void delete(Integer id) {
         etudiantServiceImpl.delete(id);

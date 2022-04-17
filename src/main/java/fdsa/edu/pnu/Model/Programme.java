@@ -23,6 +23,7 @@
 package fdsa.edu.pnu.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -63,14 +64,10 @@ public class Programme implements Serializable {
     @OneToMany(mappedBy = "prerequis", targetEntity = Programme.class)
     private List<Programme> programmes;
 
-
-//    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-//    @ManyToMany(mappedBy = "programmes", targetEntity = Etudiant.class)
-//    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
-//    @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
-//    private List<Etudiant> etudiants;
-
-
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JsonIgnoreProperties(value = {"programme"}, allowSetters = true)
+    @OneToMany(mappedBy = "programme", targetEntity = ProgrammeEtudiant.class)
+    private List<ProgrammeEtudiant> programmesEtudiant;
 
 
     public Programme() {
