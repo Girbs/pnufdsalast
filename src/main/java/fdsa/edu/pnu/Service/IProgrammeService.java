@@ -1,5 +1,6 @@
 package fdsa.edu.pnu.Service;
 
+import fdsa.edu.pnu.DTO.ProgrammeDTO;
 import fdsa.edu.pnu.Model.Programme;
 
 import java.util.List;
@@ -14,5 +15,5 @@ public interface IProgrammeService {
     Programme update(Integer id, Programme programme);
 
     void delete(Integer id);
-    List<Programme> FindListProgrammeByIdEtudiant( Integer idEtudiant);
+    List<ProgrammeDTO> FindListProgrammeByIdEtudiant(Integer idEtudiant);
 }

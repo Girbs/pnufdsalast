@@ -6,6 +6,7 @@
 package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Controller.IProgrammeController;
+import fdsa.edu.pnu.DTO.ProgrammeDTO;
 import fdsa.edu.pnu.Model.Programme;
 import fdsa.edu.pnu.ServiceImpl.ProgrammeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +47,7 @@ public class ProgrammeController implements IProgrammeController {
     }
 
     @Override
-    public List<Programme> FindListProgrammeByIdEtudiant(Integer idEtudiant) {
+    public List<ProgrammeDTO> FindListProgrammeByIdEtudiant(Integer idEtudiant) {
         return programmeServiceImpl.FindListProgrammeByIdEtudiant(idEtudiant);
     }
 }

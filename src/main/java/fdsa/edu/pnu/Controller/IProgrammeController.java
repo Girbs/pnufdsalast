@@ -1,5 +1,6 @@
 package fdsa.edu.pnu.Controller;
 
+import fdsa.edu.pnu.DTO.ProgrammeDTO;
 import fdsa.edu.pnu.Model.Programme;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -61,6 +62,6 @@ public interface IProgrammeController {
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "La liste des Programmes / Une liste vide")
     })
-    List<Programme> FindListProgrammeByIdEtudiant(@PathVariable ("idEtudiant") Integer idEtudiant);
+    List<ProgrammeDTO> FindListProgrammeByIdEtudiant(@PathVariable ("idEtudiant") Integer idEtudiant);
 
 }

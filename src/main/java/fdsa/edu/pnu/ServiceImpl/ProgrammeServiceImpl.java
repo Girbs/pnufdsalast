@@ -5,6 +5,7 @@
  */
 package fdsa.edu.pnu.ServiceImpl;
 
+import fdsa.edu.pnu.DTO.ProgrammeDTO;
 import fdsa.edu.pnu.Model.Programme;
 import fdsa.edu.pnu.Repository.ProgrammeDAO;
 import fdsa.edu.pnu.Service.IProgrammeService;
@@ -49,7 +50,7 @@ public class ProgrammeServiceImpl implements IProgrammeService {
     }
 
     @Override
-    public List<Programme> FindListProgrammeByIdEtudiant(Integer idEtudiant) {
+    public List<ProgrammeDTO> FindListProgrammeByIdEtudiant(Integer idEtudiant) {
         return programmeDAO.FindListProgrammeByIdEtudiant(idEtudiant);
     }
 }
