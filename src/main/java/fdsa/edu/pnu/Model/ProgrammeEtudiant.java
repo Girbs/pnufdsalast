@@ -2,7 +2,6 @@ package fdsa.edu.pnu.Model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,7 +12,7 @@ import java.util.Date;
 @Setter
 @Getter
 @Table(name = "ProgrammeEtudiant")
-//@JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
+@JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
 public class ProgrammeEtudiant implements Serializable {
 
     @Column(name = "ID", nullable = false, length = 10)
@@ -27,11 +26,9 @@ public class ProgrammeEtudiant implements Serializable {
     private Etudiant etudiant;
 
   @ManyToOne
-  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+  //@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @JsonIgnoreProperties(value = {"programmesEtudiant"}, allowSetters = true)
   private Programme programme;
   private  int programmedetudeId;
-
-
 
 }

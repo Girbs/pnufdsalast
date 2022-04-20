@@ -14,4 +14,5 @@ public interface IProgrammeService {
     Programme update(Integer id, Programme programme);
 
     void delete(Integer id);
+    List<Programme> FindListProgrammeByIdEtudiant( Integer idEtudiant);
 }

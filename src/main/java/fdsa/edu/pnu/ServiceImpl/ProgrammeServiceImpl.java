@@ -47,4 +47,9 @@ public class ProgrammeServiceImpl implements IProgrammeService {
     public void delete(Integer id) {
         programmeDAO.deleteById(id);
     }
+
+    @Override
+    public List<Programme> FindListProgrammeByIdEtudiant(Integer idEtudiant) {
+        return programmeDAO.FindListProgrammeByIdEtudiant(idEtudiant);
+    }
 }

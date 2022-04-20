@@ -52,4 +52,15 @@ public interface IProgrammeController {
             @ApiResponse(code = 400, message = "L'objet Programme n'est pas valide")
     })
     Programme save(@RequestBody Programme programme);
+
+
+
+    @GetMapping(value = "/programme/ListProgrammeByIdEtudiant/{idEtudiant}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Renvoi la liste des Programmes par Etudiant ", notes = "Cette methode permet de chercher et renvoyer la liste des Programmes qui existent "
+            + "dans la BDD", responseContainer = "List<Programme>")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "La liste des Programmes / Une liste vide")
+    })
+    List<Programme> FindListProgrammeByIdEtudiant(@PathVariable ("idEtudiant") Integer idEtudiant);
+
 }

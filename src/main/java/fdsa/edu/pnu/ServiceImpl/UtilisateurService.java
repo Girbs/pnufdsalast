@@ -94,7 +94,7 @@ public class UtilisateurService implements IUtilisateurService {
     public UtilisateurDTO changerMotDePasse(ChangerMotDePasseUtilisateurDto dto) {
         validate(dto);
         Optional<Utilisateur> utilisateurOptional = utilisateurDAO.findByUsername(dto.getUserName());
-        if (utilisateurOptional.isPresent()) {
+        if (!utilisateurOptional.isPresent()) {
             MessageUtil log = null;
             log.warn("Aucun utilisateur n'a ete trouve avec l'ID " + dto.getUserName());
             throw new EntityNotFoundException("Aucun utilisateur n'a ete trouve avec l'ID " + dto.getUserName(), ErrorCodes.UTILISATEUR_NOT_FOUND);

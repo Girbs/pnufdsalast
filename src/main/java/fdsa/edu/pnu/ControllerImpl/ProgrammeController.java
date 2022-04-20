@@ -44,4 +44,9 @@ public class ProgrammeController implements IProgrammeController {
     public Programme save(Programme programme) {
         return programmeServiceImpl.save(programme);
     }
+
+    @Override
+    public List<Programme> FindListProgrammeByIdEtudiant(Integer idEtudiant) {
+        return programmeServiceImpl.FindListProgrammeByIdEtudiant(idEtudiant);
+    }
 }

@@ -27,7 +27,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public interface ProgrammeDAO extends JpaRepository<Programme, Integer> {
@@ -37,4 +36,7 @@ public interface ProgrammeDAO extends JpaRepository<Programme, Integer> {
 
     @Query(value = "{call FindProgrammeById(:IdProgramme)}", nativeQuery = true)
     Programme findProgrammeById(@Param("IdProgramme") Integer IdProgramme);
+
+    @Query(value = "{call FindListProgrammeByIdEtudiant(:idEtudiant)}", nativeQuery = true)
+   List< Programme> FindListProgrammeByIdEtudiant(@Param("idEtudiant") Integer idEtudiant);
 }
