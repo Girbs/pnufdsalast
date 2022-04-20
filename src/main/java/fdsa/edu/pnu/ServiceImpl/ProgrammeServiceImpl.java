@@ -13,6 +13,7 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -51,6 +52,19 @@ public class ProgrammeServiceImpl implements IProgrammeService {
 
     @Override
     public List<ProgrammeDTO> FindListProgrammeByIdEtudiant(Integer idEtudiant) {
-        return programmeDAO.FindListProgrammeByIdEtudiant(idEtudiant);
+
+
+        List<Object> o = programmeDAO.FindListProgrammeByIdEtudiant(idEtudiant);
+        List<ProgrammeDTO> programmeDTOList = new ArrayList<>();
+
+        for (int i = 0; i < o.size(); i++) {
+
+            Object[] oo = (Object[]) o.get(i);
+            ProgrammeDTO rc = new ProgrammeDTO((Integer) oo[0], String.valueOf(oo[1]), String.valueOf(oo[2]));
+            programmeDTOList.add(rc);
+
+        }
+        return programmeDTOList;
+
     }
 }

@@ -20,7 +20,6 @@
 package fdsa.edu.pnu.Repository;
 
 
-import fdsa.edu.pnu.DTO.ProgrammeDTO;
 import fdsa.edu.pnu.Model.Programme;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -39,5 +38,5 @@ public interface ProgrammeDAO extends JpaRepository<Programme, Integer> {
     Programme findProgrammeById(@Param("IdProgramme") Integer IdProgramme);
 
     @Query(value = "{call FindListProgrammeByIdEtudiant(:idEtudiant)}", nativeQuery = true)
-   List<ProgrammeDTO> FindListProgrammeByIdEtudiant(@Param("idEtudiant") Integer idEtudiant);
+   List<Object> FindListProgrammeByIdEtudiant(@Param("idEtudiant") Integer idEtudiant);
 }
