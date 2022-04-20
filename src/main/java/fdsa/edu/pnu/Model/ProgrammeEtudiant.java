@@ -2,6 +2,7 @@ package fdsa.edu.pnu.Model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,7 +27,7 @@ public class ProgrammeEtudiant implements Serializable {
     private Etudiant etudiant;
 
   @ManyToOne
-  //@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @JsonIgnoreProperties(value = {"programmesEtudiant"}, allowSetters = true)
   private Programme programme;
   private  int programmedetudeId;
