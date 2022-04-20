@@ -92,4 +92,12 @@ public interface ICoursProgrammeController {
     public Integer findNombreDeCreditCompletedByEtudiantByProgramme(@PathVariable("IdProgramme") Integer IdProgramme , @PathVariable("idEtudiant")  Integer idEtudiant);
 
 
+
+    @GetMapping(value = "/findListCoursAndPrerequisByIdProgram/{idProgramme}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Renvoie le cursus par programme", notes = "Cette methode permet de chercher et renvoyer la liste des Sessions qui existent "
+            + "dans la BDD", responseContainer = "List<CoursProgramme>")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "La liste des CoursProgramme / Une liste vide")
+    })
+    public List<CoursProgramme> ListCoursAndPrerequisByIdProgram(@PathVariable("idProgramme") Integer idProgramme);
 }

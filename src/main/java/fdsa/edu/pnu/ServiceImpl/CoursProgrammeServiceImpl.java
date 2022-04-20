@@ -61,4 +61,9 @@ public class CoursProgrammeServiceImpl implements ICoursProgrammeService {
     public Integer findNombreDeCreditCompletedByEtudiantByProgramme(Integer IdProgramme, Integer idEtudiant) {
         return coursProgrammeDAO.findNombreDeCreditCompletedByEtudiantByProgramme(IdProgramme,idEtudiant);
     }
+
+    @Override
+    public List<CoursProgramme> ListCoursAndPrerequisByIdProgram(Integer idProgramme) {
+        return coursProgrammeDAO.ListCoursAndPrerequisByIdProgram(idProgramme);
+    }
 }

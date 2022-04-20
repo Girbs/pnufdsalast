@@ -71,4 +71,9 @@ public class CoursProgrammeControllerImpl implements ICoursProgrammeController {
         else nombreDeCredit = coursProgrammeServiceImpl.findNombreDeCreditCompletedByEtudiantByProgramme(IdProgramme, idEtudiant);
         return  nombreDeCredit;
     }
+
+    @Override
+    public List<CoursProgramme> ListCoursAndPrerequisByIdProgram(Integer idProgramme) {
+        return coursProgrammeServiceImpl.ListCoursAndPrerequisByIdProgram(idProgramme);
+    }
 }

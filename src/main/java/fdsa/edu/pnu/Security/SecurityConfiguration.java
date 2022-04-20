@@ -69,7 +69,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/programme/nouveau",
                         "/session/all",
                 "/session/{id}",
-
+                        "/coursProgramme/findListCoursAndPrerequisByIdProgram/{idProgramme}",
                         "/coursProgramme/all",
                         "/postulant/{statut}",
                         "/resultatExamenConcoursPageable",

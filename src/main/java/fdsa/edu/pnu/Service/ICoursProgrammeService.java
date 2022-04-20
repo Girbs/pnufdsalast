@@ -22,6 +22,7 @@ public interface ICoursProgrammeService {
     Integer  findNombredeCreditsByProgramme (Integer IdProgramme);
 
     Integer  findNombreDeCreditCompletedByEtudiantByProgramme (  Integer IdProgramme ,  Integer idEtudiant);
+    List <CoursProgramme>  ListCoursAndPrerequisByIdProgram (Integer idProgramme);
 
 
 
