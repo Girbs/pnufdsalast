@@ -25,4 +25,6 @@ public interface ICoursEtudiantService {
     List<CoursEtudiant> findListCoursEtudiantByIdCours(Integer idCours);
 
     List<CoursEtudiant> FindCoursEtudiantByIdEtudiant( Integer idEtudiant);
+
+    Integer FindNombreDeCoursCompletedByEtudiantByProgramme( Integer idEtudiant , Integer idProgramme);
 }

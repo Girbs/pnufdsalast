@@ -61,4 +61,12 @@ public interface ICoursEtudiantController {
 
     List<CoursEtudiant> FindCoursEtudiantByIdEtudiant( @PathVariable("idEtudiant") Integer idEtudiant);
 
+    @GetMapping(value = "/nombreDeCoursCompletesByEtudiantByProgramme/{idEtudiant}/{idProgramme}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Renvoi le nombre de cours completes par Etudiant par programme", notes = "Cette methode permet de calculer et renvoyer le nombre de cours completé par un etudiant pour un programme quelconque",
+           responseContainer = "Integer<Cours completés>")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "nombre de cours completé / Une liste vide")
+    })
+    Integer FindNombreDeCoursCompletedByEtudiantByProgramme(@PathVariable("idEtudiant") Integer idEtudiant , @PathVariable("idProgramme")Integer idProgramme);
+
 }
