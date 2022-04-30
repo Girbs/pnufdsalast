@@ -1,11 +1,13 @@
 package fdsa.edu.pnu.Controller;
 
+import fdsa.edu.pnu.DTO.SoumissionDevoir;
 import fdsa.edu.pnu.Model.HistoriqueEvaluation;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;
@@ -84,5 +86,13 @@ public interface IHistoriqueExamenController {
             @ApiResponse(code = 400, message = "L'objet evaluation n'est pas valide")
     })
     HistoriqueEvaluation save(@RequestBody HistoriqueEvaluation historiqueEvaluation);
+
+    @PostMapping(value = "/historiqueEvaluation/soumettreDevoir", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Soumettre un Devoir", notes = "Cette methode de soumettre un devoir", response = HistoriqueEvaluation.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "L'objet l' evaluation cree / modifie"),
+            @ApiResponse(code = 400, message = "L'objet evaluation n'est pas valide")
+    })
+    String soumettreDevoir(@RequestBody SoumissionDevoir soumissionDevoir,@RequestParam("img") MultipartFile file );
 
 }

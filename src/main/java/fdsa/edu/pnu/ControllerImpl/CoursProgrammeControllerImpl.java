@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class CoursProgrammeControllerImpl implements ICoursProgrammeController {
@@ -21,7 +22,7 @@ public class CoursProgrammeControllerImpl implements ICoursProgrammeController {
     }
 
     @Override
-    public CoursProgramme findById(Integer id) {
+    public Optional<CoursProgramme> findById(Integer id) {
         return coursProgrammeServiceImpl.findById(id);
     }
 
@@ -62,18 +63,15 @@ public class CoursProgrammeControllerImpl implements ICoursProgrammeController {
       return  nombreDeCredit;
     }
 
-    @Override
-    public Integer findNombreDeCreditCompletedByEtudiantByProgramme(Integer IdProgramme, Integer idEtudiant) {
-        int nombreDeCredit;
-        if(coursProgrammeServiceImpl.findNombreDeCreditCompletedByEtudiantByProgramme(IdProgramme, idEtudiant)==null){
-            nombreDeCredit=0;
-        }
-        else nombreDeCredit = coursProgrammeServiceImpl.findNombreDeCreditCompletedByEtudiantByProgramme(IdProgramme, idEtudiant);
-        return  nombreDeCredit;
-    }
+
 
     @Override
     public List<CoursProgramme> ListCoursAndPrerequisByIdProgram(Integer idProgramme) {
         return coursProgrammeServiceImpl.ListCoursAndPrerequisByIdProgram(idProgramme);
+    }
+
+    @Override
+    public Integer findNombreDeCoursByProgramme(Integer IdProgramme) {
+        return coursProgrammeServiceImpl.findNombreDeCoursByProgramme(IdProgramme);
     }
 }

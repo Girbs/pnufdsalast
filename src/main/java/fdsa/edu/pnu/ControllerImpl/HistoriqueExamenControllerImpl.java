@@ -1,10 +1,12 @@
 package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Controller.IHistoriqueExamenController;
+import fdsa.edu.pnu.DTO.SoumissionDevoir;
 import fdsa.edu.pnu.Model.HistoriqueEvaluation;
 import fdsa.edu.pnu.ServiceImpl.HistoriqueExamServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;
@@ -52,5 +54,10 @@ public class HistoriqueExamenControllerImpl implements IHistoriqueExamenControll
     @Override
     public HistoriqueEvaluation save(HistoriqueEvaluation historiqueEvaluationOrdinaire) {
         return historiqueExamServiceImpl.save(historiqueEvaluationOrdinaire);
+    }
+
+    @Override
+    public String soumettreDevoir(SoumissionDevoir soumissionDevoir, MultipartFile fichier) {
+        return historiqueExamServiceImpl.soumettreDevoir(soumissionDevoir, fichier);
     }
 }

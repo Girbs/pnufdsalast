@@ -3,12 +3,13 @@ package fdsa.edu.pnu.Service;
 import fdsa.edu.pnu.Model.CoursProgramme;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ICoursProgrammeService {
     List<CoursProgramme> findAll();
 
 
-    CoursProgramme findById(Integer id);
+    Optional<CoursProgramme> findById(Integer id);
 
     CoursProgramme save(CoursProgramme coursProgramme);
 
@@ -21,10 +22,9 @@ public interface ICoursProgrammeService {
    List <CoursProgramme>  FindListCoursProgrammeByEtudiant (Integer IdProgramme, Integer idEtudiant);
     Integer  findNombredeCreditsByProgramme (Integer IdProgramme);
 
-    Integer  findNombreDeCreditCompletedByEtudiantByProgramme (  Integer IdProgramme ,  Integer idEtudiant);
     List <CoursProgramme>  ListCoursAndPrerequisByIdProgram (Integer idProgramme);
 
-
+    Integer  findNombreDeCoursByProgramme (Integer IdProgramme);
 
 
 }

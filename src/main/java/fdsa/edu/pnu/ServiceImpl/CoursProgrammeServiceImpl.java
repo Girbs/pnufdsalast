@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CoursProgrammeServiceImpl implements ICoursProgrammeService {
@@ -20,9 +21,10 @@ public class CoursProgrammeServiceImpl implements ICoursProgrammeService {
     }
 
     @Override
-    public CoursProgramme findById(Integer id) {
+    public Optional<CoursProgramme> findById(Integer id) {
 
-        return coursProgrammeDAO.findCurriculumById(id);
+        //return coursProgrammeDAOfindCurriculumById(id);
+        return coursProgrammeDAO.findById(id);
     }
 
     @Override
@@ -57,13 +59,14 @@ public class CoursProgrammeServiceImpl implements ICoursProgrammeService {
         return coursProgrammeDAO.findNombredeCreditByProgramme(IdProgramme);
     }
 
-    @Override
-    public Integer findNombreDeCreditCompletedByEtudiantByProgramme(Integer IdProgramme, Integer idEtudiant) {
-        return coursProgrammeDAO.findNombreDeCreditCompletedByEtudiantByProgramme(IdProgramme,idEtudiant);
-    }
 
     @Override
     public List<CoursProgramme> ListCoursAndPrerequisByIdProgram(Integer idProgramme) {
         return coursProgrammeDAO.ListCoursAndPrerequisByIdProgram(idProgramme);
+    }
+
+    @Override
+    public Integer findNombreDeCoursByProgramme(Integer IdProgramme) {
+        return ListCoursAndPrerequisByIdProgram(IdProgramme).size();
     }
 }

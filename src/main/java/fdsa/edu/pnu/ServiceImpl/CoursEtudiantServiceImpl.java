@@ -17,6 +17,9 @@ public class CoursEtudiantServiceImpl implements ICoursEtudiantService {
     private CoursEtudiantDAO coursEtudiantDAO;
 
     @Autowired
+    private CoursProgrammeServiceImpl coursProgrammeService;
+
+    @Autowired
     private CoursServiceImpl coursService;
 
     @Override
@@ -112,5 +115,35 @@ public class CoursEtudiantServiceImpl implements ICoursEtudiantService {
     @Override
     public Integer FindNombreDeCoursCompletedByEtudiantByProgramme(Integer idEtudiant, Integer idProgramme) {
         return coursEtudiantDAO.FindNombreDeCoursCompletedByEtudiantByProgramme(idEtudiant, idProgramme );
+    }
+
+    @Override
+    public Integer FindNombreDeCoursAReprendreByEtudiantByProgramme(Integer idEtudiant, Integer idProgramme) {
+        return coursEtudiantDAO.FindNombreDeCoursAReprendreByEtudiantByProgramme(idEtudiant, idProgramme );
+    }
+
+    @Override
+    public Integer findNombreDeCreditCompletedByEtudiantByProgramme(Integer IdProgramme, Integer idEtudiant) {
+        return coursEtudiantDAO.findNombreDeCreditCompletedByEtudiantByProgramme(IdProgramme,idEtudiant);
+    }
+
+
+    @Override
+    public double pourcentageDeCreditCompletes(Integer idEtudiant, Integer idProgramme) {
+        double pourcentage;
+        Integer nombreDeCreditCompletes = findNombreDeCreditCompletedByEtudiantByProgramme(idEtudiant, idProgramme);
+        Integer nombredeCreditDuProgramme= coursProgrammeService.findNombredeCreditsByProgramme(idProgramme);
+
+        if(nombredeCreditDuProgramme == 0 || nombredeCreditDuProgramme == null){
+            return pourcentage =0;
+        }else
+            return pourcentage = nombreDeCreditCompletes /nombredeCreditDuProgramme*100;
+    }
+
+    @Override
+    public Integer findNombreDeCoursRestants(Integer idEtudiant, Integer idProgramme) {
+        return coursProgrammeService.findNombreDeCoursByProgramme(idProgramme) -
+                FindNombreDeCoursCompletedByEtudiantByProgramme(idEtudiant ,idProgramme)+
+                FindNombreDeCoursAReprendreByEtudiantByProgramme( idEtudiant,  idProgramme);
     }
 }

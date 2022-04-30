@@ -33,4 +33,11 @@ public interface CoursEtudiantDAO extends JpaRepository<CoursEtudiant, Integer> 
     Integer FindNombreDeCoursCompletedByEtudiantByProgramme(@Param("idEtudiant") Integer idEtudiant , @Param("idProgramme")Integer idProgramme);
 
 
+    @Query(value = "{call FindNombreDeCoursAReprendreByEtudiantByProgramme(:idEtudiant,:idProgramme)}", nativeQuery = true)
+    Integer FindNombreDeCoursAReprendreByEtudiantByProgramme(@Param("idEtudiant") Integer idEtudiant , @Param("idProgramme")Integer idProgramme);
+
+    @Query(value = "{call findNombreDeCreditCompletedByEtudiantByProgramme(:IdProgramme, :idEtudiant)}", nativeQuery = true)
+    Integer  findNombreDeCreditCompletedByEtudiantByProgramme (@Param("IdProgramme")   Integer IdProgramme , @Param("idEtudiant")  Integer idEtudiant);
+
+
 }

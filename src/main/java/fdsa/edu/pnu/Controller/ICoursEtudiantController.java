@@ -69,4 +69,45 @@ public interface ICoursEtudiantController {
     })
     Integer FindNombreDeCoursCompletedByEtudiantByProgramme(@PathVariable("idEtudiant") Integer idEtudiant , @PathVariable("idProgramme")Integer idProgramme);
 
+    @GetMapping(value = "/findNombreDeCreditCompletedByEtudiantByProgramme/{IdProgramme}/{idEtudiant}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Renvoi le nombre de credits  completé par etudiant par programme ", notes = "Cette methode permet de chercher et renvoyer la liste des Sessions qui existent "
+            + "dans la BDD", responseContainer = "List<CoursProgramme>")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "numbre de credits / Une liste vide")
+    })
+    public Integer findNombreDeCreditCompletedByEtudiantByProgramme(@PathVariable("IdProgramme") Integer IdProgramme , @PathVariable("idEtudiant")  Integer idEtudiant);
+
+
+
+    @GetMapping(value = "/nombreDeCoursAReprendreByEtudiantByProgramme/{idEtudiant}/{idProgramme}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Renvoi le nombre de cours a reprendre par Etudiant par programme", notes = "Cette methode permet de calculer et renvoyer le nombre de cours à reprendre par un etudiant pour un programme quelconque",
+            responseContainer = "Integer<Cours Reprendre>")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "nombre de cours completé / Une liste vide")
+    })
+    Integer FindNombreDeCoursAReprendreByEtudiantByProgramme(@PathVariable("idEtudiant") Integer idEtudiant , @PathVariable("idProgramme")Integer idProgramme);
+
+
+
+    @GetMapping(value = "/pourcentageDeCreditCompletes/{idEtudiant}/{idProgramme}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Renvoi le pourcentage de credits completes par Etudiant par programme", notes = "Cette methode permet de calculer et renvoyer le pourcentage de credits complete par un etudiant pour un programme quelconque",
+            responseContainer = "Integer<Cours Reprendre>")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "nombre de cours completé / Une liste vide")
+    })
+    double pourcentageDeCreditCompletes(@PathVariable("idEtudiant") Integer idEtudiant , @PathVariable("idProgramme")Integer idProgramme);
+
+
+    @GetMapping(value = "/findNombreDeCoursRestants/{idEtudiant}/{idProgramme}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Renvoi le nombre de cours restants pour un programme ", notes = "Cette methode permet de calculer et renvoyer le nombre de credits restant",
+            responseContainer = "Integer<Cours Reprendre>")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "nombre de cours completé / Une liste vide")
+    })
+    Integer findNombreDeCoursRestants(@PathVariable("idEtudiant") Integer idEtudiant , @PathVariable("idProgramme")Integer idProgramme);
+
+
+
+
+
 }

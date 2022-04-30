@@ -1,5 +1,6 @@
 package fdsa.edu.pnu.ServiceImpl;
 
+import fdsa.edu.pnu.DTO.SoumissionDevoir;
 import fdsa.edu.pnu.Model.CoursEtudiant;
 import fdsa.edu.pnu.Model.HistoriqueEvaluation;
 import fdsa.edu.pnu.Model.LogTracking;
@@ -8,9 +9,15 @@ import fdsa.edu.pnu.Repository.HistoriqueExamDAO;
 import fdsa.edu.pnu.Repository.LogTrackingDAO;
 import fdsa.edu.pnu.Service.IHistoriqueExamenService;
 import lombok.Data;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,6 +43,8 @@ public class HistoriqueExamServiceImpl implements IHistoriqueExamenService {
     public Optional<HistoriqueEvaluation> findById(Integer id) {
         return historiqueExamDAO.findById(id);
     }
+
+    public static String uploadDirectory = System.getProperty("user.dir") + "/src/main/webapp/imagedata";
 
     @Override
     public HistoriqueEvaluation save(HistoriqueEvaluation historiqueEvaluation) {
@@ -71,6 +80,25 @@ public class HistoriqueExamServiceImpl implements IHistoriqueExamenService {
     @Override
     public double CalculerMoyenne(Integer IdEtudiantCours) {
         return historiqueExamDAO.calculerMoyenne(IdEtudiantCours);
+    }
+
+    @Override
+    public String soumettreDevoir(SoumissionDevoir soumissionDevoir, MultipartFile file) {
+
+        HistoriqueEvaluation historiqueEvaluation = new HistoriqueEvaluation();
+
+        StringBuilder fileNames = new StringBuilder();
+        String nomFichier =soumissionDevoir.getCoursEtudiant().getEtudiant().getCodeEtudiant() + file.getOriginalFilename().substring(file.getOriginalFilename().length()-4);
+        Path fileNameAndPath = Paths.get(uploadDirectory,nomFichier);
+        try {
+            Files.write(fileNameAndPath, file.getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        soumissionDevoir.setAttachement(nomFichier);
+        BeanUtils.copyProperties(soumissionDevoir, historiqueEvaluation);
+        historiqueExamDAO.save(historiqueEvaluation);
+        return "Votre devoir a été soumis avec succès";
     }
 
     @Override

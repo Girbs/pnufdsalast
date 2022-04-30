@@ -27,4 +27,13 @@ public interface ICoursEtudiantService {
     List<CoursEtudiant> FindCoursEtudiantByIdEtudiant( Integer idEtudiant);
 
     Integer FindNombreDeCoursCompletedByEtudiantByProgramme( Integer idEtudiant , Integer idProgramme);
+
+    Integer  findNombreDeCreditCompletedByEtudiantByProgramme (  Integer IdProgramme ,  Integer idEtudiant);
+
+    Integer FindNombreDeCoursAReprendreByEtudiantByProgramme( Integer idEtudiant , Integer idProgramme);
+
+    double pourcentageDeCreditCompletes ( Integer idEtudiant , Integer idProgramme);
+
+    Integer findNombreDeCoursRestants (Integer idEtudiant , Integer idProgramme);
+
 }

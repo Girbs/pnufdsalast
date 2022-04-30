@@ -8,6 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequestMapping("/coursProgramme")
 public interface ICoursProgrammeController {
@@ -27,7 +28,7 @@ public interface ICoursProgrammeController {
             @ApiResponse(code = 200, message = "Le CoursProgramme a ete trouve dans la BDD"),
             @ApiResponse(code = 404, message = "Aucun CoursProgramme n'existe dans la BDD avec l'ID fourni")
     })
-    CoursProgramme findById(@PathVariable("id") Integer id);
+    Optional<CoursProgramme> findById(@PathVariable("id") Integer id);
 
 
     @PutMapping(value = "/modifier/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -83,14 +84,6 @@ public interface ICoursProgrammeController {
     })
     public Integer findNombredeCreditsByProgramme(@PathVariable("IdProgramme") Integer IdProgramme);
 
-    @GetMapping(value = "/findNombreDeCreditCompletedByEtudiantByProgramme/{IdProgramme}/{idEtudiant}", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Renvoi le nombre de credits  completé par etudiant par programme ", notes = "Cette methode permet de chercher et renvoyer la liste des Sessions qui existent "
-            + "dans la BDD", responseContainer = "List<CoursProgramme>")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "numbre de credits / Une liste vide")
-    })
-    public Integer findNombreDeCreditCompletedByEtudiantByProgramme(@PathVariable("IdProgramme") Integer IdProgramme , @PathVariable("idEtudiant")  Integer idEtudiant);
-
 
 
     @GetMapping(value = "/findListCoursAndPrerequisByIdProgram/{idProgramme}", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -100,4 +93,15 @@ public interface ICoursProgrammeController {
             @ApiResponse(code = 200, message = "La liste des CoursProgramme / Une liste vide")
     })
     public List<CoursProgramme> ListCoursAndPrerequisByIdProgram(@PathVariable("idProgramme") Integer idProgramme);
+
+
+
+    @GetMapping(value = "/findNombreDeCoursByProgramme/{IdProgramme}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Renvoi le nombre de cours d'un programme ", notes = "Cette methode permet de chercher et calculer le nombre de cours d'un programme "
+            + "dans la BDD", responseContainer = "Integer CoursProgramme")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "nombre de cours / Une liste vide")
+    })
+    public Integer findNombreDeCoursByProgramme(@PathVariable("IdProgramme") Integer IdProgramme);
+
 }

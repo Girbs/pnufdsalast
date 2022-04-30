@@ -44,4 +44,29 @@ public class CoursEtudiantControllerImpl implements ICoursEtudiantController {
     public Integer FindNombreDeCoursCompletedByEtudiantByProgramme(Integer idEtudiant, Integer idProgramme) {
         return coursEtudiantServiceImpl.FindNombreDeCoursCompletedByEtudiantByProgramme(idEtudiant,idProgramme );
     }
+
+    @Override
+    public Integer FindNombreDeCoursAReprendreByEtudiantByProgramme(Integer idEtudiant, Integer idProgramme) {
+        return coursEtudiantServiceImpl.FindNombreDeCoursCompletedByEtudiantByProgramme(idEtudiant,idProgramme );
+    }
+
+    @Override
+    public double pourcentageDeCreditCompletes(Integer idEtudiant, Integer idProgramme) {
+        return coursEtudiantServiceImpl.pourcentageDeCreditCompletes(idEtudiant, idProgramme);
+    }
+
+    @Override
+    public Integer findNombreDeCoursRestants(Integer idEtudiant, Integer idProgramme) {
+        return coursEtudiantServiceImpl.findNombreDeCoursRestants(idEtudiant,idProgramme);
+    }
+
+    @Override
+    public Integer findNombreDeCreditCompletedByEtudiantByProgramme(Integer IdProgramme, Integer idEtudiant) {
+        int nombreDeCredit;
+        if(coursEtudiantServiceImpl.findNombreDeCreditCompletedByEtudiantByProgramme(IdProgramme, idEtudiant)==null){
+            nombreDeCredit=0;
+        }
+        else nombreDeCredit = coursEtudiantServiceImpl.findNombreDeCreditCompletedByEtudiantByProgramme(IdProgramme, idEtudiant);
+        return  nombreDeCredit;
+    }
 }
