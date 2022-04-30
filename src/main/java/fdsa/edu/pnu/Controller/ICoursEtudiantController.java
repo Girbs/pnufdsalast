@@ -49,17 +49,14 @@ public interface ICoursEtudiantController {
     })
     CoursEtudiant save(@RequestBody CoursEtudiant dto);
 
-
-
-
-    @GetMapping(value = "/coursEtudiantByIdEtudiant/{idEtudiant}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/coursEtudiantByIdEtudiant/{idEtudiant}/{idProgramme}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Renvoi la liste des Concours", notes = "Cette methode permet de chercher et renvoyer la liste des cours programmes l'Id De l'etudiant  "
             + "dans la BDD", responseContainer = "List<CoursEtudiant>")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "La liste des CoursEtudiants / Une liste vide")
     })
 
-    List<CoursEtudiant> FindCoursEtudiantByIdEtudiant( @PathVariable("idEtudiant") Integer idEtudiant);
+     List<CoursEtudiant> FindCoursEtudiantByIdEtudiantByProgramme(@PathVariable("idEtudiant") Integer idEtudiant , @PathVariable("idProgramme")Integer idProgramme);
 
     @GetMapping(value = "/nombreDeCoursCompletesByEtudiantByProgramme/{idEtudiant}/{idProgramme}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Renvoi le nombre de cours completes par Etudiant par programme", notes = "Cette methode permet de calculer et renvoyer le nombre de cours completé par un etudiant pour un programme quelconque",

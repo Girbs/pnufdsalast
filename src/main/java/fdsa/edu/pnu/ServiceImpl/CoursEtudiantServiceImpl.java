@@ -108,8 +108,8 @@ public class CoursEtudiantServiceImpl implements ICoursEtudiantService {
     }
 
     @Override
-    public List<CoursEtudiant> FindCoursEtudiantByIdEtudiant(Integer idEtudiant) {
-        return coursEtudiantDAO.FindCoursEtudiantByIdEtudiant(idEtudiant);
+    public List<CoursEtudiant> FindCoursEtudiantByIdEtudiantByProgramme(Integer idEtudiant, Integer idProgramme) {
+        return coursEtudiantDAO.FindCoursEtudiantByIdEtudiantByProgramme(idEtudiant, idProgramme );
     }
 
     @Override
