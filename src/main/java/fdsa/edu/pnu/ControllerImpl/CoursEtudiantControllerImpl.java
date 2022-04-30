@@ -36,8 +36,8 @@ public class CoursEtudiantControllerImpl implements ICoursEtudiantController {
     }
 
     @Override
-    public List<CoursEtudiant> FindCoursEtudiantByIdEtudiantByProgramme(Integer idEtudiant, Integer idProgramme) {
-        return coursEtudiantServiceImpl.FindCoursEtudiantByIdEtudiantByProgramme(idEtudiant,idProgramme );
+    public List<CoursEtudiant> ListeCoursSessionEtudiantByProgramme(Integer idEtudiant, Integer idProgramme) {
+        return coursEtudiantServiceImpl.ListeCoursSessionEtudiantByProgramme(idEtudiant,idProgramme );
     }
 
     @Override

@@ -1,12 +1,15 @@
 package fdsa.edu.pnu.ServiceImpl;
 
+import fdsa.edu.pnu.DTO.SessionProgrammeDTO;
 import fdsa.edu.pnu.Model.Cours;
 import fdsa.edu.pnu.Model.CoursEtudiant;
+import fdsa.edu.pnu.Model.SessionProgramme;
 import fdsa.edu.pnu.Repository.CoursEtudiantDAO;
 import fdsa.edu.pnu.Service.ICoursEtudiantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -108,8 +111,9 @@ public class CoursEtudiantServiceImpl implements ICoursEtudiantService {
     }
 
     @Override
-    public List<CoursEtudiant> FindCoursEtudiantByIdEtudiantByProgramme(Integer idEtudiant, Integer idProgramme) {
-        return coursEtudiantDAO.FindCoursEtudiantByIdEtudiantByProgramme(idEtudiant, idProgramme );
+    public List<CoursEtudiant> ListeCoursSessionEtudiantByProgramme(Integer idEtudiant, Integer idProgramme) {
+
+        return coursEtudiantDAO.ListeCoursSessionEtudiantByProgramme(idEtudiant, idProgramme );
     }
 
     @Override
