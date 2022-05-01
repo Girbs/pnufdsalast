@@ -56,6 +56,10 @@ public class Cours implements Serializable {
     @OneToMany(mappedBy = "cours", targetEntity = Horaire.class)
     private List<Horaire> horaires;
 
+    @JsonIgnoreProperties(value = {"cours"}, allowSetters = true)
+    @OneToMany(mappedBy = "cours", targetEntity = SupportCours.class)
+    private List<SupportCours> supportCours;
+
     @OneToMany(mappedBy = "cours", targetEntity = Discussion.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)

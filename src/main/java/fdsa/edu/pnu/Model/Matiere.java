@@ -51,7 +51,8 @@ public class Matiere extends Audit<String> implements Serializable {
     @Column(name = "Code", nullable = true, length = 255)
     private String code;
 
-    @Column(name = "Contenu", nullable = true, length = 255)
+
+    @Column(name = "Contenu", columnDefinition = "NVARCHAR(MAX)")
     private String Contenu;
 
     @Column(name = "NombreDeCreditStandard", nullable = false, length = 10)
