@@ -32,6 +32,11 @@ public class CoursServiceImpl implements ICoursService {
     }
 
     @Override
+    public List<Cours> listCoursDisponible() {
+        return null;
+    }
+
+    @Override
     public Optional<Cours> findById(Integer id) {
         return coursDAO.findById(id);
     }
