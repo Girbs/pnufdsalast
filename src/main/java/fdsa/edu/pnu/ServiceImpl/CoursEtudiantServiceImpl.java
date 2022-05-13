@@ -1,11 +1,11 @@
 package fdsa.edu.pnu.ServiceImpl;
 
-import fdsa.edu.pnu.DTO.SessionProgrammeDTO;
+import fdsa.edu.pnu.DTO.CoursEtudiantDto;
 import fdsa.edu.pnu.Model.Cours;
 import fdsa.edu.pnu.Model.CoursEtudiant;
-import fdsa.edu.pnu.Model.SessionProgramme;
 import fdsa.edu.pnu.Repository.CoursEtudiantDAO;
 import fdsa.edu.pnu.Service.ICoursEtudiantService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,7 +36,7 @@ public class CoursEtudiantServiceImpl implements ICoursEtudiantService {
     }
 
     @Override
-    public CoursEtudiant save(CoursEtudiant dto) {
+    public String save(CoursEtudiant dto) {
         Cours c = coursService.findCoursProgramByIdCours(dto.getCours().getId());
         List<Integer> ce = verifierChoixCours(c.getCoursProgramme().getId(), dto.getEtudiant().getId());
         if (ce.isEmpty()) {
@@ -44,7 +44,18 @@ public class CoursEtudiantServiceImpl implements ICoursEtudiantService {
         } else {
             dto.setType("Rappel");
         }
-        return coursEtudiantDAO.save(dto);
+        coursEtudiantDAO.save(dto);
+
+        return "Succes";
+    }
+
+    @Override
+    public String save(List<CoursEtudiant> dto) {
+       CoursEtudiant ce = new CoursEtudiant();
+       for(CoursEtudiant c : dto){
+           coursEtudiantDAO.save(c);
+       }
+       return "La liste de cours a ete enregistré avec succes";
     }
 
     @Override
@@ -108,6 +119,21 @@ public class CoursEtudiantServiceImpl implements ICoursEtudiantService {
     @Override
     public List<CoursEtudiant> findListCoursEtudiantByIdCours(Integer idCours) {
         return coursEtudiantDAO.findListCoursEtudiantByIdCours(idCours);
+    }
+
+    @Override
+    public List<CoursEtudiantDto> ListeCoursEtudiant() {
+        List<CoursEtudiant> ce = coursEtudiantDAO.findAll();
+
+        List<CoursEtudiantDto> cedto = new ArrayList<>();
+
+        for(CoursEtudiant c: ce){
+            CoursEtudiantDto cdt = new CoursEtudiantDto();
+            BeanUtils.copyProperties(c, cdt);
+            cedto.add(cdt);
+        }
+
+        return cedto;
     }
 
     @Override

@@ -20,7 +20,6 @@
 package fdsa.edu.pnu.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -37,11 +36,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer", "fieldHandler"})
 public class HistoriqueEvaluation implements Serializable {
-    @JsonIgnoreProperties(value = {"historiqueEvaluations"}, allowSetters = true)
-    @ManyToOne(targetEntity = CoursEtudiant.class)
-    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
-    @JoinColumns({@JoinColumn(name = "cours_etudiant_id", referencedColumnName = "ID")})
-    public CoursEtudiant coursEtudiant;
+
     @Column(name = "ID", nullable = false, length = 10)
     @Id
     @GeneratedValue(generator = "PNU_HISTORIQUEEXAM_ID_GENERATOR")
@@ -49,11 +44,17 @@ public class HistoriqueEvaluation implements Serializable {
     private int id;
     @Column(name = "Note", nullable = false, length = 10)
     private double note;
+
     @JsonIgnoreProperties(value = {"historiqueEvaluations"}, allowSetters = true)
     @ManyToOne(targetEntity = Evaluation.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
     @JoinColumns(value = {@JoinColumn(name = "evaluationID", referencedColumnName = "ID", nullable = false)}, foreignKey = @ForeignKey(name = "FK_EVALUATIONS_Hevaluation"))
     private Evaluation evaluation;
 
+    @JsonIgnoreProperties(value = {"historiqueEvaluations"}, allowSetters = true)
+    @ManyToOne(targetEntity = CoursEtudiant.class)
+    @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})
+    @JoinColumns({@JoinColumn(name = "cours_etudiant_id", referencedColumnName = "ID")})
+    public CoursEtudiant coursEtudiant;
 
 }

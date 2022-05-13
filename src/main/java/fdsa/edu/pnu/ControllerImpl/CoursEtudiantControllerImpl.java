@@ -1,9 +1,13 @@
 package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Controller.ICoursEtudiantController;
+import fdsa.edu.pnu.DTO.CoursEtudiantDto;
 import fdsa.edu.pnu.Model.CoursEtudiant;
 import fdsa.edu.pnu.ServiceImpl.CoursEtudiantServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -31,13 +35,26 @@ public class CoursEtudiantControllerImpl implements ICoursEtudiantController {
     }
 
     @Override
-    public CoursEtudiant save(CoursEtudiant dto) {
-        return coursEtudiantServiceImpl.save(dto);
+    public ResponseEntity <String> save(CoursEtudiant dto) {
+        String choixCours =  coursEtudiantServiceImpl.save(dto);
+        return new ResponseEntity<String>(choixCours, HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<String> save(List<CoursEtudiant> coursEtudiantList) {
+        String choixCours =  coursEtudiantServiceImpl.save(coursEtudiantList);
+        return new ResponseEntity<String>(choixCours, HttpStatus.OK);
     }
 
     @Override
     public List<CoursEtudiant> ListeCoursSessionEtudiantByProgramme(Integer idEtudiant, Integer idProgramme) {
         return coursEtudiantServiceImpl.ListeCoursSessionEtudiantByProgramme(idEtudiant,idProgramme );
+    }
+
+
+    @GetMapping(value = "/ListeCoursEtudiant/all")
+    public List<CoursEtudiantDto> ListCoursEtudiant() {
+        return coursEtudiantServiceImpl.ListeCoursEtudiant();
     }
 
     @Override

@@ -1,5 +1,6 @@
 package fdsa.edu.pnu.Service;
 
+import fdsa.edu.pnu.DTO.CoursEtudiantDto;
 import fdsa.edu.pnu.Model.CoursEtudiant;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,8 @@ public interface ICoursEtudiantService {
 
     Optional<CoursEtudiant> findById(Integer id);
 
-    CoursEtudiant save(CoursEtudiant dto);
+    String save(CoursEtudiant dto);
+    String save(List<CoursEtudiant> dto);
 
     CoursEtudiant update(Integer id, CoursEtudiant coursEtudiant);
 
@@ -23,8 +25,8 @@ public interface ICoursEtudiantService {
     CoursEtudiant calculmoyenneHelper(CoursEtudiant coursEtudiant);
 
     List<CoursEtudiant> findListCoursEtudiantByIdCours(Integer idCours);
-
-     List<CoursEtudiant> ListeCoursSessionEtudiantByProgramme(Integer idEtudiant, Integer idProgramme);
+    List<CoursEtudiantDto> ListeCoursEtudiant();
+    List<CoursEtudiant> ListeCoursSessionEtudiantByProgramme(Integer idEtudiant, Integer idProgramme);
 
     Integer FindNombreDeCoursCompletedByEtudiantByProgramme( Integer idEtudiant , Integer idProgramme);
 

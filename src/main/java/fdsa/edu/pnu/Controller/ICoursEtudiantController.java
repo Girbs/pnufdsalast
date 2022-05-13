@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -47,7 +48,16 @@ public interface ICoursEtudiantController {
             @ApiResponse(code = 200, message = "L'objet le concours cree / modifie"),
             @ApiResponse(code = 400, message = "L'objet concours n'est pas valide")
     })
-    CoursEtudiant save(@RequestBody CoursEtudiant dto);
+    ResponseEntity<String> save(@RequestBody CoursEtudiant dto);
+
+    @PostMapping(value = "coursEtudiant/enregistrerListe", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Enregistrer un COncours", notes = "Cette methode permet d'enregistrer ou modifier un concours", response = CoursEtudiant.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "L'objet le concours cree / modifie"),
+            @ApiResponse(code = 400, message = "L'objet concours n'est pas valide")
+    })
+    ResponseEntity<String> save(@RequestBody List<CoursEtudiant> dto);
+
 
     @GetMapping(value = "/ListeCoursSessionEtudiantByProgramme/{idEtudiant}/{idProgramme}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Renvoi la liste des Concours", notes = "Cette methode permet de chercher et renvoyer la liste des cours programmes l'Id De l'etudiant  "

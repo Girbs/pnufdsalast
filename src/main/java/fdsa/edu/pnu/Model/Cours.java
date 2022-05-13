@@ -72,7 +72,6 @@ public class Cours implements Serializable {
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)
     private List<CoursEtudiant> coursEtudiants;
 
-
     @Column(name = "Duree", nullable = true, length = 255)
     private String duree;
 
