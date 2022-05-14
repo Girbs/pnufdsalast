@@ -49,4 +49,9 @@ public class EvaluationServiceImpl implements IEvaluationService {
     public List<Evaluation> findEvaluationsByOrganisationExamenId(Integer idOrganisationExamen) {
         return evaluationDAO.findEvaluationsByOrganisationExamenId(idOrganisationExamen);
     }
+
+    @Override
+    public List<Evaluation> findListEvaluationByIdCours(Integer IdCours) {
+        return evaluationDAO.findByCours(IdCours);
+    }
 }

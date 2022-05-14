@@ -15,4 +15,5 @@ public interface IEvaluationService {
     void delete(Integer id);
 
     List<Evaluation> findEvaluationsByOrganisationExamenId(Integer idOrganisationExamen);
+    List<Evaluation> findListEvaluationByIdCours(Integer IdCours);
 }

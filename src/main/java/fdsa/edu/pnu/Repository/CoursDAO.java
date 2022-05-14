@@ -27,6 +27,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
+
 
 public interface CoursDAO extends JpaRepository<Cours, Integer> {
 
@@ -36,4 +38,8 @@ public interface CoursDAO extends JpaRepository<Cours, Integer> {
 
     @Query("SELECT c FROM  Cours c WHERE c.id  = :idNouveauCours")
     Cours findCoursProgramByIdCours(@Param("idNouveauCours") Integer idNouveauCours);
+
+    @Query(value = "{call ListCoursDiponiblesPourEdudiant(:idEtudiant,:idProgramme)}", nativeQuery = true)
+    List<Cours> ListCoursDiponiblesPourEdudiant(@Param("idEtudiant") Integer idEtudiant, @Param("idProgramme") Integer idProgramme);
+
 }

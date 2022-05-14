@@ -8,6 +8,7 @@ import java.util.Optional;
 public interface ICoursService {
     List<Cours> findAll();
     List<Cours> listCoursDisponible();
+    List <Cours> ListCoursDiponiblesPourEdudiant(Integer idEtudiant, Integer idProgramme);
     Optional<Cours> findById(Integer id);
     Cours save(Cours cours);
     void delete(Integer id);

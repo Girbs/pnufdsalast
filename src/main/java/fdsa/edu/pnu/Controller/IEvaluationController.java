@@ -21,6 +21,15 @@ public interface IEvaluationController {
     })
     List<Evaluation> findAll();
 
+
+    @GetMapping(value = "/evaluationByIdCours/{idCours}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Renvoi la liste des evaluations", notes = "Cette methode permet de chercher et renvoyer la liste des evaluation qui existent "
+            + "dans la BDD", responseContainer = "List<EvaluationOrdinaire>")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "La liste des evaluation / Une liste vide")
+    })
+    public List<Evaluation> findListEvaluationByIdCours(Integer IdCours);
+
     // @PreAuthorize("hasAnyRole('lireConcours')")
     @GetMapping(value = "/evaluation/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Rechercher un cours par ID", notes = "Cette methode permet de chercher un cours par son ID", response = Evaluation.class)
@@ -29,6 +38,8 @@ public interface IEvaluationController {
             @ApiResponse(code = 404, message = "Aucun cours n'existe dans la BDD avec l'ID fourni")
     })
     Optional<Evaluation> findById(@PathVariable("id") Integer id);
+
+
 
 
     // @PreAuthorize("hasAnyRole('modifierConcours')")

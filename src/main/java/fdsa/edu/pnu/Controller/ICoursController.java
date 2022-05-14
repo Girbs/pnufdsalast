@@ -22,6 +22,14 @@ public interface ICoursController {
     })
     List<Cours> findAll();
 
+    @GetMapping(value = "/cours/ListeCoursDiponiblesPourEdudiant/{idEtudiant}/{idProgramme}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Renvoi la liste des Cours", notes = "Cette methode permet de chercher et renvoyer la liste des concours qui existent "
+            + "dans la BDD", responseContainer = "List<Cours>")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "La liste des cours / Une liste vide")
+    })
+     List<Cours> ListCoursDiponiblesPourEdudiant(@PathVariable("idEtudiant") Integer idEtudiant, @PathVariable("idProgramme") Integer idProgramme) ;
+
     @PreAuthorize("hasAnyRole('lireCours')")
     @GetMapping(value = "/cours/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Rechercher un cours par ID", notes = "Cette methode permet de chercher un cours par son ID", response = Cours.class)

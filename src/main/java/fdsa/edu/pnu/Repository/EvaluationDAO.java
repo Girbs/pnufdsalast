@@ -32,6 +32,6 @@ public interface EvaluationDAO extends JpaRepository<Evaluation, Integer> {
 
     @Query(value = "{call findEvaluationsByOrganisationExamenId(:idOrganisationExamen)}", nativeQuery = true)
     List<Evaluation> findEvaluationsByOrganisationExamenId(@Param("idOrganisationExamen") Integer idOrganisationExamen);
-
+    List<Evaluation> findByCours(Integer idCours);
 
 }

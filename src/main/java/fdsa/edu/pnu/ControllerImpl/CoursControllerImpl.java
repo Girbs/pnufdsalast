@@ -29,6 +29,11 @@ public class CoursControllerImpl implements ICoursController {
     }
 
     @Override
+    public List<Cours> ListCoursDiponiblesPourEdudiant(Integer idEtudiant, Integer idProgramme) {
+        return coursServiceImpl.ListCoursDiponiblesPourEdudiant(idEtudiant, idProgramme);
+    }
+
+    @Override
     public Optional<Cours> findById(Integer id) {
         return coursServiceImpl.findById(id);
     }

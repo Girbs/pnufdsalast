@@ -37,6 +37,11 @@ public class CoursServiceImpl implements ICoursService {
     }
 
     @Override
+    public List<Cours> ListCoursDiponiblesPourEdudiant(Integer idEtudiant, Integer idProgramme) {
+        return coursDAO.ListCoursDiponiblesPourEdudiant(idEtudiant, idProgramme);
+    }
+
+    @Override
     public Optional<Cours> findById(Integer id) {
         return coursDAO.findById(id);
     }
