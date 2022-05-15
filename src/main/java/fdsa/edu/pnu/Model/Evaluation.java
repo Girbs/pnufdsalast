@@ -43,6 +43,12 @@ public class Evaluation extends Audit<String> implements Serializable {
     @Column(name = "pourcentage", nullable = true)
     private double pourcentage;
 
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "lienFichier")
+    private String lienFichier;
+
     @Column(name = "TypeEvaluation", nullable = true, length = 255)
     private String typeEvaluation;
 
