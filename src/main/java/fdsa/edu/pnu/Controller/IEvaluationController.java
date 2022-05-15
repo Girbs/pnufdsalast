@@ -28,7 +28,7 @@ public interface IEvaluationController {
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "La liste des evaluation / Une liste vide")
     })
-    public List<Evaluation> findListEvaluationByIdCours(Integer IdCours);
+    public List<Evaluation> findListEvaluationByIdCours(@PathVariable("idCours")  Integer IdCours);
 
     // @PreAuthorize("hasAnyRole('lireConcours')")
     @GetMapping(value = "/evaluation/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
