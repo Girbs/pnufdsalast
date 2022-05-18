@@ -6,9 +6,18 @@ import fdsa.edu.pnu.Model.Evaluation;
 public class SoumissionDevoir {
 
     private String commentaire;
-    private String attachement;
+    private String lienFichier;
     private CoursEtudiant coursEtudiant;
     private Evaluation evaluation;
+
+    public String getLienFichier() {
+        return lienFichier;
+    }
+
+    public void setLienFichier(String lienFichier) {
+        this.lienFichier = lienFichier;
+    }
+
 
     public String getCommentaire() {
         return commentaire;
@@ -18,13 +27,6 @@ public class SoumissionDevoir {
         this.commentaire = commentaire;
     }
 
-    public String getAttachement() {
-        return attachement;
-    }
-
-    public void setAttachement(String attachement) {
-        this.attachement = attachement;
-    }
 
     public CoursEtudiant getCoursEtudiant() {
         return coursEtudiant;
@@ -43,3 +45,5 @@ public class SoumissionDevoir {
     }
 
 }
+
+

@@ -1,6 +1,7 @@
 package fdsa.edu.pnu.ServiceImpl;
 
 import fdsa.edu.pnu.DTO.SoumissionDevoir;
+import fdsa.edu.pnu.FileManagement.StorageService;
 import fdsa.edu.pnu.Model.CoursEtudiant;
 import fdsa.edu.pnu.Model.HistoriqueEvaluation;
 import fdsa.edu.pnu.Model.LogTracking;
@@ -14,10 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,6 +24,9 @@ public class HistoriqueExamServiceImpl implements IHistoriqueExamenService {
 
     @Autowired
     private HistoriqueExamDAO historiqueExamDAO;
+
+    @Autowired
+    private StorageService storageService;
     @Autowired
     private LogTrackingDAO logTrackingDAO;
     @Autowired
@@ -46,10 +46,11 @@ public class HistoriqueExamServiceImpl implements IHistoriqueExamenService {
 
     public static String uploadDirectory = System.getProperty("user.dir") + "/src/main/webapp/imagedata";
 
+
     @Override
     public HistoriqueEvaluation save(HistoriqueEvaluation historiqueEvaluation) {
         int idCoursEtudiant = historiqueEvaluation.getCoursEtudiant().getId();
-        System.out.println("The Sudent Id is: " + idCoursEtudiant);
+
         CoursEtudiant ce = coursEtudiantDAO.findById(idCoursEtudiant).get();
         double note = CalculerMoyenne(idCoursEtudiant);
         try {
@@ -85,20 +86,12 @@ public class HistoriqueExamServiceImpl implements IHistoriqueExamenService {
     @Override
     public String soumettreDevoir(SoumissionDevoir soumissionDevoir, MultipartFile file) {
 
-        HistoriqueEvaluation historiqueEvaluation = new HistoriqueEvaluation();
-
-        StringBuilder fileNames = new StringBuilder();
-        String nomFichier =soumissionDevoir.getCoursEtudiant().getEtudiant().getCodeEtudiant() + file.getOriginalFilename().substring(file.getOriginalFilename().length()-4);
-        Path fileNameAndPath = Paths.get(uploadDirectory,nomFichier);
-        try {
-            Files.write(fileNameAndPath, file.getBytes());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        soumissionDevoir.setAttachement(nomFichier);
-        BeanUtils.copyProperties(soumissionDevoir, historiqueEvaluation);
-        historiqueExamDAO.save(historiqueEvaluation);
-        return "Votre devoir a été soumis avec succès";
+        HistoriqueEvaluation he = new HistoriqueEvaluation();
+        String fileName =  storageService.uploadFile(file);
+        soumissionDevoir.setLienFichier(fileName);
+        BeanUtils.copyProperties(soumissionDevoir, he );
+        historiqueExamDAO.save(he);
+        return fileName;
     }
 
     @Override

@@ -108,8 +108,6 @@ public class EmailController {
                 + "Priere d'utiliser les informations ci-dessous pour accesder aux ressources de la faculte.\n\n"
                 + "Nom d'utilisateur: " + nomUtilisateur + "\n"
                 + "Mot de Passe temporaire: " + motDePasse + "\n\n"
-
-
                 + "Cordialement\nSupport Technique PNU\nFaculte Des Science Appliquees(FDSA)");
 
         // Send Message!

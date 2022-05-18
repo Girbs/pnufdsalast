@@ -51,6 +51,13 @@ public class HistoriqueEvaluation implements Serializable {
     @JoinColumns(value = {@JoinColumn(name = "evaluationID", referencedColumnName = "ID", nullable = false)}, foreignKey = @ForeignKey(name = "FK_EVALUATIONS_Hevaluation"))
     private Evaluation evaluation;
 
+    @Column(name = "lienFichier")
+    private String lienFichier;
+
+    @Column(name = "commentaire")
+    private String commentaire;
+
+
     @JsonIgnoreProperties(value = {"historiqueEvaluations"}, allowSetters = true)
     @ManyToOne(targetEntity = CoursEtudiant.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})

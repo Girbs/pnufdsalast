@@ -93,6 +93,6 @@ public interface IHistoriqueExamenController {
             @ApiResponse(code = 200, message = "L'objet l' evaluation cree / modifie"),
             @ApiResponse(code = 400, message = "L'objet evaluation n'est pas valide")
     })
-    String soumettreDevoir(@RequestBody SoumissionDevoir soumissionDevoir,@RequestParam("img") MultipartFile file );
+    String soumettreDevoir(@RequestBody SoumissionDevoir soumissionDevoir,@RequestParam("file") MultipartFile file );
 
 }
