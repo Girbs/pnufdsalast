@@ -143,6 +143,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/concours/listeDynamique",
                         "/concours/supprimer/{id}",
                         "/postulantPageWithFilter",
+                        "/newPostulant",
                         "/saveStudent",
                         "/getStudent",
                         "/api/v1/sms",

@@ -38,11 +38,7 @@ public class PostulantControllerImpl implements IPostulantController {
     @Autowired
     public EmailController seec;
 
-    /**
-     * Selectionner par ID
-     *
-     * @return
-     */
+
     @Override
     public List<PostulantDTO> findAll() {
         return postulantService.findAll();
@@ -59,7 +55,7 @@ public class PostulantControllerImpl implements IPostulantController {
     }
 
 
-    @PostMapping(value = {"newPostulant"}, consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
+    @PostMapping(value = {"/newPostulant"}, consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
     public Postulant addNewPostulant(@RequestPart("postulant") Postulant postulant,
                                      @RequestPart("files") MultipartFile[] file) {
         //  return postulantService.save(postulant);
