@@ -139,6 +139,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/historiqueExamenEtudiant/{idEtudiant}",
                         "/concours/{id}",
                         "/concours/nouveau",
+                        "/postulant/nouveau",
                         "/concours/listeDynamique",
                         "/concours/supprimer/{id}",
                         "/postulantPageWithFilter",
