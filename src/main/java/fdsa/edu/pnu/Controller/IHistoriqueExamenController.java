@@ -87,12 +87,12 @@ public interface IHistoriqueExamenController {
     })
     HistoriqueEvaluation save(@RequestBody HistoriqueEvaluation historiqueEvaluation, @RequestParam("file") MultipartFile file);
 
-    @PostMapping(value = "/historiqueEvaluation/soumettreDevoir", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Soumettre un Devoir", notes = "Cette methode de soumettre un devoir", response = HistoriqueEvaluation.class)
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "L'objet l' evaluation cree / modifie"),
-            @ApiResponse(code = 400, message = "L'objet evaluation n'est pas valide")
-    })
-    String soumettreDevoir(@RequestBody SoumissionDevoir soumissionDevoir,@RequestParam("file") MultipartFile file );
+//    @PostMapping(value = "/historiqueEvaluation/soumettreDevoir", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+//    @ApiOperation(value = "Soumettre un Devoir", notes = "Cette methode de soumettre un devoir", response = HistoriqueEvaluation.class)
+//    @ApiResponses(value = {
+//            @ApiResponse(code = 200, message = "L'objet l' evaluation cree / modifie"),
+//            @ApiResponse(code = 400, message = "L'objet evaluation n'est pas valide")
+//    })
+//    String soumettreDevoir(@RequestBody SoumissionDevoir soumissionDevoir,@RequestParam("file") MultipartFile file );
 
 }

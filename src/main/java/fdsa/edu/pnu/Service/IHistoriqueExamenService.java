@@ -21,7 +21,7 @@ public interface IHistoriqueExamenService {
 
     double CalculerMoyenne(Integer IdEtudiantCours);
 
-    String soumettreDevoir(SoumissionDevoir soumissionDevoir, MultipartFile file );
+   // String soumettreDevoir(SoumissionDevoir soumissionDevoir, MultipartFile file );
 
     void delete(Integer id);
 }

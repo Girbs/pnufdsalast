@@ -17,8 +17,8 @@ public class HistoriqueExamenControllerImpl implements IHistoriqueExamenControll
     @Autowired
     private HistoriqueExamServiceImpl historiqueExamServiceImpl;
 
-    @Autowired
-    private StorageService storageService;
+//    @Autowired
+//    private StorageService storageService;
 
     @Override
     public List<HistoriqueEvaluation> findAll() {
@@ -57,15 +57,15 @@ public class HistoriqueExamenControllerImpl implements IHistoriqueExamenControll
 
     @Override
     public HistoriqueEvaluation save(HistoriqueEvaluation historiqueEvaluationOrdinaire, MultipartFile file) {
-        String filename= storageService.uploadFile(file);
-        historiqueEvaluationOrdinaire.setLienFichier(filename);
+      //  String filename= storageService.uploadFile(file);
+      //  historiqueEvaluationOrdinaire.setLienFichier(filename);
         return historiqueExamServiceImpl.save(historiqueEvaluationOrdinaire);
     }
 
-    @Override
-    public String soumettreDevoir(SoumissionDevoir soumissionDevoir, MultipartFile fichier) {
-        return historiqueExamServiceImpl.soumettreDevoir(soumissionDevoir, fichier);
-    }
+//    @Override
+//    public String soumettreDevoir(SoumissionDevoir soumissionDevoir, MultipartFile fichier) {
+//        return historiqueExamServiceImpl.soumettreDevoir(soumissionDevoir, fichier);
+//    }
 }
 
 

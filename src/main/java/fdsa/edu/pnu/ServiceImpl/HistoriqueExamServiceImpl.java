@@ -25,8 +25,8 @@ public class HistoriqueExamServiceImpl implements IHistoriqueExamenService {
     @Autowired
     private HistoriqueExamDAO historiqueExamDAO;
 
-    @Autowired
-    private StorageService storageService;
+//    @Autowired
+//    private StorageService storageService;
     @Autowired
     private LogTrackingDAO logTrackingDAO;
     @Autowired
@@ -83,16 +83,16 @@ public class HistoriqueExamServiceImpl implements IHistoriqueExamenService {
         return historiqueExamDAO.calculerMoyenne(IdEtudiantCours);
     }
 
-    @Override
-    public String soumettreDevoir(SoumissionDevoir soumissionDevoir, MultipartFile file) {
-
-        HistoriqueEvaluation he = new HistoriqueEvaluation();
-        String fileName =  storageService.uploadFile(file);
-        soumissionDevoir.setLienFichier(fileName);
-        BeanUtils.copyProperties(soumissionDevoir, he );
-        historiqueExamDAO.save(he);
-        return fileName;
-    }
+//    @Override
+//    public String soumettreDevoir(SoumissionDevoir soumissionDevoir, MultipartFile file) {
+//
+//        HistoriqueEvaluation he = new HistoriqueEvaluation();
+//        String fileName =  storageService.uploadFile(file);
+//        soumissionDevoir.setLienFichier(fileName);
+//        BeanUtils.copyProperties(soumissionDevoir, he );
+//        historiqueExamDAO.save(he);
+//        return fileName;
+//    }
 
     @Override
     public void delete(Integer id) {

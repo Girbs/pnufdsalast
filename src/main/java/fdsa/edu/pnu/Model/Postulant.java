@@ -27,6 +27,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -118,12 +119,11 @@ public class Postulant extends Audit<String> implements Serializable {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "postulant", targetEntity = HistoriqueExamenConcours.class)
     private List<HistoriqueExamenConcours> historiqueExamenConcourss;
 
+    @JsonIgnoreProperties(value = {"postulant"}, allowSetters = true)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "postulant", targetEntity = ApplicationFile.class)
+    private Set<ApplicationFile> applicationFiles;
+
     public Postulant() {
     }
-    //	@OneToOne(optional=false, targetEntity=fdsa.edu.PNUFDSA.Model.Utlilisateur.class, fetch=FetchType.LAZY)
-//	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-//	@JoinColumns(value={ @JoinColumn(name="UtlilisateurPersonneID", referencedColumnName="PersonneID", nullable=true) }, foreignKey=@ForeignKey(name="FKPostulant864673"))	
-//	private fdsa.edu.PNUFDSA.Model.Utlilisateur etre;
-
 
 }
