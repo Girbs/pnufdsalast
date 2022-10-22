@@ -132,6 +132,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/matiere/all",
                         "/matiere/nouveau",
                         "/cours/all",
+                        "/createPostulantWithfile",
                         "/matiere/supprimer/{id}",
                         "/historiqueExamen/nouveau",
                         "/matiere/{id}",

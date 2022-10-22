@@ -29,7 +29,6 @@ public class ConcoursValidateur {
             errors.add("La date du debut ne peut pas etre superieur à la date de la fin ");
         }
 
-
         return errors;
     }
 }

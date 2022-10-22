@@ -14,8 +14,10 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.data.domain.Page;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;
@@ -116,4 +118,12 @@ public interface IPostulantController {
 //    })
 //    APIResponse<Page<Postulant>> findAllWithFilter(@RequestParam(required = true)  int offset, @RequestParam(required = true)  int pageSize,
 //                                                   @RequestParam(required = true) String field,@RequestParam(required = true)  String prenom );
+
+
+
+    @PostMapping("/createPostulantWithfile")
+    public ResponseEntity<Postulant> createPostulantWithfile(@RequestParam(name = "file", required = false) MultipartFile file,@RequestParam("postulant") Postulant postulant);
+
 }
+
+

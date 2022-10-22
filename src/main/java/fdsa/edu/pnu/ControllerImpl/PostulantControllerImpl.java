@@ -8,6 +8,7 @@ package fdsa.edu.pnu.ControllerImpl;
 import fdsa.edu.pnu.Controller.IPostulantController;
 import fdsa.edu.pnu.DTO.APIResponse;
 import fdsa.edu.pnu.DTO.PostulantDTO;
+import fdsa.edu.pnu.FileManagement.FileStorageService;
 import fdsa.edu.pnu.Model.ApplicationFile;
 import fdsa.edu.pnu.Model.Postulant;
 import fdsa.edu.pnu.ServiceImpl.PostulantService;
@@ -15,6 +16,7 @@ import fdsa.edu.pnu.mail.EmailController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,6 +37,9 @@ public class PostulantControllerImpl implements IPostulantController {
     @Autowired
     public PostulantService postulantService;
 
+//    @Autowired
+//    private Postulant postulant;
+
     @Autowired
     public EmailController seec;
 
@@ -53,6 +58,10 @@ public class PostulantControllerImpl implements IPostulantController {
     public Postulant save(Postulant dto) {
         return postulantService.save(dto);
     }
+
+    @Autowired
+    private  FileStorageService fileStorageService;
+
 
 
     @PostMapping(value = {"/newPostulant"}, consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
@@ -117,10 +126,20 @@ public class PostulantControllerImpl implements IPostulantController {
     }
 
 
+
 //    @Override
 //    public APIResponse<Page<Postulant>> findAllWithFilter(int offset, int pageSize, String field, String prenom) {
 //        Page<Postulant> productsWithPagination = postulantService.findAllWithFilter(offset, pageSize, field, prenom);
 //        return new APIResponse<>(productsWithPagination.getSize(), productsWithPagination);
 //    }
 
+
+
+
+    @Override
+    public ResponseEntity<Postulant> createPostulantWithfile(MultipartFile file, Postulant postulant) {
+        postulant.setLienFichier(fileStorageService.storeFile(file));
+        postulantService.save(postulant);
+        return ResponseEntity.ok().body(postulant);
+    }
 }
