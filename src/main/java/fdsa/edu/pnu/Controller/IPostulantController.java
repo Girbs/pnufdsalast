@@ -41,7 +41,6 @@ public interface IPostulantController {
     })
     Optional<Postulant> findById(@PathVariable("id") Integer id);
 
-//, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE
     @PostMapping(value = "/postulant/nouveau")
     @ApiOperation(value = "Enregistrer un Postulant", notes = "Cette methode permet d'enregistrer ou modifier un postulant", response = Postulant.class)
     @ApiResponses(value = {
