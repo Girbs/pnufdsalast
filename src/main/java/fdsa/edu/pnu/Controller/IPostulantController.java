@@ -41,14 +41,15 @@ public interface IPostulantController {
     })
     Optional<Postulant> findById(@PathVariable("id") Integer id);
 
-    @PostMapping(value = "/postulant/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+//, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE
+    @PostMapping(value = "/postulant/nouveau")
     @ApiOperation(value = "Enregistrer un Postulant", notes = "Cette methode permet d'enregistrer ou modifier un postulant", response = Postulant.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "L'objet postulant cree / modifie"),
             @ApiResponse(code = 400, message = "L'objet postulant n'est pas valide")
     })
-    Postulant save(@RequestPart("studentData") Postulant dto,
-                   @RequestPart("studentDocuments") MultipartFile file);
+    Postulant save(@RequestPart("postulant") Postulant postulant,
+                   @RequestPart("file") MultipartFile file);
 
 
     @DeleteMapping(value = "/postulant/supprimer/{id}")

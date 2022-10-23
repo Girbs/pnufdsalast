@@ -43,8 +43,8 @@ public class PostulantControllerImpl implements IPostulantController {
     }
 
     @Override
-    public Postulant save(Postulant dto, MultipartFile file) {
-        return postulantService.save(dto, file);
+    public Postulant save(Postulant postulant, MultipartFile file) {
+        return postulantService.save(postulant, file);
     }
 
 //    @Override
