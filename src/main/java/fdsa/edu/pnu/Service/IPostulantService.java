@@ -6,9 +6,9 @@
 package fdsa.edu.pnu.Service;
 
 import fdsa.edu.pnu.DTO.PostulantDTO;
-import fdsa.edu.pnu.Model.Etudiant;
 import fdsa.edu.pnu.Model.Postulant;
 import org.springframework.data.domain.Page;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;
@@ -22,7 +22,7 @@ public interface IPostulantService {
 
     Optional<Postulant> findById(Integer id);
 
-    Postulant save(Postulant dto);
+    Postulant save(Postulant dto, MultipartFile file);
 
 
     //Etudiant update(Integer id, PostulantDTO dto);

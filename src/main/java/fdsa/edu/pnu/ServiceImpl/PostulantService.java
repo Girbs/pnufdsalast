@@ -5,6 +5,7 @@
  */
 package fdsa.edu.pnu.ServiceImpl;
 
+import fdsa.edu.pnu.Config.AWSUtil;
 import fdsa.edu.pnu.DTO.PostulantDTO;
 import fdsa.edu.pnu.Model.Etudiant;
 import fdsa.edu.pnu.Model.LogTracking;
@@ -23,6 +24,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -53,6 +55,9 @@ public class PostulantService implements IPostulantService {
     private PasswordEncoder passwordEncoder;
     @Autowired
     private LogTrackingDAO logTrackingDAO;
+
+    @Autowired
+    private AWSUtil awsUtil;
 
     public static String genererMatriculPostulant(Postulant p) {
         p.getId();
@@ -158,6 +163,7 @@ public class PostulantService implements IPostulantService {
     }
 
 
+
 //    public Page<Postulant> findAllWithFilter(int offset, int pageSize, String field, String prenom) {
 //        Page<Postulant> postulants = postulantDAO.findByAllName( prenom,
 //                PageRequest.of(offset, pageSize).withSort(Sort.by(field)));
@@ -165,7 +171,9 @@ public class PostulantService implements IPostulantService {
 //    }
 
     @Override
-    public Postulant save(Postulant dto) {
+    public Postulant save(Postulant dto, MultipartFile file) {
+        String fileUrl = awsUtil.uploadFile(file);
+        dto.setLienFichier (fileUrl);
         if (dto.getId() == null) {
 
             try {

@@ -27,7 +27,6 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Getter
@@ -115,13 +114,12 @@ public class Postulant extends Audit<String> implements Serializable {
     private String nomPersonneAcontacter;
     private String prenomPersonneAcontacter;
     private String telephonePersonneAcontacter;
+    private String lienFichier;
     @JsonIgnoreProperties(value = {"postulant"}, allowSetters = true)
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "postulant", targetEntity = HistoriqueExamenConcours.class)
     private List<HistoriqueExamenConcours> historiqueExamenConcourss;
 
-    @JsonIgnoreProperties(value = {"postulant"}, allowSetters = true)
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "postulant", targetEntity = ApplicationFile.class)
-    private Set<ApplicationFile> applicationFiles;
+
 
     public Postulant() {
     }
