@@ -188,12 +188,12 @@ public class PostulantService implements IPostulantService {
             } catch (Exception e) {
                 logTrackingDAO.save(new LogTracking("Error to generate Matricule", e.toString()));
             }
-//            try {
-//              //  mail.confirmerInscription(dto.getEmail(), dto.getNom(), dto.getPrenom(), dto.getMatricule());
-//            } catch (Exception e) {
-//                logTrackingDAO.save(new LogTracking("Error found when sending confirmation " +
-//                        "email", e.toString()));
-//            }
+            try {
+               mail.confirmerInscription(dto.getEmail(), dto.getNom(), dto.getPrenom(), dto.getMatricule());
+            } catch (Exception e) {
+                logTrackingDAO.save(new LogTracking("Error found when sending confirmation " +
+                        "email", e.toString()));
+            }
 
         } else {
 
