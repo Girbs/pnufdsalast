@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'pnuapp'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_CB9F8E72EEA34800AA97D8316C42764D }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_36A0AE5E72B64725841005E869CC2B34 }}
           package: '*.jar'
