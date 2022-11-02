@@ -5,6 +5,7 @@
  */
 package fdsa.edu.pnu.Controller;
 
+import com.lowagie.text.DocumentException;
 import fdsa.edu.pnu.DTO.APIResponse;
 import fdsa.edu.pnu.DTO.PostulantDTO;
 import fdsa.edu.pnu.Model.Postulant;
@@ -17,6 +18,8 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -118,4 +121,8 @@ public interface IPostulantController {
 //    })
 //    APIResponse<Page<Postulant>> findAllWithFilter(@RequestParam(required = true)  int offset, @RequestParam(required = true)  int pageSize,
 //                                                   @RequestParam(required = true) String field,@RequestParam(required = true)  String prenom );
+
+    @GetMapping("/export/pdf/{id}")
+    public void exportToPDF(HttpServletResponse response, @PathVariable("id") Integer id) throws DocumentException, IOException;
+
 }

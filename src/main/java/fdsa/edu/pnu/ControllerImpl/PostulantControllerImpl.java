@@ -5,6 +5,8 @@
  */
 package fdsa.edu.pnu.ControllerImpl;
 
+import com.lowagie.text.DocumentException;
+import fdsa.edu.pnu.Config.ExportService;
 import fdsa.edu.pnu.Controller.IPostulantController;
 import fdsa.edu.pnu.DTO.APIResponse;
 import fdsa.edu.pnu.DTO.PostulantDTO;
@@ -16,6 +18,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,6 +37,9 @@ public class PostulantControllerImpl implements IPostulantController {
 
     @Autowired
     public EmailController seec;
+
+    @Autowired
+    ExportService exportService;
 
 
     @Override
@@ -96,5 +106,17 @@ public class PostulantControllerImpl implements IPostulantController {
 //        Page<Postulant> productsWithPagination = postulantService.findAllWithFilter(offset, pageSize, field, prenom);
 //        return new APIResponse<>(productsWithPagination.getSize(), productsWithPagination);
 //    }
+
+      @Override
+      public void exportToPDF(HttpServletResponse response, Integer id)  throws DocumentException, IOException {
+        response.setContentType("application/pdf");
+        DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
+        String currentDateTime = dateFormatter.format(new Date());
+        String headerKey = "Content-Disposition";
+        String headerValue = "attachment; filename=users_" + currentDateTime + ".pdf";
+        response.setHeader(headerKey, headerValue);
+        exportService.exportPDF(response, id);
+
+    }
 
 }

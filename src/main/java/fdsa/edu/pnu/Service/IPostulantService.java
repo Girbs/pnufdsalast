@@ -33,4 +33,6 @@ public interface IPostulantService {
 
     Page<Postulant> findAllWithPaginationAndSortingv1(int offset, int pageSize, String sortField, String searchfield, String sortDirection);
 
+
+
 }

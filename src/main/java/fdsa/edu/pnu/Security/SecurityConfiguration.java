@@ -156,6 +156,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/coursProgramme/findNombreDeCreditCompletedByEtudiantByProgramme/{IdProgramme}/{idEtudiant}",
                         "/modifierConcours/{id}",
                         "/v2/api-docs",
+                        "/export/pdf/{id}",
                         "/swagger-resources",
                         "/swagger-resources/**",
                         "/configuration/ui",
