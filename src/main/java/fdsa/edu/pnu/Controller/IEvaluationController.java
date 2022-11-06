@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;
@@ -69,12 +70,12 @@ public interface IEvaluationController {
     void delete(@PathVariable("id") Integer id);
 
     // @PreAuthorize("hasAnyRole('creerConcours')")
-    @PostMapping(value = "/evaluation/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/evaluation/nouveau")
     @ApiOperation(value = "Enregistrer un evaluationOrdinaire", notes = "Cette methode permet d'enregistrer ou modifier un evaluationOrdinaire", response = Evaluation.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "L'objet l' evaluationOrdinaire cree / modifie"),
             @ApiResponse(code = 400, message = "L'objet evaluationOrdinaire n'est pas valide")
     })
-    Evaluation save(@RequestBody Evaluation evaluationOrdinaire);
+    Evaluation save(@RequestPart("evaluation") Evaluation evaluationOrdinaire, @RequestPart("file") MultipartFile file );
 
 }

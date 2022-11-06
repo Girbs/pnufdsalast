@@ -15,6 +15,7 @@ import fdsa.edu.pnu.ServiceImpl.EvaluationServiceImpl;
 import fdsa.edu.pnu.mail.EmailController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;
@@ -64,7 +65,9 @@ public class EvaluationControllerImpl implements IEvaluationController {
     }
 
     @Override
-    public Evaluation save(Evaluation evaluationOrdinaire) {
+    public Evaluation save(Evaluation evaluationOrdinaire, MultipartFile file) {
+
+
         Optional<Evaluation> e = evaluationServiceImpl.findById(evaluationOrdinaire.getId());
        String smsMessage ="La note de l'valuation est disponible";
         String nouveauStatut = evaluationOrdinaire.getStatutResultat();
@@ -93,6 +96,6 @@ public class EvaluationControllerImpl implements IEvaluationController {
                 }
             }
         }
-        return evaluationServiceImpl.save(evaluationOrdinaire);
+        return evaluationServiceImpl.save(evaluationOrdinaire, file);
     }
 }

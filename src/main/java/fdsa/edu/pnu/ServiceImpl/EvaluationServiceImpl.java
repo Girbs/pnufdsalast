@@ -6,12 +6,14 @@
 package fdsa.edu.pnu.ServiceImpl;
 
 
+import fdsa.edu.pnu.Config.AWSUtil;
 import fdsa.edu.pnu.Model.Evaluation;
 import fdsa.edu.pnu.Repository.EvaluationDAO;
 import fdsa.edu.pnu.Service.IEvaluationService;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;
@@ -24,6 +26,8 @@ import java.util.Optional;
 public class EvaluationServiceImpl implements IEvaluationService {
     @Autowired
     private EvaluationDAO evaluationDAO;
+    @Autowired
+    private AWSUtil awsUtil;
 
     @Override
     public List<Evaluation> findAll() {
@@ -36,7 +40,9 @@ public class EvaluationServiceImpl implements IEvaluationService {
     }
 
     @Override
-    public Evaluation save(Evaluation evaluationOrdinaire) {
+    public Evaluation save(Evaluation evaluationOrdinaire, MultipartFile file) {
+        String fileUrl = awsUtil.uploadFile(file);
+        evaluationOrdinaire.setLienFichier (fileUrl);
         return evaluationDAO.save(evaluationOrdinaire);
     }
 

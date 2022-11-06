@@ -1,5 +1,6 @@
 package fdsa.edu.pnu.Service;
 
+import fdsa.edu.pnu.DTO.SoumissionDevoir;
 import fdsa.edu.pnu.Model.HistoriqueEvaluation;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -12,7 +13,7 @@ public interface IHistoriqueExamenService {
 
     Optional<HistoriqueEvaluation> findById(Integer id);
 
-    HistoriqueEvaluation save(HistoriqueEvaluation historiqueEvaluation,MultipartFile file );
+    HistoriqueEvaluation save(HistoriqueEvaluation historiqueEvaluation);
 
     List<HistoriqueEvaluation> findHistoriqueEvaluationByIdEvaluation(Integer IdEvaluation);
 

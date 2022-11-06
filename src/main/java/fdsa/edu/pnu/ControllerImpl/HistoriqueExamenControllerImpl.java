@@ -1,6 +1,8 @@
 package fdsa.edu.pnu.ControllerImpl;
 
 import fdsa.edu.pnu.Controller.IHistoriqueExamenController;
+import fdsa.edu.pnu.DTO.SoumissionDevoir;
+import fdsa.edu.pnu.FileManagement.StorageService;
 import fdsa.edu.pnu.Model.HistoriqueEvaluation;
 import fdsa.edu.pnu.ServiceImpl.HistoriqueExamServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,10 +56,10 @@ public class HistoriqueExamenControllerImpl implements IHistoriqueExamenControll
     }
 
     @Override
-    public HistoriqueEvaluation save(HistoriqueEvaluation historiqueEvaluation, MultipartFile file) {
+    public HistoriqueEvaluation save(HistoriqueEvaluation historiqueEvaluationOrdinaire, MultipartFile file) {
       //  String filename= storageService.uploadFile(file);
       //  historiqueEvaluationOrdinaire.setLienFichier(filename);
-        return historiqueExamServiceImpl.save(historiqueEvaluation, file);
+        return historiqueExamServiceImpl.save(historiqueEvaluationOrdinaire);
     }
 
 //    @Override
