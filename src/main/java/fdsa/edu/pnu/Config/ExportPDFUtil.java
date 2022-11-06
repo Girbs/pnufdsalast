@@ -20,11 +20,11 @@ public class ExportPDFUtil {
 
     private void writeTableHeader(PdfPTable table) {
         PdfPCell cell = new PdfPCell();
-        // cell.setBackgroundColor(Color.BLUE);
+       // cell.setBackgroundColor(Color.BLUE);
         cell.setPadding(5);
 
         Font font = FontFactory.getFont(FontFactory.HELVETICA);
-        // font.setColor(Color.BLACK);
+       // font.setColor(Color.BLACK);
 
         cell.setPhrase(new Phrase("Id", font));
         table.addCell(cell);
@@ -77,7 +77,7 @@ public class ExportPDFUtil {
         document.add(p1);
 
         float col1 = 800f;
-        // public static final Border NO_BORDER = null;
+       // public static final Border NO_BORDER = null;
 //        int col2 = col1+150;
 //        float mainInfo[]={col1, col2};
         float columnWidth [] = {col1, col1};
@@ -85,7 +85,7 @@ public class ExportPDFUtil {
         t.setBorder(0);
         t.addCell(postulant.getMatricule());
         t.addCell(postulant.getPrenom());
-        // subTitle.addCell(postulate.getNom());
+       // subTitle.addCell(postulate.getNom());
         document.add(t);
 
 
@@ -103,15 +103,15 @@ public class ExportPDFUtil {
 //
 //        writeTableHeader(table);
 
-        // Postulant postulant = postulantDAO.findById(id).get();
-        //  writeTableData(table, postulant);
+       // Postulant postulant = postulantDAO.findById(id).get();
+      //  writeTableData(table, postulant);
 //        List<Postulant> postulants = postulantDAO.findAll();
 //        writeTableData(table, postulants);
 //        table.addCell("TEXT");
 //        table.addCell("TEXT");
 //        table.addCell("TEXT");
 
-        // document.add(table);
+       // document.add(table);
 
         document.close();
 

@@ -1,7 +1,6 @@
 package fdsa.edu.pnu.ServiceImpl;
 
-import fdsa.edu.pnu.DTO.SoumissionDevoir;
-import fdsa.edu.pnu.FileManagement.StorageService;
+import fdsa.edu.pnu.Config.AWSUtil;
 import fdsa.edu.pnu.Model.CoursEtudiant;
 import fdsa.edu.pnu.Model.HistoriqueEvaluation;
 import fdsa.edu.pnu.Model.LogTracking;
@@ -10,7 +9,6 @@ import fdsa.edu.pnu.Repository.HistoriqueExamDAO;
 import fdsa.edu.pnu.Repository.LogTrackingDAO;
 import fdsa.edu.pnu.Service.IHistoriqueExamenService;
 import lombok.Data;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -29,6 +27,9 @@ public class HistoriqueExamServiceImpl implements IHistoriqueExamenService {
 //    private StorageService storageService;
     @Autowired
     private LogTrackingDAO logTrackingDAO;
+
+    @Autowired
+    private AWSUtil awsUtil;
     @Autowired
     private CoursEtudiantDAO coursEtudiantDAO;
     @Autowired
@@ -48,7 +49,11 @@ public class HistoriqueExamServiceImpl implements IHistoriqueExamenService {
 
 
     @Override
-    public HistoriqueEvaluation save(HistoriqueEvaluation historiqueEvaluation) {
+    public HistoriqueEvaluation save(HistoriqueEvaluation historiqueEvaluation, MultipartFile file) {
+
+        String fileUrl = awsUtil.uploadFile(file);
+        historiqueEvaluation.setLienFichier (fileUrl);
+
         int idCoursEtudiant = historiqueEvaluation.getCoursEtudiant().getId();
 
         CoursEtudiant ce = coursEtudiantDAO.findById(idCoursEtudiant).get();

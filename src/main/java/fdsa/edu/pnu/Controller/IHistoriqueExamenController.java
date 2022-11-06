@@ -1,6 +1,5 @@
 package fdsa.edu.pnu.Controller;
 
-import fdsa.edu.pnu.DTO.SoumissionDevoir;
 import fdsa.edu.pnu.Model.HistoriqueEvaluation;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -79,13 +78,13 @@ public interface IHistoriqueExamenController {
     void delete(@PathVariable("id") Integer id);
 
     // @PreAuthorize("hasAnyRole('creerConcours')")
-    @PostMapping(value = "/historiqueEvaluation/nouveau", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/historiqueEvaluation/nouveau")
     @ApiOperation(value = "Enregistrer un evaluation", notes = "Cette methode permet d'enregistrer ou modifier un evaluation", response = HistoriqueEvaluation.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "L'objet l' evaluation cree / modifie"),
             @ApiResponse(code = 400, message = "L'objet evaluation n'est pas valide")
     })
-    HistoriqueEvaluation save(@RequestBody HistoriqueEvaluation historiqueEvaluation, @RequestParam("file") MultipartFile file);
+    HistoriqueEvaluation save(@RequestPart("historiqueEvaluation") HistoriqueEvaluation historiqueEvaluation, @RequestPart("file") MultipartFile file);
 
 //    @PostMapping(value = "/historiqueEvaluation/soumettreDevoir", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 //    @ApiOperation(value = "Soumettre un Devoir", notes = "Cette methode de soumettre un devoir", response = HistoriqueEvaluation.class)
