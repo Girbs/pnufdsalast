@@ -42,6 +42,8 @@ public class Commune implements Serializable {
     @Column(name = "description", nullable = true, length = 255)
     private String description;
 
+
+
     @OneToMany(mappedBy = "commune", targetEntity = Personne.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
     @org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)

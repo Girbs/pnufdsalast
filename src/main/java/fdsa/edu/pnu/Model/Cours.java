@@ -27,6 +27,7 @@ public class Cours implements Serializable {
     @org.hibernate.annotations.GenericGenerator(name = "PNU_COURS_ID_GENERATOR", strategy = "native")
     private int id;
 
+
     @JsonIgnoreProperties(value = {"cours"}, allowSetters = true)
     @OneToMany(mappedBy = "cours", targetEntity = Evaluation.class)
     @org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})
